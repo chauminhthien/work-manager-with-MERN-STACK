@@ -7,7 +7,7 @@ import{ isEmpty } from 'utils/functions';
 class ListScreenChat extends Component {
 
   render() {
-    let { friends, listScreenChat, chatting, chattingActions, profile } = this.props;
+    let { friends, listScreenChat, chatting, chattingActions, profile, siteMess } = this.props;
 
     if(!friends || !listScreenChat || isEmpty(listScreenChat) || isEmpty(friends.data)) return null;
 
@@ -24,6 +24,7 @@ class ListScreenChat extends Component {
                   return (
                     <ChatBox 
                       key               = { i }
+                      siteMess          = { siteMess }
                       chatting          = { chatting }
                       chattingActions   = { chattingActions }
                       onChatting        = { this.props.onChatting }

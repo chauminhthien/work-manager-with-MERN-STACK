@@ -20,13 +20,16 @@ import 'styles/App.css';
 
 class DashboardPage extends React.Component {
 
-  // constructor(props){
-  //   super(props);
+  constructor(props){
+    super(props);
 
-  //   // this.socket = io('http://localhost:9100');
+    this.state = {
+      idFriendChat : null
+    }
 
-    
-  // }
+  }
+
+  menuTabChatClick = (id) => this.setState({idFriendChat: id})
 
   componentWillMount(){
     let { session } = this.props;
@@ -43,13 +46,13 @@ class DashboardPage extends React.Component {
 
   render() {
     let { location, profile } = this.props;
-
+    let { idFriendChat } = this.state;
     if(!profile.info) return <Loading />;
 
     return (
       <React.Fragment >
         <div id="wrapper">
-          <Menu />
+          <Menu menuTabChatClick={ this.menuTabChatClick } />
           <Sidebar location={location} />
           <div id="page-wrapper">
               <div className="container-fluid p-0">
@@ -57,7 +60,10 @@ class DashboardPage extends React.Component {
               </div>
           </div>
         </div>
-        <MenuChat location={location} />
+        <MenuChat 
+          resetIdFriendChat   = { () => this.setState({idFriendChat: null}) }
+          idFriendChat        = { idFriendChat }
+          location            = { location } />
       </React.Fragment>
       
     );

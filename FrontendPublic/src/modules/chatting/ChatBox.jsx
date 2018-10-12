@@ -91,7 +91,7 @@ class ChatBox extends Component {
   }
 
   render() {
-    let { dataFriends, chatting, profile } = this.props;
+    let { dataFriends, chatting, profile, siteMess } = this.props;
     let { show, fetch } = this.state;
     
     chatting = chatting.data;
@@ -101,7 +101,7 @@ class ChatBox extends Component {
     let idFriend  = dataFriends.id;
 
     return (
-      <li id={`li-${dataFriends.id ? dataFriends.id : ""}`} ref={ e => this._element = e } className={`col-md-4 ${!!show ? "" : "off"}`}  >
+      <li id={`li-${dataFriends.id ? dataFriends.id : ""}`} ref={ e => this._element = e } className={`col-md-4 ${!!show && !siteMess ? "" : "off"}`}  >
         <div className="col-lg-12 col-md-12 col-sm-12">
           <div className="panel panel-themecolor">
             <div  className="panel-heading vertical-middle"> 

@@ -54,12 +54,12 @@ class MenuChat extends Component {
     }
   }
 
-  removeFriendClick = (e) => {
+  removeFriendClick = (e) => { 
     let listScreenChat = [...this.state.listScreenChat];
 
     listScreenChat = listScreenChat.filter(el => e !== el);
+    this.setState({...this.state, listScreenChat});
 
-    this.setState({...this.state, listScreenChat})
   }
 
   onChatting = (data) => {
@@ -115,8 +115,15 @@ class MenuChat extends Component {
     let { pathname } = this.props.location;
     let { siteMess } = this.state;
     let site = (pathname === '/messagse') ? true : false;
-
     if(siteMess !== site) this.setState({...this.state, siteMess: site});
+  }
+
+  componentWillReceiveProps(props){
+    let { idFriendChat } = props;
+    if(!!idFriendChat) {
+      this.friendClick(idFriendChat);
+      !!this.props.resetIdFriendChat && this.props.resetIdFriendChat()
+    };
   }
 
   render() {
@@ -124,7 +131,7 @@ class MenuChat extends Component {
     let { profile, friends, chatting, chattingActions } = this.props;
 
     if(friends.isWorking) return <Loading />
-
+    
     return (
       <div>
         <RightSidebar 

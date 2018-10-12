@@ -130,7 +130,7 @@ class Menu extends Component {
                                     return (
                                         <li key={i} className={ative}>
                                             <div className="message-center">
-                                                <Link to="#">
+                                                <Link to="#" onClick={ () => this.props.menuTabChatClick(e) } >
                                                     <div className="user-img">
                                                     <img src={img} alt="user" className="img-circle" /> 
                                                     <span className={`profile-status ${!!friends.data[e].online ? 'online' : 'off'} pull-right`}></span>
