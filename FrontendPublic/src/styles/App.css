@@ -1,0 +1,100 @@
+body{
+  overflow: hidden;
+}
+
+#projectList {
+  height: 100vh;
+  border-right: 1px solid #e5e5e5; }
+  #projectList .box-title {
+    font-size: 14px; }
+
+.list-action li {
+  font-size: 11px; }
+  .list-action li a {
+    color: #000}
+  .list-action li strong {
+    font-size: 12px; }
+
+#iconChat{
+  position: fixed;
+  right: 10px;
+  bottom: 20px;
+  height: 50px;
+  font-size: 50px;
+  color: #2f8c2d;
+  cursor: pointer;
+}
+
+.right-sidebar .rpanel-title{
+  padding: 16px !important;
+}
+
+.chatList .r-panel-body{
+  padding: 0 !important;
+}
+
+.chatList .r-panel-body .r-panel-body{
+  padding: 0 !important;
+}
+.chatList .chatonline li a{
+  padding: 5px 0 !important;
+  float: none !important;
+  display: block !important;
+}
+.chatList .r-panel-body ul{
+  padding-top: 10px;
+  padding-bottom: 100px;
+}
+.chatList .r-panel-body ul li{
+  padding: 0 15px 0 15px !important;
+}
+
+.chatList .r-panel-body ul li:hover{
+  background: #e5e5e5;
+}
+
+#messagse li{
+  padding: 5px 15px 5px 5px !important;
+}
+
+#messagse li.me{
+  text-align: right;
+}
+
+#messagse li.me span{
+  background: #0084ff;
+  padding: 5px 10px;
+  border-radius: 50px;
+  color: #fff;
+}
+
+
+#messagse li.friend{
+
+}
+
+#messagse li.friend span{
+  background: #e5e5e5;
+  padding: 5px;
+  border-radius: 13px;
+  line-height: 30px;
+}
+
+#messagse .formMess{
+  border-top: 1px solid #e5e5e5;
+  min-height: 30px;
+  max-height: 100px;
+  width: 75%;
+}
+
+#root > div > div > div:nth-child(1){
+  overflow-x: hidden !important;
+}
+
+.sidebar > div > div:nth-child(1){
+  overflow-x: hidden !important;
+}
+
+#wrapper{
+  overflow: hidden;
+}

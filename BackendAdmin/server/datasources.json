@@ -1,0 +1,30 @@
+{
+  "mongodb": {
+    "host": "localhost",
+    "port": 27017,
+    "database": "managerWork",
+    "password": "",
+    "name": "mongodb",
+    "user": "",
+    "connector": "mongodb",
+    "authSource": "",
+    "useNewUrlParser": true
+  },
+  "email": {
+    "name": "email",
+    "connector": "mail",
+    "transports": [
+      {
+        "type": "smtp",
+        "host": "smtp.yandex.com",
+        "secure": true,
+        "service": "Yandex",
+        "port": 465,
+        "auth": {
+          "user": "chauminhthien@itfsoft.com",
+          "pass": "0212"
+        }
+      }
+    ]
+  }
+}

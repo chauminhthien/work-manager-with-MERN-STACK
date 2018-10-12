@@ -1,0 +1,53 @@
+{
+  "mongodb": {
+    "host": "localhost",
+    "port": 27017,
+    "database": "managerWork",
+    "password": "",
+    "name": "mongodb",
+    "user": "",
+    "connector": "mongodb",
+    "authSource": "",
+    "useNewUrlParser": true
+  },
+  "email": {
+    "name": "email",
+    "connector": "mail",
+    "transports": [
+      {
+        "type": "smtp",
+        "host": "smtp.yandex.com",
+        "secure": true,
+        "service": "Yandex",
+        "port": 465,
+        "auth": {
+          "user": "chauminhthien@itfsoft.com",
+          "pass": "0212"
+        }
+      }
+    ]
+  },
+  "storagess": {
+    "name": "storagess",
+    "connector": "loopback-component-storage",
+    "provider": "filesystem",
+    "root": "./client/uploads",
+    "allowedContentTypes": [
+      "image/jpg",
+      "image/jpeg",
+      "image/png",
+      "image/gif",
+      "image/tiff",
+      "application/pdf",
+      "application/msword",
+      "application/x-pdf",
+      "application/acrobat",
+      "applications/vnd.pdf",
+      "application/vnd.openxmlformats-officedocument.wordprocessingml.document",
+      "application/vnd.ms-excel",
+      "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
+      "text/plain"
+    ],
+    "maxFileSize": 20000000
+  }
+}

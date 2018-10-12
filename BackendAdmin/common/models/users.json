@@ -1,0 +1,69 @@
+{
+  "name": "users",
+  "base": "User",
+  "idInjection": true,
+  "options": {
+    "validateUpsert": true
+  },
+  "properties": {
+    "email": {
+      "type": "string",
+      "required": true
+    },
+    "password": {
+      "type": "string",
+      "required": true
+    },
+    "fullname": {
+      "type": "string",
+      "required": true
+    },
+    "phone": {
+      "type": "string"
+    },
+    "token": {
+      "type": "string"
+    },
+    "address": {
+      "type": "string"
+    },
+    "groupUserID": {
+      "type": "string",
+      "default": ""
+    },
+    "gender": {
+      "type": "number",
+      "required": true,
+      "default": 1
+    },
+    "status": {
+      "type": "number",
+      "required": true,
+      "default": 1
+    },
+    "account_type": {
+      "type": "number",
+      "required": true,
+      "default": 2
+    },
+    "created_at": {
+      "type": "string",
+      "default": ""
+    },
+    "permit": {
+      "type": "object",
+      "default": {}
+    }
+  },
+  "validations": [],
+  "relations": {
+    "groupUser": {
+      "type": "belongsTo",
+      "model": "groupUser",
+      "foreignKey": "groupUserID",
+      "primaryKey": ""
+    }
+  },
+  "acls": [],
+  "methods": {}
+}

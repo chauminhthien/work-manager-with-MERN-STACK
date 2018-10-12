@@ -1,0 +1,46 @@
+{
+  "name": "chatting",
+  "base": "PersistedModel",
+  "idInjection": true,
+  "options": {
+    "validateUpsert": true
+  },
+  "properties": {
+    "idMe": {
+      "type": "string",
+      "required": true
+    },
+    "message": {
+      "type": "string"
+    },
+    "idFriend": {
+      "type": "string"
+    },
+    "status": {
+      "type": "number",
+      "required": true,
+      "default": 0
+    },
+    "time": {
+      "type": "number",
+      "default": 0
+    }
+  },
+  "validations": [],
+  "relations": {
+    "me": {
+      "type": "belongsTo",
+      "model": "users",
+      "foreignKey": "idMe",
+      "primaryKey": ""
+    },
+    "friend": {
+      "type": "belongsTo",
+      "model": "users",
+      "foreignKey": "idFriend",
+      "primaryKey": ""
+    }
+  },
+  "acls": [],
+  "methods": {}
+}
