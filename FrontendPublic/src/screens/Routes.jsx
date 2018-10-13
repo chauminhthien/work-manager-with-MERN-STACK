@@ -18,28 +18,17 @@ import {
 
 class Routes extends React.Component<Props> {
 
-  // componentWillMount(){
-  //   let { session } = this.props;
-
-  //   if(session.token && session.token.length === 64){
-  //     let {profileActions} = this.props;
-  //     profileActions.getUserInToken(session.token)
-  //       .then(res => {
-  //         if(res.data == null) this.props.sessionActions.resetSession();
-  //       })
-  //       .catch( () => this.props.sessionActions.resetSession());
-  //   } else this.props.sessionActions.resetSession();
-  // }
   render() {
     let { session } = this.props;
-    let signedIn = (session.token != null);
-    
+    let signedIn    = (session.token != null);
+    let url         = `/login?return=${window.location.href}`;
+
     return (
       <Switch>
         <Route path='/forgotpassword' component={ ForgotPasswordAsync } />
         <Route path='/login' component={ LoginPageAsync } />
         <Route path='/access-password/:token' component={ AccessPasswordAsync } />
-        <AuthRoute path='/' signedIn={ signedIn } redirect="/login" component={ DashboardAsync } />
+        <AuthRoute path='/' signedIn={ signedIn } redirect={ url } component={ DashboardAsync } />
       </Switch>
     );
   }

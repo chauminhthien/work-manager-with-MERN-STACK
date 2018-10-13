@@ -4,15 +4,17 @@ import * as sessionStorage from './sessionStorage';
 import * as user from './api/users';
 import * as email from './api/email';
 import * as groupUser from './api/groupUser';
-import * as channel from './api/channel';
+import * as logs from './api/logs';
 import * as chatting from './api/chatting';
+import * as project from './api/project';
 
 export const api = {
   user,
   email,
   groupUser,
-  channel,
-  chatting
+  logs,
+  chatting,
+  project
 }
 
 export { localStorage, sessionStorage };

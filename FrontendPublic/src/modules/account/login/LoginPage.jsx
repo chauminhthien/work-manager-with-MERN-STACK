@@ -8,6 +8,7 @@ import { withNotification, Loading } from 'components';
 import { validateForm } from 'utils/validate';
 import * as loginActions from 'modules/account/actions';
 import * as sessionActions from 'modules/session/actions';
+import { getJsonFromSearch } from 'utils/functions';
 
 import img_panner from 'assets/plugins/images/admin-logo.png';
 
@@ -54,7 +55,7 @@ class LoginPage extends Component {
   }
 
   handleSuccess = (res, remember) => {
-    let { sessionActions, notification, history } = this.props;
+    let { sessionActions, notification } = this.props;
 
     if( null != res.error){
       notification.e('Message', res.error.messagse);
@@ -62,7 +63,7 @@ class LoginPage extends Component {
     }else if(null != res.data){ 
       notification.s('Message', 'Login success');
       sessionActions.setSession(res.data, remember);
-      history.push('/'); 
+      window.location.href = this.urlReturn();
     }else{
       this.setState({isWorking: false});
       notification.e('Message', 'Login fail');
@@ -75,9 +76,20 @@ class LoginPage extends Component {
     notification.e('Message', err.messagse);
   }
 
+  urlReturn = () => {
+    let url = window.location.origin;
+    let { location }  = this.props;
+    let { search }    = location;
+    if(!!search && search !== ""){
+      let param = getJsonFromSearch(search);
+      if(!!param && !!param.return) url = param.return;
+    }
+    return url;
+  }
+
   render() {
     let { session } = this.props;
-    
+    this.urlReturn();
     if(this.state.isWorking === true) return (<Loading />);
     if (session && session.token != null) return (<Redirect to="/" />);
 

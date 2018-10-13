@@ -27,7 +27,7 @@
   },
   "groupUser": {
     "dataSource": "mongodb",
-    "public": true
+    "public": false
   },
   "chatting": {
     "dataSource": "mongodb",
@@ -36,5 +36,17 @@
   "storagess": {
     "dataSource": "storagess",
     "public": false
+  },
+  "project": {
+    "dataSource": "mongodb",
+    "public": true
+  },
+  "logs": {
+    "dataSource": "mongodb",
+    "public": true
+  },
+  "messages": {
+    "dataSource": "mongodb",
+    "public": true
   }
 }

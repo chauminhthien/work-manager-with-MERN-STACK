@@ -4,7 +4,6 @@ import 'react-day-picker/lib/style.css';
 
 class DayPicker extends React.Component {
   render() {
-
     return (
       <DayPickerInput {...this.props} />
     );

@@ -20,6 +20,6 @@
     "cors": false
   },
   "serectkey": "FgQUvwaKRiXATWCFmhzHTA5iVCyvDRr6T0ntjBdhjOtA112",
-  "baseUrl" : "http://localhost:9100",
-  "dirUpload" : "client/uploads"
+  "baseUrl": "http://localhost:9100",
+  "dirUpload": "client/uploads"
 }

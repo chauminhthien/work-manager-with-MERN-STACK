@@ -1,0 +1,48 @@
+{
+  "name": "logs",
+  "base": "PersistedModel",
+  "idInjection": true,
+  "options": {
+    "validateUpsert": true
+  },
+  "properties": {
+    "userID": {
+      "type": "string",
+      "required": true
+    },
+    "nameAction": {
+      "type": "string"
+    },
+    "nameWork": {
+      "type": "string"
+    },
+    "idWork": {
+      "type": "string"
+    },
+    "groupUserID": {
+      "type": "string",
+      "required": true
+    },
+    "time": {
+      "type": "number",
+      "required": true
+    }
+  },
+  "validations": [],
+  "relations": {
+    "groupUser": {
+      "type": "belongsTo",
+      "model": "groupUser",
+      "foreignKey": "groupUserID",
+      "primaryKey": ""
+    },
+    "users": {
+      "type": "belongsTo",
+      "model": "users",
+      "foreignKey": "userID",
+      "primaryKey": ""
+    }
+  },
+  "acls": [],
+  "methods": {}
+}

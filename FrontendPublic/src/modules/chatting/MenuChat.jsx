@@ -8,7 +8,7 @@ import ListScreenChat from './ListScreenChat';
 
 import { actions as friendActions } from 'modules/categories/friends';
 import * as chattingActions from './actions';
-
+import { URL_BASE } from 'config/constants';
 import io from "socket.io-client";
 // 
 class MenuChat extends Component {
@@ -22,7 +22,7 @@ class MenuChat extends Component {
       siteMess        : false
     }
 
-    this.socket = io('http://localhost:9100');
+    this.socket = io(URL_BASE);
   }
 
   //========================================================
