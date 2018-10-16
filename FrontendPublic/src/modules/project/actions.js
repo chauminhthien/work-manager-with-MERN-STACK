@@ -45,3 +45,40 @@ export const fetchAll = (filter?, skip?, limit?, where?) => {
       });
   };
 };
+
+export const create = (data) => {
+  return (dispatch: (action) => void) => {
+    dispatch(fetchStarted());
+    return api.project.create(data)
+      .then(obj => {
+        if(obj.error)
+          dispatch(fetchFailed(obj.error));
+        if(obj.data)
+          dispatch(fetchFinished([obj.data]));
+        return obj;
+      });
+  };
+};
+
+export const uploadFile = (file, id) => {
+  return (dispatch: (action) => void) => {
+    return api.project.uploadFile(file, id)
+      .then(obj => {
+        if(obj.data)
+          dispatch(fetchFinished([obj.data]))
+        return obj
+      });
+  }
+}
+
+export const removeFile = (name, id) => {
+  return (dispatch: (action) => void) => {
+    return api.project.removeFile(name, id)
+      .then(obj => {
+        if(obj.data)
+          dispatch(fetchFinished([obj.data]))
+        return obj
+      });
+  }
+}
+  

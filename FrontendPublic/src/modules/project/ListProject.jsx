@@ -1,11 +1,26 @@
 import React, { Component } from 'react';
 import { Scrollbars } from 'react-custom-scrollbars';
+import { connect } from 'react-redux';
+import { bindActionCreators } from 'redux';
 
+import * as projectActions from './actions';
 import { Link } from 'react-router-dom';
 
 class ListProject extends Component {
+  
+  componentDidMount(){
+    let { profile, projectActions } = this.props;
 
+    projectActions.fetchAll({
+
+    },0, 0, {
+      groupUserID: profile.info.groupUserID
+    })
+
+  }
   render() {
+    let { project } = this.props;
+    let { ordered, data } = project
     return (
       <div className="white-box">
         <h3 className="box-title m-b-0">
@@ -17,28 +32,15 @@ class ListProject extends Component {
           <div> 
             <Link to="/project/add" className="btn btn-custom btn-block waves-effect waves-light">Create new</Link>
             <div className="list-group mail-list m-t-20">
-              <Link to="#" className="list-group-item active">
-                Hướng Nghiệp
-              </Link>
-              <Link to="#" className="list-group-item ">
-                Đồ án tốt nghiệp
-              </Link>
-              <Link to="#" className="list-group-item">
-                CRM
-                <span className="label label-rouded label-warning pull-right">
-                  15
-                </span>
-              </Link>
-              <Link to="#" className="list-group-item">
-                Work manager
-              </Link>
-              <Link to="#" className="list-group-item">
-                Trash
-                <span className="label label-rouded label-default pull-right">
-                  55
-                </span>
-              </Link>
-    
+              {
+                'push' in ordered && ordered.map((e, i) => {
+                  return(
+                    <Link key={i} to={`/task/list/${e}`} className="list-group-item">
+                      {data[e] ? data[e].name : ""}
+                    </Link>
+                  )
+                })
+              }
             </div>
           </div>
         </Scrollbars>
@@ -47,5 +49,16 @@ class ListProject extends Component {
   }
 }
 
+let mapStateToProps = (state) => {
+  let { profile, project } = state;
 
-export default ListProject;
+  return { profile, project };
+};
+
+let mapDispatchToProps = (dispatch) => {
+  return {
+    projectActions       : bindActionCreators(projectActions, dispatch),
+  };
+};
+
+export default connect(mapStateToProps, mapDispatchToProps)(ListProject);

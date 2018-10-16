@@ -28,12 +28,10 @@ let reducer = (state: DistrictState = initialState, action: Action): DistrictSta
     {
       let list = action.payload;
       let newData = { };
-      let set = new Set(state.ordered);
       list.forEach((item) => {
-        newData[item.id] = item;
-        set.add(item.id)
+        newData = {[item.id]: item, ...newData, ...state.data};
       });
-      let newOrdered = [ ...set.keys() ];
+      let newOrdered = [ ...Object.keys(newData) ];
 
       return {
         data: { ...state.data, ...newData },

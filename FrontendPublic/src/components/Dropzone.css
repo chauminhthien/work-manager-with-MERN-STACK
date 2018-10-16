@@ -9,8 +9,8 @@
 }
 
 .Dropzone img{
-  width: 150px;
-  height: 150px;
+  width: 70px;
+  height: 70px;
   border-radius: 20px;
 }
 
@@ -18,4 +18,21 @@
   line-height: 70px;
   margin-bottom: 0;
   color: #000;
+}
+.fileResult{
+  width: 100%;
+  border: 1px solid #e5e5e5;
+  margin-top: 15px;
+}
+
+.fileResult .dz-preview.dz-processing.dz-success{
+  width: 25%;
+  float: left;
+  text-align: center;
+}
+
+.fileResult .dz-preview.dz-processing.dz-success img{
+  width: 70px;
+  height: 70px;
+  border-radius: 20px;
 }

@@ -7,6 +7,7 @@ import * as groupUser from './api/groupUser';
 import * as logs from './api/logs';
 import * as chatting from './api/chatting';
 import * as project from './api/project';
+import * as messages from './api/messages';
 
 export const api = {
   user,
@@ -14,7 +15,8 @@ export const api = {
   groupUser,
   logs,
   chatting,
-  project
+  project,
+  messages
 }
 
 export { localStorage, sessionStorage };

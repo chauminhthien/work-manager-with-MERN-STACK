@@ -8,7 +8,12 @@ import ListScreenChat from './ListScreenChat';
 
 import { actions as friendActions } from 'modules/categories/friends';
 import * as chattingActions from './actions';
+import { actions as projectActions } from 'modules/project';
+import { actions as messageActions } from 'modules/categories/messages';
+import { actions as logActions } from 'modules/categories/logs';
 import { URL_BASE } from 'config/constants';
+import { isEmpty } from 'utils/functions';
+
 import io from "socket.io-client";
 // 
 class MenuChat extends Component {
@@ -79,11 +84,23 @@ class MenuChat extends Component {
   
   //=========================================================
   componentDidMount(){
-    let { profile, friends, friendActions, chattingActions } = this.props;
+    let { profile, friends, friendActions,
+      chattingActions, projectActions, messageActions, logActions
+    } = this.props;
     let { groupUserID, id } = profile.info;
 
     if(friends.ordered.length === 0 ) friendActions.fetchFriends({
       groupUserID, status: 1, id: {neq: id}
+    })
+    .then(res => {
+      if(!!res && !isEmpty(res)) this.setState({friendActive: res[0]})
+      let dateFr = [];
+      for(let val of res){
+        dateFr.push(val.id);
+      }
+      if(!isEmpty(dateFr)){
+        chattingActions.fetchMessAllFr(dateFr);
+      }
     })
 
     this.socket.on('connect', () => {
@@ -104,9 +121,21 @@ class MenuChat extends Component {
       })
 
       this.socket.on('SERVER_SEND_UERS_ONLINE', (data) => {
-        
         'push' in data && friendActions.checkFriendOnline(data);
-      })
+      });
+
+      this.socket.on('SERVER_SEND_PROJECT_NEW', (data) => {
+        !!data && projectActions.fetchFinished([data])
+      });
+
+      this.socket.on('SERVER_SEND_MESS', (data) => {
+        !!data && messageActions.fetchFinished([data])
+      });
+
+      this.socket.on('SERVER_SEND_LOG', (data) => {
+        !!data && logActions.fetchFinished([data])
+      });
+
     });
 
   }
@@ -170,6 +199,9 @@ let mapDispatchToProps = (dispatch) => {
   return {
     friendActions       : bindActionCreators(friendActions, dispatch),
     chattingActions     : bindActionCreators(chattingActions, dispatch),
+    projectActions      : bindActionCreators(projectActions, dispatch),
+    messageActions      : bindActionCreators(messageActions, dispatch),
+    logActions          : bindActionCreators(logActions, dispatch),
   };
 };
 

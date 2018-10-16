@@ -17,11 +17,20 @@
       "type": "string"
     },
     "idWork": {
-      "type": "string"
+      "type": "string",
+      "required": true
+    },
+    "userIdTo": {
+      "type": "string",
+      "required": true
     },
     "groupUserID": {
       "type": "string",
       "required": true
+    },
+    "link": {
+      "type": "string",
+      "default": "/"
     },
     "time": {
       "type": "number",
@@ -41,10 +50,16 @@
       "foreignKey": "groupUserID",
       "primaryKey": ""
     },
-    "users": {
+    "usersFrom": {
       "type": "belongsTo",
       "model": "users",
       "foreignKey": "userID",
+      "primaryKey": ""
+    },
+    "userTo": {
+      "type": "belongsTo",
+      "model": "users",
+      "foreignKey": "userIdTo",
       "primaryKey": ""
     }
   },

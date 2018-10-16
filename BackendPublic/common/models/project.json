@@ -38,7 +38,14 @@
     }
   },
   "validations": [],
-  "relations": {},
+  "relations": {
+    "groupUser": {
+      "type": "belongsTo",
+      "model": "groupUser",
+      "foreignKey": "groupUserID",
+      "primaryKey": ""
+    }
+  },
   "acls": [],
   "methods": {}
 }

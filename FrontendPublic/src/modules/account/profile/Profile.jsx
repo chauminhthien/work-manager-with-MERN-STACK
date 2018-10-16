@@ -30,7 +30,6 @@ class Profile extends Component {
       if(fileConfig.maxFilesize >= file.size){
         let formData = new FormData();
         formData.append('file', file);
-
         profileActions.uploadAvatar(formData, id)
           .then(res => {
             if(!!res.error) return Promise.reject(res.error)

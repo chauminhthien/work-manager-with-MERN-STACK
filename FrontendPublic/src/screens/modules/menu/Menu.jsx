@@ -6,6 +6,7 @@ import { Scrollbars } from 'react-custom-scrollbars';
 
 import * as sessionActions from 'modules/session/actions';
 import { actions as profileActions } from 'modules/account';
+import { actions as messageActions } from 'modules/categories/messages';
 
 import admin_logo           from 'assets/plugins/images/admin-logo.png';
 import admin_logo_dark      from 'assets/plugins/images/admin-logo-dark.png';
@@ -20,7 +21,8 @@ class Menu extends Component {
   constructor(props){
     super(props);
     this.state = {
-      countMess : 0
+      countMess : 0,
+      countNoti : 0
     }
   }
 
@@ -33,12 +35,25 @@ class Menu extends Component {
   }
 
   componentDidMount(){
-    
+    let { messages, profile, messageActions } = this.props;
+    if(messages.ordered.length === 0){
+        messageActions.fetchAll({
+            include: [
+                {relation: "usersFrom", scope: { fields: { fullname: true, avatar: true }}},
+                {relation: "userTo", scope: { fields: { fullname: true, avatar: true }}},
+              ],
+            order: "id DESC"
+        },0 , 15, {
+          groupUserID: profile.info.groupUserID,
+          userIdTo: profile.info.id
+        })
+    }
   }
 
   componentDidUpdate(){
-    let { friends, chatting, profile } = this.props;
+    let { friends, chatting, profile, messages } = this.props;
     let countMess = 0;
+    let countNoti = 0;
 
     if(friends.ordered.length > 0 && !isEmpty(chatting.data) && !!profile.info){
       let { ordered } = friends;
@@ -49,11 +64,18 @@ class Menu extends Component {
       }
       if(this.state.countMess !== countMess) this.setState({countMess})
     }
+
+    if(messages.ordered.length > 0 && !isEmpty(messages.data)){
+        let { ordered, data } = messages;
+  
+        for(let id of ordered) !!data[id] && data[id].status === 0 && ++countNoti;
+        if(this.state.countNoti !== countNoti) this.setState({countNoti})
+      }
   }
 
   render() {
-    let { countMess } = this.state;
-    let { profile, friends, chatting } = this.props;
+    let { countMess, countNoti } = this.state;
+    let { profile, friends, chatting, messages } = this.props;
     let email = (profile.info) ? profile.info.email : "";
     let fullName = (profile.info) ? `${profile.info.fullname}` : "";
     let imgAvatar = profile && profile.info && profile.info.avatar ?  profile.info.avatar : users;
@@ -81,28 +103,49 @@ class Menu extends Component {
                 <li><Link to="#" className="open-close waves-effect waves-light visible-xs"><i className="ti-close ti-menu"></i></Link></li>
                 <li className="dropdown">
                     <Link className="dropdown-toggle waves-effect waves-light" data-toggle="dropdown" to="#"> <i className="mdi mdi-gmail"></i>
-                        <div className="notify">
+                        <div className={`${countNoti > 0 ? 'notify' : ""}`}>
                         <span className="heartbit"></span> <span className="point"></span>
                         </div>
                     </Link>
-                    <ul className="dropdown-menu mailbox animated bounceInDown">
+                    <ul style={{width: '500px'}} className="dropdown-menu mailbox animated bounceInDown notication">
                         <li>
-                            <div className="drop-title">You have 4 new messages</div>
+                            <div className="drop-title">You have {countNoti} new notifications</div>
                         </li>
+                        <Scrollbars className="hiddenOverX" style={{height: '40vh'}}>
+                            {
+                                !!messages.ordered && messages.ordered.length > 0 && messages.ordered.map((e, i) => {
+                                    let img = messages.data[e] &&  messages.data[e].usersFrom && messages.data[e].usersFrom.avatar ? messages.data[e].usersFrom.avatar : users;
+                                    let nameForm = messages.data[e] && messages.data[e].usersFrom && messages.data[e].usersFrom.fullname ? messages.data[e].usersFrom.fullname : "";
+                                    let link = messages.data[e] && messages.data[e].link ? `${messages.data[e].link}?noti=${e}` : '';
+                                    let txt = (
+                                        <span className="mail-desc">
+                                            <strong style={{margin: '0 5px'}}>{nameForm}</strong> &#32;	
+                                            {messages.data[e].nameAction ? messages.data[e].nameAction : ""} &#32;
+                                            <strong style={{margin: '0 5px'}}>{messages.data[e].nameWork ? messages.data[e].nameWork : ""}</strong> 
+                                        </span> 
+                                        );
+                                    return (
+                                        <li key={i} className={`${!!messages.data[e].status ? "" : "active"}`}>
+                                            <div className="message-center">
+                                                <Link to={link}>
+                                                    <div className="user-img">
+                                                    <img src={img} alt="user" className="img-circle" /> 
+                                                    <span className="profile-status pull-right"></span>
+                                                    </div>
+                                                    <div className="mail-contnet">
+                                                        {txt}
+                                                        <span className="time">{messages.data[e].time ? convertTimeMess(messages.data[e].time) : ""}</span> </div>
+                                                </Link>
+                                            </div>
+                                        </li>
+                                    )
+                                })
+                            }
+                            
+                        </Scrollbars>
+                        
                         <li>
-                            <div className="message-center">
-                                <Link to="#">
-                                    <div className="user-img">
-                                    <img src={users} alt="user" className="img-circle" /> 
-                                    <span className="profile-status online pull-right"></span>
-                                    </div>
-                                    <div className="mail-contnet">
-                                        <h5>Pavan kumar</h5> <span className="mail-desc">Just see the my admin!</span> <span className="time">9:30 AM</span> </div>
-                                </Link>
-                            </div>
-                        </li>
-                        <li>
-                            <Link className="text-center" to="#"> <strong>See all notifications</strong> <i className="fa fa-angle-right"></i> </Link>
+                            <Link className="text-center" to="/notification"> <strong>See all notifications</strong> <i className="fa fa-angle-right"></i> </Link>
                         </li>
                     </ul>
                 </li>
@@ -194,14 +237,15 @@ class Menu extends Component {
 
 let mapStateToProps = (state) => {
   let { profile, session, chatting } = state;
-  let { friends } = state.categories;
-  return { profile, session, chatting, friends };
+  let { friends, messages } = state.categories;
+  return { profile, session, chatting, friends, messages };
 };
 
 let mapDispatchToProps = (dispatch) => {
   return {
     sessionActions    : bindActionCreators(sessionActions, dispatch),
-    profileActions    : bindActionCreators(profileActions, dispatch)
+    profileActions    : bindActionCreators(profileActions, dispatch),
+    messageActions    : bindActionCreators(messageActions, dispatch),
   };
 };
 

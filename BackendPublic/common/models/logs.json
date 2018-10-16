@@ -16,8 +16,9 @@
     "nameWork": {
       "type": "string"
     },
-    "idWork": {
-      "type": "string"
+    "nameTask": {
+      "type": "string",
+      "default": ""
     },
     "groupUserID": {
       "type": "string",

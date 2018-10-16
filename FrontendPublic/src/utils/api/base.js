@@ -132,11 +132,12 @@ export const upload = (url: string, body: any, status: number, hdr: any): Promis
     method: 'POST',
     headers,
     data: body,
+    body,
     url,
     contentType: false,
     processData: false,
   };
-
+  
   return $.ajax({
     ...opts,
     success: (res) => res,

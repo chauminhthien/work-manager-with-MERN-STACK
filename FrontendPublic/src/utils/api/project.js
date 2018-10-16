@@ -23,3 +23,27 @@ export const get = (filter, skip, limit, where) => {
       return obj;
     });
 }
+
+export const create = (data) => {
+  return base.post(PROJECT_BASE, data, 200)
+  .then(obj => {
+    return obj;
+  });
+}
+
+export const uploadFile = (file, id) => {
+  let url = `${ PROJECT_BASE }/upload/${id}`;
+  return base.upload(url, file, 200)
+    .then(obj => {
+      return {data: obj.data.status, error: obj.error};
+    });
+}
+
+export const removeFile = (name, id) => {
+  let url = `${ PROJECT_BASE }/removeFile/${id}`;
+  return base.post(url, {name}, 200)
+    .then(obj => { 
+      return {data: obj.data.status, error: obj.error};
+    });
+}
+ 
