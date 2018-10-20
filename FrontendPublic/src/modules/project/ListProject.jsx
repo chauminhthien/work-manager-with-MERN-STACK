@@ -47,7 +47,7 @@ class ListProject extends Component {
                   if(profile.info.id !== data[e].createAt && !fl) return null;
 
                   return(
-                    <Link key={i} to={`/project/view/${e}`} className={`list-group-item ${pathname === `/project/edit/${e}` || pathname === `/project/view/${e}` ? 'active': ''}`}>
+                    <Link key={i} to={`/project/view/${e}`} className={`list-group-item ${new RegExp(`.*/${e}$`).test(pathname)? 'active': ''}`}>
                       {data[e] ? data[e].name : ""}
                     </Link>
                   )

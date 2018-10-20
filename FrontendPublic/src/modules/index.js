@@ -7,3 +7,4 @@ export { default as ProfileAsync } from './account/profile/ProfileAsync';
 export { default as Messagse } from './chatting/Messagse';
 export { default as ProjectAsync } from './project/ProjectAsync';
 export { default as NotificationAsync } from './notification/NotificationAsync'
+export { default as TaskAsync } from './task/TaskAsync';

@@ -99,7 +99,7 @@ class EditProject extends Component {
             dataProject       = { dataProject }
             removeFileUpload  = { this.removeFileUpload }
             fileUpload        = { this.fileUpload }
-            friends           = { friends }/>
+            friends           = { friends } />
         </Scrollbars>
       </div>
     );

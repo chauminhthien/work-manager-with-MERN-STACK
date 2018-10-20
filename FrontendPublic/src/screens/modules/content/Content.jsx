@@ -7,7 +7,8 @@ import {
   ProfileAsync,
   Messagse,
   ProjectAsync,
-  NotificationAsync
+  NotificationAsync,
+  TaskAsync
 } from 'modules';
 
 class Content extends Component {
@@ -19,6 +20,7 @@ class Content extends Component {
         <Route exact path="/notification" component={ NotificationAsync } />
         <Route path="/profile" component={ ProfileAsync } />
         <Route path="/project" component={ ProjectAsync } />
+        <Route path="/task" component={ TaskAsync } />
         <Route component={ Error404 } />
       </Switch>
     );
