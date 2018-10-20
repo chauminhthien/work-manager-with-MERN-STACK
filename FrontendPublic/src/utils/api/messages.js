@@ -23,3 +23,11 @@ export const get = (filter, skip, limit, where) => {
       return obj;
     });
 }
+
+export const updateById = (id, data) => {
+  let url = `${MESSAGES_BASE}/${id}`;
+  return base.patch(url, data, 200)
+    .then(obj => {
+      return obj;
+    });
+}

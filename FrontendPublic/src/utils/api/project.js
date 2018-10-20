@@ -42,8 +42,16 @@ export const uploadFile = (file, id) => {
 export const removeFile = (name, id) => {
   let url = `${ PROJECT_BASE }/removeFile/${id}`;
   return base.post(url, {name}, 200)
-    .then(obj => { 
+    .then(obj => {
       return {data: obj.data.status, error: obj.error};
+    });
+}
+
+export const updateById = (id, data) => {
+  let url = `${PROJECT_BASE}/${id}`;
+  return base.patch(url, data, 200)
+    .then(obj => {
+      return obj;
     });
 }
  

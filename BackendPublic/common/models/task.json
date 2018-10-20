@@ -1,0 +1,40 @@
+{
+  "name": "task",
+  "base": "PersistedModel",
+  "idInjection": true,
+  "options": {
+    "validateUpsert": true
+  },
+  "properties": {
+    "name": {
+      "type": "string"
+    },
+    "projectId": {
+      "type": "string"
+    },
+    "memberId": {
+      "type": "string"
+    },
+    "cateTaskId": {
+      "type": "string",
+      "default": "begin"
+    },
+    "begin": {
+      "type": "number"
+    },
+    "end": {
+      "type": "number"
+    },
+    "description": {
+      "type": "string"
+    },
+    "status": {
+      "type": "number",
+      "default": 0
+    }
+  },
+  "validations": [],
+  "relations": {},
+  "acls": [],
+  "methods": {}
+}

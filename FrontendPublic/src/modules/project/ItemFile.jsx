@@ -33,9 +33,13 @@ class ItemFile extends Component {
                   <img data-dz-thumbnail alt="606500.jpg" src={this.getIconFile(e)}   />
                 </div>
               </a>
-              <Link onClick={this.handelRemoveClick(i)} className="dz-remove" to="#" data-dz-remove>
-                <i style={{fontSize: "15px", color: "#000"}} className="fa fa-trash"></i>
-              </Link>
+              {
+                !!this.props.handelRemoveClick && (
+                  <Link onClick={this.handelRemoveClick(i)} className="dz-remove" to="#" data-dz-remove>
+                    <i style={{fontSize: "15px", color: "#000"}} className="fa fa-trash"></i>
+                  </Link>
+                )
+              }
             </div>
           )
         })}

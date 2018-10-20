@@ -25,6 +25,23 @@ class ListActions extends Component {
     }
   }
 
+  onScrollFrame = (e) => {
+    
+    if( e.top === 1){
+      let { logs, logActions, profile } = this.props;
+      let where = { groupUserID: profile.info.groupUserID };
+      if(profile.info.account_type !== 1) where.userID = profile.info.id;
+      let litmit = logs.ordered.length;
+
+      logActions.fetchMore({
+        include : [
+          {relation: "users", scope: { fields: { fullname: true, avatar: true }}},
+        ],
+        order: "id DESC"
+      }, litmit, 15, where)
+    }
+  }
+
   render() {
     let { logs, profile } = this.props;
     let { isWoring, data, ordered } = logs;
@@ -36,7 +53,7 @@ class ListActions extends Component {
             Actions
           <span className="clearfix"></span>
         </h3>
-        <Scrollbars className={`hiddenOverX ${!!isWoring ? 'loading': ''}`} style={{ height: "75vh" }}>
+        <Scrollbars onScrollFrame ={ this.onScrollFrame } className={`hiddenOverX ${!!isWoring ? 'loading': ''}`} style={{ height: "75vh" }}>
           <ul className="list-group no-br list-action">
 
             {
@@ -54,12 +71,12 @@ class ListActions extends Component {
                       <strong> { data[e].nameWork ? data[e].nameWork : "" } </strong>
                       {
                         data[e].nameTask && data[e].nameTask !== ""
-                        ? (<span>trong công việc <strong> {data[e].nameWork} </strong></span>)
+                        ? (<span>trong công việc <strong> {data[e].nameTask} </strong></span>)
                         : null
                       }
-                      {
+                      ({
                         data[e].time && convertTimeMess(data[e].time)
-                      }
+                      })
                     </Link>
                   </li>
                 )

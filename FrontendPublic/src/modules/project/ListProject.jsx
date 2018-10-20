@@ -19,8 +19,10 @@ class ListProject extends Component {
 
   }
   render() {
-    let { project } = this.props;
-    let { ordered, data } = project
+    let { project, location, profile } = this.props;
+    let { ordered, data } = project;
+    let pathname = !!location ? location.pathname : "";
+    
     return (
       <div className="white-box">
         <h3 className="box-title m-b-0">
@@ -34,8 +36,18 @@ class ListProject extends Component {
             <div className="list-group mail-list m-t-20">
               {
                 'push' in ordered && ordered.map((e, i) => {
+                  if(!data[e]) return null;
+                  let fl = false;
+                  for(let v of data[e].memberJoins){
+                    if(v.value === profile.info.id){
+                      fl = true;
+                      break;
+                    }
+                  }
+                  if(profile.info.id !== data[e].createAt && !fl) return null;
+
                   return(
-                    <Link key={i} to={`/task/list/${e}`} className="list-group-item">
+                    <Link key={i} to={`/project/view/${e}`} className={`list-group-item ${pathname === `/project/edit/${e}` || pathname === `/project/view/${e}` ? 'active': ''}`}>
                       {data[e] ? data[e].name : ""}
                     </Link>
                   )

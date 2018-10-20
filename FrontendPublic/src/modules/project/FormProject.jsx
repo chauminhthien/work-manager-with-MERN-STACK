@@ -19,8 +19,8 @@ class FormProject extends Component {
     let { projectActions, notification, profile } = this.props;
     
     this.setState({isWoring: true});
-    data.groupUserID = profile.info.groupUserID;
-
+    data.groupUserID  = profile.info.groupUserID;
+    data.createAt     =  profile.info.id
     projectActions.create(data)
       .then(res => {
         if(!!res.error) return Promise.reject(res.error.messagse);
@@ -41,7 +41,7 @@ class FormProject extends Component {
     let { history, notification } = this.props;
 
     notification.s('Message', 'Create propject success');
-    let url = `/task/list/${data.id}`;
+    let url = `/project/view/${data.id}`;
     history.push(url);
   }
 

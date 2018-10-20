@@ -48,5 +48,13 @@
   "messages": {
     "dataSource": "mongodb",
     "public": true
+  },
+  "cateTask": {
+    "dataSource": "mongodb",
+    "public": true
+  },
+  "task": {
+    "dataSource": "mongodb",
+    "public": true
   }
 }

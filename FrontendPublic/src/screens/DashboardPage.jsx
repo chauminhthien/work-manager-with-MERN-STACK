@@ -11,9 +11,10 @@ import { Content } from './modules/content';
 import { Loading } from 'components';
 import * as sessionActions from 'modules/session/actions';
 import { actions as profileActions } from 'modules/account';
-import { actions as chattingActions} from 'modules/chatting'
+import { actions as chattingActions} from 'modules/chatting';
+import { actions as messageActions } from 'modules/categories/messages';
 import { MenuChat } from 'modules/chatting';
-
+import { getJsonFromSearch } from 'utils/functions';
 import 'styles/App.css';
 
 // import io from "socket.io-client";
@@ -24,7 +25,8 @@ class DashboardPage extends React.Component {
     super(props);
 
     this.state = {
-      idFriendChat : null
+      idFriendChat : null,
+      idNoti       : null
     }
 
   }
@@ -44,11 +46,24 @@ class DashboardPage extends React.Component {
     } else this.props.sessionActions.resetSession();
   }
 
+  componentDidUpdate(){
+    let { location, messageActions } = this.props;
+    let { search } = location;
+
+    if(!!search && search !== ""){
+      let param = getJsonFromSearch(search);
+
+      if(!!param && !!param.noti && this.state.idNoti !== param.noti)
+        messageActions.updateById(param.noti, {status: 1})
+        .finally(() => this.setState({idNoti: param.noti}))
+    }
+  }
+  
   render() {
     let { location, profile } = this.props;
     let { idFriendChat } = this.state;
     if(!profile.info) return <Loading />;
-
+    
     return (
       <React.Fragment >
         <div id="wrapper">
@@ -80,6 +95,7 @@ let mapDispatchToProps = (dispatch) => {
     sessionActions    : bindActionCreators(sessionActions, dispatch),
     profileActions    : bindActionCreators(profileActions, dispatch),
     chattingActions   : bindActionCreators(chattingActions, dispatch),   
+    messageActions    : bindActionCreators(messageActions, dispatch),   
   };
 };
 

@@ -1,7 +1,7 @@
 'use strict';
 
 module.exports = function(Messages) {
-	const enabledRemoteMethods = ['find', 'create'];
+	const enabledRemoteMethods = ['find', 'prototype.patchAttributes', 'create'];
   Messages.sharedClass.methods().forEach(function(method) {
     const methodName = method.stringName.replace(/.*?(?=\.)/, '').substr(1);
     // console.log(methodName);

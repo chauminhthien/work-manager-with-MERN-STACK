@@ -31,6 +31,13 @@ export const fetchFinished = (data: any):Action => {
   };
 };
 
+export const fetchMoreFinished = (data: any):Action => {
+  return {
+    type: constant.FETCH_MORE_FINISHED,
+    payload: data
+  };
+};
+
 export const fetchAll = (filter?, skip?, limit?, where?) => {
   return (dispatch: (action: Action) =>void) => {
     dispatch(fetchStarted());
@@ -45,3 +52,30 @@ export const fetchAll = (filter?, skip?, limit?, where?) => {
       });
   };
 };
+
+export const fetchMore = (filter?, skip?, limit?, where?) => {
+  return (dispatch: (action: Action) =>void) => {
+    dispatch(fetchStarted());
+    api.messages.get(filter, skip, limit, where)
+      .then(res => {
+        if(res.error) return Promise.reject(res.error);
+        if(res.data.length > 0) dispatch(fetchMoreFinished(res.data));
+        return res.data;
+      })
+      .catch(err => {
+        dispatch(fetchFailed(err));
+      });
+  };
+};
+
+export const updateById = (id, data) => { 
+  return (dispatch: (action) => void) => {
+    return api.messages.updateById(id, data)
+      .then(obj => {
+        if(!!obj.data)
+          dispatch(fetchFinished([obj.data]))
+        else dispatch(fetchFailed(obj.error));
+        return obj
+      });
+  }
+}

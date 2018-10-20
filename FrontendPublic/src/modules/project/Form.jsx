@@ -24,6 +24,24 @@ class Form extends Component {
       dataError         : {}
     }
   }
+  
+  componentWillReceiveProps(nextProps){
+    let { dataProject } = nextProps;
+
+    if(!!dataProject && Object.keys(dataProject).length > 0){
+      let { begin, end, description, memberJoins, files } = dataProject;
+      this.setState({...this.state, begin, end, description, selectedFrOption: memberJoins, files})
+    }
+  }
+
+  componentDidMount(){
+    let { dataProject } = this.props;
+
+    if(!!dataProject && Object.keys(dataProject).length > 0){
+      let { begin, end, description, memberJoins, files } = dataProject;
+      this.setState({...this.state, begin, end, description, selectedFrOption: memberJoins, files})
+    }
+  }
 
   formProjectSubmit = () => {
     if(validate(this._inputName, 'str:3:200')){
@@ -70,16 +88,31 @@ class Form extends Component {
   }
 
   fileUpload = (files) => {
+    let { dataProject } = this.props;
+
     files = files.filter(e => {
       return fileConfig.acceptTypeFileProject.indexOf(e.type) !== -1 && fileConfig.maxFilesize >= e.size
     });
-    this.setState({files: [...this.state.files, ...files]})
+
+    if(!!dataProject && Object.keys(dataProject).length > 0){
+      files.length > 0 && !!this.props.fileUpload && this.props.fileUpload(files);
+    }else{
+      this.setState({files: [...this.state.files, ...files]})
+    }
+
   }
 
-  handelRemoveClick = (id) => {
+  handelRemoveClick = (idImg) => {
+    let { dataProject } = this.props;
     let { files } = this.state;
-    files = files.filter((e, i) => i !== id);
-    this.setState({files})
+    if(!!dataProject && Object.keys(dataProject).length > 0){
+      files = files.filter((e, i) => i === idImg);
+      files.length > 0 && !!this.props.removeFileUpload && this.props.removeFileUpload(files[0].name);
+    }else{
+      files = files.filter((e, i) => i !== idImg);
+      this.setState({files})
+    }
+    
   }
 
   descriptionChange = (evt) => {
@@ -90,7 +123,7 @@ class Form extends Component {
   parseDate = (date) => convertDMY(new Date(date).getTime(), '-');
 
   render() {
-    let { friends } = this.props;
+    let { friends, dataProject } = this.props;
     let { selectedFrOption, dataError, files } = this.state;
 
     const optionsFr = [];
@@ -105,7 +138,7 @@ class Form extends Component {
         <div className="form-group">
           <div className="col-xs-12">
             <label>Name project</label>
-            <input ref={e => this._inputName = e} className="form-control" id="name" name="name" placeholder="Name project" />
+            <input defaultValue={!!dataProject && dataProject.name ? dataProject.name : ""} ref={e => this._inputName = e} className="form-control" id="name" name="name" placeholder="Name project" />
           </div>
         </div>
 
@@ -141,7 +174,8 @@ class Form extends Component {
           <div className={`col-xs-6 ${!!dataError.end ? 'error-more' : ''}`}>
             <label>Begin day</label>
             <DayPicker
-              ref         = { e => this.test = e } 
+              ref         = { e => this.test = e }
+              placeholder={`${ dataProject ? convertDMY(dataProject.begin, '-') : null}`}
               onDayChange = { this.setTime('begin') }
               formatDate  = { this.parseDate } />
           </div>
@@ -149,6 +183,7 @@ class Form extends Component {
           <div className={`col-xs-6 ${!!dataError.end ? 'error-more' : ''}`}>
             <label>End day</label>
             <DayPicker
+              placeholder={`${ dataProject ? convertDMY(dataProject.end, '-') : null}`}
               onDayChange = { this.setTime('end') }
               formatDate  = { this.parseDate } />
           </div>

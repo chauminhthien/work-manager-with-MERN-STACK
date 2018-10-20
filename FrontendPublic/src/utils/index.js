@@ -8,6 +8,8 @@ import * as logs from './api/logs';
 import * as chatting from './api/chatting';
 import * as project from './api/project';
 import * as messages from './api/messages';
+import * as task from './api/task';
+import * as cateTask from './api/cateTask';
 
 export const api = {
   user,
@@ -16,7 +18,9 @@ export const api = {
   logs,
   chatting,
   project,
-  messages
+  messages,
+  task,
+  cateTask
 }
 
 export { localStorage, sessionStorage };

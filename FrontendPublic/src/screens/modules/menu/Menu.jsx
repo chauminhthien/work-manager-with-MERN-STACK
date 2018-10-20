@@ -73,6 +73,23 @@ class Menu extends Component {
       }
   }
 
+  onScrollFrame = (e) => {
+    if( e.top === 1){
+        let { messageActions, messages, profile } = this.props;
+        let litmit = messages.ordered.length;
+        messageActions.fetchMore({
+            include: [
+                {relation: "usersFrom", scope: { fields: { fullname: true, avatar: true }}},
+                {relation: "userTo", scope: { fields: { fullname: true, avatar: true }}},
+              ],
+            order: "id DESC"
+        },litmit , 15, {
+          groupUserID: profile.info.groupUserID,
+          userIdTo: profile.info.id
+        })
+    }
+  }
+
   render() {
     let { countMess, countNoti } = this.state;
     let { profile, friends, chatting, messages } = this.props;
@@ -111,7 +128,7 @@ class Menu extends Component {
                         <li>
                             <div className="drop-title">You have {countNoti} new notifications</div>
                         </li>
-                        <Scrollbars className="hiddenOverX" style={{height: '40vh'}}>
+                        <Scrollbars  onScrollFrame ={ this.onScrollFrame } className="hiddenOverX" style={{height: '40vh'}}>
                             {
                                 !!messages.ordered && messages.ordered.length > 0 && messages.ordered.map((e, i) => {
                                     let img = messages.data[e] &&  messages.data[e].usersFrom && messages.data[e].usersFrom.avatar ? messages.data[e].usersFrom.avatar : users;

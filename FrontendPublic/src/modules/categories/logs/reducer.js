@@ -31,15 +31,28 @@ let reducer = (state: DistrictState = initialState, action: Action): DistrictSta
       list.forEach((item) => {
         newData = {[item.id]: item, ...newData, ...state.data};
       });
+      
       let newOrdered = [ ...Object.keys(newData) ];
-
       return {
-        data: { ...state.data, ...newData },
+        data: {...newData },
         ordered: newOrdered,
         isWorking: false
       };
     }
-
+    case constant.FETCH_MORE_FINISHED:{
+      let list = action.payload;
+      let newData = { ...state.data };
+      list.forEach((item) => {
+        newData[item.id] = item;
+      });
+      
+      let newOrdered = [ ...Object.keys(newData) ];
+      return {
+        data: {...newData },
+        ordered: newOrdered,
+        isWorking: false
+      };
+    }
     default:
     break;
   }

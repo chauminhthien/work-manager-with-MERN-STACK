@@ -35,6 +35,9 @@
     },
     "groupUserID": {
       "type": "string"
+    },
+    "createAt": {
+      "type": "string"
     }
   },
   "validations": [],
@@ -43,6 +46,12 @@
       "type": "belongsTo",
       "model": "groupUser",
       "foreignKey": "groupUserID",
+      "primaryKey": ""
+    },
+    "createAt": {
+      "type": "belongsTo",
+      "model": "users",
+      "foreignKey": "createAt",
       "primaryKey": ""
     }
   },

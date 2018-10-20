@@ -7,6 +7,7 @@ import { reducer as profile } from 'modules/account';
 import { reducer as categories } from 'modules/categories';
 import { reducer as chatting } from 'modules/chatting';
 import { reducer as project } from 'modules/project';
+import { reducer as task } from 'modules/task';
 
 const reducer = combineReducers({
   session,
@@ -14,7 +15,8 @@ const reducer = combineReducers({
   categories,
   profile,
   chatting,
-  project
+  project,
+  task
 });
 
 export default reducer;

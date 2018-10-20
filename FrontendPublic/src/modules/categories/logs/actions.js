@@ -31,13 +31,35 @@ export const fetchFinished = (data: any):Action => {
   };
 };
 
+export const fetchMoreFinished = (data) => {
+  return {
+    type: constant.FETCH_MORE_FINISHED,
+    payload: data
+  };
+}
+
 export const fetchAll = (filter?, skip?, limit?, where?) => {
   return (dispatch: (action: Action) =>void) => {
     dispatch(fetchStarted());
     api.logs.get(filter, skip, limit, where)
       .then(res => {
         if(res.error) return Promise.reject(res.error);
-        dispatch(fetchFinished(res.data.reverse()));
+        if(res.data.length > 0) dispatch(fetchFinished(res.data.reverse()));
+        return res.data;
+      })
+      .catch(err => {
+        dispatch(fetchFailed(err));
+      });
+  };
+};
+
+export const fetchMore = (filter?, skip?, limit?, where?) => {
+  return (dispatch: (action: Action) =>void) => {
+    dispatch(fetchStarted());
+    api.logs.get(filter, skip, limit, where)
+      .then(res => {
+        if(res.error) return Promise.reject(res.error);
+        if(res.data.length > 0) dispatch(fetchMoreFinished(res.data));
         return res.data;
       })
       .catch(err => {
