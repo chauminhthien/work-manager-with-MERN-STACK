@@ -2,6 +2,9 @@ import React, { Component } from 'react';
 import { Switch, Route, withRouter } from 'react-router-dom';
 
 import NewTask from './NewTask';
+import ViewTask from './ViewTask';
+import TaskInfoRight from './TaskInfoRight';
+
 import { ListProject } from 'modules/project';
 import { ListActions } from 'modules/actions';
 import { Error404 } from 'modules';
@@ -19,12 +22,16 @@ class Task extends Component {
         <div className="col-xs-7 p-0 h-100 bd-r">
           <Switch>
             <Route path="/task/new/:id" component={ NewTask } />
+            <Route path="/task/view/:id" component={ ViewTask } />
             <Route component={ Error404 } />
           </Switch>
         </div>
 
         <div className="col-xs-3 p-0 p-r-15 h-100">
-          <ListActions />
+          <Switch>
+            <Route path="/task/view/:id" component={ TaskInfoRight } />
+            <Route component={ ListActions } />
+          </Switch>
         </div>
       </div>
     );

@@ -28,5 +28,9 @@
   "groupUser": {
     "dataSource": "mongodb",
     "public": true
+  },
+  "cateTask": {
+    "dataSource": "mongodb",
+    "public": true
   }
 }

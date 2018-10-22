@@ -2,13 +2,15 @@ import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import CKEditor from "react-ckeditor-component";
 
-import { DayPicker, Dropzone } from 'components';
+import { DayPicker, Dropzone, TimePicker } from 'components';
 import Select from 'react-select';
 import { isEmpty } from 'utils/functions';
 import { convertDMY } from 'utils/format';
 import { validate } from 'utils/validate';
 import * as fileConfig from 'config/fileConfig';
 import ItemFile from './ItemFile';
+
+
 
 class Form extends Component {
   _formSubmit = null;
@@ -158,7 +160,7 @@ class Form extends Component {
         </div>
 
         <div className="form-group">
-          <div className={`col-xs-6 ${!!dataError.end ? 'error-more' : ''}`}>
+          <div className={`col-xs-4 ${!!dataError.end ? 'error-more' : ''}`}>
             <label>Begin day</label>
             <DayPicker
               ref         = { e => this.test = e }
@@ -166,13 +168,22 @@ class Form extends Component {
               onDayChange = { this.setTime('begin') }
               formatDate  = { this.parseDate } />
           </div>
+          <div className={`col-xs-2 ${!!dataError.end ? 'error-more' : ''}`}>
+            <label>Begin time</label>
+            <TimePicker />
+          </div>
 
-          <div className={`col-xs-6 ${!!dataError.end ? 'error-more' : ''}`}>
+          <div className={`col-xs-4 ${!!dataError.end ? 'error-more' : ''}`}>
             <label>End day</label>
             <DayPicker
               placeholder={`${ dataProject ? convertDMY(dataProject.end, '-') : 'DD-MM-YYY'}`}
               onDayChange = { this.setTime('end') }
               formatDate  = { this.parseDate } />
+          </div>
+
+          <div className={`col-xs-2 ${!!dataError.end ? 'error-more' : ''}`}>
+            <label>End time</label>
+            <TimePicker onChange={e => console.log(e._d)} />
           </div>
 
         </div>

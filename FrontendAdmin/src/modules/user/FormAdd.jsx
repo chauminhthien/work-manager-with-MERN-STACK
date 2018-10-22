@@ -169,8 +169,8 @@ class FormAdd extends Component {
             <label>Gender</label>
             <select defaultValue={ user ? user.gender : 1 } ref={e => this._genderSelect = e } className="form-control" name="gender" id="gender">
               <option> -- Select Gender</option>
-              <option value={0}> Male</option>
-              <option value={1}> Female</option>
+              <option value={1}> Male</option>
+              <option value={0}> Female</option>
             </select>
             <span className="help-block">Agency invalid</span>
           </div>

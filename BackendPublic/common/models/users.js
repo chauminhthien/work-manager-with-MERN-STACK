@@ -24,7 +24,16 @@ module.exports = function(Users) {
         if(res.status === 0)  return Promise.reject(mess.USER_DISABLED);
 
         if(res.status === 1){ 
-          next(null, data);
+          if(!!res.account_type){
+            Users.app.models.groupUser.findById(res.groupUserID)
+              .then(userGr => {
+                if(!userGr) return Promise.reject(mess.YOU_NOT_PERMISSION)
+                let { begin, end } = userGr;
+                let now = Date.now();
+                if(begin > now || now < end) return Promise.reject(mess.YOU_NOT_PERMISSION)
+                next(null, data)
+              })
+          } else  next(null, data);
         }
         
       }, e => Promise.reject(mess.USER_DISABLED))

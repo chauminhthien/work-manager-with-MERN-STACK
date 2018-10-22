@@ -23,7 +23,16 @@ module.exports = function(Users) {
         if(res.status === 0)  return Promise.reject(mess.USER_DISABLED);
 
         if(res.status === 1){ 
-          next(null, data);
+          if(!!res.account_type){
+            Users.app.models.groupUser.findById(res.groupUserID)
+              .then(userGr => {
+                if(!userGr) return Promise.reject(mess.YOU_NOT_PERMISSION)
+                let { begin, end } = userGr;
+                let now = Date.now();
+                if(begin > now || now < end) return Promise.reject(mess.YOU_NOT_PERMISSION)
+                next(null, data)
+              })
+          } else  next(null, data);
         }
         
       }, e => Promise.reject(mess.USER_DISABLED))
@@ -280,6 +289,25 @@ module.exports = function(Users) {
           context.args.data.groupUserID = id;
           delete context.args.data.end;
           delete context.args.data.begin;
+
+          Users.app.models.cateTask.find({where: {default: 1}})
+            .then(dataCate => {
+              if(!!dataCate){
+                for(let val of dataCate){
+                  let { name, icon } = val;
+
+                  let dt = {
+                    groupUserID : id,
+                    default     : 0,
+                    name,
+                    icon,
+                    removed     : 0,
+                  }
+
+                  Users.app.models.cateTask.create(dt);
+                }
+              }
+            })
           next();
         }, e => Promise.reject(e))
         .catch(e => next(e))

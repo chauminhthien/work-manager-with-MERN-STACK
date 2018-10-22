@@ -23,7 +23,7 @@ class RightSidebar extends React.Component {
           </div>
           <Scrollbars style={{ height: "100vh" }}>
             <div className="r-panel-body">
-              {children}
+              {open ? children : null}
             </div>
           </Scrollbars>
         </div>

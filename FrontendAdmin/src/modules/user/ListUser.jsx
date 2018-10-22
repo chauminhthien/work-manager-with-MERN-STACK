@@ -8,6 +8,7 @@ import { actions as breadcrumbActions } from 'screens/modules/breadcrumb';
 import { actions as userActions } from 'modules/user';
 import { RightSidebar, Loading } from 'components';
 import FormAdd from './FormAdd';
+import Item from './Item';
 
 class ListUser extends Component {
   constructor(props){
@@ -19,25 +20,8 @@ class ListUser extends Component {
     }
   }
 
-  getUsers = (profile) => { 
-    let { users } = this.props;
-    let { userFetch } = this.state;
-    if(!!profile.info && users.ordered.length === 0 && !users.isWorking && !userFetch){
-
-      let where = {};
-
-      if(profile.info && profile.info.account_type === 0)
-        where = { account_type : 1 };
-      else
-        where = { created_at : profile.info.id };
-
-      this.props.userActions.fetchAll({}, 0, 0, where)
-        .finally( () => this.setState({userFetch: true}))
-    }
-  }
-
   componentDidMount(){
-    let { breadcrumbActions } = this.props;
+    let { breadcrumbActions, profile, users, userActions } = this.props;
 
     breadcrumbActions.set({
       page_name: 'Dashboard',
@@ -46,16 +30,24 @@ class ListUser extends Component {
         liClass: "active"
       }]
     });
+
+    if(!!profile.info && users.ordered.length === 0){
+
+      let where = {};
+
+      if(profile.info && profile.info.account_type === 0)
+        where = { account_type : 1 };
+      else
+        where = { created_at : profile.info.id };
+
+      userActions.fetchAll({}, 0, 0, where)
+    }
     
   }
 
-  openRightSidebar = () => {
-    this.setState({open: true});
-  }
+  openRightSidebar = () => this.setState({open: true});
 
-  closeRightSidebar = () => {
-    this.setState({open: false, idUser: null});
-  }
+  closeRightSidebar = () =>  this.setState({open: false, idUser: null});
 
   formSubmitDataUser = (data) => {
     let { profile, userActions, notification} = this.props;
@@ -87,9 +79,7 @@ class ListUser extends Component {
     }
   }
 
-  onClickEditUser =  (id) => () => {
-    this.setState({open: true, idUser: id});
-  }
+  onClickEditUser =  (id) => this.setState({open: true, idUser: id});
 
   render() {
     let { open, idUser } = this.state;
@@ -97,7 +87,7 @@ class ListUser extends Component {
     let { data, ordered } = users;
     
     if (users.isWorking) return <Loading />;
-    if(profile.info) this.getUsers(profile);
+    
     return (
       <Fragment>
         <RightSidebar
@@ -135,44 +125,10 @@ class ListUser extends Component {
                       <th className="text-center">Action</th>
                     </tr>
                   </thead>
-                  <tbody>
-                    {
-                      ordered.length > 0
-                      ? (
-                        ordered.map( (e, i) => {
-                          return (
-                            <tr key={i}>
-                              <td>
-                                <span className="font-medium">{data[e].email}</span>
-                              </td>
-                              <td>
-                                <span className="font-medium">{`${data[e].fullname}`}</span>
-                              </td>
-                              <td>{ (data[e].gender && data[e].gender === 1) ? 'Male' : 'Female' }</td>
-                              <td>
-                                a
-                              </td>
-                              <td className="text-center">
-                                <span className={`label label-${ (data[e].status && data[e].status === 1) ? 'success' : 'danger' }`}>
-                                  { (data[e].status && data[e].status === 1) ? 'Active' : 'Unactive' }
-                                </span>
-                              </td>
-                              <td className="text-center">
-                              
-                                <button onClick={ this.onClickEditUser(e) } className="btn-save btn btn-sm btn-icon btn-pure btn-outline delete-row-btn">
-                                  <i className=" ti-pencil" aria-hidden="true"></i>
-                                </button>
-                                {/* <button className="btn-save btn btn-sm btn-icon btn-pure btn-outline delete-row-btn">
-                                  <i className="ti-trash" aria-hidden="true"></i>
-                                </button> */}
-                              </td>
-                            </tr>
-                          )
-                        })
-                      )
-                      : null
-                    }
-                  </tbody>
+                  <Item
+                    ordered     = { ordered }
+                    data        = { data }
+                    onClickEdit = { this.onClickEditUser } />
                 </table>
               </div>
             </div>

@@ -1,9 +1,9 @@
 import { combineReducers } from 'redux';
 
-import { reducer as channel } from './channel';
+import { reducer as cateTask } from './cateTask';
 
 const reducer = combineReducers({
-  channel
+  cateTask
 });
 
 export default reducer;

@@ -125,9 +125,20 @@ app.use(function(req, res, next) {
             .then(dataU => {
               if (null === dataU) return Promise.reject(mess.ACCESS_TOKEN_INVALID);
               if(dataU.status === 0 ) return Promise.reject(mess.USER_DISABLED);
+              let { account_type, groupUserID } = dataU;
               app.userCurrent = dataU;
 
-              next();
+              if(!!account_type){
+                app.models.groupUser.findById(groupUserID)
+                  .then(userGr => {
+                    if(!userGr) return Promise.reject({...mess.YOU_NOT_PERMISSION})
+                    let { begin, end } = userGr;
+                    let now = Date.now();
+                    if(begin > now || now < end) return Promise.reject({...mess.YOU_NOT_PERMISSION})
+                    next();
+                  })
+              } else next();
+              
             }, e => Promise.reject(e))
             .catch(e => res.json({error: e, data: null}));
       } else next();

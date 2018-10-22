@@ -1,0 +1,27 @@
+#TimePicker{
+  height: 30px;
+  border-radius: 0;
+  text-align: center
+}
+
+.rc-time-picker-panel-narrow{
+  max-width: 100% !important;
+}
+
+.rc-time-picker-panel-select{
+  overflow-x: hidden;
+  width: 50%;
+}
+
+.rc-time-picker-panel-select li{
+  padding: 0 !important;
+  text-align: center !important;
+}
+
+.rc-time-picker-panel-inner{
+  border-radius: 0 !important;
+}
+
+.rc-time-picker-panel-input{
+  text-align: center;
+}

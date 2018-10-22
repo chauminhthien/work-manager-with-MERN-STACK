@@ -13,6 +13,7 @@ import { Content } from './modules/content';
 
 import * as sessionActions from 'modules/session/actions';
 import { actions as profileActions } from 'modules/account';
+import { Loading } from 'components';
 
 class DashboardPage extends React.Component {
 
@@ -30,8 +31,8 @@ class DashboardPage extends React.Component {
   }
 
   render() {
-    let { location } = this.props;
-
+    let { location, profile} = this.props;
+    if(!profile.info) return <Loading />
     return (
       <Scrollbars style={{ height: "100vh" }}>
         <div id="wrapper">
