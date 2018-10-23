@@ -25,7 +25,7 @@ const fetchFailed = (error) => {
 export const fetchAll = (filter?, skip?, limit?, where?) => {
   return (dispatch: (action) => void) => {
     dispatch(fetchStarted());
-    return api.cateTask.fetchAll(filter, skip, limit, where)
+    return api.cateTask.get(filter, skip, limit, where)
       .then(res => {
         if(res.error) return Promise.reject(res.error);
         dispatch(fetchFinished(res.data));

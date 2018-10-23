@@ -19,10 +19,11 @@ class Select extends React.Component {
     return (
       <select ref={e => this._selectHtml = e} onChange={ this.onChange } {...disabled} defaultValue={defaultValue} className={`form-control ${(className) ? className : ''}`} {...rest}>
         {
-          (options.length > 0)
+          (!!options && options.length > 0)
           ? (
             options.map( (e, i) => {
-              return (<option key={i} value={e.value} >{e.text}</option>)
+              let { value, text, ...re } = e;
+              return (<option key={i} value={value ? value : ""} {...re}>{text ? text : ""}</option>)
             } )
           )
           : null

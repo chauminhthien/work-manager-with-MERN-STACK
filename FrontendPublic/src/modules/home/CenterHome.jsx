@@ -1,13 +1,51 @@
 import React, { Component } from 'react';
 import { Scrollbars } from 'react-custom-scrollbars';
-import { Link } from 'react-router-dom';
+import { connect } from 'react-redux';
+import { bindActionCreators } from 'redux';
+
+import { withNotification } from 'components';
 
 import img_wellcome from 'assets/Images/img-wellcome.png';
-import users        from 'assets/Images/user.jpg';
+import ListTask from './ListTask';
+import { Form as FormAddTask } from 'modules/task';
+
+import { actions as cateTaskAction } from 'modules/categories/cateTask';
+import { actions as projectActions } from 'modules/project';
+import { actions as taskActions } from 'modules/task';
 
 class CenterHome extends Component {
+  _changNameNewTask = null;;
+
+  constructor(props){
+    super(props);
+    this.state = {
+      nameTask: null
+    }
+  }
+
+  componentWillMount(){
+    let { cateTask, task, profile, taskActions, cateTaskAction, projectActions, project } = this.props;
+    
+    if(cateTask.ordered.length === 0) cateTaskAction.fetchAll({}, 0, 0, {groupUserID: profile.info.groupUserID});
+    if(task.ordered.length === 0) taskActions.fetchAll({}, 0, 0, {groupUserID: profile.info.groupUserID});
+
+    if(project.ordered.length === 0) projectActions.fetchAll({ },0, 0, { groupUserID: profile.info.groupUserID })
+      
+  }
+
+  changNameNewTask = () => {
+    let nameTask = !!this._changNameNewTask ? this._changNameNewTask.value : "";
+    nameTask = nameTask.trim();
+    
+    if(nameTask.length >= 3){
+      this.setState({nameTask})
+    }else this.setState({nameTask: null})
+  }
 
   render() {
+    let { nameTask } = this.state;
+    let { cateTask, project } = this.props;
+
     return (
       <div className="white-box">
         <div className="top">
@@ -25,99 +63,60 @@ class CenterHome extends Component {
             <form className="form-horizontal">
               <div className="form-group">
                 <div className="col-sm-12">
-                  <div className="input-group br-b">
-                    <div className="input-group-addon no-bg no-br ">
-                      <i style={{color: '#00c23f', fontSize: '18px' }} className="fa fa-plus" />
-                    </div>
-                    <input type="text" className="form-control no-br no-outline" placeholder="Name work" />
-                  </div>
+                    {
+                      !nameTask && (
+                        <div className="input-group br-b">
+                          <div className="input-group-addon no-bg no-br ">
+                            <i style={{color: '#00c23f', fontSize: '18px' }} className="fa fa-plus" />
+                          </div>
+                          <input 
+                                ref={e => this._changNameNewTask = e}
+                                onChange={ this.changNameNewTask }
+                                type="text" className="form-control no-br no-outline" placeholder="Name work" />
+                          
+                        </div>
+                      )
+                    }
+                  
                 </div>
               </div>
             </form>
           </div>
         </div>
         <div className="clear"></div>
-        <div className="bottom">
-          <ul className="nav nav-tabs tabs customtab">
-            <li className={`tab  active`}>
-              <Link  to="#" data-toggle="tab"> <span className="visible-xs">
-                <i className="fa fa-home" /></span> <span className="hidden-xs">All</span>
-              </Link>
-            </li>
-
-            <li className={`tab`}>
-              <Link  to="#" data-toggle="tab"> <span className="visible-xs">
-                <i className="fa fa-home" /></span> <span className="hidden-xs">Work me</span>
-              </Link>
-            </li>
-
-            <li className={`tab`}>
-              <Link  to="#" data-toggle="tab"> <span className="visible-xs">
-                <i className="fa fa-home" /></span> <span className="hidden-xs">New</span>
-              </Link>
-            </li>
-
-            <li className={`tab`}>
-              <Link  to="#" data-toggle="tab"> <span className="visible-xs">
-                <i className="fa fa-home" /></span> <span className="hidden-xs">Slow</span>
-              </Link>
-            </li>
-          </ul>
-
-          <form className="form-horizontal m-t-15">
-            <div className="form-group">
-              <div className="col-sm-8">
-                <input type="text" className="form-control" placeholder="Enter keywork" />
-              </div>
-
-              <div className="col-sm-4">
-                <select className="form-control">
-                  <option >The job assign me</option>
-                  <option >The job I assign</option>
-                  <option >The job contact to me</option>
-                </select>
-              </div>
-            </div>
-          </form>
-
-          <Scrollbars className="hiddenOverX" style={{ minHeight: "45vh" }}>
-            <ul className="list-group no-br">
-              <li className="list-group-item no-br br-b m-b-5 min-h-50">
-                Chủ nhật (23/09/2018)
-              </li>
-              {[...Array(20)].map( (e, i) => {
-                return (
-                  <li key={i} className="list-group-item no-br br-b m-b-5 min-h-50">
-                    <Link to="#">
-                      <div className="col-xs-6 p-l-0">
-                        <img width="20px" alt={'users'} className="circle m-r-5" src={users}/>
-                        <i className="fa fa-phone m-r-5 text-default"></i>
-                        <span className="text-danger">Test tạo công việc -  {i}</span>
-                      </div>
-                      <div className="col-xs-6">
-                        <div className="col-xs-7 m-t-7">
-                          <div className="progress">
-                            <div className="progress-bar progress-bar-danger" style={{width: '60%'}} role="progressbar">
-                              <span className="sr-only">60% Complete</span> 
-                            </div>
-                          </div>
-                        </div>
-                        <div className="col-xs-5 text-default">
-                          (Đang tiến hành)
-                        </div>
-                      </div>
-                      <div className="clear"></div>
-                    </Link>
-                  </li>
-                )
-              })}
-            </ul>
-          </Scrollbars>
-        </div>
+        {
+          !!nameTask 
+          ? (
+              <Scrollbars className="hiddenOverX" style={{ height: "60vh" }}>
+                <FormAddTask
+                  dataProject = {{ name: nameTask }}
+                  cateTask    = { cateTask }
+                  homeCancel  = { () => this.setState({nameTask: null})}
+                  project     = { project } />
+              </Scrollbars>
+            )
+          : <ListTask />
+        }
+        
+        
       </div>
     );
   }
 }
 
+let mapStateToProps = (state) => {
+  let { profile, task, project } = state;
+  let { friends, cateTask } = state.categories;
 
-export default CenterHome;
+  return { profile, friends, cateTask, task, project };
+};
+
+let mapDispatchToProps = (dispatch) => {
+  return {
+    taskActions       : bindActionCreators(taskActions, dispatch),
+    cateTaskAction    : bindActionCreators(cateTaskAction, dispatch),
+    projectActions    : bindActionCreators(projectActions, dispatch),
+  };
+};
+
+export default withNotification(connect(mapStateToProps, mapDispatchToProps)(CenterHome));

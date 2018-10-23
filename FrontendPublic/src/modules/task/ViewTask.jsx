@@ -33,7 +33,7 @@ class ViewTask extends Component {
   }
 
   render() {
-    let { project, match, friends, profile } = this.props;
+    let { project, match, profile } = this.props;
     let { isWoring } = this.state;
 
     let { id } = match.params;
@@ -58,7 +58,7 @@ class ViewTask extends Component {
         <div className="col-xs-9 m-t-30">
           <div className="pull-right">
             {
-              1===1 &&
+              true &&
               (
                 <Link to={`/task/edit/${id ? id : ""}`} className="m-l-15 btn btn-info btn-flat">Edit</Link>
               )

@@ -31,10 +31,20 @@
     "status": {
       "type": "number",
       "default": 0
+    },
+    "groupUserID": {
+      "type": "string"
     }
   },
   "validations": [],
-  "relations": {},
+  "relations": {
+    "groupUser": {
+      "type": "belongsTo",
+      "model": "groupUser",
+      "foreignKey": "groupUserID",
+      "primaryKey": ""
+    }
+  },
   "acls": [],
   "methods": {}
 }
