@@ -12,6 +12,13 @@ import Form from './Form';
 
 class NewTask extends Component {
 
+  constructor(props){
+    super(props);
+    this.state = {
+      isWoring : false
+    }
+  }
+
   componentWillMount(){
     let { cateTask, task, profile, taskActions, cateTaskAction, projectActions, project } = this.props;
     
@@ -22,9 +29,42 @@ class NewTask extends Component {
       
   }
 
+  productOnSubmit = (data, files) => {
+    let { taskActions, notification, profile } = this.props;
+    this.setState({isWoring: true});
+    data.groupUserID  = profile.info.groupUserID;
+    data.createAt     =  profile.info.id;
+
+    taskActions.create(data)
+      .then(res => {
+        if(!!res.error) return Promise.reject(res.error.messagse);
+        if(!!files) return taskActions.uploadFile(files, res.data.id);
+        else this.hannelCreateSuccess(res.data);
+      })
+      .then(file => {
+        if(!!file && !!file.error) return Promise.reject(file.error.messagse);
+        if(!!file && !!file.data)  this.hannelCreateSuccess(file.data);
+      })
+      .catch(e =>  {
+        this.setState({isWoring: false});
+        notification.e('Message', e.toString());
+      })
+      .finally(() => this.setState({isWoring: false}));
+  }
+
+  hannelCreateSuccess = (data) => {
+    let { history, notification } = this.props;
+
+    notification.s('Message', 'Create task success');
+    let url = `/task/view/${data.id}`;
+    history.push(url);
+  }
+
   render() {
-    let isWoring = false;
+    
     let { task, cateTask, project,  match } = this.props;
+    let { isWoring } = this.state;
+
     if(task.isWoring || cateTask.isWoring || project.isWoring) return <Loading />;
     let { id } = match.params;
 
@@ -44,6 +84,7 @@ class NewTask extends Component {
             task      = { task }
             idProject = { id }
             project   = { project }
+            productOnSubmit = { this.productOnSubmit }
             cateTask  = { cateTask } />
         </Scrollbars>
       </div>

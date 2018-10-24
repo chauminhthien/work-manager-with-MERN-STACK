@@ -12,12 +12,17 @@
     "projectId": {
       "type": "string"
     },
+    "files": {
+      "type": [
+        "any"
+      ],
+      "default": "[]"
+    },
     "memberId": {
       "type": "string"
     },
     "cateTaskId": {
-      "type": "string",
-      "default": "begin"
+      "type": "string"
     },
     "begin": {
       "type": "number"
@@ -32,7 +37,14 @@
       "type": "number",
       "default": 0
     },
+    "process": {
+      "type": "number",
+      "default": 0
+    },
     "groupUserID": {
+      "type": "string"
+    },
+    "createAt": {
       "type": "string"
     }
   },
@@ -42,6 +54,30 @@
       "type": "belongsTo",
       "model": "groupUser",
       "foreignKey": "groupUserID",
+      "primaryKey": ""
+    },
+    "memberId": {
+      "type": "belongsTo",
+      "model": "users",
+      "foreignKey": "memberId",
+      "primaryKey": ""
+    },
+    "createAt": {
+      "type": "belongsTo",
+      "model": "users",
+      "foreignKey": "createAt",
+      "primaryKey": ""
+    },
+    "projectId": {
+      "type": "belongsTo",
+      "model": "project",
+      "foreignKey": "projectId",
+      "primaryKey": ""
+    },
+    "cateTaskId": {
+      "type": "belongsTo",
+      "model": "cateTask",
+      "foreignKey": "cateTaskId",
       "primaryKey": ""
     }
   },

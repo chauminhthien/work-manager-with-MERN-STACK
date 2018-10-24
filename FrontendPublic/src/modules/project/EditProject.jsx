@@ -23,7 +23,11 @@ class EditProject extends Component {
 
     this.setState({isWoring: true});
     data.groupUserID = profile.info.groupUserID;
-
+    data.memberJoins.push({
+      value : profile.info.id,
+      label : profile.info.fullname,
+      email : profile.info.email
+    })
     projectActions.updateById(id, data)
       .then(res => {
         if(!!res.error) return Promise.reject(res.error.messagse ? res.error.messagse : "UNKNOW ERROR");
@@ -73,12 +77,19 @@ class EditProject extends Component {
     if(!dataProject || dataProject.createAt !== profile.info.id) return null;
     
     let fl = false;
+    
     for(let v of dataProject.memberJoins){
       if(v.value === profile.info.id){
         fl = true;
         break;
       }
     }
+
+    let memberJoins = [];
+    for(let v of dataProject.memberJoins){
+      if(v.value !== profile.info.id) memberJoins.push(v)
+    }
+    dataProject.memberJoins = memberJoins;
 
     if(profile.info.id !== dataProject.createAt && !fl) return null;
 

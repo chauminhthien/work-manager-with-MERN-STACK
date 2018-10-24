@@ -20,6 +20,11 @@ class FormProject extends Component {
     
     this.setState({isWoring: true});
     data.groupUserID  = profile.info.groupUserID;
+    data.memberJoins.push({
+      value : profile.info.id,
+      label : profile.info.fullname,
+      email : profile.info.email
+    })
     data.createAt     =  profile.info.id
     projectActions.create(data)
       .then(res => {
@@ -37,7 +42,7 @@ class FormProject extends Component {
       });
   }
 
-  hannelCreateSuccess = (data) => { console.log(data);
+  hannelCreateSuccess = (data) => {
     let { history, notification } = this.props;
 
     notification.s('Message', 'Create propject success');

@@ -67,3 +67,53 @@ export const fetchMore = (filter?, skip?, limit?, where?) => {
       });
   };
 };
+
+export const create = (data) => {
+  return (dispatch: (action) => void) => {
+    return api.task.create(data)
+      .then(obj => {
+        if(obj.error)
+          dispatch(fetchFailed(obj.error));
+        if(obj.data)
+          dispatch(fetchFinished([obj.data]));
+        return obj;
+      });
+  };
+};
+
+export const uploadFile = (file, id) => {
+  return (dispatch: (action) => void) => {
+    return api.task.uploadFile(file, id)
+      .then(obj => {
+        if(!!obj.data)
+          dispatch(fetchFinished([obj.data]))
+        else dispatch(fetchFailed(obj.error))
+        return obj
+      });
+  }
+}
+
+export const removeFile = (name, id) => {
+  return (dispatch: (action) => void) => {
+    return api.task.removeFile(name, id)
+      .then(obj => {
+        if(!!obj.data)
+          dispatch(fetchFinished([obj.data]))
+        else dispatch(fetchFailed(obj.error))
+        return obj
+      });
+  }
+}
+
+export const updateById = (id, data) => { 
+  return (dispatch: (action) => void) => {
+    dispatch(fetchStarted());
+    return api.task.updateById(id, data)
+      .then(obj => {
+        if(!!obj.data)
+          dispatch(fetchFinished([obj.data]))
+        else dispatch(fetchFailed(obj.error));
+        return obj
+      });
+  }
+}

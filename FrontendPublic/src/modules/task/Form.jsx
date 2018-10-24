@@ -49,10 +49,13 @@ class Form extends Component {
 
   formProjectSubmit = () => {
     if(validate(this._inputName, 'str:3:200')){
+      let { project } = this.props;
+      
       let name = (!!this._inputName) ? this._inputName.value : null;
       let { selectedFrOption, description, files, begin, end, beginTime, endTime, dataError, idProject,
         cateTaskId } = this.state;
-
+      
+      project = project.data[idProject] ? project.data[idProject] : null;
       dataError = {};
       
       if(!selectedFrOption || !selectedFrOption.value)
@@ -66,25 +69,33 @@ class Form extends Component {
       if(!endTime) dataError.endTime      = true;
 
       if(!!begin && !!end && !!beginTime && endTime){
-        let dayBegin = convertDMY(begin);
-        let timeBegin = new Date(beginTime);
 
-        let time  = `${dayBegin} ${timeBegin.getHours()}:${timeBegin.getMinutes()}:00`;
-        begin     = new Date(time).getTime();
+        if(!project || begin < project.begin || end > project.end){
+          dataError.begin     = true;
+          dataError.end       = true;
+        }else{
+          let dayBegin = convertDMY(begin);
+          let timeBegin = new Date(beginTime);
 
-        let dayEnd = convertDMY(end);
-        let timeEnd = new Date(endTime);
+          let time  = `${dayBegin} ${timeBegin.getHours()}:${timeBegin.getMinutes()}:00`;
+          begin     = new Date(time).getTime();
 
-        time  = `${dayEnd} ${timeEnd.getHours()}:${timeEnd.getMinutes()}:00`;
-        end     = new Date(time).getTime();
+          let dayEnd = convertDMY(end);
+          let timeEnd = new Date(endTime);
 
-        if(begin >= end) {
-          dataError.begin  = true;
-          dataError.end    = true;
-          dataError.beginTime  = true;
-          dataError.endTime    = true;
+          time  = `${dayEnd} ${timeEnd.getHours()}:${timeEnd.getMinutes()}:00`;
+          end   = new Date(time).getTime();
+
+          if(begin >= end) {
+            dataError.begin  = true;
+            dataError.end    = true;
+            dataError.beginTime  = true;
+            dataError.endTime    = true;
+          }
         }
+        
       }
+
       if(isEmpty(dataError)){
         
         let data = {
@@ -92,7 +103,7 @@ class Form extends Component {
           begin,
           end,
           description,
-          idProject,
+          projectId: idProject,
           cateTaskId,
           memberId: !!selectedFrOption.value ? selectedFrOption.value : null
         }
@@ -102,7 +113,7 @@ class Form extends Component {
           formData = new FormData();
           files.forEach(file => formData.append('file', file));
         }
-        console.log(data);
+        
         !!this.props.productOnSubmit && this.props.productOnSubmit(data, formData);
 
       }
@@ -162,9 +173,7 @@ class Form extends Component {
     if(this.state.cateTaskId !== id) this.setState({cateTaskId: id})
   }
 
-  changTime = (key) => e => {
-    if(!!e._d) this.setState({[key]: new Date(e._d).getTime()})
-  }
+  changTime = (key) => e => this.setState({[key]: (!!e && !!e._d ? new Date(e._d).getTime() : null)})
 
   render() {
     let { dataProject, cateTask, project, idProject } = this.props;
