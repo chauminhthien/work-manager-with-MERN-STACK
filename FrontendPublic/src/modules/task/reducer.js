@@ -29,17 +29,20 @@ let reducer = (state: DistrictState = initialState, action: Action): DistrictSta
       let list = action.payload;
       let newData = { };
       list.forEach((item) => {
-        newData = {[item.id]: item, ...newData, ...state.data};
+        if(!!state.data[item.id]) { 
+          state.data[item.id] = item;
+          newData = {...state.data}
+        }else newData = {[item.id]: item, ...newData, ...state.data};
       });
-      
       let newOrdered = [ ...Object.keys(newData) ];
+
       return {
-        data: {...newData },
+        data: { ...newData },
         ordered: newOrdered,
         isWorking: false
       };
     }
-    case constant.FETCH_MORE_FINISHED:{
+    case constant.FETCH_MORE_FINISHED: {
       let list = action.payload;
       let newData = { ...state.data };
       list.forEach((item) => {

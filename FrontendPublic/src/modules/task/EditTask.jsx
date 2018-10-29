@@ -9,8 +9,9 @@ import * as taskActions from './actions';
 import { actions as cateTaskAction } from 'modules/categories/cateTask';
 import { actions as projectActions } from 'modules/project';
 import Form from './Form';
+import { getJsonFromSearch, isEmpty } from 'utils/functions';
 
-class NewTask extends Component {
+class EditTask extends Component {
 
   constructor(props){
     super(props);
@@ -32,23 +33,16 @@ class NewTask extends Component {
   }
 
   productOnSubmit = (data, files) => {
-    let { taskActions, notification, profile } = this.props;
+    let { taskActions, notification, match } = this.props;
+    let { id } = match.params;
     this.setState({isWoring: true});
-    data.groupUserID  = profile.info.groupUserID;
-    data.createAt     =  profile.info.id;
-
-    taskActions.create(data)
-      .then(res => {
-        if(!!res.error) return Promise.reject(res.error.messagse);
-        if(!!files) return taskActions.uploadFile(files, res.data.id);
-        else this.hannelCreateSuccess(res.data);
-      })
-      .then(file => {
-        if(!!file && !!file.error) return Promise.reject(file.error.messagse);
-        if(!!file && !!file.data)  this.hannelCreateSuccess(file.data);
+    
+    taskActions.updateById(id, data)
+      .then(res => { 
+        if(!!res.error) return Promise.reject(res.error.messagse ? res.error.messagse : "UNKNOW ERROR");
+        notification.s('Message', 'Update task success');
       })
       .catch(e =>  {
-        this.setState({isWoring: false});
         notification.e('Message', e.toString());
       })
       .finally(() => this.setState({isWoring: false}));
@@ -62,13 +56,48 @@ class NewTask extends Component {
     history.push(url);
   }
 
+
+  fileUpload = (files) => {
+    let { taskActions, notification, match } = this.props;
+    let { id } = match.params;
+    let form = new FormData();
+    if('push' in files && !isEmpty(files)){
+      files.forEach(file => form.append('file', file));
+    }
+
+    taskActions.uploadFile(form, id)
+      .then(res => {
+        if(!!res.error) return Promise.reject(res.error.messagse ? res.error.messagse : "UNKNOW ERROR");
+        else notification.s("Message", "Upload file success")
+      })
+      .catch(e => notification.e("Error", e));
+  }
+
+  removeFileUpload = (nameF) => {
+    let { taskActions, notification, match } = this.props;
+    let { id } = match.params;
+
+    !!nameF && nameF !=="" && taskActions.removeFile(nameF, id)
+      .then(res => { 
+        if(!!res.error) return Promise.reject(res.error.messagse ? res.error.messagse : "UNKNOW ERROR");
+        else notification.s("Message", "Remove file success")
+      })
+      .catch(e => notification.e("Error", e));
+  }
+
   render() {
     
-    let { task, cateTask, project,  match } = this.props;
+    let { profile, task, cateTask, project,  match, location } = this.props;
     let { isWoring } = this.state;
 
     if(task.isWoring || cateTask.isWoring || project.isWoring) return <Loading />;
     let { id } = match.params;
+    let dataTask = task.data[id];
+    if(!dataTask || profile.info.id !== dataTask.createAt) return null;
+
+    let param = getJsonFromSearch(location.search)
+    if(!param || !param.project || !project.data[param.project]) return null;
+    let idProject = param.project;
 
     return (
       <div className="white-box">
@@ -83,11 +112,14 @@ class NewTask extends Component {
         <hr />
         <Scrollbars className={`hiddenOverX ${!!isWoring ? 'loading' : ''}`} style={{height: '65vh'}}>
           <Form 
-            task      = { task }
-            idProject = { id }
-            project   = { project }
-            productOnSubmit = { this.productOnSubmit }
-            cateTask  = { cateTask } />
+            task              = { task }
+            idProject         = { idProject }
+            project           = { project }
+            productOnSubmit   = { this.productOnSubmit }
+            dataTask          = { dataTask }
+            fileUpload        = { this.fileUpload }
+            removeFileUpload  = { this.removeFileUpload }
+            cateTask          = { cateTask } />
         </Scrollbars>
       </div>
     );
@@ -109,4 +141,4 @@ let mapDispatchToProps = (dispatch) => {
   };
 };
 
-export default withNotification(connect(mapStateToProps, mapDispatchToProps)(NewTask));
+export default withNotification(connect(mapStateToProps, mapDispatchToProps)(EditTask));

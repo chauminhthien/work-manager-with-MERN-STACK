@@ -5,7 +5,7 @@ import CKEditor from "react-ckeditor-component";
 import { DayPicker, Dropzone, TimePicker, Select as SelectOP } from 'components';
 import Select from 'react-select';
 import { isEmpty } from 'utils/functions';
-import { convertDMY } from 'utils/format';
+import { convertDMY, convertMDY, convertHM } from 'utils/format';
 import { validate } from 'utils/validate';
 import * as fileConfig from 'config/fileConfig';
 import ItemFile from './ItemFile';
@@ -31,21 +31,40 @@ class Form extends Component {
   }
   
   componentWillReceiveProps(nextProps){
-    let { dataProject } = nextProps;
+    let { dataTask, project, idProject } = nextProps;
+    
+    if(!!dataTask && Object.keys(dataTask).length > 0){
+      let { begin, end, description, memberId, files, cateTaskId } = dataTask;
+      if(!!project.data[idProject] && !!project.data[idProject].memberJoins){
+        for(let val of project.data[idProject].memberJoins){
+          if(memberId === val.value) {
+            memberId = val;
+            break;
+          };
+        }
+      }
 
-    if(!!dataProject && Object.keys(dataProject).length > 0){
-      let { begin, end, description, memberJoins, files } = dataProject;
-      this.setState({...this.state, begin, end, description, selectedFrOption: memberJoins, files})
+      this.setState({...this.state, cateTaskId, beginTime: begin, begin, endTime: end, end, description, selectedFrOption: memberId, files})
     }
   }
 
-  // componentDidMount(){
-  //   let { dataProject, cateTask } = this.props;
-  //   if(!!dataProject && Object.keys(dataProject).length > 0){
-  //     let { begin, end, description, memberJoins, files } = dataProject;
-  //     this.setState({...this.state, begin, end, description, selectedFrOption: memberJoins, files})
-  //   }
-  // }
+  componentDidMount(){
+    let { dataTask, project, idProject } = this.props;
+    
+    if(!!dataTask && Object.keys(dataTask).length > 0){
+      let { begin, end, description, memberId, files, cateTaskId } = dataTask;
+      if(!!project.data[idProject] && !!project.data[idProject].memberJoins){
+        for(let val of project.data[idProject].memberJoins){
+          if(memberId === val.value) {
+            memberId = val;
+            break;
+          };
+        }
+      }
+
+      this.setState({...this.state, cateTaskId, beginTime: begin, begin, endTime: end, end, description, selectedFrOption: memberId, files})
+    }
+  }
 
   formProjectSubmit = () => {
     if(validate(this._inputName, 'str:3:200')){
@@ -67,26 +86,30 @@ class Form extends Component {
       if(!end) dataError.end      = true;
       if(!beginTime) dataError.beginTime  = true;
       if(!endTime) dataError.endTime      = true;
+      
+      let beginData = null;
+      let endData   = null;
 
       if(!!begin && !!end && !!beginTime && endTime){
-
+        
         if(!project || begin < project.begin || end > project.end){
           dataError.begin     = true;
           dataError.end       = true;
         }else{
-          let dayBegin = convertDMY(begin);
+          let dayBegin = convertMDY(begin);
           let timeBegin = new Date(beginTime);
 
           let time  = `${dayBegin} ${timeBegin.getHours()}:${timeBegin.getMinutes()}:00`;
-          begin     = new Date(time).getTime();
+   
+          beginData     = new Date(time).getTime();
 
-          let dayEnd = convertDMY(end);
+          let dayEnd = convertMDY(end);
           let timeEnd = new Date(endTime);
 
           time  = `${dayEnd} ${timeEnd.getHours()}:${timeEnd.getMinutes()}:00`;
-          end   = new Date(time).getTime();
-
-          if(begin >= end) {
+          endData   = new Date(time).getTime();
+         
+          if(beginData >= endData) {
             dataError.begin  = true;
             dataError.end    = true;
             dataError.beginTime  = true;
@@ -100,8 +123,8 @@ class Form extends Component {
         
         let data = {
           name,
-          begin,
-          end,
+          begin: beginData,
+          end: endData,
           description,
           projectId: idProject,
           cateTaskId,
@@ -117,6 +140,7 @@ class Form extends Component {
         !!this.props.productOnSubmit && this.props.productOnSubmit(data, formData);
 
       }
+      
       this.setState({dataError});
     }
   }
@@ -127,13 +151,13 @@ class Form extends Component {
   }
 
   fileUpload = (files) => {
-    let { dataProject } = this.props;
+    let { dataTask } = this.props;
 
     files = files.filter(e => {
       return fileConfig.acceptTypeFileProject.indexOf(e.type) !== -1 && fileConfig.maxFilesize >= e.size
     });
 
-    if(!!dataProject && Object.keys(dataProject).length > 0){
+    if(!!dataTask && Object.keys(dataTask).length > 0){
       files.length > 0 && !!this.props.fileUpload && this.props.fileUpload(files);
     }else{
       this.setState({files: [...this.state.files, ...files]})
@@ -142,9 +166,9 @@ class Form extends Component {
   }
 
   handelRemoveClick = (idImg) => {
-    let { dataProject } = this.props;
+    let { dataTask } = this.props;
     let { files } = this.state;
-    if(!!dataProject && Object.keys(dataProject).length > 0){
+    if(!!dataTask && Object.keys(dataTask).length > 0){
       files = files.filter((e, i) => i === idImg);
       files.length > 0 && !!this.props.removeFileUpload && this.props.removeFileUpload(files[0].name);
     }else{
@@ -176,7 +200,7 @@ class Form extends Component {
   changTime = (key) => e => this.setState({[key]: (!!e && !!e._d ? new Date(e._d).getTime() : null)})
 
   render() {
-    let { dataProject, cateTask, project, idProject } = this.props;
+    let { dataTask, cateTask, project, idProject } = this.props;
     let { selectedFrOption, dataError, files, cateTaskId, idProject: idProj } = this.state;
     
     if(!project || !cateTask) return null;
@@ -201,7 +225,7 @@ class Form extends Component {
         <div className="form-group">
           <div className="col-xs-12">
             <label>Name task</label>
-            <input defaultValue={!!dataProject && dataProject.name ? dataProject.name : ""} ref={e => this._inputName = e} className="form-control" id="name" name="name" placeholder="Name task" />
+            <input defaultValue={!!dataTask && dataTask.name ? dataTask.name : ""} ref={e => this._inputName = e} className="form-control" id="name" name="name" placeholder="Name task" />
           </div>
         </div>
 
@@ -246,31 +270,34 @@ class Form extends Component {
         </div>
 
         <div className="form-group">
-          <div className={`col-xs-4 ${!!dataError.end ? 'error-more' : ''}`}>
+          <div className={`col-xs-4 ${!!dataError.begin ? 'error-more' : ''}`}>
             <label>Begin day</label>
             <DayPicker
               ref         = { e => this.test = e }
-              placeholder={`${ dataProject && dataProject.end ? convertDMY(dataProject.begin, '-') : 'DD-MM-YYY'}`}
+              placeholder={`${ dataTask && dataTask.begin ? convertDMY(dataTask.begin, '-') : 'DD-MM-YYY'}`}
               onDayChange = { this.setTime('begin') }
               formatDate  = { this.parseDate } />
           </div>
           <div className={`col-xs-2 ${!!dataError.beginTime ? 'error-more' : ''}`}>
             <label>Begin time</label>
-            <TimePicker 
+            <TimePicker
+              placeholder = {`${ dataTask && dataTask.begin ? convertHM(dataTask.begin, '-') : 'HH:MM'}`}
               onChange={ this.changTime('beginTime')} />
           </div>
 
           <div className={`col-xs-4 ${!!dataError.end ? 'error-more' : ''}`}>
             <label>End day</label>
             <DayPicker
-              placeholder={`${ dataProject && dataProject.end ? convertDMY(dataProject.end, '-') : 'DD-MM-YYY'}`}
+              placeholder={`${ dataTask && dataTask.end ? convertDMY(dataTask.end, '-') : 'DD-MM-YYY'}`}
               onDayChange = { this.setTime('end') }
               formatDate  = { this.parseDate } />
           </div>
 
           <div className={`col-xs-2 ${!!dataError.endTime ? 'error-more' : ''}`}>
             <label>End time</label>
-            <TimePicker onChange={ this.changTime('endTime')} />
+            <TimePicker
+              placeholder={`${ dataTask && dataTask.begin ? convertHM(dataTask.end, '-') : 'HH:MM'}`}
+              onChange={ this.changTime('endTime')} />
           </div>
 
         </div>
@@ -295,7 +322,7 @@ class Form extends Component {
               onDrop        = { e => this.fileUpload(e) } >
               
             </Dropzone>
-            {
+              {  
                 'push' in files && !isEmpty(files)
                 ? <ItemFile handelRemoveClick={this.handelRemoveClick} files = { files } />
                 : null

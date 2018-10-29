@@ -49,7 +49,7 @@ module.exports = function(Task) {
 									!!log && !!socketID[groupUserID][userCurrent.id] && socketID[groupUserID][userCurrent.id].emit('SERVER_SEND_LOG', log);
 									if(!!log && userCurrent.account_type === 2){
 										Task.app.models.users.findOne({fields: ['id'], where: {groupUserID, account_type: 1}})
-											.then(use => { console.log(use)
+											.then(use => { 
 												!!use && !!use.id && socketID[groupUserID][use.id].emit('SERVER_SEND_LOG', log);
 											})
 									}
@@ -81,7 +81,7 @@ module.exports = function(Task) {
 	                {relation: "userTo", scope: { fields: { fullname: true, avatar: true }}},
 	              ]
 	  					})
-	  						.then(mess => { console.log(mess)
+	  						.then(mess => {
 	  							!!socketID[groupUserID] && !!socketID[groupUserID][memberId] && !!mess && socketID[groupUserID][memberId].emit('SERVER_SEND_MESS', mess)
 	  						})
 	  				}
@@ -155,7 +155,7 @@ module.exports = function(Task) {
 												!!log && !!socketID[groupUserID][userCurrent.id] && socketID[groupUserID][userCurrent.id].emit('SERVER_SEND_LOG', log);
 												if(!!log && userCurrent.account_type === 2){
 													Task.app.models.users.findOne({fields: ['id'], where: {groupUserID, account_type: 1}})
-														.then(use => { console.log(use)
+														.then(use => {
 															!!use && !!use.id && socketID[groupUserID][use.id].emit('SERVER_SEND_LOG', log);
 														})
 												}
@@ -176,8 +176,7 @@ module.exports = function(Task) {
 							time: Date.now()
 						}
 
-
-						if(memberId !== userCurrent.id){
+						if(memberId !== userCurrent.id.toString()){
 							Task.app.models.messages.create(dataMess)
 				  			.then(ress => {
 				  				if(!!ress){
@@ -187,30 +186,18 @@ module.exports = function(Task) {
 				                {relation: "userTo", scope: { fields: { fullname: true, avatar: true }}},
 				              ]
 				  					})
-				  						.then(mess => { console.log(mess)
+				  						.then(mess => { 
 				  							!!socketID[groupUserID] && !!socketID[groupUserID][memberId] && !!mess && socketID[groupUserID][memberId].emit('SERVER_SEND_MESS', mess)
 				  						})
 				  				}
 				  			});
-
-				  		Task.app.models.users.findById(memberId)
-				  			.then(r => {
-				  				!!r && Task.app.models.email.sendEmail({
-									  			to: r.email,
-									  			subject: "Bạn vừa được thêm vào một stask của dựa án",
-									  			html: mail
-									  		})
-				  			})
-				  		
 						}
 
 					res.save();
           cb(null, {...res.__data});
-
-
   			}, e => Promise.reject(e))
-  			.catch(e => cb(e));
       })
+      .catch(e => cb(e));
   };
 
   Task.remoteMethod(
@@ -225,4 +212,188 @@ module.exports = function(Task) {
       }
   );
 
+  //=======================================================
+
+  Task.removeFile = function(name, id, cb) {
+
+    Task.findById(id)
+      .then(res => {
+        if(!res) return Promise.reject(mess.DATA_NOT_EXIST);
+
+        let dirRoot = Task.app.get('dirUpload');
+  			let dirPath = `${dirRoot}/files/${name}`;
+
+        if (fs.existsSync(dirPath)) fs.unlink(dirPath);
+        res.files = res.files.filter(e => e.name !== name);
+
+
+        let { memberId, name: nameTask, id, groupUserID, projectId } = res.__data;
+  			let { socketID, userCurrent } = Task.app;
+
+				let dataLog = {
+					userID 			: userCurrent.id,
+					nameAction	: "xoá mới file trong ",
+					nameWork		: nameTask,
+					nameTask		: "",
+					groupUserID,
+					time				: Date.now()
+				}
+
+				Task.app.models.project.findById(projectId)
+					.then(pro => {
+						if(!!pro) dataLog.nameTask = pro.name;
+
+						Task.app.models.logs.create(dataLog)
+							.then(log => {
+								if(!!log){
+									Task.app.models.logs.findById(log.id, {
+										include : [
+						          {relation: "users", scope: { fields: { fullname: true, avatar: true }}},
+						        ]
+									})
+										.then(log => {
+											!!log && !!socketID[groupUserID][userCurrent.id] && socketID[groupUserID][userCurrent.id].emit('SERVER_SEND_LOG', log);
+											if(!!log && userCurrent.account_type === 2){
+												Task.app.models.users.findOne({fields: ['id'], where: {groupUserID, account_type: 1}})
+													.then(use => {
+														!!use && !!use.id && socketID[groupUserID][use.id].emit('SERVER_SEND_LOG', log);
+													})
+											}
+										})
+									
+								}
+							})
+					})
+
+				let dataMess = {
+					userID: userCurrent.id,
+					userIdTo: memberId,
+					nameAction: "xoá file vào task",
+					nameWork: nameTask,
+					idWork: id,
+					groupUserID,
+					link: `/task/view/${id}`,
+					time: Date.now()
+				}
+
+				if(memberId !== userCurrent.id.toString()){
+					Task.app.models.messages.create(dataMess)
+		  			.then(ress => {
+		  				if(!!ress){
+		  					Task.app.models.messages.findById(ress.id, {
+		  						include: [
+		                {relation: "usersFrom", scope: { fields: { fullname: true, avatar: true }}},
+		                {relation: "userTo", scope: { fields: { fullname: true, avatar: true }}},
+		              ]
+		  					})
+		  						.then(mess => { 
+		  							!!socketID[groupUserID] && !!socketID[groupUserID][memberId] && !!mess && socketID[groupUserID][memberId].emit('SERVER_SEND_MESS', mess)
+		  						})
+		  				}
+		  			});
+				}
+
+				res.save();
+        cb(null, {...res.__data});
+      }, e => Promise.reject(e))
+      .catch(e => cb(e));
+  };
+
+  Task.remoteMethod(
+      'removeFile',
+      {
+       http: {path: '/removeFile/:id', verb: 'post'},
+       accepts: [
+          {arg: 'name', type: 'string', "required": true},
+          {arg: 'id', type: 'string', "required": true}
+       ],
+       returns: {arg: 'status', type: 'string'}
+      }
+  );
+
+  //============================================
+
+  Task.beforeRemote('prototype.patchAttributes', function (ctx, res, next) {
+  	let { instance, args } = ctx;
+  	let { data } =  args;
+
+  	let { groupUserID, id, name, memberId } = instance;
+
+  	let { socketID, userCurrent } 	= Task.app;
+  	
+  	let dataLog = {
+			userID 			: userCurrent.id,
+			nameAction		: (instance.name === data.name) ? "cập nhật task " : "đổi tên thành",
+			nameWork		: instance.name,
+			nameTask		: instance.name === data.name ? "" : `thành ${data.name}`,
+			groupUserID,
+			time			: Date.now()
+		}
+
+		let mail = `
+  				<h2>
+  					Bạn vừa mới được thêm vào một Task,
+  					<a href="http://acac.com/ascascac" >${name}</a>
+  				</h2>`;
+
+		Task.app.models.logs.create(dataLog)
+			.then(log => {
+				if(!!log){
+					Task.app.models.logs.findById(log.id, {
+						include : [
+		          {relation: "users", scope: { fields: { fullname: true, avatar: true }}},
+		        ]
+					})
+						.then(log => { 
+							!!log && !!socketID[groupUserID][userCurrent.id] && socketID[groupUserID][userCurrent.id].emit('SERVER_SEND_LOG', log);
+							if(!!log && userCurrent.account_type === 2){
+								Task.app.models.users.findOne({fields: ['id'], where: {groupUserID, account_type: 1}})
+									.then(use => { console.log(use.id)
+										!!use && !!use.id && socketID[groupUserID][use.id].emit('SERVER_SEND_LOG', log);
+									})
+							}
+						})
+				}
+			})
+
+		let dataMess = {
+			userID: userCurrent.id,
+			userIdTo: memberId,
+			nameAction: "Thêm bạn vào Task",
+			nameWork: name,
+			idWork: id,
+			groupUserID,
+			link: `/task/view/${id}`,
+			time: Date.now()
+		}
+
+
+		if(memberId !== userCurrent.id){
+			Task.app.models.messages.create(dataMess)
+  			.then(ress => {
+  				if(!!ress){
+  					Task.app.models.messages.findById(ress.id, {
+  						include: [
+                {relation: "usersFrom", scope: { fields: { fullname: true, avatar: true }}},
+                {relation: "userTo", scope: { fields: { fullname: true, avatar: true }}},
+              ]
+  					})
+  						.then(mess => {
+  							!!socketID[groupUserID] && !!socketID[groupUserID][memberId] && !!mess && socketID[groupUserID][memberId].emit('SERVER_SEND_MESS', mess)
+  						})
+  				}
+  			});
+
+  		Task.app.models.users.findById(memberId)
+  			.then(r => {
+  				!!r && Task.app.models.email.sendEmail({
+		  			to: r.email,
+		  			subject: "Bạn vừa được thêm vào một stask của dựa án",
+		  			html: mail
+		  		})
+  			})
+  		
+		}
+		next();
+  })
 };

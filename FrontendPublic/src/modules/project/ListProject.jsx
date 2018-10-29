@@ -21,7 +21,7 @@ class ListProject extends Component {
   render() {
     let { project, location, profile } = this.props;
     let { ordered, data } = project;
-    let pathname = !!location ? location.pathname : "";
+    let pathname = !!location ? `${location.pathname}${location.search}` : "";
     
     return (
       <div className="white-box">
@@ -45,9 +45,9 @@ class ListProject extends Component {
                     }
                   }
                   if(profile.info.id !== data[e].createAt && !fl) return null;
-
+                  
                   return(
-                    <Link key={i} to={`/project/view/${e}`} className={`list-group-item ${new RegExp(`.*/${e}$`).test(pathname)? 'active': ''}`}>
+                    <Link key={i} to={`/project/view/${e}`} className={`list-group-item ${new RegExp(`.*${e}`).test(pathname) ? 'active': ''}`}>
                       {data[e] ? data[e].name : ""}
                     </Link>
                   )

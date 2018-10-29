@@ -1,10 +1,47 @@
 import React, { Component } from 'react';
+import { connect } from 'react-redux';
+import { bindActionCreators } from 'redux';
 
+import { withNotification } from 'components';
+import * as projectActions from './actions';
+import { actions as taskActions } from 'modules/task';
+import { actions as cateTaskActions } from 'modules/categories/cateTask';
 import users        from 'assets/Images/user.jpg';
 
 class TaskInfoRight extends Component {
 
+  componentDidMount(){
+
+    let { profile, project, task, cateTask, projectActions } = this.props;
+
+    if(project.ordered.length === 0){
+      projectActions.fetchAll({
+      },0, 0, {
+        groupUserID: profile.info.groupUserID
+      })
+    }
+
+    if(task.ordered.length === 0) taskActions.fetchAll({
+      order: "id DESC"
+    },0 , 15, { groupUserID: profile.info.groupUserID })
+
+    if(cateTask.ordered.length === 0) cateTaskActions.fetchAll({},0 , 15, { groupUserID: profile.info.groupUserID })
+    
+  }
+
   render() {
+    let { match, profile, task, friends } = this.props;
+    let { id } = match.params;
+    
+    let dataTask = task.data[id];
+    if(!dataTask || (profile.info.id !== dataTask.createAt && profile.info.id !== dataTask.memberId)) return null;
+
+    let memberJob = !!friends.data[dataTask.memberId] ? friends.data[dataTask.memberId] : null;
+    if(!!memberJob && !memberJob.avatar) memberJob.avatar = users;
+
+    let memberAss = dataTask.createAt === profile.info.id
+      ? profile.info : (!!friends.data[dataTask.createAt] ? friends.data[dataTask.createAt] : null );
+    if(!!memberAss && !memberAss.avatar) memberAss.avatar = users;
     
     return (
 
@@ -30,8 +67,8 @@ class TaskInfoRight extends Component {
         <div className="col-md-12 m-t-15">
           <ul className="chatonline">
             <li style={{lineHeight: '30px'}}>
-              <img src={users} alt="user-img" className="img-circle" />
-              <span>User 01</span>
+              <img src={memberJob ? memberJob.avatar : users} alt="user-img" className="img-circle" />
+              <span>{memberJob ? memberJob.fullname : ""}</span>
             </li>
           </ul>
           <span className="clearfix"></span>
@@ -46,8 +83,8 @@ class TaskInfoRight extends Component {
         <div className="col-md-12 m-t-15">
           <ul className="chatonline">
             <li style={{lineHeight: '30px'}}>
-              <img src={users} alt="user-img" className="img-circle" />
-              <span>User 01</span>
+              <img src={memberAss ? memberAss.avatar : users} alt="user-img" className="img-circle" />
+              <span>{memberAss ? memberAss.fullname : ""}</span>
             </li>
           </ul>
           <span className="clearfix"></span>
@@ -61,4 +98,18 @@ class TaskInfoRight extends Component {
 }
 
 
-export default TaskInfoRight;
+let mapStateToProps = (state) => {
+  let { profile, project, task } = state;
+  let { friends, cateTask }           = state.categories
+  return { profile, project, friends, cateTask, task };
+};
+
+let mapDispatchToProps = (dispatch) => {
+  return {
+    projectActions       : bindActionCreators(projectActions, dispatch),
+    taskActions          : bindActionCreators(taskActions, dispatch),
+    cateTaskActions      : bindActionCreators(cateTaskActions, dispatch),
+  };
+};
+
+export default withNotification(connect(mapStateToProps, mapDispatchToProps)(TaskInfoRight));

@@ -52,7 +52,7 @@ boot(app, __dirname, function(err) {
             }
           })
       })
-
+      
       socket.on('disconnect', function(){
         let { id } = socket;
         let idG = null;

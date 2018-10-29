@@ -9,4 +9,20 @@ module.exports = function(Messages) {
       Messages.disableRemoteMethodByName(methodName);
     }
   });
+
+  Messages.afterRemote('prototype.patchAttributes', function(ctx, res, next) {
+    let {id} = ctx.result;
+    
+    Messages.findById(id, {
+      include: [
+        {relation: "usersFrom", scope: { fields: { fullname: true, avatar: true }}},
+		{relation: "userTo", scope: { fields: { fullname: true, avatar: true }}},
+      ]})
+      .then(res => {
+        ctx.result = res;
+        next();
+      }, e => Promise.reject(e))
+      .catch(e => next(e))
+  });
+
 };

@@ -16,6 +16,7 @@ class ItemFile extends Component {
   }
 
   handelRemoveClick = (id) => (e) => {
+    e.preventDefault();
     !!this.props.handelRemoveClick && this.props.handelRemoveClick(id);
   }
 

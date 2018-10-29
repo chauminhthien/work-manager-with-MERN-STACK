@@ -74,6 +74,35 @@ export const convertDMY = (date, currency) => {
   return dd + currency + mm + currency + yyyy;
 }
 
+export const convertMDY = (date, currency) => {
+  if(!currency) currency = "-";
+  let fullDate = new Date(date);
+
+  let dd   = fullDate.getDate();
+  if( dd < 10 )  dd = '0' + dd;
+
+  let mm   = fullDate.getMonth() + 1;
+  if( mm < 10 )  mm = '0' + mm;
+
+  let yyyy   = fullDate.getFullYear();
+
+  return mm + currency + dd + currency + yyyy;
+}
+
+export const convertHM = (time, currency = '-') => {
+  let fullDate = new Date(time);
+
+  let h           = fullDate.getHours();
+  if( h < 10 )  h = '0' + h;
+
+  let min             = fullDate.getMinutes();
+  if( min < 10 )  min = '0' + min;
+
+  return `${h}:${min}`;
+
+}
+
+
 export const convertTimeMess = (date, currency) => {
   if(!currency) currency = "-";
   let now = new Date();

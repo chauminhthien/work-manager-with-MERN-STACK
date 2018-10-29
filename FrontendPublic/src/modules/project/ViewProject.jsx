@@ -8,8 +8,10 @@ import { withNotification } from 'components';
 import img_wellcome from 'assets/Images/img-wellcome.png';
 import ItemFile from './ItemFile';
 import * as projectActions from './actions';
-
+import { actions as taskActions } from 'modules/task';
+import { actions as cateTaskActions } from 'modules/categories/cateTask';
 import users        from 'assets/Images/user.jpg';
+import { isEmpty } from 'utils/functions';
 
 class ViewProject extends Component {
   constructor(props){
@@ -20,19 +22,19 @@ class ViewProject extends Component {
   }
 
   componentDidMount(){
-    let { profile, project, projectActions } = this.props;
+    let { profile, task, cateTask,  project, projectActions, taskActions, cateTaskActions } = this.props;
 
-    if(project.ordered.length === 0){
-      projectActions.fetchAll({
+    if(project.ordered.length === 0) projectActions.fetchAll({},0, 0, { groupUserID: profile.info.groupUserID })
 
-      },0, 0, {
-        groupUserID: profile.info.groupUserID
-      })
-    }
+    if(task.ordered.length === 0) taskActions.fetchAll({
+      order: "id DESC"
+    },0 , 15, { groupUserID: profile.info.groupUserID })
+
+    if(cateTask.ordered.length === 0) cateTaskActions.fetchAll({},0 , 15, { groupUserID: profile.info.groupUserID })
   }
 
   render() {
-    let { project, match, friends, profile } = this.props;
+    let { project, task, match, friends, profile, cateTask } = this.props;
     let { isWoring } = this.state;
 
     let { id } = match.params;
@@ -109,32 +111,61 @@ class ViewProject extends Component {
             <li className="list-group-item no-br br-b m-b-5 min-h-50">
               Chủ nhật (23/09/2018)
             </li>
-            {[...Array(20)].map( (e, i) => {
-              return (
-                <li key={i} className="list-group-item no-br br-b m-b-5 min-h-50">
-                  <Link to="#">
-                    <div className="col-xs-6 p-l-0">
-                      <img width="20px" alt={'users'} className="circle m-r-5" src={users}/>
-                      <i className="fa fa-phone m-r-5 text-default"></i>
-                      <span className="text-danger">Test tạo công việc -  {i}</span>
-                    </div>
-                    <div className="col-xs-6">
-                      <div className="col-xs-7 m-t-7">
-                        <div className="progress">
-                          <div className="progress-bar progress-bar-danger" style={{width: '60%'}} role="progressbar">
-                            <span className="sr-only">60% Complete</span> 
+            {
+              !!task && !isEmpty(task.ordered) && task.ordered.map( (e, i) => {
+                let taskItem = !!task.data && !!task.data[e] ? task.data[e]  : null;
+                let now = Date.now();
+                if(!taskItem || taskItem.projectId !== id) return null;
+
+                let icon = !!cateTask && !!cateTask.data[taskItem.cateTaskId] ? cateTask.data[taskItem.cateTaskId].icon : "";
+                let link = `/task/view/${e}?project=${taskItem.projectId}`
+                let process = {
+                  liClass : "success",
+                  text    : "Complete"
+                }
+
+                if(taskItem.process < 100){
+                  if(now >= taskItem.begin && now <= taskItem.end)
+                    process = { liClass : "info", text    : "Pending" };
+                  
+                  if(now > taskItem.end )
+                    process = { liClass : "danger", text: "Not complete" };
+
+                  if(now < taskItem.begin)
+                    process = { liClass : "default", text: "Not implemented yet" };
+                }
+                
+
+                let avatar = (
+                  !!friends.data[taskItem.memberId] && friends.data[taskItem.memberId].avatar
+                  ? friends.data[taskItem.memberId].avatar : users)
+
+                return (
+                  <li key={i} className="list-group-item no-br br-b m-b-5 min-h-50">
+                    <Link to={link} >
+                      <div className="col-xs-6 p-l-0">
+                        <img width="20px" alt={'users'} className="circle m-r-5" src={avatar}/>
+                        <i className={`${icon} m-r-5 text-${process.liClass}`}></i>
+                        <span className={`text-${process.liClass}`}>{taskItem.name ? taskItem.name : ""}</span>
+                      </div>
+                      <div className="col-xs-6">
+                        <div className="col-xs-7 m-t-7">
+                          <div className="progress">
+                            <div className={`progress-bar progress-bar-${process.liClass}`} style={{width: `${taskItem.process ? taskItem.process : 0}%`}} role="progressbar">
+                              <span className="sr-only">{taskItem.process ? taskItem.process : 0}% Complete</span> 
+                            </div>
                           </div>
                         </div>
+                        <div className={`col-xs-5 text-${process.liClass}`}>
+                          ({process.text})
+                        </div>
                       </div>
-                      <div className="col-xs-5 text-default">
-                        (Đang tiến hành)
-                      </div>
-                    </div>
-                    <div className="clear"></div>
-                  </Link>
-                </li>
-              )
-            })}
+                      <div className="clear"></div>
+                    </Link>
+                  </li>
+                )
+              })
+            }
           </ul>
         </Scrollbars>
       </div>
@@ -143,14 +174,16 @@ class ViewProject extends Component {
 }
 
 let mapStateToProps = (state) => {
-  let { profile, project } = state;
-  let { friends }           = state.categories
-  return { profile, project, friends };
+  let { profile, project, task } = state;
+  let { friends, cateTask }      = state.categories;
+  return { profile, project, friends, task, cateTask };
 };
 
 let mapDispatchToProps = (dispatch) => {
   return {
     projectActions       : bindActionCreators(projectActions, dispatch),
+    taskActions          : bindActionCreators(taskActions, dispatch),
+    cateTaskActions      : bindActionCreators(cateTaskActions, dispatch),
   };
 };
 

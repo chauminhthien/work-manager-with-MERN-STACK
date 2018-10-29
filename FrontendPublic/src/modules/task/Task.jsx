@@ -3,6 +3,7 @@ import { Switch, Route, withRouter } from 'react-router-dom';
 
 import NewTask from './NewTask';
 import ViewTask from './ViewTask';
+import EditTask from './EditTask';
 import TaskInfoRight from './TaskInfoRight';
 
 import { ListProject } from 'modules/project';
@@ -23,6 +24,7 @@ class Task extends Component {
           <Switch>
             <Route path="/task/new/:id" component={ NewTask } />
             <Route path="/task/view/:id" component={ ViewTask } />
+            <Route path="/task/edit/:id" component={ EditTask } />
             <Route component={ Error404 } />
           </Switch>
         </div>

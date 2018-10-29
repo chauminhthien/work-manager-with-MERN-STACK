@@ -56,12 +56,7 @@
       "foreignKey": "groupUserID",
       "primaryKey": ""
     },
-    "memberId": {
-      "type": "belongsTo",
-      "model": "users",
-      "foreignKey": "memberId",
-      "primaryKey": ""
-    },
+
     "createAt": {
       "type": "belongsTo",
       "model": "users",
@@ -74,7 +69,7 @@
       "foreignKey": "projectId",
       "primaryKey": ""
     },
-    "cateTaskId": {
+    "cateTask": {
       "type": "belongsTo",
       "model": "cateTask",
       "foreignKey": "cateTaskId",

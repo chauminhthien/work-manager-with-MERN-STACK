@@ -59,7 +59,7 @@ export const fetchMore = (filter?, skip?, limit?, where?) => {
     api.task.get(filter, skip, limit, where)
       .then(res => {
         if(res.error) return Promise.reject(res.error);
-        if(res.data.length > 0) dispatch(fetchMoreFinished(res.data));
+        if(res.data.length > 0) dispatch(fetchFinished(res.data.reverse()));
         return res.data;
       })
       .catch(err => {
@@ -84,7 +84,7 @@ export const create = (data) => {
 export const uploadFile = (file, id) => {
   return (dispatch: (action) => void) => {
     return api.task.uploadFile(file, id)
-      .then(obj => {
+      .then(obj => { 
         if(!!obj.data)
           dispatch(fetchFinished([obj.data]))
         else dispatch(fetchFailed(obj.error))

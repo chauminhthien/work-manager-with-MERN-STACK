@@ -36,6 +36,7 @@ export function getJsonFromSearch(search) {
 }
 
 export const isEmpty = function (input) {
+  if(!input) return true;
   if ('push' in input) {
     return input.length === 0;
   }

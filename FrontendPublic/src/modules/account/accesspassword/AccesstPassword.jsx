@@ -27,7 +27,7 @@ class ForgotPassword extends Component {
     let { token } = match.params;
     if (token && token.length === 86) {
       this.props.accountActions.checkToken(token)
-        .then(r => { console.log(r);
+        .then(r => { 
           if(r && r.data){
             let { data } = r;
             this.setState({data});
