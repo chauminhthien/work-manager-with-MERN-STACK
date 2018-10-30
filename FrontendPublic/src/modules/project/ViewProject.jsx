@@ -11,13 +11,17 @@ import * as projectActions from './actions';
 import { actions as taskActions } from 'modules/task';
 import { actions as cateTaskActions } from 'modules/categories/cateTask';
 import users        from 'assets/Images/user.jpg';
-import { isEmpty } from 'utils/functions';
+import { isEmpty, rmv } from 'utils/functions';
 
 class ViewProject extends Component {
+
+  _nameTaskSearch = null;
+
   constructor(props){
     super(props);
     this.state = {
-      isWoring : false
+      isWoring    : false,
+      taskSearch  : null
     }
   }
 
@@ -33,9 +37,16 @@ class ViewProject extends Component {
     if(cateTask.ordered.length === 0) cateTaskActions.fetchAll({},0 , 15, { groupUserID: profile.info.groupUserID })
   }
 
+  taskSearchChange = () => {
+    let taskSearch  = !!this._nameTaskSearch ? this._nameTaskSearch.value : "";
+    taskSearch      = rmv(taskSearch.trim());
+  
+    this.setState({taskSearch});
+  }
+
   render() {
     let { project, task, match, friends, profile, cateTask } = this.props;
-    let { isWoring } = this.state;
+    let { isWoring, taskSearch } = this.state;
 
     let { id } = match.params;
 
@@ -49,6 +60,15 @@ class ViewProject extends Component {
         break;
       }
     }
+
+    let orderTask = [];
+
+    task.ordered.forEach(e => {
+      let nameTask = !!task.data[e] ? task.data[e].name : "";
+      nameTask = rmv(nameTask);
+      if(taskSearch == null || nameTask.indexOf(taskSearch) !== -1) orderTask.push(e);
+    })
+
 
     if(profile.info.id !== dataProject.createAt && !fl) return null;
     return (
@@ -90,9 +110,9 @@ class ViewProject extends Component {
           </div>
         </div>
         <div className="clear"></div>
-        {
-          dataProject.description && dataProject.description !== "" && (<div style={{padding: '15px'}} className="fileResult" dangerouslySetInnerHTML={{__html: dataProject.description}}></div>)
-        }
+          {
+            dataProject.description && dataProject.description !== "" && (<div style={{padding: '15px'}} className="fileResult" dangerouslySetInnerHTML={{__html: dataProject.description}}></div>)
+          }
         
         <ItemFile files = { dataProject.files } />
         <div className="clear"></div>
@@ -101,7 +121,13 @@ class ViewProject extends Component {
         <form className="form-horizontal m-t-15">
           <div className="form-group">
             <div className="col-sm-12">
-              <input type="text" className="form-control" placeholder="Enter keywork" />
+              <input 
+                ref         = { e => this._nameTaskSearch = e}
+                onChange    = { this.taskSearchChange }
+                type        = "text"
+                className   = "form-control"
+                placeholder = "Enter keywork" />
+
             </div>
           </div>
         </form>
@@ -112,7 +138,7 @@ class ViewProject extends Component {
               Chủ nhật (23/09/2018)
             </li>
             {
-              !!task && !isEmpty(task.ordered) && task.ordered.map( (e, i) => {
+              !!task && !isEmpty(orderTask) && orderTask.map( (e, i) => {
                 let taskItem = !!task.data && !!task.data[e] ? task.data[e]  : null;
                 let now = Date.now();
                 if(!taskItem || taskItem.projectId !== id) return null;

@@ -15,6 +15,7 @@ class FormProject extends Component {
       isWoring : false
     }
   }
+  
   productOnSubmit = (data, files) => {
     let { projectActions, notification, profile } = this.props;
     

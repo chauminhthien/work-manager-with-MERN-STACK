@@ -132,7 +132,7 @@ class Form extends Component {
         optionsFr.push({value: friends.data[e].id, label: friends.data[e].fullname, email: friends.data[e].email})
       })
     }
-
+    
     return (
       <form className="form-horizontal new-lg-form formSubmit p-r-15" method="post" ref={e => this._formSubmit = e} onSubmit={ this.onSubmitFormLogin } name="myform" noValidate >
         <div className="form-group">

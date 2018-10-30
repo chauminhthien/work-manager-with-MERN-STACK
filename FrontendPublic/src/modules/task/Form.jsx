@@ -13,6 +13,7 @@ import ItemFile from './ItemFile';
 class Form extends Component {
   _formSubmit = null;
   _inputName  = null;
+  _projectChange = null;
 
   constructor(props){
     super(props);
@@ -28,6 +29,11 @@ class Form extends Component {
       endTime           : null,
       dataError         : {}
     }
+  }
+
+  projectChange = () => {
+    let idProject = !!this._projectChange ? this._projectChange.value : null;
+    !!idProject && this.setState({idProject})
   }
   
   componentWillReceiveProps(nextProps){
@@ -132,7 +138,7 @@ class Form extends Component {
         }
 
         let formData = null;
-        if('push' in files && !isEmpty(files)){
+        if(!!files && 'push' in files && !isEmpty(files)){
           formData = new FormData();
           files.forEach(file => formData.append('file', file));
         }
@@ -211,7 +217,7 @@ class Form extends Component {
         optionsFr.push(va);
     }
 
-    const optionsProject = [];
+    const optionsProject = [{text: "-- Select Project --", value: 0}];
     for(let id of project.ordered){
       if(!!idProject) {
         optionsProject.push({text: project.data[idProject].name, value: idProject})
@@ -235,6 +241,8 @@ class Form extends Component {
             <SelectOP
               className = {dataError.idProject ? 'error' : ''}
               disabled  = { idProject ? true : false }
+              refHTML   = { e => this._projectChange = e }
+              onChange  = { this.projectChange }
               options   = { optionsProject } />
           </div>
           <div className="col-xs-6">
@@ -323,7 +331,7 @@ class Form extends Component {
               
             </Dropzone>
               {  
-                'push' in files && !isEmpty(files)
+                !!files && 'push' in files && !isEmpty(files)
                 ? <ItemFile handelRemoveClick={this.handelRemoveClick} files = { files } />
                 : null
               }

@@ -8,8 +8,9 @@ import CKEditor from "react-ckeditor-component";
 import { withNotification } from 'components';
 import img_wellcome from 'assets/Images/img-wellcome.png';
 import ItemFile from './ItemFile';
-import * as projectActions from './actions';
-import { actions as taskActions } from 'modules/task';
+
+import { actions as projectActions } from 'modules/project';
+import * as taskActions from './actions';
 import { actions as cateTaskActions } from 'modules/categories/cateTask';
 
 import users        from 'assets/Images/user.jpg';
@@ -32,10 +33,10 @@ class ViewTask extends Component {
         groupUserID: profile.info.groupUserID
       })
     }
-
+    
     if(task.ordered.length === 0) taskActions.fetchAll({
       order: "id DESC"
-    },0 , 15, { groupUserID: profile.info.groupUserID })
+    },0 ,15, { groupUserID: profile.info.groupUserID })
 
     if(cateTask.ordered.length === 0) cateTaskActions.fetchAll({},0 , 15, { groupUserID: profile.info.groupUserID })
     

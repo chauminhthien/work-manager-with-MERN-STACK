@@ -39,9 +39,10 @@ export const fetchMoreFinished = (data) => {
 }
 
 export const fetchAll = (filter?, skip?, limit?, where?) => {
+
   return (dispatch: (action: Action) =>void) => {
     dispatch(fetchStarted());
-    api.task.get(filter, skip, limit, where)
+    return api.task.get(filter, skip, limit, where)
       .then(res => {
         if(res.error) return Promise.reject(res.error);
         if(res.data.length > 0) dispatch(fetchFinished(res.data.reverse()));

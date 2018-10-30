@@ -3,8 +3,9 @@ import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 
 import { withNotification } from 'components';
-import * as projectActions from './actions';
-import { actions as taskActions } from 'modules/task';
+
+import { actions as projectActions } from 'modules/project';
+import * as taskActions from './actions';
 import { actions as cateTaskActions } from 'modules/categories/cateTask';
 import users        from 'assets/Images/user.jpg';
 
@@ -12,7 +13,7 @@ class TaskInfoRight extends Component {
 
   componentDidMount(){
 
-    let { profile, project, task, cateTask, projectActions } = this.props;
+    let { profile, project, task, cateTask, projectActions, taskActions } = this.props;
 
     if(project.ordered.length === 0){
       projectActions.fetchAll({
@@ -20,10 +21,10 @@ class TaskInfoRight extends Component {
         groupUserID: profile.info.groupUserID
       })
     }
-
+    console.log(task.ordered.length === 0, '==========================')
     if(task.ordered.length === 0) taskActions.fetchAll({
       order: "id DESC"
-    },0 , 15, { groupUserID: profile.info.groupUserID })
+    },0 ,15, { groupUserID: profile.info.groupUserID });
 
     if(cateTask.ordered.length === 0) cateTaskActions.fetchAll({},0 , 15, { groupUserID: profile.info.groupUserID })
     

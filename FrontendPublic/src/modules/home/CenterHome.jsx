@@ -8,18 +8,23 @@ import { withNotification } from 'components';
 import img_wellcome from 'assets/Images/img-wellcome.png';
 import ListTask from './ListTask';
 import { Form as FormAddTask } from 'modules/task';
-
 import { actions as cateTaskAction } from 'modules/categories/cateTask';
 import { actions as projectActions } from 'modules/project';
 import { actions as taskActions } from 'modules/task';
 
+import { isEmpty, rmv } from 'utils/functions';
+
 class CenterHome extends Component {
-  _changNameNewTask = null;;
+  _changNameNewTask = null;
 
   constructor(props){
     super(props);
     this.state = {
-      nameTask: null
+      nameTask    : null,
+      taskSearch  : null,
+      isWoring    : false,
+      jobType     : null,
+      jobStatus   : "ALL"
     }
   }
 
@@ -35,6 +40,37 @@ class CenterHome extends Component {
       
   }
 
+  productOnSubmit = (data, files) => {
+    let { taskActions, notification, profile } = this.props;
+    this.setState({isWoring: true});
+    data.groupUserID  = profile.info.groupUserID;
+    data.createAt     =  profile.info.id;
+    
+    taskActions.create(data)
+      .then(res => {
+        if(!!res.error) return Promise.reject(res.error.messagse);
+        if(!!files) return taskActions.uploadFile(files, res.data.id);
+        else this.hannelCreateSuccess(res.data);
+      })
+      .then(file => {
+        if(!!file && !!file.error) return Promise.reject(file.error.messagse);
+        if(!!file && !!file.data)  this.hannelCreateSuccess(file.data);
+      })
+      .catch(e =>  {
+        this.setState({isWoring: false});
+        notification.e('Message', e.toString());
+        this.setState({isWoring: false})
+      })
+  }
+
+  hannelCreateSuccess = (data) => {
+    let { history, notification } = this.props;
+
+    notification.s('Message', 'Create task success');
+    let url = `/task/view/${data.id}?project=${data.projectId}`;
+    history.push(url);
+  }
+
   changNameNewTask = () => {
     let nameTask = !!this._changNameNewTask ? this._changNameNewTask.value : "";
     nameTask = nameTask.trim();
@@ -44,9 +80,71 @@ class CenterHome extends Component {
     }else this.setState({nameTask: null})
   }
 
+  taskSearchChange = (input) => () => {
+    let taskSearch  = !!input ? input.value : "";
+    taskSearch      = rmv(taskSearch.trim());
+    
+    this.setState({taskSearch});
+  }
+
+  jobTypeChane = (input) => () => {
+    let jobType = !!input ? input.value : null;
+    if(!jobType || jobType === "-1") jobType = null;
+    this.setState({jobType})
+  }
+
+  jobStatusChange = (val) => () => {
+    let jobStatus = !!val ? val : "ALL";
+    this.setState({jobStatus})
+  }
+
+  checkJobType = (obj) => {
+    let { profile, jobType, data } = obj;
+
+    if(jobType == null) return true;
+
+    if(jobType === "1") return (profile.info.id === data.createAt);
+    if(jobType === "0") return (profile.info.id === data.memberId)
+
+    return true;
+  }
+
+  checkJobStatus = (obj) => {
+    let { jobStatus, data } = obj;
+    let now = Date.now();
+    switch(jobStatus){
+      case "ALL":  return true;
+      case "NEW": return now < data.begin && data.process < 100;
+      case "SLOW": return now > data.end && data.process < 100;
+      case "PENDING": return now >= data.begin && now <= data.end && data.process < 100;
+      case "COMPLETE": return data.process === 100;
+      default: return true;
+    }
+  }
+
+  checkJob = (obj) => {
+    let { profile, data } = obj;
+    if(profile.info.account_type === 1) return true;
+    return (data.createAt === profile.info.id || data.memberId === profile.info.id)
+  }
+
   render() {
-    let { nameTask } = this.state;
-    let { cateTask, project } = this.props;
+    let { nameTask, taskSearch, jobType, jobStatus } = this.state;
+    let { cateTask, project, task, friends, profile } = this.props;
+
+    let orderTask = [];
+
+    task.ordered.forEach(e => {
+      let nameTask = !!task.data[e] ? task.data[e].name : "";
+      nameTask = rmv(nameTask);
+      
+      let flag = (taskSearch == null || nameTask.indexOf(taskSearch) !== -1);
+      flag = !!flag && this.checkJobType({profile, jobType, data: task.data[e]});
+      flag = !!flag && this.checkJobStatus({profile, jobStatus, data: task.data[e]});
+      flag = !!flag && this.checkJob({profile, data: task.data[e]});
+      
+      if(!!flag) orderTask.push(e);
+    })
 
     return (
       <div className="white-box">
@@ -72,9 +170,11 @@ class CenterHome extends Component {
                             <i style={{color: '#00c23f', fontSize: '18px' }} className="fa fa-plus" />
                           </div>
                           <input 
-                                ref={e => this._changNameNewTask = e}
-                                onChange={ this.changNameNewTask }
-                                type="text" className="form-control no-br no-outline" placeholder="Name work" />
+                            ref       = {e => this._changNameNewTask = e}
+                            onChange  = { this.changNameNewTask }
+                            type      = "text"
+                            className="form-control no-br no-outline"
+                            placeholder="Name work" />
                           
                         </div>
                       )
@@ -91,13 +191,24 @@ class CenterHome extends Component {
           ? (
               <Scrollbars className="hiddenOverX" style={{ height: "60vh" }}>
                 <FormAddTask
-                  dataProject = {{ name: nameTask }}
-                  cateTask    = { cateTask }
-                  homeCancel  = { () => this.setState({nameTask: null})}
-                  project     = { project } />
+                  dataTask        = {{ name: nameTask }}
+                  cateTask        = { cateTask }
+                  productOnSubmit = { this.productOnSubmit }
+                  homeCancel      = { () => this.setState({nameTask: null})}
+                  project         = { project } />
               </Scrollbars>
             )
-          : <ListTask />
+          : <ListTask 
+            taskSearchChange = { this.taskSearchChange }
+            data             = { task.data }
+            cateTask         = { cateTask }
+            friends          = { friends }
+            isEmpty          = { isEmpty }
+            jobTypeChane     = { this.jobTypeChane }
+            jobStatusChange  = { this.jobStatusChange }
+            jobStatus        = { jobStatus }
+            profile          = { profile }
+            ordered          = { orderTask } />
         }
         
         
@@ -117,7 +228,7 @@ let mapDispatchToProps = (dispatch) => {
   return {
     taskActions       : bindActionCreators(taskActions, dispatch),
     cateTaskAction    : bindActionCreators(cateTaskAction, dispatch),
-    projectActions    : bindActionCreators(projectActions, dispatch),
+    projectActions    : bindActionCreators(projectActions, dispatch)
   };
 };
 
