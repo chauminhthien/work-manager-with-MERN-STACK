@@ -112,6 +112,7 @@ class CenterHome extends Component {
   checkJobStatus = (obj) => {
     let { jobStatus, data } = obj;
     let now = Date.now();
+    
     switch(jobStatus){
       case "ALL":  return true;
       case "NEW": return now < data.begin && data.process < 100;

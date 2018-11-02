@@ -18,6 +18,12 @@
       ],
       "default": "[]"
     },
+    "relateMember": {
+      "type": [
+        "any"
+      ],
+      "default": "[]"
+    },
     "memberId": {
       "type": "string"
     },
@@ -56,7 +62,6 @@
       "foreignKey": "groupUserID",
       "primaryKey": ""
     },
-
     "createAt": {
       "type": "belongsTo",
       "model": "users",

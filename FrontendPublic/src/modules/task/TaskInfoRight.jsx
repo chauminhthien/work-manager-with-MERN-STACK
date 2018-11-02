@@ -21,7 +21,7 @@ class TaskInfoRight extends Component {
         groupUserID: profile.info.groupUserID
       })
     }
-    console.log(task.ordered.length === 0, '==========================')
+    
     if(task.ordered.length === 0) taskActions.fetchAll({
       order: "id DESC"
     },0 ,15, { groupUserID: profile.info.groupUserID });

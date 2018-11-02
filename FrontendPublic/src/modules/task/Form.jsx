@@ -19,6 +19,7 @@ class Form extends Component {
     super(props);
     this.state = {
       selectedFrOption  : null,
+      selectedRelateOption: null,
       cateTaskId        : null,
       idProject         : null,
       description       : "",
@@ -40,7 +41,7 @@ class Form extends Component {
     let { dataTask, project, idProject } = nextProps;
     
     if(!!dataTask && Object.keys(dataTask).length > 0){
-      let { begin, end, description, memberId, files, cateTaskId } = dataTask;
+      let { begin, end, description, memberId, files, cateTaskId, relateMember } = dataTask;
       if(!!project.data[idProject] && !!project.data[idProject].memberJoins){
         for(let val of project.data[idProject].memberJoins){
           if(memberId === val.value) {
@@ -50,7 +51,18 @@ class Form extends Component {
         }
       }
 
-      this.setState({...this.state, cateTaskId, beginTime: begin, begin, endTime: end, end, description, selectedFrOption: memberId, files})
+      this.setState({
+        ...this.state,
+        cateTaskId,
+        beginTime: begin,
+        begin,
+        endTime: end,
+        end,
+        description,
+        selectedFrOption: memberId,
+        files,
+        selectedRelateOption: relateMember
+      })
     }
   }
 
@@ -58,7 +70,7 @@ class Form extends Component {
     let { dataTask, project, idProject } = this.props;
     
     if(!!dataTask && Object.keys(dataTask).length > 0){
-      let { begin, end, description, memberId, files, cateTaskId } = dataTask;
+      let { begin, end, description, memberId, files, cateTaskId, relateMember } = dataTask;
       if(!!project.data[idProject] && !!project.data[idProject].memberJoins){
         for(let val of project.data[idProject].memberJoins){
           if(memberId === val.value) {
@@ -68,7 +80,18 @@ class Form extends Component {
         }
       }
 
-      this.setState({...this.state, cateTaskId, beginTime: begin, begin, endTime: end, end, description, selectedFrOption: memberId, files})
+      this.setState({
+        ...this.state,
+        cateTaskId,
+        beginTime: begin,
+        begin,
+        endTime: end,
+        end,
+        description,
+        selectedFrOption: memberId,
+        files,
+        selectedRelateOption: relateMember
+      })
     }
   }
 
@@ -78,13 +101,16 @@ class Form extends Component {
       
       let name = (!!this._inputName) ? this._inputName.value : null;
       let { selectedFrOption, description, files, begin, end, beginTime, endTime, dataError, idProject,
-        cateTaskId } = this.state;
+        cateTaskId, selectedRelateOption } = this.state;
       
       project = project.data[idProject] ? project.data[idProject] : null;
       dataError = {};
       
       if(!selectedFrOption || !selectedFrOption.value)
         dataError.selectedFrOption = true;
+
+      if(!selectedRelateOption || isEmpty(selectedRelateOption)) 
+        dataError.selectedRelateOption = true;
 
       if(!idProject) dataError.idProject = true
         
@@ -134,7 +160,8 @@ class Form extends Component {
           description,
           projectId: idProject,
           cateTaskId,
-          memberId: !!selectedFrOption.value ? selectedFrOption.value : null
+          memberId: !!selectedFrOption.value ? selectedFrOption.value : null,
+          relateMember: selectedRelateOption
         }
 
         let formData = null;
@@ -207,7 +234,7 @@ class Form extends Component {
 
   render() {
     let { dataTask, cateTask, project, idProject } = this.props;
-    let { selectedFrOption, dataError, files, cateTaskId, idProject: idProj } = this.state;
+    let { selectedFrOption, dataError, files, cateTaskId, idProject: idProj, selectedRelateOption } = this.state;
     
     if(!project || !cateTask) return null;
     const optionsFr = [];
@@ -217,7 +244,7 @@ class Form extends Component {
         optionsFr.push(va);
     }
 
-    const optionsProject = [{text: "-- Select Project --", value: 0}];
+    const optionsProject = !!idProject ? [] : [{text: "-- Select Project --", value: 0}];
     for(let id of project.ordered){
       if(!!idProject) {
         optionsProject.push({text: project.data[idProject].name, value: idProject})
@@ -254,6 +281,21 @@ class Form extends Component {
               onChange  = { va => this.setState({selectedFrOption: va}) }
               options   = { optionsFr }
             />
+            
+          </div>
+        </div>
+
+        <div className="form-group">
+          <div className="col-xs-12">
+            <label>Related members</label>
+            <Select
+              className = {!!dataError.selectedRelateOption ? 'bd-danger' : ''}
+              value     = { selectedRelateOption }
+              isMulti   = { true }
+              onChange  = { va => this.setState({selectedRelateOption: va}) }
+              options   = { optionsFr }
+            />
+            
           </div>
         </div>
 

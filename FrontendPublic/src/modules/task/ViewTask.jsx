@@ -3,7 +3,7 @@ import { Scrollbars } from 'react-custom-scrollbars';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import { Link } from 'react-router-dom';
-import CKEditor from "react-ckeditor-component";
+
 
 import { withNotification } from 'components';
 import img_wellcome from 'assets/Images/img-wellcome.png';
@@ -12,8 +12,10 @@ import ItemFile from './ItemFile';
 import { actions as projectActions } from 'modules/project';
 import * as taskActions from './actions';
 import { actions as cateTaskActions } from 'modules/categories/cateTask';
+import { actions as commentActions } from 'modules/categories/comment';
 
-import users        from 'assets/Images/user.jpg';
+import FormCMT from './FormCMT';
+import ListCMT from './ListCMT';
 
 class ViewTask extends Component {
   constructor(props){
@@ -25,7 +27,8 @@ class ViewTask extends Component {
 
   componentDidMount(){
 
-    let { profile, project, task, cateTask, projectActions } = this.props;
+    let { profile, project, task, cateTask, projectActions, comment, commentActions, match } = this.props;
+    let { id } = match.params;
 
     if(project.ordered.length === 0){
       projectActions.fetchAll({
@@ -38,12 +41,41 @@ class ViewTask extends Component {
       order: "id DESC"
     },0 ,15, { groupUserID: profile.info.groupUserID })
 
-    if(cateTask.ordered.length === 0) cateTaskActions.fetchAll({},0 , 15, { groupUserID: profile.info.groupUserID })
+    if(cateTask.ordered.length === 0) cateTaskActions.fetchAll({},0 , 15, { groupUserID: profile.info.groupUserID });
+
+    if(!comment.data[id]){
+      commentActions.fetchAll({
+        order: "id DESC"
+      }, 0, 15, {
+        taskId    : id,
+        parentId  : "null"
+      })
+    }
     
   }
 
+  commentSubmit = (data) => {
+    
+    let { commentActions, profile, match, notification } = this.props;
+    let { id } = match.params;
+
+    data.taskId = id;
+    data.groupUserID = profile.info.groupUserID;
+    data.userId = profile.info.id;
+
+    return commentActions.create(data)
+      .then(r => {
+        if(!!r.error) return r.error;
+        return true
+      })
+      .catch(e => {
+        notification.e("Error", e.toString());
+        return false;
+      })
+  }
+
   render() {
-    let { match, profile, task } = this.props;
+    let { match, profile, task, friends, comment } = this.props;
     let { isWoring } = this.state;
 
     let { id } = match.params;
@@ -99,6 +131,7 @@ class ViewTask extends Component {
           
           <ItemFile files = { dataTask.files } />
           <div className="clear"></div>
+
           <form className="form-horizontal m-t-15">
             <div className="form-group">
               <div className="col-sm-6">
@@ -122,74 +155,19 @@ class ViewTask extends Component {
               </div>
             </div>
           </form>
-          <form className="form-horizontal m-t-15">
-            <div className="form-group ">
-              <div className="col-xs-12" id="cmtTask">
-                <CKEditor
-                  content={this.state.description}
-                  id="a"
-                  events={{
-                    change: this.descriptionChange
-                  }} />
-              </div>
-            </div>
-            <div className="form-group">
-            <div className="col-sm-8">
-              <button type="button" className="btn btn-flat btn-outline no-bd">
-                  <i className="fa fa-paperclip"></i>
-              </button>
-              <button type="button" className="btn btn-flat btn-outline no-bd">
-                  <i className="fa fa-user-plus"></i>
-              </button>
-              
-            </div>
-            <div className="col-sm-4">
-              <Link className="pull-right btn btn-flat cbtn btn-outline btn-1e btn-success m-r-5" to="/">Send</Link>
-            </div>
-          </div>
-          </form>
+
+          <FormCMT
+            profile       = { profile }
+            friends       = { friends }
+            commentSubmit = { this.commentSubmit }
+            dataTask      = { dataTask }/>
+
           <hr />
-          <div style={{paddingBottom: "200px"}}>
-            <div className="media">
-              <div className="media-left">
-                <Link to="#"> <img alt="64x64" className="media-object" src={users} data-holder-rendered="true" style={{width: 64, height: 64}} /> </Link>
-              </div>
-              <div className="media-body">
-                <h4 className="media-heading">Media heading</h4> Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin commodo. Cras purus odio, vestibulum in vulputate at, tempus viverra turpis. Fusce condimentum nunc ac nisi vulputate fringilla. Donec lacinia congue felis in faucibus. </div>
-            </div>
-            <div className="media">
-              <div className="media-left">
-                <Link to="#"> <img alt="64x64" className="media-object" src={users} data-holder-rendered="true" style={{width: 64, height: 64}} /> </Link>
-              </div>
-              <div className="media-body">
-                <h4 className="media-heading">Media heading</h4> Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin commodo. Cras purus odio, vestibulum in vulputate at, tempus viverra turpis. Fusce condimentum nunc ac nisi vulputate fringilla. Donec lacinia congue felis in faucibus.
-                <div className="media">
-                  <div className="media-left">
-                    <Link to="#"> <img alt="64x64" className="media-object" src={users} data-holder-rendered="true" style={{width: 64, height: 64}} /> </Link>
-                  </div>
-                  <div className="media-body">
-                    <h4 className="media-heading">Nested media heading</h4> Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin commodo. Cras purus odio, vestibulum in vulputate at, tempus viverra turpis. Fusce condimentum nunc ac nisi vulputate fringilla. Donec lacinia congue felis in faucibus. </div>
-                </div>
-              </div>
-            </div>
-            <div className="media">
-              <div className="media-body">
-                <h4 className="media-heading">Media heading</h4> Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin commodo. Cras purus odio, vestibulum in vulputate at, tempus viverra turpis. </div>
-              <div className="media-right">
-                <Link to="#"> <img alt="64x64" className="media-object" src={users} data-holder-rendered="true" style={{width: 64, height: 64}} /> </Link>
-              </div>
-            </div>
-            <div className="media">
-              <div className="media-left">
-                <Link to="#"> <img alt="64x64" className="media-object" src={users} data-holder-rendered="true" style={{width: 64, height: 64}} /> </Link>
-              </div>
-              <div className="media-body">
-                <h4 className="media-heading">Media heading</h4> Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin commodo. Cras purus odio, vestibulum in vulputate at, tempus viverra turpis. </div>
-              <div className="media-right">
-                <Link to="#"> <img alt="64x64" className="media-object" src={users} data-holder-rendered="true" style={{width: 64, height: 64}} /> </Link>
-              </div>
-            </div>
-          </div>
+
+          <ListCMT
+            profile       = { profile }
+            friends       = { friends }
+            comment       = { comment } />
         </Scrollbars>
       </div>
     );
@@ -198,8 +176,8 @@ class ViewTask extends Component {
 
 let mapStateToProps = (state) => {
   let { profile, project, task } = state;
-  let { friends, cateTask }           = state.categories
-  return { profile, project, friends, cateTask, task };
+  let { friends, cateTask, comment }           = state.categories
+  return { profile, project, friends, cateTask, task, comment };
 };
 
 let mapDispatchToProps = (dispatch) => {
@@ -207,6 +185,7 @@ let mapDispatchToProps = (dispatch) => {
     projectActions       : bindActionCreators(projectActions, dispatch),
     taskActions          : bindActionCreators(taskActions, dispatch),
     cateTaskActions      : bindActionCreators(cateTaskActions, dispatch),
+    commentActions       : bindActionCreators(commentActions, dispatch),
   };
 };
 

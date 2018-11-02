@@ -10,6 +10,7 @@ import * as project from './api/project';
 import * as messages from './api/messages';
 import * as task from './api/task';
 import * as cateTask from './api/cateTask';
+import * as comment from './api/comment';
 
 export const api = {
   user,
@@ -20,7 +21,8 @@ export const api = {
   project,
   messages,
   task,
-  cateTask
+  cateTask,
+  comment
 }
 
 export { localStorage, sessionStorage };
