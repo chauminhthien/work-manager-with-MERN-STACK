@@ -13,6 +13,7 @@ import { actions as projectActions } from 'modules/project';
 import * as taskActions from './actions';
 import { actions as cateTaskActions } from 'modules/categories/cateTask';
 import { actions as commentActions } from 'modules/categories/comment';
+import * as fileConfig from 'config/fileConfig';
 
 import FormCMT from './FormCMT';
 import ListCMT from './ListCMT';
@@ -54,6 +55,22 @@ class ViewTask extends Component {
     
   }
 
+  onScrollFrame = (e) => {
+    
+    if( e.top === 1){
+      let { comment, commentActions, match } = this.props;
+      let { id } = match.params;
+      let litmit = comment.ordered.length;
+
+      commentActions.fetchMore({
+        order: "id DESC"
+      }, litmit, 15, {
+        taskId    : id,
+        parentId  : "null"
+      })
+    }
+  }
+
   commentSubmit = (data) => {
     
     let { commentActions, profile, match, notification } = this.props;
@@ -72,6 +89,18 @@ class ViewTask extends Component {
         notification.e("Error", e.toString());
         return false;
       })
+  }
+
+  uploadFile = (file) => {
+    let { notification, commentActions, match } = this.props;
+    let { id } = match.params;
+
+    if(fileConfig.acceptTypeFileProject.indexOf(file.type) !== -1 && fileConfig.maxFilesize >= file.size){
+      let formData = new FormData();
+      formData.append('file', file);
+
+      commentActions.uploadFile(formData, id)
+    }else notification.e("Error", 'File invalid')
   }
 
   render() {
@@ -103,7 +132,7 @@ class ViewTask extends Component {
     return (
       <div className="white-box">
        
-        <Scrollbars className={`hiddenOverX ${!!isWoring ? 'loading' : ''}`} style={{height: '85vh'}}>
+        <Scrollbars  onScrollFrame ={ this.onScrollFrame } className={`hiddenOverX ${!!isWoring ? 'loading' : ''}`} style={{height: '85vh'}}>
           <div className="col-xs-3">
             <img alt="img" src={img_wellcome} />
           </div>
@@ -160,13 +189,17 @@ class ViewTask extends Component {
             profile       = { profile }
             friends       = { friends }
             commentSubmit = { this.commentSubmit }
-            dataTask      = { dataTask }/>
+            uploadFile    = { this.uploadFile }
+            dataTask      = { dataTask } />
 
           <hr />
 
           <ListCMT
             profile       = { profile }
             friends       = { friends }
+            dataTask      = { dataTask }
+            commentActions = { this.props.commentActions}
+            match         = { this.props.match }
             comment       = { comment } />
         </Scrollbars>
       </div>

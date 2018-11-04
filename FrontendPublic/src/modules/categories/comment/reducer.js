@@ -32,7 +32,28 @@ let reducer = (state: DistrictState = initialState, action: Action): DistrictSta
         if(!!state.data[item.id]) {
           state.data[item.id] = item;
           newData = {...state.data}
-        }else newData = {[item.id]: item, ...newData, ...state.data};
+        }else {
+          if(item.parentId === "null")
+            newData = {[item.id]: item, ...newData, ...state.data};
+          else{
+            let tam = state.data[item.parentId];
+        
+            tam.children = !!tam && !!tam.children ? tam.children : [];
+            
+            let fl = true;
+            for(let v of tam.children){
+              if(v.id.toString() === item.id.toString()) {
+                fl = false;
+                break;
+              }
+            }
+
+            if(!!fl) tam.children.push(item)
+
+            state.data[tam.id] = tam;
+            newData = {...state.data}
+          }
+        }
       });
       let newOrdered = [ ...Object.keys(newData) ];
 

@@ -37,9 +37,9 @@ class FormCMT extends Component {
     }
   }
 
-  uploadFileComment = () => { console.log(this._attFile.files[0])
-    if(!!this._attFile && !!this._attFile.files[0]) console.log(this._attFile.files[0])
-    // this.props.uploadFile(this._inputAvata.files[0]);
+  uploadFileComment = () => {
+    if(!!this._attFile && !!this._attFile.files[0])
+      this.props.uploadFile(this._attFile.files[0]);
   }
 
   render() {
@@ -52,7 +52,7 @@ class FormCMT extends Component {
 
     if(!!dataTask && !!dataTask.relateMember && 'push' in dataTask.relateMember){
       for(let val of dataTask.relateMember) {
-        if(val.value === memberId) f = true;
+        if(!!memberId && val.value === memberId) f = true;
         optionsMember.push(val);
       }
     }

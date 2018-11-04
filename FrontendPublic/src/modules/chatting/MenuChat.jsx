@@ -5,7 +5,9 @@ import { bindActionCreators } from 'redux';
 import { RightSidebar, Loading } from 'components';
 import ListMember from './ListMember';
 import ListScreenChat from './ListScreenChat';
+import { withNotification } from 'components';
 
+import { actions as commentActions } from 'modules/categories/comment';
 import { actions as friendActions } from 'modules/categories/friends';
 import * as chattingActions from './actions';
 import { actions as projectActions } from 'modules/project';
@@ -85,7 +87,8 @@ class MenuChat extends Component {
   //=========================================================
   componentDidMount(){
     let { profile, friends, friendActions,
-      chattingActions, projectActions, messageActions, logActions
+      chattingActions, projectActions, messageActions, logActions,
+      commentActions, notification
     } = this.props;
     let { groupUserID, id } = profile.info;
 
@@ -125,6 +128,7 @@ class MenuChat extends Component {
       });
 
       this.socket.on('SERVER_SEND_PROJECT_NEW', (data) => {
+        notification.s("Message", "You have new message");
         !!data && projectActions.fetchFinished([data])
       });
 
@@ -134,6 +138,11 @@ class MenuChat extends Component {
 
       this.socket.on('SERVER_SEND_LOG', (data) => {
         !!data && logActions.fetchFinished([data])
+      });
+
+      this.socket.on('SERVER_SEND_COMMENT', (data) => {
+        notification.s("Message", "You have new message");
+        !!data && commentActions.fetchFinished([data])
       });
 
     });
@@ -202,7 +211,8 @@ let mapDispatchToProps = (dispatch) => {
     projectActions      : bindActionCreators(projectActions, dispatch),
     messageActions      : bindActionCreators(messageActions, dispatch),
     logActions          : bindActionCreators(logActions, dispatch),
+    commentActions       : bindActionCreators(commentActions, dispatch),
   };
 };
 
-export default connect(mapStateToProps, mapDispatchToProps)(MenuChat);
+export default withNotification(connect(mapStateToProps, mapDispatchToProps)(MenuChat));

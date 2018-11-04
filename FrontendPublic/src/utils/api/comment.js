@@ -35,7 +35,7 @@ export const uploadFile = (file, id) => {
   let url = `${ COMMENT_BASE }/upload/${id}`;
   return base.upload(url, file, 200)
     .then(obj => {
-      return obj;
+      return {data: obj.data.status, error: obj.error};
     });
 }
 

@@ -37,7 +37,8 @@ class TaskInfoRight extends Component {
     let dataTask = task.data[id];
     if(!dataTask || (profile.info.id !== dataTask.createAt && profile.info.id !== dataTask.memberId)) return null;
 
-    let memberJob = !!friends.data[dataTask.memberId] ? friends.data[dataTask.memberId] : null;
+    let memberJob = dataTask.memberId === profile.info.id
+      ? profile.info : (!!friends.data[dataTask.memberId] ? friends.data[dataTask.memberId] : null );
     if(!!memberJob && !memberJob.avatar) memberJob.avatar = users;
 
     let memberAss = dataTask.createAt === profile.info.id

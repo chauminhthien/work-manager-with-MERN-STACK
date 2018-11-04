@@ -24,6 +24,12 @@
       ],
       "default": "[]"
     },
+    "memberCmt": {
+      "type": [
+        "any"
+      ],
+      "default": "[]"
+    },
     "memberId": {
       "type": "string"
     },
