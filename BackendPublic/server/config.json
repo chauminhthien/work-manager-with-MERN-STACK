@@ -20,7 +20,6 @@
     "cors": false
   },
   "serectkey": "FgQUvwaKRiXATWCFmhzHTA5iVCyvDRr6T0ntjBdhjOtA112",
-  // "baseUrl": "http://localhost:9100",
   "baseUrl": "https://work-s2.itfsoft.com",
   "dirUpload": "client/uploads"
 }
