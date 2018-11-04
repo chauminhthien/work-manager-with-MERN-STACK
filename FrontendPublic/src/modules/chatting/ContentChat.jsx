@@ -38,7 +38,7 @@ class ContentChat extends Component {
     !!this._inputChat && this._inputChat.focus();
   }
 
-  scrollTop = () => {
+  scrollTop = (he) => {
     let { chatting, friendActive } = this.props;
     let dataMess = !!friendActive && !!chatting ? chatting.data[friendActive.id]: [];
 
@@ -46,12 +46,17 @@ class ContentChat extends Component {
       let divContent = this._element.getElementsByTagName('div')[0];
       if(!!divContent){
         let list = divContent.getElementsByTagName('li')[0];
-        let he = !!list ? list.offsetHeight : 0;
-
+        he = undefined !== he ? he : (!!list ? list.offsetHeight : 0);
         he = he*(dataMess.length);
         if(he > 415)
           divContent.getElementsByTagName('div')[0].scrollTo(0, he);
       }
+    }
+  }
+
+  onScrollFrame = (id) => (e) => {
+    if( e.top === 0){
+      !!this.props.messFetchMore && this.props.messFetchMore(id) && this.scrollTop(0);;
     }
   }
   
@@ -76,7 +81,7 @@ class ContentChat extends Component {
           </div>
         </div>
         <div ref={e => this._element = e} className="messages">
-          <Scrollbars style={{height: '75vh'}}>
+          <Scrollbars  onScrollFrame ={ this.onScrollFrame(friendActive.id) } style={{height: '75vh'}}>
             <ul>
               {
                 !!dataMess && 'push' in dataMess && dataMess.map((e, i) => {

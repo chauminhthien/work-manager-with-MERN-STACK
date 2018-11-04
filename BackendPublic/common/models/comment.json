@@ -15,6 +15,12 @@
         "any"
       ]
     },
+    "files": {
+      "type": [
+        "any"
+      ],
+      "default": "[]"
+    },
     "content": {
       "type": "string"
     },

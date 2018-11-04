@@ -9,3 +9,5 @@ export { default as DayPicker } from './DayPicker';
 export { default as Dropzone } from './Dropzone';
 export { default as Dropdown } from './Dropdown';
 export { default as TimePicker } from './TimePicker';
+export { default as Modal } from './Modal';
+export { default as RangeSilder } from './RangeSilder';

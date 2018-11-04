@@ -8,6 +8,7 @@ import { convertTimeMess } from 'utils/format';
 class ChatBox extends Component {
   _element    = null;
   _inputChat  =  null;
+  _panelBody  = null;
 
   constructor(props){
     super(props);
@@ -56,6 +57,7 @@ class ChatBox extends Component {
       });
 
     }
+    this.scrollTop();
     if(!!this._element) this._element.getElementsByTagName('input')[0].focus();
   }
 
@@ -75,17 +77,56 @@ class ChatBox extends Component {
   }
 
   componentDidUpdate(){
-    this.scrollTop();
+    // this.scrollTop();
   }
 
-  scrollTop = () => {
+  scrollTop = (height) => {
     let slimScrollDiv = this._element.getElementsByClassName('panel-body')[0];
     if(!!slimScrollDiv){
       let slimscroll = slimScrollDiv.getElementsByClassName('slimscroll')[0];
 
       if(!!slimscroll){ 
-        let height = slimscroll.offsetHeight;
-        height > 250 && slimScrollDiv.scrollTo(0, height + 70);
+        height = undefined !== height ? height :  slimscroll.offsetHeight;
+        slimScrollDiv.scrollTo(0, height + 70);
+      }
+    }
+  }
+
+  onScroll = (id) => () => {
+    if(!!this._panelBody && this._panelBody.scrollTop === 0){
+      let { chattingActions, chatting, profile } = this.props;
+      
+      if(!!chatting.data[id]){
+        let skip = chatting.data[id].length;
+        this.setState({fetch: true});
+        chattingActions.fetchMore({
+          include: [
+            {relation: "me", scope: { fields: { avatar: true }}},
+            {relation: "friend", scope: { fields: { avatar: true }}},
+          ],
+          order: "id DESC"
+        }, skip, 10,{
+          and: [
+            {
+              or :[
+                  { idFriend        : profile.info.id },
+                  { idFriend        : id }
+                ]
+            },
+            {
+              or :[
+                  { idMe        : profile.info.id },
+                  { idMe        : id }
+                ]
+            }
+          ]
+          
+        }, id)
+        .finally( () => {
+          this.setState({fetch: false});
+          this.scrollTop(50)
+        });
+  
       }
     }
   }
@@ -110,9 +151,9 @@ class ChatBox extends Component {
               <div className="pull-right"> <Link onClick={ this.removeFriendClick(dataFriends.id ? dataFriends.id : "") } className="vertical-middle" to="#" data-perform="panel-dismiss"><i className="ti-close" /></Link> </div>
             </div>
             <div className={`panel-wrapper collapse in ${!!fetch ? 'loading': ''}`} aria-expanded="true" role="dialog">
-              <div className="panel-body">
+              <div ref={e => this._panelBody =e } onScroll={ this.onScroll(dataFriends.id) } className="panel-body">
                 <div className="chat-box" style={{height: 510}}>
-                  <div className="slimScrollDiv" style={{position: 'relative', overflow: 'hidden', width: 'auto'}}><ul className="chat-list slimscroll" style={{overflow: 'hidden', width: 'auto', height: '100%'}} tabIndex={5005}>
+                  <div  className="slimScrollDiv" style={{position: 'relative', overflow: 'hidden', width: 'auto'}}><ul className="chat-list slimscroll" style={{overflow: 'hidden', width: 'auto', height: '100%'}} tabIndex={5005}>
                       {
                         !!chatting[idFriend] && !isEmpty(chatting[idFriend])
                         ? (

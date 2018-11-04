@@ -11,6 +11,7 @@ import { actions as commentActions } from 'modules/categories/comment';
 import { actions as friendActions } from 'modules/categories/friends';
 import * as chattingActions from './actions';
 import { actions as projectActions } from 'modules/project';
+import { actions as taskActions } from 'modules/task';
 import { actions as messageActions } from 'modules/categories/messages';
 import { actions as logActions } from 'modules/categories/logs';
 import { URL_BASE } from 'config/constants';
@@ -88,7 +89,7 @@ class MenuChat extends Component {
   componentDidMount(){
     let { profile, friends, friendActions,
       chattingActions, projectActions, messageActions, logActions,
-      commentActions, notification
+      commentActions, notification, taskActions
     } = this.props;
     let { groupUserID, id } = profile.info;
 
@@ -143,6 +144,11 @@ class MenuChat extends Component {
       this.socket.on('SERVER_SEND_COMMENT', (data) => {
         notification.s("Message", "You have new message");
         !!data && commentActions.fetchFinished([data])
+      });
+
+      this.socket.on('SERVER_SEND_TASK', (data) => {
+        notification.s("Message", "You have new message");
+        !!data && taskActions.fetchFinished([data])
       });
 
     });
@@ -211,7 +217,8 @@ let mapDispatchToProps = (dispatch) => {
     projectActions      : bindActionCreators(projectActions, dispatch),
     messageActions      : bindActionCreators(messageActions, dispatch),
     logActions          : bindActionCreators(logActions, dispatch),
-    commentActions       : bindActionCreators(commentActions, dispatch),
+    commentActions      : bindActionCreators(commentActions, dispatch),
+    taskActions         : bindActionCreators(taskActions, dispatch),
   };
 };
 

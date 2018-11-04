@@ -9,6 +9,7 @@ import configureStore             from './store';
 import { KEY_SESSION } from 'config/constants';
 
 let initialState = localStorage.loadState(KEY_SESSION);
+console.log(initialState, '=================================')
 if(undefined === initialState.session) initialState = sessionStorage.loadState(KEY_SESSION);
 
 let store = configureStore(initialState);

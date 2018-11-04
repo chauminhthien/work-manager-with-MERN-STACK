@@ -50,6 +50,22 @@ let reducer = (state = initialState, action) => {
         error: null
       };
     }
+    case constant.FETCH_MORE_FINISHED:{
+      let data = {...state.data };
+
+      let list = action.payload;
+      let { data: dataM, id } = list;
+
+      if(!!data[id]) data[id] = [...dataM, ...data[id]]
+      else data[id] = [...dataM];
+      
+      return {
+        ...state,
+        data,
+        isWorking: false,
+        error: null
+      };
+    }
     default:
       break;
   };

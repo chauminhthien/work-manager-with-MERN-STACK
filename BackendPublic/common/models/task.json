@@ -39,6 +39,9 @@
     "begin": {
       "type": "number"
     },
+    "timeFisnish": {
+      "type": "number"
+    },
     "end": {
       "type": "number"
     },

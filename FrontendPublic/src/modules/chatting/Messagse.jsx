@@ -58,6 +58,42 @@ class Messagse extends Component {
     .then((res) => !!res.data);
   }
 
+  messFetchMore = (id) => {
+    let { chattingActions, profile, chatting } = this.props;
+
+    if(!!chatting.data[id]){
+      let skip = chatting.data[id].length;
+      this.setState({fetch: true});
+      return chattingActions.fetchMore({
+        include: [
+          {relation: "me", scope: { fields: { avatar: true }}},
+          {relation: "friend", scope: { fields: { avatar: true }}},
+        ],
+        order: "id DESC"
+      }, skip, 10,{
+        and: [
+          {
+            or :[
+                { idFriend        : profile.info.id },
+                { idFriend        : id }
+              ]
+          },
+          {
+            or :[
+                { idMe        : profile.info.id },
+                { idMe        : id }
+              ]
+          }
+        ]
+        
+      }, id)
+      .finally( () => {
+        this.setState({fetch: false});
+        return true;
+      });
+    }
+  }
+
   onChangeKeyword = () => {
     let keySearch = (!!this._keywordInput) ? this._keywordInput.value : "";
   
@@ -131,6 +167,7 @@ class Messagse extends Component {
             onChatting        = { this.onChatting }
             chatting          = { chatting }
             fecth             = { fecth }
+            messFetchMore     = { this.messFetchMore }
             friendActive      = { friendActive } />
         </div>
       </div>

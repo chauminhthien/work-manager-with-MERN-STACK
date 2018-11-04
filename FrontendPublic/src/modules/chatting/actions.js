@@ -15,6 +15,13 @@ export const fetchFinished = (data) => {
   };
 };
 
+const fetchMoreFinished = (data) => {
+  return {
+    type: constant.FETCH_MORE_FINISHED,
+    payload: data
+  };
+}
+
 const fetchFailed = (error) => {
   return {
     type: constant.FETCH_FAILED,
@@ -36,6 +43,22 @@ export const fetchMess = (filter?, skip?, limit?, where?, id) => {
       .then(res => {
         if(res.error) return Promise.reject(res.error);
         dispatch(fetchFinished({data: res.data.reverse(), id}));
+        return res.data;
+      })
+      .catch(err => {
+        dispatch(fetchFailed(err));
+      });
+  };
+};
+
+export const fetchMore = (filter?, skip?, limit?, where?, id) => {  
+  return (dispatch: (action) => void) => {
+    dispatch(fetchStarted());
+    return api.chatting.fetchMess(filter, skip, limit, where)
+      .then(res => {
+        if(res.error) return Promise.reject(res.error);
+        if(!!res.data && res.data.length > 0)
+        dispatch(fetchMoreFinished({data: res.data.reverse(), id}));
         return res.data;
       })
       .catch(err => {
