@@ -30,7 +30,7 @@ class MenuChat extends Component {
       siteMess        : false
     }
 
-    this.socket = io(URL_BASE);
+    this.socket = io(URL_BASE, {transports: ['polling']});
   }
 
   //========================================================

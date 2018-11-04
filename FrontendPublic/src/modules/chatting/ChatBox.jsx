@@ -77,7 +77,7 @@ class ChatBox extends Component {
   }
 
   componentDidUpdate(){
-    // this.scrollTop();
+    this.scrollTop();
   }
 
   scrollTop = (height) => {
