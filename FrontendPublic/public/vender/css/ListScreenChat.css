@@ -854,14 +854,16 @@ ul.windowsChat li .conversation .message.me .avatar{
 }
 
 #windowsChat .panel .panel-heading{
+	/* background: red; */
 	padding: 5px 15px;
-  font-size: 13px;
-  cursor: pointer;
-  width: 100%;
-  word-wrap: normal;
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
+	font-size: 13px;
+	cursor: pointer;
+	width: 100%;
+	word-wrap: normal;
+	white-space: nowrap;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	background-color: #ff7676 !important;
 }
 
 #windowsChat .chat-list .chat-image{
