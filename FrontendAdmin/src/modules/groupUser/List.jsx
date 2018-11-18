@@ -6,6 +6,8 @@ import { withNotification, Loading, RightSidebar } from 'components';
 import { actions as breadcrumbActions } from 'screens/modules/breadcrumb';
 import * as groupUserActions from './actions';
 
+import { Error404 } from 'modules';
+
 import Form from './Form';
 import Item from './Item';
 
@@ -52,7 +54,8 @@ class ListUser extends Component {
 
   render() {
     let { open, idGr } = this.state;
-    let { groupUser } = this.props;
+    let { groupUser, profile } = this.props;
+    if(!profile || !profile.info || profile.info.account_type !== 0) return <Error404 />
     let { ordered, data } = groupUser;
     let dataGroup = data[idGr];
     if(groupUser.isWorking) return <Loading />;
@@ -103,9 +106,8 @@ class ListUser extends Component {
 }
 
 let mapStateToProps = (state) => {
-  let { groupUser } = state;
-
-  return { groupUser };
+  let { groupUser, profile } = state;
+  return { groupUser, profile };
 };
 
 let mapDispatchToProps = (dispatch) => {

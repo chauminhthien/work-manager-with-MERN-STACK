@@ -16,7 +16,6 @@ class Files extends Component {
   render() {
 
     let { file } = this.props;
-    
     return (
       <div >
           <a href={file.url} target="_blank" style={{cursor: "pointer"}}>

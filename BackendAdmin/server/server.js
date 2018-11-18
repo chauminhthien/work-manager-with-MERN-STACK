@@ -28,6 +28,9 @@ boot(app, __dirname, function(err) {
     app.start();
 });
 
+// app.options("*", cors());
+// app.use(cors());
+
 app.use(function(req, res, next) {
 
   let restApiRoot        = app.get('restApiRoot');
@@ -69,10 +72,12 @@ app.use(function(req, res, next) {
             if(!!account_type){
               app.models.groupUser.findById(groupUserID)
                 .then(userGr => {
-                  if(!userGr) return Promise.reject({...mess.YOU_NOT_PERMISSION})
+                  if(!userGr) return res.json({error: mess.YOU_NOT_PERMISSION, data: null});
+                  if(!userGr.status) return res.json({error: mess.USER_DISABLED, data: null}); 
+
                   let { begin, end } = userGr;
                   let now = Date.now();
-                  if(begin > now || now < end) return Promise.reject({...mess.YOU_NOT_PERMISSION})
+                  if(begin > now || now > end) return res.json({error: mess.YOU_NOT_PERMISSION, data: null});
                   next();
                 })
             } else next();

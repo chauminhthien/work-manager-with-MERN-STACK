@@ -396,13 +396,16 @@ module.exports = function(Task) {
 	  		
 			}
 		}else{
-			let { id } = instance;
+			let { id, finish } = instance;
+			let content = "Cập nhật tiến độ công việc";
+
+			if(!!finish) content = "Đã đống công việc";
 
 			let cmt = {
 	     	taskId: id,
 	     	groupUserID: userCurrent.groupUserID,
 	     	userId: userCurrent.id,
-	     	content: "Cập nhật tiến độ công việc",
+	     	content,
 	     	files: [],
 	     	time: Date.now()
 	    }
@@ -436,7 +439,7 @@ module.exports = function(Task) {
 											time: Date.now()
 										}
 
-										console.log(key !== userCurrent.id.toString());
+
 										if(key !== userCurrent.id.toString()) {
 											Task.app.models.messages.create(dataMess)
 								  			.then(ress => {
@@ -466,5 +469,27 @@ module.exports = function(Task) {
 		}
 
 		next();
-  })
+  });
+
+	Task.afterRemote('prototype.patchAttributes', function (ctx, res, next) {
+
+		let { socketID } 	= Task.app;
+		let { relateMember, groupUserID, memberId } = res;
+
+		if(!!relateMember){
+      for(let m of relateMember){
+        if(!!m && !!socketID[groupUserID][m.value]){
+          socketID[groupUserID][m.value].emit('SERVER_SEND_TASK_NOT_NOTY', {data: res});
+        } 
+      }
+    }
+
+    if(!!socketID && socketID[groupUserID]){
+    	if(!!socketID[groupUserID][memberId]){
+        socketID[groupUserID][memberId].emit('SERVER_SEND_TASK_NOT_NOTY', {data: res});
+      } 
+    }
+
+		next();
+	})
 };

@@ -305,95 +305,166 @@ module.exports = function(Project) {
   	let { instance, args } = ctx;
   	let { data } =  args;
 
-  	let { memberJoins, groupUserID } = data;
-  	let { socketID, userCurrent } = Project.app;
+  	if(!data.finish){
+  		let { memberJoins, groupUserID } = data;
+	  	let { socketID, userCurrent } = Project.app;
 
-  	let memberKill = [];
-  	for(let val1 of instance.memberJoins){
-		for(let val2 of memberJoins){ 
-			if(val1.value === val2.value)  memberKill.push(val1.value);
-  		}
-	}
-
-	// console.log(memberKill);
-
-	let dataLog = {
-		userID 			: userCurrent.id,
-		nameAction		: (instance.name === data.name) ? "cập nhật dự án " : "đổi tên thành",
-		nameWork		: instance.name,
-		nameTask		: instance.name === data.name ? "" : `thành ${data.name}`,
-		groupUserID,
-		time			: Date.now()
-	}
-	Project.app.models.logs.create(dataLog)
-		.then(log => {
-			if(!!log){
-				Project.app.models.logs.findById(log.id, {
-					include : [
-	          {relation: "users", scope: { fields: { fullname: true, avatar: true }}},
-	        ]
-				})
-					.then(log => { 
-						!!log && !!socketID[groupUserID][userCurrent.id] && socketID[groupUserID][userCurrent.id].emit('SERVER_SEND_LOG', log);
-						if(!!log && userCurrent.account_type === 2){
-							Project.app.models.users.findOne({fields: ['id'], where: {groupUserID, account_type: 1}})
-								.then(use => { console.log(use.id)
-									!!use && !!use.id && socketID[groupUserID][use.id].emit('SERVER_SEND_LOG', log);
-								})
-						}
-					})
-				
+	  	let memberKill = [];
+	  	for(let val1 of instance.memberJoins){
+			for(let val2 of memberJoins){ 
+				if(val1.value === val2.value)  memberKill.push(val1.value);
+	  		}
 			}
-		})
 
-  		memberJoins.forEach(e => {
-  			let dataMess = {
-				userID: userCurrent.id,
-				userIdTo: e.value,
-				nameAction: "Cập nhật dự án",
-				nameWork: data.name,
-				idWork: instance.id,
+		// console.log(memberKill);
+
+			let dataLog = {
+				userID 			: userCurrent.id,
+				nameAction		: (instance.name === data.name) ? "cập nhật dự án " : "đổi tên thành",
+				nameWork		: instance.name,
+				nameTask		: instance.name === data.name ? "" : `thành ${data.name}`,
 				groupUserID,
-				link: `/project/view/${instance.id}`,
-				time: Date.now()
+				time			: Date.now()
 			}
 
-  			if(memberKill.indexOf(e.value) === -1) {
-  				let kill = true;
-  				for(let val1 of instance.memberJoins){
-  					if(val1.value === e.value) {
-  						kill = false;
-  						break;
-  					}
-  				}
+			Project.app.models.logs.create(dataLog)
+			.then(log => {
+				if(!!log){
+					Project.app.models.logs.findById(log.id, {
+						include : [
+		          {relation: "users", scope: { fields: { fullname: true, avatar: true }}},
+		        ]
+					})
+						.then(log => { 
+							!!log && !!socketID[groupUserID][userCurrent.id] && socketID[groupUserID][userCurrent.id].emit('SERVER_SEND_LOG', log);
+							if(!!log && userCurrent.account_type === 2){
+								Project.app.models.users.findOne({fields: ['id'], where: {groupUserID, account_type: 1}})
+									.then(use => { console.log(use.id)
+										!!use && !!use.id && socketID[groupUserID][use.id].emit('SERVER_SEND_LOG', log);
+									})
+							}
+						})
+					
+				}
+			})
 
-  				if(!kill){
-  					dataMess.nameAction = "Xoá bạn khỏi dự án";
-  					dataMess.link 		= "#";
-  					dataMess.status 	= 1;
-  				}else{
-  					dataMess.nameAction = "thêm bạn vào dự án";
-  				}
-  			}
-	  		
-			Project.app.models.messages.create(dataMess)
-	  			.then(res => {
-	  				if(!!res){
-	  					Project.app.models.messages.findById(res.id, {
-	  						include: [
-				                {relation: "usersFrom", scope: { fields: { fullname: true, avatar: true }}},
-				                {relation: "userTo", scope: { fields: { fullname: true, avatar: true }}},
-				              ]
-	  					})
-  						.then(mess => {
-  							!!socketID[groupUserID][e.value] && !!mess && socketID[groupUserID][e.value].emit('SERVER_SEND_MESS', mess)
-  						})
+	  		memberJoins.forEach(e => {
+	  			let dataMess = {
+					userID: userCurrent.id,
+					userIdTo: e.value,
+					nameAction: "Cập nhật dự án",
+					nameWork: data.name,
+					idWork: instance.id,
+					groupUserID,
+					link: `/project/view/${instance.id}`,
+					time: Date.now()
+				}
+
+	  			if(memberKill.indexOf(e.value) === -1) {
+	  				let kill = true;
+	  				for(let val1 of instance.memberJoins){
+	  					if(val1.value === e.value) {
+	  						kill = false;
+	  						break;
+	  					}
 	  				}
-	  			})
-		})
 
+	  				if(!kill){
+	  					dataMess.nameAction = "Xoá bạn khỏi dự án";
+	  					dataMess.link 		= "#";
+	  					dataMess.status 	= 1;
+	  				}else{
+	  					dataMess.nameAction = "thêm bạn vào dự án";
+	  				}
+	  			}
+		  		
+				Project.app.models.messages.create(dataMess)
+		  			.then(res => {
+		  				if(!!res){
+		  					Project.app.models.messages.findById(res.id, {
+		  						include: [
+					                {relation: "usersFrom", scope: { fields: { fullname: true, avatar: true }}},
+					                {relation: "userTo", scope: { fields: { fullname: true, avatar: true }}},
+					              ]
+		  					})
+	  						.then(mess => {
+	  							!!socketID[groupUserID][e.value] && !!mess && socketID[groupUserID][e.value].emit('SERVER_SEND_MESS', mess)
+	  						})
+		  				}
+		  			})
+			})
+  	}
+  	
 		next();
+  })
 
-  	})
+  Project.afterRemote('prototype.patchAttributes', function (ctx, res, next) {
+  	let { name, memberJoins, createAt, groupUserID, finish } = res.__data;
+  	
+  	if(!!finish){
+  		let { socketID, userCurrent } = Project.app;
+  		let memberId = {[createAt]: createAt.toString()};
+
+  		for(let v of memberJoins) memberId[v.value] = v.value;
+
+  			for(let id in memberId){
+		  		if(id != userCurrent.id){
+		  			let dataMess = {
+							userID: userCurrent.id,
+							userIdTo: id,
+							nameAction: "Đã đống dự án",
+							nameWork: name,
+							idWork: res.id,
+							groupUserID,
+							link: `/project/view/${res.id}`,
+							time: Date.now()
+						}
+
+						Project.app.models.messages.create(dataMess)
+			  			.then(res => {
+			  				if(!!res){
+			  					Project.app.models.messages.findById(res.id, {
+			  						include: [
+			                {relation: "usersFrom", scope: { fields: { fullname: true, avatar: true }}},
+			                {relation: "userTo", scope: { fields: { fullname: true, avatar: true }}},
+			              ]
+			  					})
+			  						.then(mess => {
+			  							!!socketID && !!socketID[groupUserID] && !!socketID[groupUserID][id] && !!mess && socketID[groupUserID][id].emit('SERVER_SEND_MESS', mess)
+			  						})
+			  				}
+			  			})
+		  		}
+		  	
+		  	}
+
+		  let dataLog = {
+				userID 			: createAt,
+				nameAction	: "đã đống dự án",
+				nameWork		: name,
+				nameTask		: "",
+				groupUserID,
+				time				: Date.now()
+			}
+
+			Project.app.models.logs.create(dataLog)
+				.then(log => {
+					if(!!log){
+						Project.app.models.logs.findById(log.id, {
+							include : [
+			          {relation: "users", scope: { fields: { fullname: true, avatar: true }}},
+			        ]
+						})
+							.then(log => {
+								!!log && !!socketID[groupUserID] && !!socketID[groupUserID][createAt] && socketID[groupUserID][createAt].emit('SERVER_SEND_LOG', log);
+							})
+						
+					}
+				})
+  	}
+  	
+  	next();
+  	
+  })
 
 };

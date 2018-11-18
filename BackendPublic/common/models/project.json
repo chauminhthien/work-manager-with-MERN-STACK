@@ -38,6 +38,13 @@
     },
     "createAt": {
       "type": "string"
+    },
+    "timeFisnish": {
+      "type": "number"
+    },
+    "finish": {
+      "type": "number",
+      "default": 0
     }
   },
   "validations": [],

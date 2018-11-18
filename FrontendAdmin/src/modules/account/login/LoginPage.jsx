@@ -105,7 +105,7 @@ class LoginPage extends Component {
               <div className="form-group">
                 <div className="col-xs-12">
                   <label>Password</label>
-                  <input ref={e => this._passwordInput = e} className="form-control" id="password" name="password" form-valid="str:6:32" type="password" placeholder="Password" />
+                  <input autoComplete="password" ref={e => this._passwordInput = e} className="form-control" id="password" name="password" form-valid="str:6:32" type="password" placeholder="Password" />
                   <span className="help-block">Password 6 - 32 characters</span>
                 </div>
               </div>

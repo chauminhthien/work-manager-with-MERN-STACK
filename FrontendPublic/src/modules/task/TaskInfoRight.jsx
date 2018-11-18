@@ -13,7 +13,7 @@ class TaskInfoRight extends Component {
 
   componentDidMount(){
 
-    let { profile, project, task, cateTask, projectActions, taskActions } = this.props;
+    let { profile, project, cateTask, projectActions, taskActions } = this.props;
 
     if(project.ordered.length === 0){
       projectActions.fetchAll({
@@ -22,7 +22,7 @@ class TaskInfoRight extends Component {
       })
     }
     
-    if(task.ordered.length === 0) taskActions.fetchAll({
+    taskActions.fetchAll({
       order: "id DESC"
     },0 ,15, { groupUserID: profile.info.groupUserID });
 

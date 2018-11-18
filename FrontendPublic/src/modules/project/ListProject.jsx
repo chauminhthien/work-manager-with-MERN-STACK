@@ -31,8 +31,14 @@ class ListProject extends Component {
           <span className="clearfix"></span>
         </h3>
         <Scrollbars className="hiddenOverX" style={{ height: "85vh" }}>
-          <div> 
-            <Link to="/project/add" className="btn btn-custom btn-block waves-effect waves-light">Create new</Link>
+          <div>
+            {
+              !!profile && !!profile.info.account_type && profile.info.account_type === 1 
+              ? (
+                <Link to="/project/add" className="btn btn-custom btn-block waves-effect waves-light">Create new</Link>
+              ) : null
+            }
+            
             <div className="list-group mail-list m-t-20">
               {
                 'push' in ordered && ordered.map((e, i) => {

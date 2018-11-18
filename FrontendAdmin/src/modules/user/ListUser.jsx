@@ -39,7 +39,7 @@ class ListUser extends Component {
         where = { account_type : 1 };
       else
         where = { created_at : profile.info.id };
-
+        
       userActions.fetchAll({}, 0, 0, where)
     }
     
@@ -53,11 +53,13 @@ class ListUser extends Component {
     let { profile, userActions, notification} = this.props;
     let { idUser } = this.state;
 
-    let account_type = (profile.info && profile.info.account_type === 0) ? 1 : 2;
+    let account_type  = (profile.info && profile.info.account_type === 0) ? 1 : 2;
     data.account_type = account_type;
-    data.created_at = profile.info.id;
+    data.created_at   = profile.info.id;
 
     if(!idUser) {
+      if(profile.info && profile.info.account_type === 1)  data.groupUserID = profile.info.groupUserID;
+
       userActions.create(data)
       .then(res => {
         if(res.error) return Promise.reject(res.error);
@@ -128,6 +130,7 @@ class ListUser extends Component {
                   <Item
                     ordered     = { ordered }
                     data        = { data }
+                    profile     = { profile }
                     onClickEdit = { this.onClickEditUser } />
                 </table>
               </div>

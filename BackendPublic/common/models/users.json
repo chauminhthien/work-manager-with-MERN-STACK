@@ -66,6 +66,12 @@
       "model": "groupUser",
       "foreignKey": "groupUserID",
       "primaryKey": ""
+    },
+    "createdAt": {
+      "type": "belongsTo",
+      "model": "users",
+      "foreignKey": "created_at",
+      "primaryKey": ""
     }
   },
   "acls": [],

@@ -88,7 +88,7 @@ export const updateById = (id, data) => {
   return (dispatch: (action) => void) => {
     dispatch(fetchStarted());
     return api.project.updateById(id, data)
-      .then(obj => {
+      .then(obj => { console.log(obj, '================================================')
         if(!!obj.data)
           dispatch(fetchFinished([obj.data]))
         else dispatch(fetchFailed(obj.error));

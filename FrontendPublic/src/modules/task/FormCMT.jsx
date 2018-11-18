@@ -56,8 +56,8 @@ class FormCMT extends Component {
         optionsMember.push(val);
       }
     }
-
-    if(!f) optionsMember.push({label: friends.data[memberId].fullname, email: friends.data[memberId].email, value: memberId})
+    
+    if(!f) optionsMember.push({label: !!friends.data[memberId] ? friends.data[memberId].fullname : "" , email: !!friends.data[memberId] ? friends.data[memberId].email : "", value: memberId})
 
     // optionsMember.push({label: profile.info.fullname, email: profile.info.email, value: profile.info.id})
 

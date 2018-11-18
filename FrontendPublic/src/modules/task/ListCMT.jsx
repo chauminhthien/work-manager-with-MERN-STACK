@@ -44,10 +44,10 @@ class ListCMT extends Component {
 
   render() {
 
-    let { profile, friends, comment } = this.props;
+    let { profile, friends, comment, dataTask, project } = this.props;
     let { data, ordered } = comment;
     let { repId } = this.state;
-
+    
     return (
       <div style={{paddingBottom: "200px"}}>
 
@@ -94,7 +94,12 @@ class ListCMT extends Component {
                     )
                   }
 
-                  <Link onClick={ this.repClick(e) } className="m-t-15" to="#" >Reply</Link>
+                  {
+                    dataTask.process < 100 && !dataTask.finish && !project.data[dataTask.projectId].finish && (
+                      <Link onClick={ this.repClick(e) } className="m-t-15" to="#" >Reply</Link>
+                    )
+                  }
+                  
 
                   <span className="m-l-15 label label-info label-rounded">{ !!cmt.time && convertTimeMess(cmt.time) }</span>
                   {
@@ -103,7 +108,7 @@ class ListCMT extends Component {
                         profile       = { this.props.profile }
                         dataTask      = { this.props.dataTask }
                         commentSubmit = { this.commentSubmit }
-                        friends       = { this.propsfriends } />
+                        friends       = { this.props.friends } />
                     )
                   }
                   

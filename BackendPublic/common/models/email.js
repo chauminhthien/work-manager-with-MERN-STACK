@@ -5,7 +5,7 @@ module.exports = function(Email) {
 
   Email.sendEmail = function(data, cb) {
     
-    let { to, subject, html, from = 'account@financal.vn' } = data;
+    let { to, subject, html, from = 'chauminhthien@itfsoft.com' } = data;
 
     let flag = true;
 
@@ -21,8 +21,8 @@ module.exports = function(Email) {
       let transporter = MAILER.createTransport({
         service : 'Yandex',
         auth : {
-            user : 'account@financal.vn',
-            pass : 'FintechVietnam2018'
+            user : 'chauminhthien@itfsoft.com',
+            pass : 'Chauminhthien0212'
         }
       });
 

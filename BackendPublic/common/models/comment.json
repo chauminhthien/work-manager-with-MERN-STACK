@@ -16,10 +16,7 @@
       ]
     },
     "files": {
-      "type": [
-        "any"
-      ],
-      "default": "[]"
+      "type": "any"
     },
     "content": {
       "type": "string"

@@ -2,6 +2,7 @@ import React, { Component, Fragment } from 'react';
 
 import { validateForm, validate } from 'utils/validate';
 import { DayPicker } from 'components';
+import { isEmpty } from 'utils/functions';
 
 class FormAdd extends Component {
   _emailInput       = null;
@@ -19,25 +20,29 @@ class FormAdd extends Component {
     this.state = {
       userEditID  : null,
       end         : null,
-      begin       : null
+      begin       : null,
+      dataError   : {}
     }
   }
 
 
   onSubmitData = (e) => {
     e.preventDefault();
-    let { idUser } = this.props;
+    let { idUser }    = this.props;
+    let dataError     = {};
 
-    let valid = validateForm(this._formSubmit,
-      [
-        {id: 'email', rule: 'email:7:200'},
-        {id: 'fullname', rule: 'str:3:200'},
-        {id: 'lastname', rule: 'str:3:200'},
-        {id: 'phone', rule: 'phone'},
-        {id: 'address', rule: 'str:3:200'},
-        {id: 'gender', rule: 'int:0:1'}
-      ]
-    );
+    let ru = [
+      {id: 'email', rule: 'email:7:200'},
+      {id: 'fullname', rule: 'str:3:200'},
+      {id: 'phone', rule: 'phone'},
+      {id: 'address', rule: 'str:3:200'},
+      {id: 'gender', rule: 'int:0:1'}
+    ];
+
+    if(!idUser) ru.push( {id: 'maxuser', rule: 'int:1:999'})
+    let valid = validateForm(this._formSubmit, ru);
+
+
     
     if(idUser && this._passInput != null && this._passInput.value !== "") 
       valid = validate(this._passInput, 'str:6:32');
@@ -45,7 +50,7 @@ class FormAdd extends Component {
 
     if(this._maxUserInput != null) valid = validate(this._channelSelect, 'int:1:9999');
     if(this._statusSelect != null) valid = validate(this._statusSelect, 'int:0:1');
-    
+
     if(valid){
       let email       = (this._emailInput != null) ? this._emailInput.value : null;
       let password    = (this._passInput != null) ? this._passInput.value : null;
@@ -68,21 +73,35 @@ class FormAdd extends Component {
           max_user,
           
         }
-        
-        let fl = true;
-        if(!idUser) {
-          fl = false;
+
+        // let fl = true;
+        if(!!idUser) {
+          // fl = false;
           data.password = password;
-          if(end && begin){
-            fl = true;
-            data.end   = new Date(end).getTime();
-            data.begin = new Date(begin).getTime();
-          }
         }
         else if(password) data.password = password;
         if(this._statusSelect != null) data.status = this._statusSelect.value;
-        
-        if(fl)
+
+        if(!idUser && !!end && !!begin){
+          // fl = true;
+          let now = Date.now();
+          begin = new Date(begin).getTime();
+          end   = new Date(end).getTime();
+          
+          if(now <= begin && begin <= end){
+            data.end = end;
+            data.begin = begin;
+          }else{
+            dataError.end = true;
+            dataError.begin = true;
+          }
+        }
+        if(!idUser && (!end || !begin)){
+          dataError.end = true;
+          dataError.begin = true;
+        }
+        this.setState({dataError})
+        if(isEmpty(dataError))
           if(!!this.props.formSubmitDataUser) this.props.formSubmitDataUser(data);
       }
     }
@@ -91,6 +110,7 @@ class FormAdd extends Component {
   renderFooter = () => {
     let { users, idUser, profile } = this.props;
     let user = (idUser) ? users.data[idUser] : null;
+    let { dataError } = this.state;
 
     if (!profile.info || profile.info.account_type === 1 || user) return null;
 
@@ -103,13 +123,13 @@ class FormAdd extends Component {
           </div>
         </div>
         <div className="form-group">
-          <div className="col-xs-12">
+          <div className={`col-xs-12 ${!!dataError.begin ? "has-error" : ""}`}>
             <label>Begin date</label>
             <DayPicker onDayChange={begin => this.setState({begin})}/>
           </div>
         </div>
         <div className="form-group">
-          <div className="col-xs-12">
+          <div className={`col-xs-12 ${!!dataError.end ? "has-error" : ""}`}>
             <label>End date</label>
             <DayPicker onDayChange={end => this.setState({end})} />
           </div>
@@ -123,7 +143,7 @@ class FormAdd extends Component {
     let user = (idUser) ? users.data[idUser] : null;
 
     return (
-      <form ref={e => this._formData = e} onSubmit={ this.onSubmitData } className="form-horizontal" style={{paddingBottom: '20px'}}>
+      <form ref={e => this._formData = e} onSubmit={ this.onSubmitData } className="form-horizontal" style={{paddingBottom: '250px'}}>
         <div className="form-group">
           <div className="col-xs-12">
             <label>Email address</label>
@@ -135,7 +155,7 @@ class FormAdd extends Component {
         <div className="form-group">
           <div className="col-xs-12">
             <label>Password</label>
-            <input className="form-control" name="password" id="password" type="password" ref={e => this._passInput = e} />
+            <input autoComplete="password" className="form-control" name="password" id="password" type="password" ref={e => this._passInput = e} />
             <span className="help-block">Email invalid or 7 - 100 characters</span>
           </div>
         </div>

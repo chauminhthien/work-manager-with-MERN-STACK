@@ -1,10 +1,10 @@
-import React, { Component } from 'react';
+import React, { Component, Fragment } from 'react';
 import { Scrollbars } from 'react-custom-scrollbars';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import { Link } from 'react-router-dom';
 
-import { withNotification } from 'components';
+import { withNotification, AlertConfirm } from 'components';
 import img_wellcome from 'assets/Images/img-wellcome.png';
 import ItemFile from './ItemFile';
 import * as projectActions from './actions';
@@ -21,7 +21,8 @@ class ViewProject extends Component {
     super(props);
     this.state = {
       isWoring    : false,
-      taskSearch  : null
+      taskSearch  : null,
+      idDonePro   : null
     }
   }
 
@@ -44,9 +45,25 @@ class ViewProject extends Component {
     this.setState({taskSearch});
   }
 
+  doneProject = (id) => (e) => {
+    e.preventDefault();
+    this.setState({idDonePro: id})
+  }
+
+  doneProjectSuccess = () => {
+    let { idDonePro } = this.state;
+    let { notification, projectActions} = this.props;
+
+    projectActions.updateById(idDonePro, {finish: 1, timeFisnish: Date.now()})
+      .then(r => {
+        if(!!r.data) notification.s("Message", "Update done success");
+      })
+      .finally(() => this.setState({idDonePro: null}))
+  }
+
   render() {
     let { project, task, match, friends, profile, cateTask } = this.props;
-    let { isWoring, taskSearch } = this.state;
+    let { isWoring, taskSearch, idDonePro } = this.state;
 
     let { id } = match.params;
 
@@ -62,37 +79,55 @@ class ViewProject extends Component {
     }
 
     let orderTask = [];
+    let len = 0;
+    let lenDone = 0;
 
     task.ordered.forEach(e => {
       let nameTask = !!task.data[e] ? task.data[e].name : "";
       nameTask = rmv(nameTask);
       if(taskSearch == null || nameTask.indexOf(taskSearch) !== -1) orderTask.push(e);
-    })
 
-
+      if(task.data[e].projectId === id){
+        ++len;
+        if(!!task.data[e].finish) ++lenDone;
+      }
+    });
+    
     if(profile.info.id !== dataProject.createAt && !fl) return null;
     return (
       <div className="white-box">
+        {
+          !!idDonePro
+          ?
+          ( 
+            <AlertConfirm
+              onCancel= { () => this.setState({idDonePro: null})}
+              onSuccess= { this.doneProjectSuccess }
+              title="Are you sure!"/>
+          )
+          : null
+        }
         <div className="col-xs-3">
           <img alt="img" src={img_wellcome} />
         </div>
         <div className="col-xs-9 m-t-30">
           <div className="pull-right">
-            
-            <Link to={`/task/new/${id ? id : ""}`} className="btn btn-info btn-flat">Create new task</Link>
+          
             {
-              dataProject.createAt === profile.info.id &&
+              !!profile && !!profile.info.account_type && profile.info.account_type === 1 && !dataProject.finish &&
               (
-                <Link to={`/project/edit/${id ? id : ""}`} className="m-l-15 btn btn-info btn-flat">Edit</Link>
+                <Fragment>
+                  <Link to={`/task/new/${id ? id : ""}`} className="btn btn-info btn-flat">Create new task</Link>
+                  
+                  {
+                    lenDone*1.0 / len*1.0 >= 0.5 &&
+                      <Link to="#" onClick={ this.doneProject(id) } className="btn m-l-15 btn-info btn-flat">Done project</Link>
+                  }
+                  
+                  <Link to={`/project/edit/${id ? id : ""}`} className="m-l-15 btn btn-info btn-flat">Edit</Link>
+                </Fragment>
               )
             }
-            
-            {/* <Dropdown className="pull-right" icon="ti-settings" >
-              <Link to="" className="btn btn-block btn-info btn-flat">Create new task</Link>
-            </Dropdown> */}
-            {/* <button className="btn btn-outline btn-info btn-flat bd-0 m-l-15">
-              <i className="ti-settings" />
-            </button> */}
             
           </div>
           

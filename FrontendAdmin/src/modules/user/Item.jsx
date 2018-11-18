@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { Link } from 'react-router-dom';
 
 class Item extends Component {
 
@@ -11,7 +12,7 @@ class Item extends Component {
   };
 
   render() {
-    let { ordered, data } = this.props;
+    let { ordered, data, profile } = this.props;
 
     return (
       <tbody>
@@ -38,10 +39,17 @@ class Item extends Component {
                     </span>
                   </td>
                   <td className="text-center">
-                  
+
                     <button onClick={ this.onClickEdit(e) } className="p-0 btn-save btn btn-sm btn-icon btn-pure btn-outline delete-row-btn">
                       <i className=" ti-pencil" aria-hidden="true"></i>
                     </button>
+                    {
+                      !!profile.info && profile.info.account_type === 1 && (
+                        <Link to={`/users/report/${e}`} className="btn-save btn btn-sm btn-icon btn-pure btn-outline delete-row-btn">
+                          <i className="ti-bar-chart" aria-hidden="true"></i>
+                        </Link>
+                      )
+                    }
                   </td>
                 </tr>
               )

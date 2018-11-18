@@ -32,13 +32,15 @@ module.exports = function(Comment) {
     	let { socketID, userCurrent } = Comment.app;
 
 	    let cmt = {
-	     	taskId: id,
-	     	groupUserID: userCurrent.groupUserID,
-	     	userId: userCurrent.id,
-	     	content: "",
-	     	files: data,
-	     	time: Date.now()
+	     	taskId         : id,
+	     	groupUserID    : userCurrent.groupUserID,
+	     	userId         : userCurrent.id,
+	     	content        : "",
+	     	files          : data,
+	     	time           : Date.now(),
+        parentId       : "null"
 	    }
+
       
       Comment.create(cmt)
       	.then(e => {
@@ -101,7 +103,8 @@ module.exports = function(Comment) {
   );
 
   Comment.afterRemote('find', async function(ctx, res, next) {
-    if (!!res) {
+
+    if (!!res) { 
       let data = [];
       for(let cmt of res){
         let { id } = cmt;

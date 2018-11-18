@@ -110,7 +110,7 @@ class Form extends Component {
         dataError.selectedFrOption = true;
 
       if(!selectedRelateOption || isEmpty(selectedRelateOption)) 
-        dataError.selectedRelateOption = true;
+        selectedRelateOption =  [];
 
       if(!idProject) dataError.idProject = true
         
@@ -279,7 +279,15 @@ class Form extends Component {
               value     = { selectedFrOption }
               isMulti   = { false }
               onChange  = { va => this.setState({selectedFrOption: va}) }
-              options   = { optionsFr }
+              options   = { optionsFr.filter(e => {
+                if(selectedRelateOption == null) return e;
+                let f = false;
+                for(let va of selectedRelateOption){
+                  if(va.value === e.value) f = true;
+                }
+
+                if(!f) return e;
+              }) }
             />
             
           </div>
@@ -293,7 +301,10 @@ class Form extends Component {
               value     = { selectedRelateOption }
               isMulti   = { true }
               onChange  = { va => this.setState({selectedRelateOption: va}) }
-              options   = { optionsFr }
+              options   = { optionsFr.filter(e => {
+                return selectedFrOption == null || e.value !== selectedFrOption.value;
+                // return e;
+              }) }
             />
             
           </div>

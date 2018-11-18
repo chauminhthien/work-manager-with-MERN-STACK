@@ -151,6 +151,18 @@ class MenuChat extends Component {
         !!data && taskActions.fetchFinished([data])
       });
 
+      this.socket.on('SERVER_SEND_TASK_NOT_NOTY', (res) => {
+        let { data, mess } = res;
+        
+        if(!!mess){
+          let { type, m } = mess;
+          if(!type) notification.s("Messages", m);
+          else notification.w("Messages", m);
+        }
+          
+        !!data && taskActions.fetchFinished([data])
+      });
+
     });
 
   }

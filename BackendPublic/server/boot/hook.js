@@ -2,11 +2,10 @@
 
 module.exports = function(server) {
   var remotes = server.remotes();
-
   // remotes.before('**', function (ctx, next, method) {
   //   next();
   // });
-
+  
   remotes.after('**', function (ctx, next) { 
     ctx.result = {error: null, data: ctx.result};
     next();
@@ -20,4 +19,5 @@ module.exports = function(server) {
       ...ctx.error,
     }, data: null});
   });
+
 };

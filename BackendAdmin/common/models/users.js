@@ -18,7 +18,7 @@ module.exports = function(Users) {
     let data = res;
     let { userId, id } = res;
     Users.findOne( {where: { and: [{id: userId}, {or: [{account_type: 0}, {account_type: 1}]}] }})
-      .then(res => {
+      .then(res => { console.log(res)
         if(!res) return Promise.reject(mess.USER_NOT_EXIST);
         if(res.status === 0)  return Promise.reject(mess.USER_DISABLED);
 
@@ -26,10 +26,12 @@ module.exports = function(Users) {
           if(!!res.account_type){
             Users.app.models.groupUser.findById(res.groupUserID)
               .then(userGr => {
-                if(!userGr) return Promise.reject(mess.YOU_NOT_PERMISSION)
+                if(!userGr) return next(mess.YOU_NOT_PERMISSION);
+                if(!userGr.status) return next(mess.USER_DISABLED);
+                
                 let { begin, end } = userGr;
                 let now = Date.now();
-                if(begin > now || now < end) return Promise.reject(mess.YOU_NOT_PERMISSION)
+                if(begin > now || now > end) return next({...mess.YOU_NOT_PERMISSION});
                 next(null, data)
               })
           } else  next(null, data);
@@ -202,6 +204,7 @@ module.exports = function(Users) {
           if(!res) return Promise.reject({...mess.DATA_NO_MATCH, messagse: "User not exit"});
 
           if(!data) return Promise.reject({...mess.DATA_NO_MATCH, messagse: "Data not empty"});
+          if(!data.password) data.password = res.__data.password;
             return Users.upsertWithWhere({'id': id}, data);
         }, e => Promise.reject(e))
         .then(data => {
@@ -315,11 +318,11 @@ module.exports = function(Users) {
         let { groupUserID } = context.args.data;
         let couUser = 1;
         Users.count({groupUserID})
-          .then(couUser => {
+          .then(couUser => { 
             couUser = couUser;
             return Users.app.models.groupUser.findById(groupUserID, { fields: ['max_user']});
           }, e => Promise.reject({...mess.DATA_NO_MATCH, messagse: 'User to maximum'}))
-          .then(groupU => {
+          .then(groupU => { 
             if(couUser >= groupU.max_user) return Promise.reject({...mess.DATA_NO_MATCH, messagse: 'User to maximum'});
             next();
           }, e => Promise.reject({...mess.DATA_NO_MATCH, messagse: 'User to maximum'}))

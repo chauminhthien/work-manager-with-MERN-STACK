@@ -24,19 +24,22 @@ module.exports = function(Users) {
         if(res.status === 0)  return Promise.reject(mess.USER_DISABLED);
 
         if(res.status === 1){ 
-          if(!!res.account_type){
+          if(!!res.account_type){ 
             Users.app.models.groupUser.findById(res.groupUserID)
-              .then(userGr => {
-                if(!userGr) return Promise.reject(mess.YOU_NOT_PERMISSION)
+              .then(userGr => { 
+                if(!userGr) return next(mess.YOU_NOT_PERMISSION);
+                if(!userGr.status) return next(mess.USER_DISABLED);
+
                 let { begin, end } = userGr;
                 let now = Date.now();
-                if(begin > now || now < end) return Promise.reject(mess.YOU_NOT_PERMISSION)
-                next(null, data)
+
+                if(begin > now || now > end) return next({...mess.YOU_NOT_PERMISSION});
+                return next(null, data)
               })
           } else  next(null, data);
         }
         
-      }, e => Promise.reject(mess.USER_DISABLED))
+      }, e => next(mess.USER_DISABLED))
       .catch(e => {
         Users.app.models.AccessToken.destroyById(id);
         next(e)

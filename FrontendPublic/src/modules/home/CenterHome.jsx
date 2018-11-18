@@ -165,7 +165,7 @@ class CenterHome extends Component {
               <div className="form-group">
                 <div className="col-sm-12">
                     {
-                      !nameTask && (
+                      !!profile && !!profile.info.account_type && profile.info.account_type === 1 && !nameTask && (
                         <div className="input-group br-b">
                           <div className="input-group-addon no-bg no-br ">
                             <i style={{color: '#00c23f', fontSize: '18px' }} className="fa fa-plus" />

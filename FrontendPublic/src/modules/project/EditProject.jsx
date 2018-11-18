@@ -75,7 +75,7 @@ class EditProject extends Component {
 
     let dataProject = project.data[id];
     if(!dataProject || dataProject.createAt !== profile.info.id) return null;
-    
+    if(!profile || profile.info.account_type !== 1) return null;
     let fl = false;
     
     for(let v of dataProject.memberJoins){

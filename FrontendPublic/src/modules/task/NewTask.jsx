@@ -20,10 +20,10 @@ class NewTask extends Component {
   }
 
   componentWillMount(){
-    let { cateTask, task, profile, taskActions, cateTaskAction, projectActions, project } = this.props;
+    let { cateTask, profile, taskActions, cateTaskAction, projectActions, project } = this.props;
     
     if(cateTask.ordered.length === 0) cateTaskAction.fetchAll({}, 0, 0, {groupUserID: profile.info.groupUserID});
-    if(task.ordered.length === 0) taskActions.fetchAll({
+    taskActions.fetchAll({
       order: "id DESC"
     },0 , 15, { groupUserID: profile.info.groupUserID })
 

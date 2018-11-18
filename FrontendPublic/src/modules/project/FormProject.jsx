@@ -52,8 +52,9 @@ class FormProject extends Component {
   }
 
   render() {
-    let { friends } = this.props;
+    let { friends, profile } = this.props;
     let { isWoring } = this.state;
+    if(!profile || profile.info.account_type !== 1) return null;
     return (
       <div className="white-box">
         <div className="col-xs-3">

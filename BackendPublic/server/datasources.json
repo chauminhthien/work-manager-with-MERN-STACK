@@ -1,13 +1,13 @@
 {
   "mongodb": {
-    "host": "27.0.15.150",
+    "host": "localhost",
     "port": 27017,
     "database": "managerWork",
-    "password": "DB_ITFsoft.com",
+    "password": "",
     "name": "mongodb",
-    "user": "ITFsoft.com",
+    "user": "",
     "connector": "mongodb",
-    "authSource": "admin",
+    "authSource": "",
     "useNewUrlParser": true
   },
   "email": {

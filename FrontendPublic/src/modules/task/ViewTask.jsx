@@ -5,7 +5,7 @@ import { bindActionCreators } from 'redux';
 import { Link } from 'react-router-dom';
 
 
-import { withNotification, Modal, RangeSilder } from 'components';
+import { withNotification, Modal, RangeSilder, AlertConfirm } from 'components';
 import img_wellcome from 'assets/Images/img-wellcome.png';
 import ItemFile from './ItemFile';
 
@@ -24,13 +24,14 @@ class ViewTask extends Component {
     this.state = {
       isWoring    : false,
       idUpdatePro : null,
-      taskProcess : null
+      taskProcess : null,
+      idDoneTask  : null
     }
   }
 
   componentDidMount(){
 
-    let { profile, project, task, cateTask, projectActions, comment, commentActions, match, taskActions } = this.props;
+    let { profile, project, cateTask, projectActions, comment, commentActions, match, taskActions, cateTaskActions } = this.props;
     let { id } = match.params;
 
     if(project.ordered.length === 0){
@@ -40,7 +41,7 @@ class ViewTask extends Component {
       })
     }
     
-    if(task.ordered.length === 0) taskActions.fetchAll({
+    taskActions.fetchAll({
       order: "id DESC"
     },0 ,15, { groupUserID: profile.info.groupUserID })
 
@@ -98,6 +99,11 @@ class ViewTask extends Component {
     this.setState({idUpdatePro: id})
   }
 
+  doneTask = (id) => (e) => {
+    e.preventDefault();
+    this.setState({idDoneTask: id})
+  }
+
   updateProcesClick = (pro) => () => {
     let { notification, taskActions} = this.props;
     let { taskProcess, idUpdatePro } = this.state;
@@ -109,6 +115,17 @@ class ViewTask extends Component {
         if(!!r.data) notification.s("Message", "Update process success");
       })
       .finally(() => this.setState({idUpdatePro: null}))
+  }
+
+  doneTaskSuccess = () =>{
+    let { idDoneTask } = this.state;
+    let { notification, taskActions} = this.props;
+
+    taskActions.updateById(idDoneTask, {finish: 1, timeFisnish: Date.now()})
+      .then(r => {
+        if(!!r.data) notification.s("Message", "Update done success");
+      })
+      .finally(() => this.setState({idDoneTask: null}))
   }
 
   uploadFile = (file) => {
@@ -124,8 +141,8 @@ class ViewTask extends Component {
   }
 
   render() {
-    let { match, profile, task, friends, comment } = this.props;
-    let { isWoring, idUpdatePro, taskProcess } = this.state;
+    let { match, profile, task, friends, comment, cateTask, project } = this.props;
+    let { isWoring, idUpdatePro, taskProcess, idDoneTask } = this.state;
 
     let { id } = match.params;
     
@@ -156,6 +173,17 @@ class ViewTask extends Component {
 
     return (
       <div className="white-box">
+        {
+          !!idDoneTask
+          ?
+          ( 
+            <AlertConfirm
+              onCancel= { () => this.setState({idDoneTask: null})}
+              onSuccess= { this.doneTaskSuccess }
+              title="Are you sure!"/>
+          )
+          : null
+        }
         <Modal
           header = "Update process"
           buttons = { buttons }
@@ -180,7 +208,7 @@ class ViewTask extends Component {
           <div className="col-xs-9 m-t-30">
             <div className="pull-right">
               {
-                profile.info.id === dataTask.createAt &&  dataTask.process < 100 &&
+                profile.info.id === dataTask.createAt &&  dataTask.process < 100 && !project.data[dataTask.projectId].finish &&
                 (
                   <Link to={`/task/edit/${id ? id : ""}?project=${dataTask ? dataTask.projectId: ""}`} className="m-l-15 btn btn-info btn-flat">Edit</Link>
                 )
@@ -188,7 +216,10 @@ class ViewTask extends Component {
               
             </div>
             
-            <h2 className="box-title">{dataTask.name}</h2>
+            <h2 className="box-title">
+              <i className={`m-r-15 ${!!cateTask && !!cateTask.data[dataTask.cateTaskId] ? cateTask.data[dataTask.cateTaskId].icon : ""}`}></i>
+              {dataTask.name}
+            </h2>
 
           </div>
           <div className="clear"></div>
@@ -205,15 +236,20 @@ class ViewTask extends Component {
           <form className="form-horizontal m-t-15">
             <div className="form-group">
               <div className="col-sm-6">
-                {/* {
-                  profile.info.id === dataTask.memberId && dataTask.status === 0 && (
-                    <Fragment>
-                      <Link className="btn btn-flat cbtn btn-outline btn-1e btn-danger m-r-5" to="/">Cancel</Link>
-                      <Link className="btn btn-flat cbtn btn-outline btn-1e btn-success m-r-5" to="/">Confirm</Link>
-                    </Fragment>
-                  )
-                } */}
-                <Link onClick={ this.updateProces(id) } className="btn btn-flat cbtn btn-outline btn-1e btn-info" to="#">Update work process</Link>
+   
+                {
+                  !!dataTask.process && dataTask.process < 100 && !dataTask.finish
+                  ? (
+                    <Link onClick={ this.updateProces(id) } className="btn btn-flat cbtn btn-outline btn-1e btn-info" to="#">Update work process</Link>
+                  ) : null
+                }
+                
+                {
+                  !!profile && profile.info.account_type === 1 && !!dataTask.process && dataTask.process === 100 && !dataTask.finish
+                  ? (
+                    <Link onClick={ this.doneTask(id) } className="m-l-15 btn btn-flat cbtn btn-outline btn-1e btn-info" to="#">Done task</Link>
+                  ) : null
+                }
               </div>
               <div className="col-sm-6">
                 <h5>{process.text}<span className="pull-right">{dataTask.process}%</span></h5>
@@ -225,18 +261,24 @@ class ViewTask extends Component {
               </div>
             </div>
           </form>
-
-          <FormCMT
-            profile       = { profile }
-            friends       = { friends }
-            commentSubmit = { this.commentSubmit }
-            uploadFile    = { this.uploadFile }
-            dataTask      = { dataTask } />
-
+          
+          {
+            dataTask.process < 100 && !dataTask.finish && !project.data[dataTask.projectId].finish
+            ? (
+              <FormCMT
+                profile       = { profile }
+                friends       = { friends }
+                commentSubmit = { this.commentSubmit }
+                uploadFile    = { this.uploadFile }
+                dataTask      = { dataTask } />
+            ) : null
+          }
+        
           <hr />
 
           <ListCMT
             profile       = { profile }
+            project       = { project }
             friends       = { friends }
             dataTask      = { dataTask }
             commentActions = { this.props.commentActions}

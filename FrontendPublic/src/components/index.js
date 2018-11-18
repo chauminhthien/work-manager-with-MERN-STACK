@@ -11,3 +11,4 @@ export { default as Dropdown } from './Dropdown';
 export { default as TimePicker } from './TimePicker';
 export { default as Modal } from './Modal';
 export { default as RangeSilder } from './RangeSilder';
+export { default as AlertConfirm } from './AlertConfirm';

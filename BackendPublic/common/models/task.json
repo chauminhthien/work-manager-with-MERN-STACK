@@ -56,6 +56,10 @@
       "type": "number",
       "default": 0
     },
+    "finish": {
+      "type": "number",
+      "default": 0
+    },
     "groupUserID": {
       "type": "string"
     },
