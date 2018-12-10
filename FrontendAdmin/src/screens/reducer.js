@@ -7,6 +7,7 @@ import { reducer as users } from 'modules/user';
 import { reducer as profile } from 'modules/account';
 import { reducer as categories } from 'modules/categories';
 import { reducer as groupUser } from 'modules/groupUser';
+import { reducer as report } from 'modules/report';
 
 const reducer = combineReducers({
   session,
@@ -14,7 +15,8 @@ const reducer = combineReducers({
   categories,
   users,
   profile,
-  groupUser
+  groupUser,
+  report
 });
 
 export default reducer;

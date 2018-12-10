@@ -7,7 +7,8 @@ import {
   Error404,
   ProfileAsync,
   GroupUserAsync,
-  CategoriesAsync
+  CategoriesAsync,
+  ReportAsync
 } from 'modules';
 
 class Content extends Component {
@@ -19,6 +20,7 @@ class Content extends Component {
         <Route path="/profile" component={ ProfileAsync } />
         <Route path="/group-user" component={ GroupUserAsync } />
         <Route path="/categories" component={ CategoriesAsync } />
+        <Route path="/report" component={ ReportAsync } />
         <Route component={ Error404 } />
       </Switch>
     );

@@ -96,18 +96,20 @@ class ListCMT extends Component {
 
                   {
                     dataTask.process < 100 && !dataTask.finish && !project.data[dataTask.projectId].finish && (
-                      <Link onClick={ this.repClick(e) } className="m-t-15" to="#" >Reply</Link>
+                      <Link onClick={ this.repClick(e) } className="m-t-15 m-r-15" to="#" >Reply</Link>
                     )
                   }
                   
 
-                  <span className="m-l-15 label label-info label-rounded">{ !!cmt.time && convertTimeMess(cmt.time) }</span>
+                  <span className="label label-info label-rounded">{ !!cmt.time && convertTimeMess(cmt.time) }</span>
                   {
                     !!repId && repId === e && (
                       <FormCMT 
                         profile       = { this.props.profile }
                         dataTask      = { this.props.dataTask }
                         commentSubmit = { this.commentSubmit }
+                        parentId      = { repId }
+                        uploadFile    = { this.props.uploadFile }
                         friends       = { this.props.friends } />
                     )
                   }
@@ -145,7 +147,7 @@ class ListCMT extends Component {
                                 <div style={{width: "100%", wordBreak: "break-word", padding: "1px 10px", borderRadius: "5px"}} dangerouslySetInnerHTML={{__html: e.content}} />
                               )
                             }
-                            <span className="m-l-15 label label-info label-rounded">{ !!e.time && convertTimeMess(e.time) }</span>
+                            <span className="label label-info label-rounded">{ !!e.time && convertTimeMess(e.time) }</span>
                           </div>
                         </div>
                       )

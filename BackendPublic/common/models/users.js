@@ -25,6 +25,8 @@ module.exports = function(Users) {
 
         if(res.status === 1){ 
           if(!!res.account_type){ 
+            let { account_type, groupUserID } = res.__data;
+
             Users.app.models.groupUser.findById(res.groupUserID)
               .then(userGr => { 
                 if(!userGr) return next(mess.YOU_NOT_PERMISSION);
@@ -34,6 +36,14 @@ module.exports = function(Users) {
                 let now = Date.now();
 
                 if(begin > now || now > end) return next({...mess.YOU_NOT_PERMISSION});
+                let login = {
+                  userId,
+                  time: Date.now(),
+                  type: 0,
+                  account_type,
+                  groupUserID,
+                }
+                Users.app.models.login.create(login);
                 return next(null, data)
               })
           } else  next(null, data);
@@ -233,7 +243,28 @@ module.exports = function(Users) {
   Users.signOut = function(token, cb) {
     if (token.length !== 64) cb(mess.DATA_NO_MATCH);
 
-    
+    Users.app.models.AccessToken.findById(token)
+      .then(dataToken => {
+        if(!!dataToken){
+          let { userId } = dataToken.__data;
+          Users.findById(userId)
+            .then(dataU => {
+              if(!!dataU){
+                let { account_type, groupUserID } = dataU.__data;
+
+                let login = {
+                  userId,
+                  time: Date.now(),
+                  type: 1,
+                  account_type,
+                  groupUserID,
+                }
+                Users.app.models.login.create(login);
+              }
+            })
+        }
+      })
+        
 
     Users.app.models.AccessToken.destroyById(token)
       .then(res => {

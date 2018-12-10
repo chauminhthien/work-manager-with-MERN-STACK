@@ -1,0 +1,103 @@
+{
+  "name": "task",
+  "base": "PersistedModel",
+  "idInjection": true,
+  "options": {
+    "validateUpsert": true
+  },
+  "properties": {
+    "name": {
+      "type": "string"
+    },
+    "projectId": {
+      "type": "string"
+    },
+    "files": {
+      "type": [
+        "any"
+      ],
+      "default": "[]"
+    },
+    "relateMember": {
+      "type": [
+        "any"
+      ],
+      "default": "[]"
+    },
+    "memberCmt": {
+      "type": [
+        "any"
+      ],
+      "default": "[]"
+    },
+    "memberId": {
+      "type": "string"
+    },
+    "cateTaskId": {
+      "type": "string"
+    },
+    "begin": {
+      "type": "number"
+    },
+    "timeFisnish": {
+      "type": "number"
+    },
+    "end": {
+      "type": "number"
+    },
+    "point": {
+      "type": "number",
+      "default": 0
+    },
+    "description": {
+      "type": "string"
+    },
+    "status": {
+      "type": "number",
+      "default": 0
+    },
+    "process": {
+      "type": "number",
+      "default": 0
+    },
+    "finish": {
+      "type": "number",
+      "default": 0
+    },
+    "groupUserID": {
+      "type": "string"
+    },
+    "createAt": {
+      "type": "string"
+    }
+  },
+  "validations": [],
+  "relations": {
+    "groupUser": {
+      "type": "belongsTo",
+      "model": "groupUser",
+      "foreignKey": "groupUserID",
+      "primaryKey": ""
+    },
+    "createAt": {
+      "type": "belongsTo",
+      "model": "users",
+      "foreignKey": "createAt",
+      "primaryKey": ""
+    },
+    "projectId": {
+      "type": "belongsTo",
+      "model": "project",
+      "foreignKey": "projectId",
+      "primaryKey": ""
+    },
+    "cateTask": {
+      "type": "belongsTo",
+      "model": "cateTask",
+      "foreignKey": "cateTaskId",
+      "primaryKey": ""
+    }
+  },
+  "acls": [],
+  "methods": {}
+}

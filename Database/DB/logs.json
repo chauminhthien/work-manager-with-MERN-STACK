@@ -1,0 +1,144 @@
+{ 
+    "_id" : ObjectId("5c06020d01cee737ccd6370f"), 
+    "userID" : ObjectId("5ba8b2c3cda330222ca7b8d1"), 
+    "nameAction" : "thêm mới dự án", 
+    "nameWork" : "Project 01", 
+    "nameTask" : "", 
+    "groupUserID" : ObjectId("5ba8b2c3cda330222ca7b8d0"), 
+    "time" : 1543897613525.0
+}
+{ 
+    "_id" : ObjectId("5c0603aa60b0881fdcf8e664"), 
+    "userID" : ObjectId("5ba8b2c3cda330222ca7b8d1"), 
+    "nameAction" : "thêm mới taks", 
+    "nameWork" : "Task 01", 
+    "nameTask" : "Project 01", 
+    "groupUserID" : ObjectId("5ba8b2c3cda330222ca7b8d0"), 
+    "time" : 1543898026571.0
+}
+{ 
+    "_id" : ObjectId("5c06043a60b0881fdcf8e667"), 
+    "userID" : ObjectId("5ba8b2c3cda330222ca7b8d1"), 
+    "nameAction" : "thêm mới taks", 
+    "nameWork" : "Châu Minh Thiện", 
+    "nameTask" : "Project 01", 
+    "groupUserID" : ObjectId("5ba8b2c3cda330222ca7b8d0"), 
+    "time" : 1543898170367.0
+}
+{ 
+    "_id" : ObjectId("5c06055139d07a30c8968d2b"), 
+    "userID" : ObjectId("5ba8b2c3cda330222ca7b8d1"), 
+    "nameAction" : "thêm mới taks", 
+    "nameWork" : "Đại Học Tài Nguyên Và Môi trường Tp.Hcm", 
+    "nameTask" : "Project 01", 
+    "groupUserID" : ObjectId("5ba8b2c3cda330222ca7b8d0"), 
+    "time" : 1543898449587.0
+}
+{ 
+    "_id" : ObjectId("5c06058d39d07a30c8968d2e"), 
+    "userID" : ObjectId("5ba8b2c3cda330222ca7b8d1"), 
+    "nameAction" : "thêm mới taks", 
+    "nameWork" : "Đại Học Tài Nguyên Và Môi trường Tp.Hcm", 
+    "nameTask" : "Project 01", 
+    "groupUserID" : ObjectId("5ba8b2c3cda330222ca7b8d0"), 
+    "time" : 1543898509188.0
+}
+{ 
+    "_id" : ObjectId("5c0605bb39d07a30c8968d31"), 
+    "userID" : ObjectId("5ba8b2c3cda330222ca7b8d1"), 
+    "nameAction" : "thêm mới taks", 
+    "nameWork" : "tak 02", 
+    "nameTask" : "Project 01", 
+    "groupUserID" : ObjectId("5ba8b2c3cda330222ca7b8d0"), 
+    "time" : 1543898555560.0
+}
+{ 
+    "_id" : ObjectId("5c0606b497bea8119c31802b"), 
+    "userID" : ObjectId("5ba8b2c3cda330222ca7b8d1"), 
+    "nameAction" : "thêm mới taks", 
+    "nameWork" : "Đại Học Tài Nguyên Và Môi trường Tp.Hcm", 
+    "nameTask" : "Project 01", 
+    "groupUserID" : ObjectId("5ba8b2c3cda330222ca7b8d0"), 
+    "time" : 1543898804344.0
+}
+{ 
+    "_id" : ObjectId("5c060bd797bea8119c31802e"), 
+    "userID" : ObjectId("5ba8b2c3cda330222ca7b8d1"), 
+    "nameAction" : "thêm mới taks", 
+    "nameWork" : "Task 02", 
+    "nameTask" : "Project 01", 
+    "groupUserID" : ObjectId("5ba8b2c3cda330222ca7b8d0"), 
+    "time" : 1543900119790.0
+}
+{ 
+    "_id" : ObjectId("5c060ffed01bc5246c0781d0"), 
+    "userID" : ObjectId("5ba8b2c3cda330222ca7b8d1"), 
+    "nameAction" : "thêm mới taks", 
+    "nameWork" : "Đại Học Tài Nguyên Và Môi trường Tp.Hcm", 
+    "nameTask" : "Project 01", 
+    "groupUserID" : ObjectId("5ba8b2c3cda330222ca7b8d0"), 
+    "time" : 1543901182653.0
+}
+{ 
+    "_id" : ObjectId("5c0639b340d73f19345f16c1"), 
+    "userID" : ObjectId("5ba8b2c3cda330222ca7b8d1"), 
+    "nameAction" : "thêm mới file trong ", 
+    "nameWork" : "Đại Học Tài Nguyên Và Môi trường Tp.Hcm", 
+    "nameTask" : "Project 01", 
+    "groupUserID" : ObjectId("5ba8b2c3cda330222ca7b8d0"), 
+    "time" : 1543911859912.0
+}
+{ 
+    "_id" : ObjectId("5c0639b640d73f19345f16c3"), 
+    "userID" : ObjectId("5ba8b2c3cda330222ca7b8d1"), 
+    "nameAction" : "thêm mới file trong ", 
+    "nameWork" : "Đại Học Tài Nguyên Và Môi trường Tp.Hcm", 
+    "nameTask" : "Project 01", 
+    "groupUserID" : ObjectId("5ba8b2c3cda330222ca7b8d0"), 
+    "time" : 1543911862684.0
+}
+{ 
+    "_id" : ObjectId("5c068d3163f1b4130092663c"), 
+    "userID" : ObjectId("5ba8b2c3cda330222ca7b8d1"), 
+    "nameAction" : "thêm mới dự án", 
+    "nameWork" : "Project 02", 
+    "nameTask" : "", 
+    "groupUserID" : ObjectId("5ba8b2c3cda330222ca7b8d0"), 
+    "time" : 1543933233822.0
+}
+{ 
+    "_id" : ObjectId("5c068d7f63f1b41300926644"), 
+    "userID" : ObjectId("5ba8b2c3cda330222ca7b8d1"), 
+    "nameAction" : "thêm mới taks", 
+    "nameWork" : "Task 01 project 02", 
+    "nameTask" : "Project 02", 
+    "groupUserID" : ObjectId("5ba8b2c3cda330222ca7b8d0"), 
+    "time" : 1543933311590.0
+}
+{ 
+    "_id" : ObjectId("5c0694c363f1b41300926662"), 
+    "userID" : ObjectId("5ba8b2c3cda330222ca7b8d1"), 
+    "nameAction" : "thêm mới taks", 
+    "nameWork" : "Task 02 of project 02", 
+    "nameTask" : "Project 02", 
+    "groupUserID" : ObjectId("5ba8b2c3cda330222ca7b8d0"), 
+    "time" : 1543935171572.0
+}
+{ 
+    "_id" : ObjectId("5c0cbc08131760206cadfd3b"), 
+    "userID" : ObjectId("5ba8b2c3cda330222ca7b8d1"), 
+    "nameAction" : "thêm mới taks", 
+    "nameWork" : "Task 03 project 01", 
+    "nameTask" : "Project 01", 
+    "groupUserID" : ObjectId("5ba8b2c3cda330222ca7b8d0"), 
+    "time" : 1544338440082.0
+}
+{ 
+    "_id" : ObjectId("5c0cc3ba131760206cadfd40"), 
+    "userID" : ObjectId("5ba8b2c3cda330222ca7b8d1"), 
+    "nameAction" : "thêm mới taks", 
+    "nameWork" : "Công việc", 
+    "nameTask" : "Project 01", 
+    "groupUserID" : ObjectId("5ba8b2c3cda330222ca7b8d0"), 
+    "time" : 1544340410909.0
+}

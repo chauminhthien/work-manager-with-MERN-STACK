@@ -59,3 +59,40 @@ export const rmv = (str) => {
   str = str.replace(/-+$/g,""); 
   return str;
 }
+
+
+export const monthNumToName = (num) => {
+  if(!num) return '';
+
+  var months = [
+    'January', 'February', 'March', 'April', 'May',
+    'June', 'July', 'August', 'September',
+    'October', 'November', 'December'
+    ];
+
+  return months[num - 1] || '';
+}
+
+export const getTime = (time, currency) => {
+  time = time || Date.now();
+  
+  let fullDate = new Date(time);
+
+  switch(currency){
+    case 'mm':
+      let mm   = fullDate.getMonth() + 1;
+      return (mm < 10 ) ? `0${mm}` : mm;
+    case 'dd':
+      let dd   = fullDate.getDate();
+      return (dd < 10 ) ? `0${dd}` : dd;
+    case 'yyyy': return fullDate.getFullYear();
+    default: return '';
+
+  }
+}
+
+export const arrayNumFrom = (begin, end) => {
+  let arr = [];
+  for(let i = begin; i <= end; i++) arr.push(i);
+  return arr;
+}

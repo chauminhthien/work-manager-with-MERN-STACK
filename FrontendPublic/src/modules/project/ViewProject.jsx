@@ -12,6 +12,7 @@ import { actions as taskActions } from 'modules/task';
 import { actions as cateTaskActions } from 'modules/categories/cateTask';
 import users        from 'assets/Images/user.jpg';
 import { isEmpty, rmv } from 'utils/functions';
+import { convertMDY } from 'utils/format';
 
 class ViewProject extends Component {
 
@@ -131,7 +132,7 @@ class ViewProject extends Component {
             
           </div>
           
-          <h2 className="box-title">{dataProject.name}</h2>
+          <h2 className="box-title">{dataProject.name}<smail> ({convertMDY(dataProject.begin)} -> {convertMDY(dataProject.end)})</smail></h2>
           <div id="memberJoin">
             {
               'push' in dataProject.memberJoins && dataProject.memberJoins.length > 0 &&
@@ -195,6 +196,8 @@ class ViewProject extends Component {
                   if(now < taskItem.begin)
                     process = { liClass : "default", text: "Not implemented yet" };
                 }
+
+                if(!!taskItem.finish) process = { liClass : "success", text    : "Done" }
                 
 
                 let avatar = (

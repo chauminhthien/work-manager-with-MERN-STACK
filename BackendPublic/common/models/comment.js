@@ -14,7 +14,7 @@ module.exports = function(Comment) {
     }
   });
 
-  Comment.upload = function(file, id, cb) {
+  Comment.upload = function(file, id, parentId = null, cb) {
 
     file.req.params.container = 'files';
     let dirRoot = Comment.app.get('dirUpload');
@@ -38,7 +38,7 @@ module.exports = function(Comment) {
 	     	content        : "",
 	     	files          : data,
 	     	time           : Date.now(),
-        parentId       : "null"
+        parentId       : parentId
 	    }
 
       
@@ -47,10 +47,25 @@ module.exports = function(Comment) {
       		if(!e) return Promise.reject(mess.SERVER_DISCONNECT);
       		let { taskId, groupUserID, userId } = e.__data;
 
+    
       		Comment.app.models.task.findById(taskId)
       			.then(task => {
       				if(!!task){
-      					let { memberCmt } = task.__data;
+      					let { memberCmt, createAt, memberId, relateMember } = task.__data;
+
+                if(!!socketID[groupUserID] && !!socketID[groupUserID][createAt])
+                  socketID[groupUserID][createAt].emit('SERVER_SEND_COMMENT_NOT_NOTY', e);
+
+
+                if(!!socketID[groupUserID] && !!socketID[groupUserID][memberId])
+                  socketID[groupUserID][memberId].emit('SERVER_SEND_COMMENT_NOT_NOTY', e);
+
+                for(let v of relateMember){
+
+                  if(!!socketID[groupUserID] && !!socketID[groupUserID][v.value])
+                    socketID[groupUserID][v.value].emit('SERVER_SEND_COMMENT_NOT_NOTY', e);
+                }
+
       					for(let key of memberCmt){
 			  					if(key !== userCurrent.id.toString()) {
 										let dataMess = {
@@ -93,10 +108,11 @@ module.exports = function(Comment) {
   Comment.remoteMethod(
       'upload',
       {
-       http: {path: '/upload/:id', verb: 'post'},
+       http: {path: '/upload/:id/:parentId', verb: 'post'},
        accepts: [
           {arg: 'file', type: 'object', 'http': {source: 'context'}},
-          {arg: 'id', type: 'string', "required": true}
+          {arg: 'id', type: 'string', "required": true},
+          {arg: 'parentId', type: 'string'}
        ],
        returns: {arg: 'status', type: 'string'}
       }
@@ -132,7 +148,7 @@ module.exports = function(Comment) {
     Comment.app.models.task.findById(taskId)
     	.then(task => {
     		if(!!task){
-    			let { memberCmt } = task.__data;
+    			let { memberCmt, relateMember, createAt, memberId } = task.__data;
     			if(memberCmt.indexOf(userCurrent.id.toString()) === -1){
     				memberCmt.push(userCurrent.id.toString());
     			}
@@ -146,6 +162,18 @@ module.exports = function(Comment) {
     					memberCmt.push(userId);
 
     			task.memberCmt = memberCmt;
+
+          if(!!socketID[groupUserID] && !!socketID[groupUserID][createAt])
+            socketID[groupUserID][createAt].emit('SERVER_SEND_COMMENT_NOT_NOTY', res);
+
+          if(!!socketID[groupUserID] && !!socketID[groupUserID][memberId])
+            socketID[groupUserID][memberId].emit('SERVER_SEND_COMMENT_NOT_NOTY', res);
+
+          for(let v of relateMember){
+
+            if(!!socketID[groupUserID] && !!socketID[groupUserID][v.value])
+              socketID[groupUserID][v.value].emit('SERVER_SEND_COMMENT_NOT_NOTY', res);
+          }
 
   				for(let id of memberCmt){
   					if(id !== userCurrent.id.toString()) {

@@ -1,0 +1,2120 @@
+{ 
+    "_id" : ObjectId("5bbed76c4756b01584becff9"), 
+    "idMe" : ObjectId("5ba8b2c3cda330222ca7b8d1"), 
+    "message" : "125", 
+    "idFriend" : ObjectId("5bbaf4ca3f8500d824ef8376"), 
+    "status" : NumberInt(0), 
+    "time" : 1539233644469.0
+}
+{ 
+    "_id" : ObjectId("5bbed7714756b01584becffa"), 
+    "idMe" : ObjectId("5ba8b2c3cda330222ca7b8d1"), 
+    "message" : "369", 
+    "idFriend" : ObjectId("5bbaf4ca3f8500d824ef8376"), 
+    "status" : NumberInt(0), 
+    "time" : 1539233649929.0
+}
+{ 
+    "_id" : ObjectId("5bbed7b0a5e7cb11a0bb1c1a"), 
+    "idMe" : ObjectId("5ba8b2c3cda330222ca7b8d1"), 
+    "message" : "4545", 
+    "idFriend" : ObjectId("5bbaf4ca3f8500d824ef8376"), 
+    "status" : NumberInt(0), 
+    "time" : 1539233712580.0
+}
+{ 
+    "_id" : ObjectId("5bbed7d1205b05230803868f"), 
+    "idMe" : ObjectId("5ba8b2c3cda330222ca7b8d1"), 
+    "message" : "5555", 
+    "idFriend" : ObjectId("5bbaf4ca3f8500d824ef8376"), 
+    "status" : NumberInt(0), 
+    "time" : 1539233745488.0
+}
+{ 
+    "_id" : ObjectId("5bbed7f9205b052308038690"), 
+    "idMe" : ObjectId("5ba8b2c3cda330222ca7b8d1"), 
+    "message" : "369", 
+    "idFriend" : ObjectId("5bbaf4ca3f8500d824ef8376"), 
+    "status" : NumberInt(0), 
+    "time" : 1539233785772.0
+}
+{ 
+    "_id" : ObjectId("5bbed8cc7f4f5611bce362bb"), 
+    "idMe" : ObjectId("5ba8b2c3cda330222ca7b8d1"), 
+    "message" : "369", 
+    "idFriend" : ObjectId("5bbaf4ca3f8500d824ef8376"), 
+    "status" : NumberInt(0), 
+    "time" : 1539233996364.0
+}
+{ 
+    "_id" : ObjectId("5bbed9cf7f4f5611bce362bc"), 
+    "idMe" : ObjectId("5ba8b2c3cda330222ca7b8d1"), 
+    "message" : "369", 
+    "idFriend" : ObjectId("5bbaf4ca3f8500d824ef8376"), 
+    "status" : NumberInt(0), 
+    "time" : 1539233996364.0
+}
+{ 
+    "_id" : ObjectId("5bbed9f20118c5114048833f"), 
+    "idMe" : ObjectId("5ba8b2c3cda330222ca7b8d1"), 
+    "message" : "369", 
+    "idFriend" : ObjectId("5bbaf4ca3f8500d824ef8376"), 
+    "status" : NumberInt(0), 
+    "time" : 1539233996364.0
+}
+{ 
+    "_id" : ObjectId("5bbeda1478c8a21414448520"), 
+    "idMe" : ObjectId("5ba8b2c3cda330222ca7b8d1"), 
+    "message" : "369", 
+    "idFriend" : ObjectId("5bbaf4ca3f8500d824ef8376"), 
+    "status" : NumberInt(0), 
+    "time" : 1539233996364.0
+}
+{ 
+    "_id" : ObjectId("5bbeda53cb75ce21300e9021"), 
+    "idMe" : ObjectId("5ba8b2c3cda330222ca7b8d1"), 
+    "message" : "369", 
+    "idFriend" : ObjectId("5bbaf4ca3f8500d824ef8376"), 
+    "status" : NumberInt(0), 
+    "time" : 1539233996364.0
+}
+{ 
+    "_id" : ObjectId("5bbeda6b05ce0b04443278aa"), 
+    "idMe" : ObjectId("5ba8b2c3cda330222ca7b8d1"), 
+    "message" : "369", 
+    "idFriend" : ObjectId("5bbaf4ca3f8500d824ef8376"), 
+    "status" : NumberInt(0), 
+    "time" : 1539233996364.0
+}
+{ 
+    "_id" : ObjectId("5bbeda7a0a7aa92c38208c44"), 
+    "idMe" : ObjectId("5ba8b2c3cda330222ca7b8d1"), 
+    "message" : "369", 
+    "idFriend" : ObjectId("5bbaf4ca3f8500d824ef8376"), 
+    "status" : NumberInt(0), 
+    "time" : 1539233996364.0
+}
+{ 
+    "_id" : ObjectId("5bbedae5b3eaab23ec67423f"), 
+    "idMe" : ObjectId("5ba8b2c3cda330222ca7b8d1"), 
+    "message" : "369", 
+    "idFriend" : ObjectId("5bbaf4ca3f8500d824ef8376"), 
+    "status" : NumberInt(0), 
+    "time" : 1539233996364.0
+}
+{ 
+    "_id" : ObjectId("5bbedaf949dc9926186df143"), 
+    "idMe" : ObjectId("5ba8b2c3cda330222ca7b8d1"), 
+    "message" : "369", 
+    "idFriend" : ObjectId("5bbaf4ca3f8500d824ef8376"), 
+    "status" : NumberInt(0), 
+    "time" : 1539233996364.0
+}
+{ 
+    "_id" : ObjectId("5bbedb1fd9682931d41a9e90"), 
+    "idMe" : ObjectId("5ba8b2c3cda330222ca7b8d1"), 
+    "message" : "369", 
+    "idFriend" : ObjectId("5bbaf4ca3f8500d824ef8376"), 
+    "status" : NumberInt(0), 
+    "time" : 1539233996364.0
+}
+{ 
+    "_id" : ObjectId("5bbedb981f3abc23b06828ce"), 
+    "idMe" : ObjectId("5ba8b2c3cda330222ca7b8d1"), 
+    "message" : "369", 
+    "idFriend" : ObjectId("5bbaf4ca3f8500d824ef8376"), 
+    "status" : NumberInt(0), 
+    "time" : 1539233996364.0
+}
+{ 
+    "_id" : ObjectId("5bbedbcef5b549116cdfdd77"), 
+    "idMe" : ObjectId("5ba8b2c3cda330222ca7b8d1"), 
+    "message" : "369", 
+    "idFriend" : ObjectId("5bbaf4ca3f8500d824ef8376"), 
+    "status" : NumberInt(0), 
+    "time" : 1539233996364.0
+}
+{ 
+    "_id" : ObjectId("5bbedbe1e0dd522fac3da46d"), 
+    "idMe" : ObjectId("5ba8b2c3cda330222ca7b8d1"), 
+    "message" : "369", 
+    "idFriend" : ObjectId("5bbaf4ca3f8500d824ef8376"), 
+    "status" : NumberInt(0), 
+    "time" : 1539233996364.0
+}
+{ 
+    "_id" : ObjectId("5bbedc1fe2161e0de82a86fe"), 
+    "idMe" : ObjectId("5ba8b2c3cda330222ca7b8d1"), 
+    "message" : "369", 
+    "idFriend" : ObjectId("5bbaf4ca3f8500d824ef8376"), 
+    "status" : NumberInt(0), 
+    "time" : 1539233996364.0
+}
+{ 
+    "_id" : ObjectId("5bbedc27e2161e0de82a86ff"), 
+    "idMe" : ObjectId("5ba8b2c3cda330222ca7b8d1"), 
+    "message" : "258", 
+    "idFriend" : ObjectId("5bbaf4ca3f8500d824ef8376"), 
+    "status" : NumberInt(0), 
+    "time" : 1539234854906.0
+}
+{ 
+    "_id" : ObjectId("5bbedc47f8a5b22600b97e9f"), 
+    "idMe" : ObjectId("5ba8b2c3cda330222ca7b8d1"), 
+    "message" : "258", 
+    "idFriend" : ObjectId("5bbaf4ca3f8500d824ef8376"), 
+    "status" : NumberInt(0), 
+    "time" : 1539234886844.0
+}
+{ 
+    "_id" : ObjectId("5bbedc4df8a5b22600b97ea0"), 
+    "idMe" : ObjectId("5bbaf4ca3f8500d824ef8376"), 
+    "message" : "1258", 
+    "idFriend" : ObjectId("5ba8b2c3cda330222ca7b8d1"), 
+    "status" : NumberInt(0), 
+    "time" : 1539234893204.0
+}
+{ 
+    "_id" : ObjectId("5bbedc55f8a5b22600b97ea1"), 
+    "idMe" : ObjectId("5ba8b2c3cda330222ca7b8d1"), 
+    "message" : "396", 
+    "idFriend" : ObjectId("5bbaf4ca3f8500d824ef8376"), 
+    "status" : NumberInt(0), 
+    "time" : 1539234900699.0
+}
+{ 
+    "_id" : ObjectId("5bbedc62f8a5b22600b97ea2"), 
+    "idMe" : ObjectId("5ba8b2c3cda330222ca7b8d1"), 
+    "message" : "396", 
+    "idFriend" : ObjectId("5bbaf4ca3f8500d824ef8376"), 
+    "status" : NumberInt(0), 
+    "time" : 1539234913924.0
+}
+{ 
+    "_id" : ObjectId("5bbedc67f8a5b22600b97ea3"), 
+    "idMe" : ObjectId("5bbaf4ca3f8500d824ef8376"), 
+    "message" : "1258", 
+    "idFriend" : ObjectId("5ba8b2c3cda330222ca7b8d1"), 
+    "status" : NumberInt(0), 
+    "time" : 1539234919544.0
+}
+{ 
+    "_id" : ObjectId("5bbedc88f8a5b22600b97ea4"), 
+    "idMe" : ObjectId("5ba8b2c3cda330222ca7b8d1"), 
+    "message" : "258", 
+    "idFriend" : ObjectId("5bbaf4ca3f8500d824ef8376"), 
+    "status" : NumberInt(0), 
+    "time" : 1539234952235.0
+}
+{ 
+    "_id" : ObjectId("5bbedc92f8a5b22600b97ea5"), 
+    "idMe" : ObjectId("5bbaf4ca3f8500d824ef8376"), 
+    "message" : "125", 
+    "idFriend" : ObjectId("5ba8b2c3cda330222ca7b8d1"), 
+    "status" : NumberInt(0), 
+    "time" : 1539234962647.0
+}
+{ 
+    "_id" : ObjectId("5bbedca4b372302d109c5cb7"), 
+    "idMe" : ObjectId("5bbaf4ca3f8500d824ef8376"), 
+    "message" : "acascasc", 
+    "idFriend" : ObjectId("5ba8b2c3cda330222ca7b8d1"), 
+    "status" : NumberInt(0), 
+    "time" : 1539234980208.0
+}
+{ 
+    "_id" : ObjectId("5bbee152b372302d109c5cb8"), 
+    "idMe" : ObjectId("5bbaf4ca3f8500d824ef8376"), 
+    "message" : "111111111111111", 
+    "idFriend" : ObjectId("5ba8b2c3cda330222ca7b8d1"), 
+    "status" : NumberInt(0), 
+    "time" : 1539236177819.0
+}
+{ 
+    "_id" : ObjectId("5bbee156b372302d109c5cb9"), 
+    "idMe" : ObjectId("5bbaf4ca3f8500d824ef8376"), 
+    "message" : "4333333333333333", 
+    "idFriend" : ObjectId("5ba8b2c3cda330222ca7b8d1"), 
+    "status" : NumberInt(0), 
+    "time" : 1539236182051.0
+}
+{ 
+    "_id" : ObjectId("5bbee15bb372302d109c5cba"), 
+    "idMe" : ObjectId("5ba8b2c3cda330222ca7b8d1"), 
+    "message" : "333333333333333333", 
+    "idFriend" : ObjectId("5bbaf4ca3f8500d824ef8376"), 
+    "status" : NumberInt(0), 
+    "time" : 1539236186782.0
+}
+{ 
+    "_id" : ObjectId("5bbee703b372302d109c5cbb"), 
+    "idMe" : ObjectId("5ba8b2c3cda330222ca7b8d1"), 
+    "message" : "333333333333333", 
+    "idFriend" : ObjectId("5bbaf4ca3f8500d824ef8376"), 
+    "status" : NumberInt(0), 
+    "time" : 1539237635614.0
+}
+{ 
+    "_id" : ObjectId("5bbee70db372302d109c5cbc"), 
+    "idMe" : ObjectId("5bbaf4ca3f8500d824ef8376"), 
+    "message" : "aaaaaaaaaaaaaaa", 
+    "idFriend" : ObjectId("5ba8b2c3cda330222ca7b8d1"), 
+    "status" : NumberInt(0), 
+    "time" : 1539237645886.0
+}
+{ 
+    "_id" : ObjectId("5bbee788b372302d109c5cbd"), 
+    "idMe" : ObjectId("5ba8b2c3cda330222ca7b8d1"), 
+    "message" : "123", 
+    "idFriend" : ObjectId("5bbaf4ca3f8500d824ef8376"), 
+    "status" : NumberInt(0), 
+    "time" : 1539237768113.0
+}
+{ 
+    "_id" : ObjectId("5bbee849b372302d109c5cbe"), 
+    "idMe" : ObjectId("5bbaf4ca3f8500d824ef8376"), 
+    "message" : "111", 
+    "idFriend" : ObjectId("5ba8b2c3cda330222ca7b8d1"), 
+    "status" : NumberInt(0), 
+    "time" : 1539237961344.0
+}
+{ 
+    "_id" : ObjectId("5bbee923b372302d109c5cbf"), 
+    "idMe" : ObjectId("5ba8b2c3cda330222ca7b8d1"), 
+    "message" : "333333333", 
+    "idFriend" : ObjectId("5bbaf4ca3f8500d824ef8376"), 
+    "status" : NumberInt(0), 
+    "time" : 1539238179853.0
+}
+{ 
+    "_id" : ObjectId("5bbee9570be6230a8cbbec57"), 
+    "idMe" : ObjectId("5ba8b2c3cda330222ca7b8d1"), 
+    "message" : "3333", 
+    "idFriend" : ObjectId("5bbaf4ca3f8500d824ef8376"), 
+    "status" : NumberInt(0), 
+    "time" : 1539238231139.0
+}
+{ 
+    "_id" : ObjectId("5bbee9930be6230a8cbbec58"), 
+    "idMe" : ObjectId("5ba8b2c3cda330222ca7b8d1"), 
+    "message" : "369", 
+    "idFriend" : ObjectId("5bbaf4ca3f8500d824ef8376"), 
+    "status" : NumberInt(0), 
+    "time" : 1539238291667.0
+}
+{ 
+    "_id" : ObjectId("5bbee99a0be6230a8cbbec59"), 
+    "idMe" : ObjectId("5bbaf4ca3f8500d824ef8376"), 
+    "message" : "5222", 
+    "idFriend" : ObjectId("5ba8b2c3cda330222ca7b8d1"), 
+    "status" : NumberInt(0), 
+    "time" : 1539238298691.0
+}
+{ 
+    "_id" : ObjectId("5bbee9b3dfe45b0ffc486df5"), 
+    "idMe" : ObjectId("5ba8b2c3cda330222ca7b8d1"), 
+    "message" : "555", 
+    "idFriend" : ObjectId("5bbaf4ca3f8500d824ef8376"), 
+    "status" : NumberInt(0), 
+    "time" : 1539238323120.0
+}
+{ 
+    "_id" : ObjectId("5bbee9b9dfe45b0ffc486df6"), 
+    "idMe" : ObjectId("5bbaf4ca3f8500d824ef8376"), 
+    "message" : "25855", 
+    "idFriend" : ObjectId("5ba8b2c3cda330222ca7b8d1"), 
+    "status" : NumberInt(0), 
+    "time" : 1539238329335.0
+}
+{ 
+    "_id" : ObjectId("5bbeea6d1dbfe1356831c6d5"), 
+    "idMe" : ObjectId("5bbaf4ca3f8500d824ef8376"), 
+    "message" : "258", 
+    "idFriend" : ObjectId("5ba8b2c3cda330222ca7b8d1"), 
+    "status" : NumberInt(0), 
+    "time" : 1539238509325.0
+}
+{ 
+    "_id" : ObjectId("5bbeea6f1dbfe1356831c6d6"), 
+    "idMe" : ObjectId("5bbaf4ca3f8500d824ef8376"), 
+    "message" : "ascasc", 
+    "idFriend" : ObjectId("5ba8b2c3cda330222ca7b8d1"), 
+    "status" : NumberInt(0), 
+    "time" : 1539238511654.0
+}
+{ 
+    "_id" : ObjectId("5bbeea731dbfe1356831c6d7"), 
+    "idMe" : ObjectId("5ba8b2c3cda330222ca7b8d1"), 
+    "message" : "ascasc", 
+    "idFriend" : ObjectId("5bbaf4ca3f8500d824ef8376"), 
+    "status" : NumberInt(0), 
+    "time" : 1539238514733.0
+}
+{ 
+    "_id" : ObjectId("5bbeea751dbfe1356831c6d8"), 
+    "idMe" : ObjectId("5ba8b2c3cda330222ca7b8d1"), 
+    "message" : "asc", 
+    "idFriend" : ObjectId("5bbaf4ca3f8500d824ef8376"), 
+    "status" : NumberInt(0), 
+    "time" : 1539238517065.0
+}
+{ 
+    "_id" : ObjectId("5bbeea761dbfe1356831c6d9"), 
+    "idMe" : ObjectId("5ba8b2c3cda330222ca7b8d1"), 
+    "message" : "ac", 
+    "idFriend" : ObjectId("5bbaf4ca3f8500d824ef8376"), 
+    "status" : NumberInt(0), 
+    "time" : 1539238518124.0
+}
+{ 
+    "_id" : ObjectId("5bbeea791dbfe1356831c6da"), 
+    "idMe" : ObjectId("5bbaf4ca3f8500d824ef8376"), 
+    "message" : "ascac", 
+    "idFriend" : ObjectId("5ba8b2c3cda330222ca7b8d1"), 
+    "status" : NumberInt(0), 
+    "time" : 1539238521164.0
+}
+{ 
+    "_id" : ObjectId("5bbeea7a1dbfe1356831c6db"), 
+    "idMe" : ObjectId("5bbaf4ca3f8500d824ef8376"), 
+    "message" : "asc", 
+    "idFriend" : ObjectId("5ba8b2c3cda330222ca7b8d1"), 
+    "status" : NumberInt(0), 
+    "time" : 1539238522860.0
+}
+{ 
+    "_id" : ObjectId("5bbeea7f1dbfe1356831c6dc"), 
+    "idMe" : ObjectId("5ba8b2c3cda330222ca7b8d1"), 
+    "message" : "ascasc", 
+    "idFriend" : ObjectId("5bbaf4ca3f8500d824ef8376"), 
+    "status" : NumberInt(0), 
+    "time" : 1539238527199.0
+}
+{ 
+    "_id" : ObjectId("5bbeea801dbfe1356831c6dd"), 
+    "idMe" : ObjectId("5ba8b2c3cda330222ca7b8d1"), 
+    "message" : "asc", 
+    "idFriend" : ObjectId("5bbaf4ca3f8500d824ef8376"), 
+    "status" : NumberInt(0), 
+    "time" : 1539238528659.0
+}
+{ 
+    "_id" : ObjectId("5bbeea811dbfe1356831c6de"), 
+    "idMe" : ObjectId("5ba8b2c3cda330222ca7b8d1"), 
+    "message" : "asc", 
+    "idFriend" : ObjectId("5bbaf4ca3f8500d824ef8376"), 
+    "status" : NumberInt(0), 
+    "time" : 1539238529321.0
+}
+{ 
+    "_id" : ObjectId("5bbeeab31dbfe1356831c6df"), 
+    "idMe" : ObjectId("5ba8b2c3cda330222ca7b8d1"), 
+    "message" : "ascascacs", 
+    "idFriend" : ObjectId("5bbaf4ca3f8500d824ef8376"), 
+    "status" : NumberInt(0), 
+    "time" : 1539238579006.0
+}
+{ 
+    "_id" : ObjectId("5bbeeb361dbfe1356831c6e0"), 
+    "idMe" : ObjectId("5bbaf4ca3f8500d824ef8376"), 
+    "message" : "aacasc", 
+    "idFriend" : ObjectId("5ba8b2c3cda330222ca7b8d1"), 
+    "status" : NumberInt(0), 
+    "time" : 1539238710699.0
+}
+{ 
+    "_id" : ObjectId("5bbeebb41dbfe1356831c6e1"), 
+    "idMe" : ObjectId("5bbaf4ca3f8500d824ef8376"), 
+    "message" : "asc", 
+    "idFriend" : ObjectId("5ba8b2c3cda330222ca7b8d1"), 
+    "status" : NumberInt(0), 
+    "time" : 1539238836964.0
+}
+{ 
+    "_id" : ObjectId("5bbeebee1dbfe1356831c6e2"), 
+    "idMe" : ObjectId("5bbaf4ca3f8500d824ef8376"), 
+    "message" : "ascascasc", 
+    "idFriend" : ObjectId("5ba8b2c3cda330222ca7b8d1"), 
+    "status" : NumberInt(0), 
+    "time" : 1539238894228.0
+}
+{ 
+    "_id" : ObjectId("5bbeebf21dbfe1356831c6e3"), 
+    "idMe" : ObjectId("5bbaf4ca3f8500d824ef8376"), 
+    "message" : "chau", 
+    "idFriend" : ObjectId("5ba8b2c3cda330222ca7b8d1"), 
+    "status" : NumberInt(0), 
+    "time" : 1539238898555.0
+}
+{ 
+    "_id" : ObjectId("5bbeec271dbfe1356831c6e4"), 
+    "idMe" : ObjectId("5bbaf4ca3f8500d824ef8376"), 
+    "message" : "ascascac", 
+    "idFriend" : ObjectId("5ba8b2c3cda330222ca7b8d1"), 
+    "status" : NumberInt(0), 
+    "time" : 1539238951368.0
+}
+{ 
+    "_id" : ObjectId("5bbeec2a1dbfe1356831c6e5"), 
+    "idMe" : ObjectId("5bbaf4ca3f8500d824ef8376"), 
+    "message" : "cha", 
+    "idFriend" : ObjectId("5ba8b2c3cda330222ca7b8d1"), 
+    "status" : NumberInt(0), 
+    "time" : 1539238954302.0
+}
+{ 
+    "_id" : ObjectId("5bbeec351dbfe1356831c6e6"), 
+    "idMe" : ObjectId("5ba8b2c3cda330222ca7b8d1"), 
+    "message" : "hello", 
+    "idFriend" : ObjectId("5bbaf4ca3f8500d824ef8376"), 
+    "status" : NumberInt(0), 
+    "time" : 1539238964839.0
+}
+{ 
+    "_id" : ObjectId("5bbeec3d1dbfe1356831c6e7"), 
+    "idMe" : ObjectId("5ba8b2c3cda330222ca7b8d1"), 
+    "message" : "how are you", 
+    "idFriend" : ObjectId("5bbaf4ca3f8500d824ef8376"), 
+    "status" : NumberInt(0), 
+    "time" : 1539238973227.0
+}
+{ 
+    "_id" : ObjectId("5bbeec3f1dbfe1356831c6e8"), 
+    "idMe" : ObjectId("5ba8b2c3cda330222ca7b8d1"), 
+    "message" : ":)", 
+    "idFriend" : ObjectId("5bbaf4ca3f8500d824ef8376"), 
+    "status" : NumberInt(0), 
+    "time" : 1539238975441.0
+}
+{ 
+    "_id" : ObjectId("5bbeec471dbfe1356831c6e9"), 
+    "idMe" : ObjectId("5bbaf4ca3f8500d824ef8376"), 
+    "message" : "khặc khặc", 
+    "idFriend" : ObjectId("5ba8b2c3cda330222ca7b8d1"), 
+    "status" : NumberInt(0), 
+    "time" : 1539238982799.0
+}
+{ 
+    "_id" : ObjectId("5bbeec4b1dbfe1356831c6ea"), 
+    "idMe" : ObjectId("5bbaf4ca3f8500d824ef8376"), 
+    "message" : "ascasc", 
+    "idFriend" : ObjectId("5bbaf4d73f8500d824ef837c"), 
+    "status" : NumberInt(0), 
+    "time" : 1539238987670.0
+}
+{ 
+    "_id" : ObjectId("5bbeec581dbfe1356831c6eb"), 
+    "idMe" : ObjectId("5bbaf4ca3f8500d824ef8376"), 
+    "message" : "hù hù", 
+    "idFriend" : ObjectId("5ba8b2c3cda330222ca7b8d1"), 
+    "status" : NumberInt(0), 
+    "time" : 1539239000156.0
+}
+{ 
+    "_id" : ObjectId("5bbeec5c1dbfe1356831c6ec"), 
+    "idMe" : ObjectId("5bbaf4ca3f8500d824ef8376"), 
+    "message" : "huhu", 
+    "idFriend" : ObjectId("5bbaf4d73f8500d824ef837c"), 
+    "status" : NumberInt(0), 
+    "time" : 1539239004376.0
+}
+{ 
+    "_id" : ObjectId("5bbeec6a1dbfe1356831c6ed"), 
+    "idMe" : ObjectId("5ba8b2c3cda330222ca7b8d1"), 
+    "message" : "khặc khặc", 
+    "idFriend" : ObjectId("5bbaf4d73f8500d824ef837c"), 
+    "status" : NumberInt(0), 
+    "time" : 1539239018354.0
+}
+{ 
+    "_id" : ObjectId("5bbef4f11dbfe1356831c6ee"), 
+    "idMe" : ObjectId("5ba8b2c3cda330222ca7b8d1"), 
+    "message" : "ascasc", 
+    "idFriend" : ObjectId("5bbaf4ca3f8500d824ef8376"), 
+    "status" : NumberInt(0), 
+    "time" : 1539241201475.0
+}
+{ 
+    "_id" : ObjectId("5bbef5091dbfe1356831c6ef"), 
+    "idMe" : ObjectId("5ba8b2c3cda330222ca7b8d1"), 
+    "message" : "ascascacs", 
+    "idFriend" : ObjectId("5bbaf4ca3f8500d824ef8376"), 
+    "status" : NumberInt(0), 
+    "time" : 1539241225178.0
+}
+{ 
+    "_id" : ObjectId("5bbef5201dbfe1356831c6f0"), 
+    "idMe" : ObjectId("5ba8b2c3cda330222ca7b8d1"), 
+    "message" : "ascascasc", 
+    "idFriend" : ObjectId("5bbaf4ca3f8500d824ef8376"), 
+    "status" : NumberInt(0), 
+    "time" : 1539241248119.0
+}
+{ 
+    "_id" : ObjectId("5bbef5221dbfe1356831c6f1"), 
+    "idMe" : ObjectId("5ba8b2c3cda330222ca7b8d1"), 
+    "message" : "ascac", 
+    "idFriend" : ObjectId("5bbaf4ca3f8500d824ef8376"), 
+    "status" : NumberInt(0), 
+    "time" : 1539241250606.0
+}
+{ 
+    "_id" : ObjectId("5bbef5231dbfe1356831c6f2"), 
+    "idMe" : ObjectId("5ba8b2c3cda330222ca7b8d1"), 
+    "message" : "asc", 
+    "idFriend" : ObjectId("5bbaf4ca3f8500d824ef8376"), 
+    "status" : NumberInt(0), 
+    "time" : 1539241251683.0
+}
+{ 
+    "_id" : ObjectId("5bbef52f1dbfe1356831c6f3"), 
+    "idMe" : ObjectId("5ba8b2c3cda330222ca7b8d1"), 
+    "message" : "ascasc", 
+    "idFriend" : ObjectId("5bbaf4ca3f8500d824ef8376"), 
+    "status" : NumberInt(0), 
+    "time" : 1539241263473.0
+}
+{ 
+    "_id" : ObjectId("5bbf5b529f7e2c18ccff752a"), 
+    "idMe" : ObjectId("5ba8b2c3cda330222ca7b8d1"), 
+    "message" : "hello", 
+    "idFriend" : ObjectId("5bbaf4ca3f8500d824ef8376"), 
+    "status" : NumberInt(0), 
+    "time" : 1539267410291.0
+}
+{ 
+    "_id" : ObjectId("5bbf5b579f7e2c18ccff752b"), 
+    "idMe" : ObjectId("5bbaf4ca3f8500d824ef8376"), 
+    "message" : "alo", 
+    "idFriend" : ObjectId("5ba8b2c3cda330222ca7b8d1"), 
+    "status" : NumberInt(0), 
+    "time" : 1539267415563.0
+}
+{ 
+    "_id" : ObjectId("5bbf5b5e9f7e2c18ccff752c"), 
+    "idMe" : ObjectId("5ba8b2c3cda330222ca7b8d1"), 
+    "message" : "a xi moto", 
+    "idFriend" : ObjectId("5bbaf4ca3f8500d824ef8376"), 
+    "status" : NumberInt(0), 
+    "time" : 1539267422132.0
+}
+{ 
+    "_id" : ObjectId("5bbf63fc9f7e2c18ccff752d"), 
+    "idMe" : ObjectId("5ba8b2c3cda330222ca7b8d1"), 
+    "message" : "ascac", 
+    "idFriend" : ObjectId("5bbaf4ca3f8500d824ef8376"), 
+    "status" : NumberInt(0), 
+    "time" : 1539269628673.0
+}
+{ 
+    "_id" : ObjectId("5bbf677a9f7e2c18ccff752e"), 
+    "idMe" : ObjectId("5ba8b2c3cda330222ca7b8d1"), 
+    "message" : "ascasc", 
+    "idFriend" : ObjectId("5bbaf4ca3f8500d824ef8376"), 
+    "status" : NumberInt(0), 
+    "time" : 1539270522650.0
+}
+{ 
+    "_id" : ObjectId("5bbf67819f7e2c18ccff752f"), 
+    "idMe" : ObjectId("5ba8b2c3cda330222ca7b8d1"), 
+    "message" : "12312", 
+    "idFriend" : ObjectId("5bbaf4ca3f8500d824ef8376"), 
+    "status" : NumberInt(0), 
+    "time" : 1539270528682.0
+}
+{ 
+    "_id" : ObjectId("5bbf67d89f7e2c18ccff7530"), 
+    "idMe" : ObjectId("5ba8b2c3cda330222ca7b8d1"), 
+    "message" : "acasc", 
+    "idFriend" : ObjectId("5bbaf4ca3f8500d824ef8376"), 
+    "status" : NumberInt(0), 
+    "time" : 1539270616794.0
+}
+{ 
+    "_id" : ObjectId("5bbf67da9f7e2c18ccff7531"), 
+    "idMe" : ObjectId("5ba8b2c3cda330222ca7b8d1"), 
+    "message" : "casc", 
+    "idFriend" : ObjectId("5bbaf4ca3f8500d824ef8376"), 
+    "status" : NumberInt(0), 
+    "time" : 1539270618401.0
+}
+{ 
+    "_id" : ObjectId("5bbf68709f7e2c18ccff7532"), 
+    "idMe" : ObjectId("5ba8b2c3cda330222ca7b8d1"), 
+    "message" : "ascascacs", 
+    "idFriend" : ObjectId("5bbaf4ca3f8500d824ef8376"), 
+    "status" : NumberInt(0), 
+    "time" : 1539270768901.0
+}
+{ 
+    "_id" : ObjectId("5bbf69a39f7e2c18ccff7533"), 
+    "idMe" : ObjectId("5ba8b2c3cda330222ca7b8d1"), 
+    "message" : "acasc", 
+    "idFriend" : ObjectId("5bbaf4ca3f8500d824ef8376"), 
+    "status" : NumberInt(0), 
+    "time" : 1539271075925.0
+}
+{ 
+    "_id" : ObjectId("5bbf69a69f7e2c18ccff7534"), 
+    "idMe" : ObjectId("5ba8b2c3cda330222ca7b8d1"), 
+    "message" : "acasc", 
+    "idFriend" : ObjectId("5bbaf4ca3f8500d824ef8376"), 
+    "status" : NumberInt(0), 
+    "time" : 1539271078301.0
+}
+{ 
+    "_id" : ObjectId("5bbf69a99f7e2c18ccff7535"), 
+    "idMe" : ObjectId("5ba8b2c3cda330222ca7b8d1"), 
+    "message" : "aaaa", 
+    "idFriend" : ObjectId("5bbaf4ca3f8500d824ef8376"), 
+    "status" : NumberInt(0), 
+    "time" : 1539271081118.0
+}
+{ 
+    "_id" : ObjectId("5bbf69b59f7e2c18ccff7536"), 
+    "idMe" : ObjectId("5ba8b2c3cda330222ca7b8d1"), 
+    "message" : "111111111111111", 
+    "idFriend" : ObjectId("5bbaf4ca3f8500d824ef8376"), 
+    "status" : NumberInt(0), 
+    "time" : 1539271093038.0
+}
+{ 
+    "_id" : ObjectId("5bbf69be9f7e2c18ccff7537"), 
+    "idMe" : ObjectId("5bbaf4ca3f8500d824ef8376"), 
+    "message" : "ascascascasc", 
+    "idFriend" : ObjectId("5ba8b2c3cda330222ca7b8d1"), 
+    "status" : NumberInt(0), 
+    "time" : 1539271102719.0
+}
+{ 
+    "_id" : ObjectId("5bbf69ce9f7e2c18ccff7538"), 
+    "idMe" : ObjectId("5ba8b2c3cda330222ca7b8d1"), 
+    "message" : "ascac", 
+    "idFriend" : ObjectId("5bbaf4ca3f8500d824ef8376"), 
+    "status" : NumberInt(0), 
+    "time" : 1539271118445.0
+}
+{ 
+    "_id" : ObjectId("5bbf69d29f7e2c18ccff7539"), 
+    "idMe" : ObjectId("5bbaf4ca3f8500d824ef8376"), 
+    "message" : "ascacsac", 
+    "idFriend" : ObjectId("5ba8b2c3cda330222ca7b8d1"), 
+    "status" : NumberInt(0), 
+    "time" : 1539271122198.0
+}
+{ 
+    "_id" : ObjectId("5bbf69fa9f7e2c18ccff753a"), 
+    "idMe" : ObjectId("5bbaf4ca3f8500d824ef8376"), 
+    "message" : "ascac", 
+    "idFriend" : ObjectId("5ba8b2c3cda330222ca7b8d1"), 
+    "status" : NumberInt(0), 
+    "time" : 1539271162086.0
+}
+{ 
+    "_id" : ObjectId("5bbf6a069f7e2c18ccff753b"), 
+    "idMe" : ObjectId("5ba8b2c3cda330222ca7b8d1"), 
+    "message" : "acacac", 
+    "idFriend" : ObjectId("5bbaf4ca3f8500d824ef8376"), 
+    "status" : NumberInt(0), 
+    "time" : 1539271173901.0
+}
+{ 
+    "_id" : ObjectId("5bbf6a309f7e2c18ccff753c"), 
+    "idMe" : ObjectId("5bbaf4ca3f8500d824ef8376"), 
+    "message" : "ascascasc", 
+    "idFriend" : ObjectId("5ba8b2c3cda330222ca7b8d1"), 
+    "status" : NumberInt(0), 
+    "time" : 1539271216492.0
+}
+{ 
+    "_id" : ObjectId("5bbf6b479f7e2c18ccff753d"), 
+    "idMe" : ObjectId("5ba8b2c3cda330222ca7b8d1"), 
+    "message" : "acac", 
+    "idFriend" : ObjectId("5bbaf4ca3f8500d824ef8376"), 
+    "status" : NumberInt(0), 
+    "time" : 1539271495451.0
+}
+{ 
+    "_id" : ObjectId("5bbf6b4d9f7e2c18ccff753e"), 
+    "idMe" : ObjectId("5ba8b2c3cda330222ca7b8d1"), 
+    "message" : "aa", 
+    "idFriend" : ObjectId("5bbaf4ca3f8500d824ef8376"), 
+    "status" : NumberInt(0), 
+    "time" : 1539271501075.0
+}
+{ 
+    "_id" : ObjectId("5bbf6b5d9f7e2c18ccff753f"), 
+    "idMe" : ObjectId("5ba8b2c3cda330222ca7b8d1"), 
+    "message" : "121", 
+    "idFriend" : ObjectId("5bbaf4ca3f8500d824ef8376"), 
+    "status" : NumberInt(0), 
+    "time" : 1539271516850.0
+}
+{ 
+    "_id" : ObjectId("5bbf6c0581660a0bd89af6f3"), 
+    "idMe" : ObjectId("5ba8b2c3cda330222ca7b8d1"), 
+    "message" : "39", 
+    "idFriend" : ObjectId("5bbaf4ca3f8500d824ef8376"), 
+    "status" : NumberInt(0), 
+    "time" : 1539271685281.0
+}
+{ 
+    "_id" : ObjectId("5bbf6c1281660a0bd89af6f4"), 
+    "idMe" : ObjectId("5bbaf4ca3f8500d824ef8376"), 
+    "message" : "111", 
+    "idFriend" : ObjectId("5ba8b2c3cda330222ca7b8d1"), 
+    "status" : NumberInt(0), 
+    "time" : 1539271698553.0
+}
+{ 
+    "_id" : ObjectId("5bbf6d0881660a0bd89af6f5"), 
+    "idMe" : ObjectId("5ba8b2c3cda330222ca7b8d1"), 
+    "message" : "25555", 
+    "idFriend" : ObjectId("5bbaf4ca3f8500d824ef8376"), 
+    "status" : NumberInt(0), 
+    "time" : 1539271943839.0
+}
+{ 
+    "_id" : ObjectId("5bbf6d1581660a0bd89af6f6"), 
+    "idMe" : ObjectId("5bbaf4ca3f8500d824ef8376"), 
+    "message" : "258", 
+    "idFriend" : ObjectId("5ba8b2c3cda330222ca7b8d1"), 
+    "status" : NumberInt(0), 
+    "time" : 1539271957503.0
+}
+{ 
+    "_id" : ObjectId("5bbf6d5f81660a0bd89af6f7"), 
+    "idMe" : ObjectId("5ba8b2c3cda330222ca7b8d1"), 
+    "message" : "acac", 
+    "idFriend" : ObjectId("5bbaf4ca3f8500d824ef8376"), 
+    "status" : NumberInt(0), 
+    "time" : 1539272031182.0
+}
+{ 
+    "_id" : ObjectId("5bbf6d6381660a0bd89af6f8"), 
+    "idMe" : ObjectId("5bbaf4ca3f8500d824ef8376"), 
+    "message" : "acac", 
+    "idFriend" : ObjectId("5ba8b2c3cda330222ca7b8d1"), 
+    "status" : NumberInt(0), 
+    "time" : 1539272035455.0
+}
+{ 
+    "_id" : ObjectId("5bbf6d6a81660a0bd89af6f9"), 
+    "idMe" : ObjectId("5bbaf4ca3f8500d824ef8376"), 
+    "message" : "acac", 
+    "idFriend" : ObjectId("5ba8b2c3cda330222ca7b8d1"), 
+    "status" : NumberInt(0), 
+    "time" : 1539272042678.0
+}
+{ 
+    "_id" : ObjectId("5bbf6d6c81660a0bd89af6fa"), 
+    "idMe" : ObjectId("5bbaf4ca3f8500d824ef8376"), 
+    "message" : "ascasc", 
+    "idFriend" : ObjectId("5ba8b2c3cda330222ca7b8d1"), 
+    "status" : NumberInt(0), 
+    "time" : 1539272044366.0
+}
+{ 
+    "_id" : ObjectId("5bbf6d6f81660a0bd89af6fb"), 
+    "idMe" : ObjectId("5ba8b2c3cda330222ca7b8d1"), 
+    "message" : "cascasc", 
+    "idFriend" : ObjectId("5bbaf4ca3f8500d824ef8376"), 
+    "status" : NumberInt(0), 
+    "time" : 1539272047215.0
+}
+{ 
+    "_id" : ObjectId("5bbf6d6f81660a0bd89af6fc"), 
+    "idMe" : ObjectId("5ba8b2c3cda330222ca7b8d1"), 
+    "message" : "ac", 
+    "idFriend" : ObjectId("5bbaf4ca3f8500d824ef8376"), 
+    "status" : NumberInt(0), 
+    "time" : 1539272047951.0
+}
+{ 
+    "_id" : ObjectId("5bbf6d7081660a0bd89af6fd"), 
+    "idMe" : ObjectId("5ba8b2c3cda330222ca7b8d1"), 
+    "message" : "ac", 
+    "idFriend" : ObjectId("5bbaf4ca3f8500d824ef8376"), 
+    "status" : NumberInt(0), 
+    "time" : 1539272048790.0
+}
+{ 
+    "_id" : ObjectId("5bbf6d7481660a0bd89af6fe"), 
+    "idMe" : ObjectId("5ba8b2c3cda330222ca7b8d1"), 
+    "message" : "acac", 
+    "idFriend" : ObjectId("5bbaf4ca3f8500d824ef8376"), 
+    "status" : NumberInt(0), 
+    "time" : 1539272052917.0
+}
+{ 
+    "_id" : ObjectId("5bbf6d7b81660a0bd89af6ff"), 
+    "idMe" : ObjectId("5ba8b2c3cda330222ca7b8d1"), 
+    "message" : "acac", 
+    "idFriend" : ObjectId("5bbaf4ca3f8500d824ef8376"), 
+    "status" : NumberInt(0), 
+    "time" : 1539272059503.0
+}
+{ 
+    "_id" : ObjectId("5bbf6db481660a0bd89af700"), 
+    "idMe" : ObjectId("5ba8b2c3cda330222ca7b8d1"), 
+    "message" : "sacac", 
+    "idFriend" : ObjectId("5bbaf4ca3f8500d824ef8376"), 
+    "status" : NumberInt(0), 
+    "time" : 1539272116319.0
+}
+{ 
+    "_id" : ObjectId("5bbf6db581660a0bd89af701"), 
+    "idMe" : ObjectId("5ba8b2c3cda330222ca7b8d1"), 
+    "message" : "ac", 
+    "idFriend" : ObjectId("5bbaf4ca3f8500d824ef8376"), 
+    "status" : NumberInt(0), 
+    "time" : 1539272117861.0
+}
+{ 
+    "_id" : ObjectId("5bbf6db681660a0bd89af702"), 
+    "idMe" : ObjectId("5ba8b2c3cda330222ca7b8d1"), 
+    "message" : "asc", 
+    "idFriend" : ObjectId("5bbaf4ca3f8500d824ef8376"), 
+    "status" : NumberInt(0), 
+    "time" : 1539272118613.0
+}
+{ 
+    "_id" : ObjectId("5bbf6db781660a0bd89af703"), 
+    "idMe" : ObjectId("5ba8b2c3cda330222ca7b8d1"), 
+    "message" : "ac", 
+    "idFriend" : ObjectId("5bbaf4ca3f8500d824ef8376"), 
+    "status" : NumberInt(0), 
+    "time" : 1539272119397.0
+}
+{ 
+    "_id" : ObjectId("5bbf6db881660a0bd89af704"), 
+    "idMe" : ObjectId("5ba8b2c3cda330222ca7b8d1"), 
+    "message" : "ac", 
+    "idFriend" : ObjectId("5bbaf4ca3f8500d824ef8376"), 
+    "status" : NumberInt(0), 
+    "time" : 1539272120325.0
+}
+{ 
+    "_id" : ObjectId("5bbf6db981660a0bd89af705"), 
+    "idMe" : ObjectId("5ba8b2c3cda330222ca7b8d1"), 
+    "message" : "ac", 
+    "idFriend" : ObjectId("5bbaf4ca3f8500d824ef8376"), 
+    "status" : NumberInt(0), 
+    "time" : 1539272121174.0
+}
+{ 
+    "_id" : ObjectId("5bbf705d81660a0bd89af706"), 
+    "idMe" : ObjectId("5ba8b2c3cda330222ca7b8d1"), 
+    "message" : "123", 
+    "idFriend" : ObjectId("5bbaf4ca3f8500d824ef8376"), 
+    "status" : NumberInt(0), 
+    "time" : 1539272797313.0
+}
+{ 
+    "_id" : ObjectId("5bbf705f81660a0bd89af707"), 
+    "idMe" : ObjectId("5ba8b2c3cda330222ca7b8d1"), 
+    "message" : "acac", 
+    "idFriend" : ObjectId("5bbaf4ca3f8500d824ef8376"), 
+    "status" : NumberInt(0), 
+    "time" : 1539272799824.0
+}
+{ 
+    "_id" : ObjectId("5bbf706281660a0bd89af708"), 
+    "idMe" : ObjectId("5ba8b2c3cda330222ca7b8d1"), 
+    "message" : "chau", 
+    "idFriend" : ObjectId("5bbaf4ca3f8500d824ef8376"), 
+    "status" : NumberInt(0), 
+    "time" : 1539272802400.0
+}
+{ 
+    "_id" : ObjectId("5bbf706481660a0bd89af709"), 
+    "idMe" : ObjectId("5ba8b2c3cda330222ca7b8d1"), 
+    "message" : "minh", 
+    "idFriend" : ObjectId("5bbaf4ca3f8500d824ef8376"), 
+    "status" : NumberInt(0), 
+    "time" : 1539272804313.0
+}
+{ 
+    "_id" : ObjectId("5bbf706881660a0bd89af70a"), 
+    "idMe" : ObjectId("5bbaf4ca3f8500d824ef8376"), 
+    "message" : "acac", 
+    "idFriend" : ObjectId("5ba8b2c3cda330222ca7b8d1"), 
+    "status" : NumberInt(0), 
+    "time" : 1539272808648.0
+}
+{ 
+    "_id" : ObjectId("5bbf706981660a0bd89af70b"), 
+    "idMe" : ObjectId("5bbaf4ca3f8500d824ef8376"), 
+    "message" : "ac", 
+    "idFriend" : ObjectId("5ba8b2c3cda330222ca7b8d1"), 
+    "status" : NumberInt(0), 
+    "time" : 1539272809984.0
+}
+{ 
+    "_id" : ObjectId("5bbf706b81660a0bd89af70c"), 
+    "idMe" : ObjectId("5bbaf4ca3f8500d824ef8376"), 
+    "message" : "ac", 
+    "idFriend" : ObjectId("5ba8b2c3cda330222ca7b8d1"), 
+    "status" : NumberInt(0), 
+    "time" : 1539272811031.0
+}
+{ 
+    "_id" : ObjectId("5bbf708681660a0bd89af70d"), 
+    "idMe" : ObjectId("5bbaf4ca3f8500d824ef8376"), 
+    "message" : "123", 
+    "idFriend" : ObjectId("5ba8b2c3cda330222ca7b8d1"), 
+    "status" : NumberInt(0), 
+    "time" : 1539272837768.0
+}
+{ 
+    "_id" : ObjectId("5bbf709481660a0bd89af70e"), 
+    "idMe" : ObjectId("5ba8b2c3cda330222ca7b8d1"), 
+    "message" : "123", 
+    "idFriend" : ObjectId("5bbaf4ca3f8500d824ef8376"), 
+    "status" : NumberInt(0), 
+    "time" : 1539272852456.0
+}
+{ 
+    "_id" : ObjectId("5bbf70bf81660a0bd89af70f"), 
+    "idMe" : ObjectId("5bbaf4ca3f8500d824ef8376"), 
+    "message" : "acacac", 
+    "idFriend" : ObjectId("5ba8b2c3cda330222ca7b8d1"), 
+    "status" : NumberInt(0), 
+    "time" : 1539272895936.0
+}
+{ 
+    "_id" : ObjectId("5bbffce8c2915a1a18e5ffa3"), 
+    "idMe" : ObjectId("5ba8b2c3cda330222ca7b8d1"), 
+    "message" : "3333333333333333", 
+    "idFriend" : ObjectId("5bbaf4ca3f8500d824ef8376"), 
+    "status" : NumberInt(0), 
+    "time" : 1539308776625.0
+}
+{ 
+    "_id" : ObjectId("5bbffee1c2915a1a18e5ffa4"), 
+    "idMe" : ObjectId("5ba8b2c3cda330222ca7b8d1"), 
+    "message" : "sdvascv", 
+    "idFriend" : ObjectId("5bbaf4ca3f8500d824ef8376"), 
+    "status" : NumberInt(0), 
+    "time" : 1539309281335.0
+}
+{ 
+    "_id" : ObjectId("5bbffef4c2915a1a18e5ffa5"), 
+    "idMe" : ObjectId("5bbaf4ca3f8500d824ef8376"), 
+    "message" : "chat", 
+    "idFriend" : ObjectId("5ba8b2c3cda330222ca7b8d1"), 
+    "status" : NumberInt(0), 
+    "time" : 1539309300877.0
+}
+{ 
+    "_id" : ObjectId("5bbffef6c2915a1a18e5ffa6"), 
+    "idMe" : ObjectId("5bbaf4ca3f8500d824ef8376"), 
+    "message" : "casc", 
+    "idFriend" : ObjectId("5ba8b2c3cda330222ca7b8d1"), 
+    "status" : NumberInt(0), 
+    "time" : 1539309302913.0
+}
+{ 
+    "_id" : ObjectId("5bc0009bc2915a1a18e5ffa7"), 
+    "idMe" : ObjectId("5ba8b2c3cda330222ca7b8d1"), 
+    "message" : "lllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllll", 
+    "idFriend" : ObjectId("5bbaf4ca3f8500d824ef8376"), 
+    "status" : NumberInt(0), 
+    "time" : 1539309723058.0
+}
+{ 
+    "_id" : ObjectId("5bc000e0c2915a1a18e5ffa8"), 
+    "idMe" : ObjectId("5bbaf4ca3f8500d824ef8376"), 
+    "message" : "asc", 
+    "idFriend" : ObjectId("5ba8b2c3cda330222ca7b8d1"), 
+    "status" : NumberInt(0), 
+    "time" : 1539309791899.0
+}
+{ 
+    "_id" : ObjectId("5bc000e0c2915a1a18e5ffa9"), 
+    "idMe" : ObjectId("5bbaf4ca3f8500d824ef8376"), 
+    "message" : "ac", 
+    "idFriend" : ObjectId("5ba8b2c3cda330222ca7b8d1"), 
+    "status" : NumberInt(0), 
+    "time" : 1539309792289.0
+}
+{ 
+    "_id" : ObjectId("5bc0066ac2915a1a18e5ffaa"), 
+    "idMe" : ObjectId("5bbaf4ca3f8500d824ef8376"), 
+    "message" : "ascascasc", 
+    "idFriend" : ObjectId("5ba8b2c3cda330222ca7b8d1"), 
+    "status" : NumberInt(0), 
+    "time" : 1539311210323.0
+}
+{ 
+    "_id" : ObjectId("5bc0066dc2915a1a18e5ffab"), 
+    "idMe" : ObjectId("5bbaf4ca3f8500d824ef8376"), 
+    "message" : "ascascascasc", 
+    "idFriend" : ObjectId("5ba8b2c3cda330222ca7b8d1"), 
+    "status" : NumberInt(0), 
+    "time" : 1539311213606.0
+}
+{ 
+    "_id" : ObjectId("5bc00679c2915a1a18e5ffac"), 
+    "idMe" : ObjectId("5bbaf4ca3f8500d824ef8376"), 
+    "message" : "chau", 
+    "idFriend" : ObjectId("5ba8b2c3cda330222ca7b8d1"), 
+    "status" : NumberInt(0), 
+    "time" : 1539311225091.0
+}
+{ 
+    "_id" : ObjectId("5bc0067dc2915a1a18e5ffad"), 
+    "idMe" : ObjectId("5ba8b2c3cda330222ca7b8d1"), 
+    "message" : "hello", 
+    "idFriend" : ObjectId("5bbaf4ca3f8500d824ef8376"), 
+    "status" : NumberInt(0), 
+    "time" : 1539311228966.0
+}
+{ 
+    "_id" : ObjectId("5bc0067fc2915a1a18e5ffae"), 
+    "idMe" : ObjectId("5ba8b2c3cda330222ca7b8d1"), 
+    "message" : "acacsac", 
+    "idFriend" : ObjectId("5bbaf4ca3f8500d824ef8376"), 
+    "status" : NumberInt(0), 
+    "time" : 1539311231375.0
+}
+{ 
+    "_id" : ObjectId("5bc00685c2915a1a18e5ffaf"), 
+    "idMe" : ObjectId("5bbaf4ca3f8500d824ef8376"), 
+    "message" : "ascascasc", 
+    "idFriend" : ObjectId("5ba8b2c3cda330222ca7b8d1"), 
+    "status" : NumberInt(0), 
+    "time" : 1539311237304.0
+}
+{ 
+    "_id" : ObjectId("5bc00689c2915a1a18e5ffb0"), 
+    "idMe" : ObjectId("5ba8b2c3cda330222ca7b8d1"), 
+    "message" : "asc", 
+    "idFriend" : ObjectId("5bbaf4ca3f8500d824ef8376"), 
+    "status" : NumberInt(0), 
+    "time" : 1539311241360.0
+}
+{ 
+    "_id" : ObjectId("5bc00734c2915a1a18e5ffb1"), 
+    "idMe" : ObjectId("5ba8b2c3cda330222ca7b8d1"), 
+    "message" : "azscacac", 
+    "idFriend" : ObjectId("5bbaf4ca3f8500d824ef8376"), 
+    "status" : NumberInt(0), 
+    "time" : 1539311412166.0
+}
+{ 
+    "_id" : ObjectId("5bc0193104799c1e54a8fb7e"), 
+    "idMe" : ObjectId("5bbaf4ca3f8500d824ef8376"), 
+    "message" : "25", 
+    "idFriend" : ObjectId("5ba8b2c3cda330222ca7b8d1"), 
+    "status" : NumberInt(0), 
+    "time" : 1539316017290.0
+}
+{ 
+    "_id" : ObjectId("5bc0195104799c1e54a8fb7f"), 
+    "idMe" : ObjectId("5bbaf4ca3f8500d824ef8376"), 
+    "message" : "258", 
+    "idFriend" : ObjectId("5ba8b2c3cda330222ca7b8d1"), 
+    "status" : NumberInt(0), 
+    "time" : 1539316049830.0
+}
+{ 
+    "_id" : ObjectId("5bc0195504799c1e54a8fb80"), 
+    "idMe" : ObjectId("5bbaf4ca3f8500d824ef8376"), 
+    "message" : "255", 
+    "idFriend" : ObjectId("5ba8b2c3cda330222ca7b8d1"), 
+    "status" : NumberInt(0), 
+    "time" : 1539316053276.0
+}
+{ 
+    "_id" : ObjectId("5bc019789463372c30279df7"), 
+    "idMe" : ObjectId("5bbaf4ca3f8500d824ef8376"), 
+    "message" : "125", 
+    "idFriend" : ObjectId("5ba8b2c3cda330222ca7b8d1"), 
+    "status" : NumberInt(0), 
+    "time" : 1539316088851.0
+}
+{ 
+    "_id" : ObjectId("5bc019f5ee00cc1d206942d6"), 
+    "idMe" : ObjectId("5bbaf4ca3f8500d824ef8376"), 
+    "message" : "132", 
+    "idFriend" : ObjectId("5ba8b2c3cda330222ca7b8d1"), 
+    "status" : NumberInt(0), 
+    "time" : 1539316213593.0
+}
+{ 
+    "_id" : ObjectId("5bc01a0cef8a46077caa011a"), 
+    "idMe" : ObjectId("5bbaf4ca3f8500d824ef8376"), 
+    "message" : "255", 
+    "idFriend" : ObjectId("5ba8b2c3cda330222ca7b8d1"), 
+    "status" : NumberInt(0), 
+    "time" : 1539316235807.0
+}
+{ 
+    "_id" : ObjectId("5bc01a855e8a360160d0741b"), 
+    "idMe" : ObjectId("5bbaf4ca3f8500d824ef8376"), 
+    "message" : "369", 
+    "idFriend" : ObjectId("5ba8b2c3cda330222ca7b8d1"), 
+    "status" : NumberInt(0), 
+    "time" : 1539316357643.0
+}
+{ 
+    "_id" : ObjectId("5bc01ab21219a71ec017bc51"), 
+    "idMe" : ObjectId("5bbaf4ca3f8500d824ef8376"), 
+    "message" : "369", 
+    "idFriend" : ObjectId("5ba8b2c3cda330222ca7b8d1"), 
+    "status" : NumberInt(0), 
+    "time" : 1539316402042.0
+}
+{ 
+    "_id" : ObjectId("5bc01bf5d4478627d81f049d"), 
+    "idMe" : ObjectId("5bbaf4ca3f8500d824ef8376"), 
+    "message" : "258", 
+    "idFriend" : ObjectId("5ba8b2c3cda330222ca7b8d1"), 
+    "status" : NumberInt(0), 
+    "time" : 1539316725173.0
+}
+{ 
+    "_id" : ObjectId("5bc01c45ef653010e04e8eeb"), 
+    "idMe" : ObjectId("5bbaf4ca3f8500d824ef8376"), 
+    "message" : "258", 
+    "idFriend" : ObjectId("5ba8b2c3cda330222ca7b8d1"), 
+    "status" : NumberInt(0), 
+    "time" : 1539316804911.0
+}
+{ 
+    "_id" : ObjectId("5bc01c53ef653010e04e8eec"), 
+    "idMe" : ObjectId("5ba8b2c3cda330222ca7b8d1"), 
+    "message" : "acascasc", 
+    "idFriend" : ObjectId("5bbaf4ca3f8500d824ef8376"), 
+    "status" : NumberInt(0), 
+    "time" : 1539316819058.0
+}
+{ 
+    "_id" : ObjectId("5bc01c5fef653010e04e8eed"), 
+    "idMe" : ObjectId("5bbaf4ca3f8500d824ef8376"), 
+    "message" : "ascascasc", 
+    "idFriend" : ObjectId("5ba8b2c3cda330222ca7b8d1"), 
+    "status" : NumberInt(0), 
+    "time" : 1539316831430.0
+}
+{ 
+    "_id" : ObjectId("5bc01c63ef653010e04e8eee"), 
+    "idMe" : ObjectId("5ba8b2c3cda330222ca7b8d1"), 
+    "message" : "ascascacs", 
+    "idFriend" : ObjectId("5bbaf4ca3f8500d824ef8376"), 
+    "status" : NumberInt(0), 
+    "time" : 1539316835524.0
+}
+{ 
+    "_id" : ObjectId("5bc01c67ef653010e04e8eef"), 
+    "idMe" : ObjectId("5bbaf4ca3f8500d824ef8376"), 
+    "message" : "ascascasc", 
+    "idFriend" : ObjectId("5ba8b2c3cda330222ca7b8d1"), 
+    "status" : NumberInt(0), 
+    "time" : 1539316839024.0
+}
+{ 
+    "_id" : ObjectId("5bc01c6eef653010e04e8ef0"), 
+    "idMe" : ObjectId("5bbaf4ca3f8500d824ef8376"), 
+    "message" : "ascascacs", 
+    "idFriend" : ObjectId("5ba8b2c3cda330222ca7b8d1"), 
+    "status" : NumberInt(0), 
+    "time" : 1539316846671.0
+}
+{ 
+    "_id" : ObjectId("5bc04f7f2ceac42100bbb11f"), 
+    "idMe" : ObjectId("5ba8b2c3cda330222ca7b8d1"), 
+    "message" : "ascascasc", 
+    "idFriend" : ObjectId("5bbaf4ca3f8500d824ef8376"), 
+    "status" : NumberInt(0), 
+    "time" : 1539329919126.0
+}
+{ 
+    "_id" : ObjectId("5bc050bb2ceac42100bbb120"), 
+    "idMe" : ObjectId("5ba8b2c3cda330222ca7b8d1"), 
+    "message" : "acascasc", 
+    "idFriend" : ObjectId("5bbaf4ca3f8500d824ef8376"), 
+    "status" : NumberInt(0), 
+    "time" : 1539330235299.0
+}
+{ 
+    "_id" : ObjectId("5bc050cf2ceac42100bbb121"), 
+    "idMe" : ObjectId("5bbaf4ca3f8500d824ef8376"), 
+    "message" : "ascascacs", 
+    "idFriend" : ObjectId("5ba8b2c3cda330222ca7b8d1"), 
+    "status" : NumberInt(0), 
+    "time" : 1539330255330.0
+}
+{ 
+    "_id" : ObjectId("5bc050d12ceac42100bbb122"), 
+    "idMe" : ObjectId("5bbaf4ca3f8500d824ef8376"), 
+    "message" : "chau", 
+    "idFriend" : ObjectId("5ba8b2c3cda330222ca7b8d1"), 
+    "status" : NumberInt(0), 
+    "time" : 1539330257226.0
+}
+{ 
+    "_id" : ObjectId("5bc050d32ceac42100bbb123"), 
+    "idMe" : ObjectId("5bbaf4ca3f8500d824ef8376"), 
+    "message" : "minh", 
+    "idFriend" : ObjectId("5ba8b2c3cda330222ca7b8d1"), 
+    "status" : NumberInt(0), 
+    "time" : 1539330259388.0
+}
+{ 
+    "_id" : ObjectId("5bc059242ceac42100bbb124"), 
+    "idMe" : ObjectId("5ba8b2c3cda330222ca7b8d1"), 
+    "message" : "acasc", 
+    "idFriend" : ObjectId("5bbaf4ca3f8500d824ef8376"), 
+    "status" : NumberInt(0), 
+    "time" : 1539332387790.0
+}
+{ 
+    "_id" : ObjectId("5bc059a52ceac42100bbb125"), 
+    "idMe" : ObjectId("5bbaf4ca3f8500d824ef8376"), 
+    "message" : "chau", 
+    "idFriend" : ObjectId("5ba8b2c3cda330222ca7b8d1"), 
+    "status" : NumberInt(0), 
+    "time" : 1539332517856.0
+}
+{ 
+    "_id" : ObjectId("5bc059ae2ceac42100bbb126"), 
+    "idMe" : ObjectId("5ba8b2c3cda330222ca7b8d1"), 
+    "message" : "chau", 
+    "idFriend" : ObjectId("5bbaf4ca3f8500d824ef8376"), 
+    "status" : NumberInt(0), 
+    "time" : 1539332526257.0
+}
+{ 
+    "_id" : ObjectId("5bc059b52ceac42100bbb127"), 
+    "idMe" : ObjectId("5bbaf4ca3f8500d824ef8376"), 
+    "message" : "chau", 
+    "idFriend" : ObjectId("5ba8b2c3cda330222ca7b8d1"), 
+    "status" : NumberInt(0), 
+    "time" : 1539332533096.0
+}
+{ 
+    "_id" : ObjectId("5bc05f3b4f11f806d4bb5b6d"), 
+    "idMe" : ObjectId("5bbaf4ca3f8500d824ef8376"), 
+    "message" : "hello", 
+    "idFriend" : ObjectId("5ba8b2c3cda330222ca7b8d1"), 
+    "status" : NumberInt(0), 
+    "time" : 1539333946702.0
+}
+{ 
+    "_id" : ObjectId("5bc05f454f11f806d4bb5b6e"), 
+    "idMe" : ObjectId("5ba8b2c3cda330222ca7b8d1"), 
+    "message" : "haha", 
+    "idFriend" : ObjectId("5bbaf4ca3f8500d824ef8376"), 
+    "status" : NumberInt(0), 
+    "time" : 1539333957670.0
+}
+{ 
+    "_id" : ObjectId("5bc05f4a4f11f806d4bb5b6f"), 
+    "idMe" : ObjectId("5bbaf4ca3f8500d824ef8376"), 
+    "message" : ":)", 
+    "idFriend" : ObjectId("5ba8b2c3cda330222ca7b8d1"), 
+    "status" : NumberInt(0), 
+    "time" : 1539333962546.0
+}
+{ 
+    "_id" : ObjectId("5bc05f4d4f11f806d4bb5b70"), 
+    "idMe" : ObjectId("5bbaf4ca3f8500d824ef8376"), 
+    "message" : ":)", 
+    "idFriend" : ObjectId("5ba8b2c3cda330222ca7b8d1"), 
+    "status" : NumberInt(0), 
+    "time" : 1539333965342.0
+}
+{ 
+    "_id" : ObjectId("5bc05f624f11f806d4bb5b71"), 
+    "idMe" : ObjectId("5ba8b2c3cda330222ca7b8d1"), 
+    "message" : "ascasc", 
+    "idFriend" : ObjectId("5bbaf4ca3f8500d824ef8376"), 
+    "status" : NumberInt(0), 
+    "time" : 1539333986231.0
+}
+{ 
+    "_id" : ObjectId("5bc05f6e4f11f806d4bb5b72"), 
+    "idMe" : ObjectId("5bbaf4ca3f8500d824ef8376"), 
+    "message" : "11", 
+    "idFriend" : ObjectId("5ba8b2c3cda330222ca7b8d1"), 
+    "status" : NumberInt(0), 
+    "time" : 1539333998322.0
+}
+{ 
+    "_id" : ObjectId("5bc05f9d4f11f806d4bb5b73"), 
+    "idMe" : ObjectId("5bbaf4ca3f8500d824ef8376"), 
+    "message" : "125", 
+    "idFriend" : ObjectId("5ba8b2c3cda330222ca7b8d1"), 
+    "status" : NumberInt(0), 
+    "time" : 1539334045517.0
+}
+{ 
+    "_id" : ObjectId("5bc05fa04f11f806d4bb5b74"), 
+    "idMe" : ObjectId("5bbaf4ca3f8500d824ef8376"), 
+    "message" : "sacasc", 
+    "idFriend" : ObjectId("5ba8b2c3cda330222ca7b8d1"), 
+    "status" : NumberInt(0), 
+    "time" : 1539334048281.0
+}
+{ 
+    "_id" : ObjectId("5bc05fa44f11f806d4bb5b75"), 
+    "idMe" : ObjectId("5ba8b2c3cda330222ca7b8d1"), 
+    "message" : "ascascasc", 
+    "idFriend" : ObjectId("5bbaf4ca3f8500d824ef8376"), 
+    "status" : NumberInt(0), 
+    "time" : 1539334052288.0
+}
+{ 
+    "_id" : ObjectId("5bc05fcd4f11f806d4bb5b76"), 
+    "idMe" : ObjectId("5bbaf4ca3f8500d824ef8376"), 
+    "message" : "ascasc", 
+    "idFriend" : ObjectId("5ba8b2c3cda330222ca7b8d1"), 
+    "status" : NumberInt(0), 
+    "time" : 1539334093405.0
+}
+{ 
+    "_id" : ObjectId("5bc05fd14f11f806d4bb5b77"), 
+    "idMe" : ObjectId("5ba8b2c3cda330222ca7b8d1"), 
+    "message" : "ascascac", 
+    "idFriend" : ObjectId("5bbaf4ca3f8500d824ef8376"), 
+    "status" : NumberInt(0), 
+    "time" : 1539334097413.0
+}
+{ 
+    "_id" : ObjectId("5bc06328e0fbf630087df98c"), 
+    "idMe" : ObjectId("5bbaf4ca3f8500d824ef8376"), 
+    "message" : "alo alo", 
+    "idFriend" : ObjectId("5ba8b2c3cda330222ca7b8d1"), 
+    "status" : NumberInt(0), 
+    "time" : 1539334952357.0
+}
+{ 
+    "_id" : ObjectId("5bc0632ce0fbf630087df98d"), 
+    "idMe" : ObjectId("5ba8b2c3cda330222ca7b8d1"), 
+    "message" : "helo", 
+    "idFriend" : ObjectId("5bbaf4ca3f8500d824ef8376"), 
+    "status" : NumberInt(0), 
+    "time" : 1539334956330.0
+}
+{ 
+    "_id" : ObjectId("5bc06d0ae055a81dc4060995"), 
+    "idMe" : ObjectId("5ba8b2c3cda330222ca7b8d1"), 
+    "message" : "ll", 
+    "idFriend" : ObjectId("5bbaf4ca3f8500d824ef8376"), 
+    "status" : NumberInt(0), 
+    "time" : 1539337482382.0
+}
+{ 
+    "_id" : ObjectId("5bc06ff3e055a81dc4060996"), 
+    "idMe" : ObjectId("5bbaf4ca3f8500d824ef8376"), 
+    "message" : "haha", 
+    "idFriend" : ObjectId("5ba8b2c3cda330222ca7b8d1"), 
+    "status" : NumberInt(0), 
+    "time" : 1539338227168.0
+}
+{ 
+    "_id" : ObjectId("5bc06ff9e055a81dc4060997"), 
+    "idMe" : ObjectId("5bbaf4ca3f8500d824ef8376"), 
+    "message" : "hoho", 
+    "idFriend" : ObjectId("5ba8b2c3cda330222ca7b8d1"), 
+    "status" : NumberInt(0), 
+    "time" : 1539338233582.0
+}
+{ 
+    "_id" : ObjectId("5bc07003e055a81dc4060998"), 
+    "idMe" : ObjectId("5ba8b2c3cda330222ca7b8d1"), 
+    "message" : ":)", 
+    "idFriend" : ObjectId("5bbaf4ca3f8500d824ef8376"), 
+    "status" : NumberInt(0), 
+    "time" : 1539338243215.0
+}
+{ 
+    "_id" : ObjectId("5bc158802f2f631300b01810"), 
+    "idMe" : ObjectId("5ba8b2c3cda330222ca7b8d1"), 
+    "message" : "alo", 
+    "idFriend" : ObjectId("5bbaf4ca3f8500d824ef8376"), 
+    "status" : NumberInt(0), 
+    "time" : 1539397760358.0
+}
+{ 
+    "_id" : ObjectId("5bc158872f2f631300b01811"), 
+    "idMe" : ObjectId("5bbaf4ca3f8500d824ef8376"), 
+    "message" : "hehe", 
+    "idFriend" : ObjectId("5ba8b2c3cda330222ca7b8d1"), 
+    "status" : NumberInt(0), 
+    "time" : 1539397767184.0
+}
+{ 
+    "_id" : ObjectId("5bc158a12f2f631300b01812"), 
+    "idMe" : ObjectId("5bbaf4ca3f8500d824ef8376"), 
+    "message" : ":)", 
+    "idFriend" : ObjectId("5ba8b2c3cda330222ca7b8d1"), 
+    "status" : NumberInt(0), 
+    "time" : 1539397792764.0
+}
+{ 
+    "_id" : ObjectId("5bc158a82f2f631300b01813"), 
+    "idMe" : ObjectId("5bbaf4ca3f8500d824ef8376"), 
+    "message" : "asca", 
+    "idFriend" : ObjectId("5ba8b2c3cda330222ca7b8d1"), 
+    "status" : NumberInt(0), 
+    "time" : 1539397800895.0
+}
+{ 
+    "_id" : ObjectId("5bc158aa2f2f631300b01814"), 
+    "idMe" : ObjectId("5bbaf4ca3f8500d824ef8376"), 
+    "message" : "casc", 
+    "idFriend" : ObjectId("5ba8b2c3cda330222ca7b8d1"), 
+    "status" : NumberInt(0), 
+    "time" : 1539397802124.0
+}
+{ 
+    "_id" : ObjectId("5bc158af2f2f631300b01815"), 
+    "idMe" : ObjectId("5ba8b2c3cda330222ca7b8d1"), 
+    "message" : ":)", 
+    "idFriend" : ObjectId("5bbaf4ca3f8500d824ef8376"), 
+    "status" : NumberInt(0), 
+    "time" : 1539397806731.0
+}
+{ 
+    "_id" : ObjectId("5bc158d42f2f631300b01816"), 
+    "idMe" : ObjectId("5ba8b2c3cda330222ca7b8d1"), 
+    "message" : ":)", 
+    "idFriend" : ObjectId("5bbaf4ca3f8500d824ef8376"), 
+    "status" : NumberInt(0), 
+    "time" : 1539397844536.0
+}
+{ 
+    "_id" : ObjectId("5bc98d89870f4f1338c25ffd"), 
+    "idMe" : ObjectId("5bbaf4ca3f8500d824ef8376"), 
+    "message" : "c", 
+    "idFriend" : ObjectId("5ba8b2c3cda330222ca7b8d1"), 
+    "status" : NumberInt(0), 
+    "time" : 1539935625468.0
+}
+{ 
+    "_id" : ObjectId("5bcd68629dba142ca847234f"), 
+    "idMe" : ObjectId("5ba8b2c3cda330222ca7b8d1"), 
+    "message" : "haha", 
+    "idFriend" : ObjectId("5bbaf4ca3f8500d824ef8376"), 
+    "status" : NumberInt(0), 
+    "time" : 1540188258795.0
+}
+{ 
+    "_id" : ObjectId("5bcd68e29dba142ca8472350"), 
+    "idMe" : ObjectId("5bbaf4ca3f8500d824ef8376"), 
+    "message" : "haha", 
+    "idFriend" : ObjectId("5ba8b2c3cda330222ca7b8d1"), 
+    "status" : NumberInt(0), 
+    "time" : 1540188386366.0
+}
+{ 
+    "_id" : ObjectId("5bdea3c3f342953dec643442"), 
+    "idMe" : ObjectId("5ba8b2c3cda330222ca7b8d1"), 
+    "message" : "a", 
+    "idFriend" : ObjectId("5bbaf4ca3f8500d824ef8376"), 
+    "status" : NumberInt(0), 
+    "time" : 1541317571035.0
+}
+{ 
+    "_id" : ObjectId("5bdea99df342953dec643443"), 
+    "idMe" : ObjectId("5ba8b2c3cda330222ca7b8d1"), 
+    "message" : "1", 
+    "idFriend" : ObjectId("5bbaf4e73f8500d824ef8383"), 
+    "status" : NumberInt(0), 
+    "time" : 1541319069177.0
+}
+{ 
+    "_id" : ObjectId("5bdea9a2f342953dec643444"), 
+    "idMe" : ObjectId("5ba8b2c3cda330222ca7b8d1"), 
+    "message" : "2", 
+    "idFriend" : ObjectId("5bbaf4e73f8500d824ef8383"), 
+    "status" : NumberInt(0), 
+    "time" : 1541319074281.0
+}
+{ 
+    "_id" : ObjectId("5bdea9a3f342953dec643445"), 
+    "idMe" : ObjectId("5ba8b2c3cda330222ca7b8d1"), 
+    "message" : "3", 
+    "idFriend" : ObjectId("5bbaf4e73f8500d824ef8383"), 
+    "status" : NumberInt(0), 
+    "time" : 1541319074976.0
+}
+{ 
+    "_id" : ObjectId("5bdea9a4f342953dec643446"), 
+    "idMe" : ObjectId("5ba8b2c3cda330222ca7b8d1"), 
+    "message" : "4", 
+    "idFriend" : ObjectId("5bbaf4e73f8500d824ef8383"), 
+    "status" : NumberInt(0), 
+    "time" : 1541319076438.0
+}
+{ 
+    "_id" : ObjectId("5bdea9a5f342953dec643447"), 
+    "idMe" : ObjectId("5ba8b2c3cda330222ca7b8d1"), 
+    "message" : "5", 
+    "idFriend" : ObjectId("5bbaf4e73f8500d824ef8383"), 
+    "status" : NumberInt(0), 
+    "time" : 1541319077893.0
+}
+{ 
+    "_id" : ObjectId("5bdea9a7f342953dec643448"), 
+    "idMe" : ObjectId("5ba8b2c3cda330222ca7b8d1"), 
+    "message" : "6", 
+    "idFriend" : ObjectId("5bbaf4e73f8500d824ef8383"), 
+    "status" : NumberInt(0), 
+    "time" : 1541319079128.0
+}
+{ 
+    "_id" : ObjectId("5bdea9a9f342953dec643449"), 
+    "idMe" : ObjectId("5ba8b2c3cda330222ca7b8d1"), 
+    "message" : "7", 
+    "idFriend" : ObjectId("5bbaf4e73f8500d824ef8383"), 
+    "status" : NumberInt(0), 
+    "time" : 1541319081037.0
+}
+{ 
+    "_id" : ObjectId("5bdea9aaf342953dec64344a"), 
+    "idMe" : ObjectId("5ba8b2c3cda330222ca7b8d1"), 
+    "message" : "8", 
+    "idFriend" : ObjectId("5bbaf4e73f8500d824ef8383"), 
+    "status" : NumberInt(0), 
+    "time" : 1541319082197.0
+}
+{ 
+    "_id" : ObjectId("5bdea9abf342953dec64344b"), 
+    "idMe" : ObjectId("5ba8b2c3cda330222ca7b8d1"), 
+    "message" : "9", 
+    "idFriend" : ObjectId("5bbaf4e73f8500d824ef8383"), 
+    "status" : NumberInt(0), 
+    "time" : 1541319083388.0
+}
+{ 
+    "_id" : ObjectId("5bdea9acf342953dec64344c"), 
+    "idMe" : ObjectId("5ba8b2c3cda330222ca7b8d1"), 
+    "message" : "10", 
+    "idFriend" : ObjectId("5bbaf4e73f8500d824ef8383"), 
+    "status" : NumberInt(0), 
+    "time" : 1541319084712.0
+}
+{ 
+    "_id" : ObjectId("5bdea9adf342953dec64344d"), 
+    "idMe" : ObjectId("5ba8b2c3cda330222ca7b8d1"), 
+    "message" : "11", 
+    "idFriend" : ObjectId("5bbaf4e73f8500d824ef8383"), 
+    "status" : NumberInt(0), 
+    "time" : 1541319085769.0
+}
+{ 
+    "_id" : ObjectId("5bdea9aff342953dec64344e"), 
+    "idMe" : ObjectId("5ba8b2c3cda330222ca7b8d1"), 
+    "message" : "12", 
+    "idFriend" : ObjectId("5bbaf4e73f8500d824ef8383"), 
+    "status" : NumberInt(0), 
+    "time" : 1541319087293.0
+}
+{ 
+    "_id" : ObjectId("5bdea9b0f342953dec64344f"), 
+    "idMe" : ObjectId("5ba8b2c3cda330222ca7b8d1"), 
+    "message" : "13", 
+    "idFriend" : ObjectId("5bbaf4e73f8500d824ef8383"), 
+    "status" : NumberInt(0), 
+    "time" : 1541319088551.0
+}
+{ 
+    "_id" : ObjectId("5bdea9b2f342953dec643450"), 
+    "idMe" : ObjectId("5ba8b2c3cda330222ca7b8d1"), 
+    "message" : "14", 
+    "idFriend" : ObjectId("5bbaf4e73f8500d824ef8383"), 
+    "status" : NumberInt(0), 
+    "time" : 1541319090068.0
+}
+{ 
+    "_id" : ObjectId("5bdea9b3f342953dec643451"), 
+    "idMe" : ObjectId("5ba8b2c3cda330222ca7b8d1"), 
+    "message" : "15", 
+    "idFriend" : ObjectId("5bbaf4e73f8500d824ef8383"), 
+    "status" : NumberInt(0), 
+    "time" : 1541319091056.0
+}
+{ 
+    "_id" : ObjectId("5bdea9b4f342953dec643452"), 
+    "idMe" : ObjectId("5ba8b2c3cda330222ca7b8d1"), 
+    "message" : "16", 
+    "idFriend" : ObjectId("5bbaf4e73f8500d824ef8383"), 
+    "status" : NumberInt(0), 
+    "time" : 1541319092238.0
+}
+{ 
+    "_id" : ObjectId("5bdea9b6f342953dec643453"), 
+    "idMe" : ObjectId("5ba8b2c3cda330222ca7b8d1"), 
+    "message" : "17", 
+    "idFriend" : ObjectId("5bbaf4e73f8500d824ef8383"), 
+    "status" : NumberInt(0), 
+    "time" : 1541319094080.0
+}
+{ 
+    "_id" : ObjectId("5bdea9b7f342953dec643454"), 
+    "idMe" : ObjectId("5ba8b2c3cda330222ca7b8d1"), 
+    "message" : "18", 
+    "idFriend" : ObjectId("5bbaf4e73f8500d824ef8383"), 
+    "status" : NumberInt(0), 
+    "time" : 1541319095660.0
+}
+{ 
+    "_id" : ObjectId("5bdea9b9f342953dec643455"), 
+    "idMe" : ObjectId("5ba8b2c3cda330222ca7b8d1"), 
+    "message" : "19", 
+    "idFriend" : ObjectId("5bbaf4e73f8500d824ef8383"), 
+    "status" : NumberInt(0), 
+    "time" : 1541319097066.0
+}
+{ 
+    "_id" : ObjectId("5bdea9baf342953dec643456"), 
+    "idMe" : ObjectId("5ba8b2c3cda330222ca7b8d1"), 
+    "message" : "20", 
+    "idFriend" : ObjectId("5bbaf4e73f8500d824ef8383"), 
+    "status" : NumberInt(0), 
+    "time" : 1541319098282.0
+}
+{ 
+    "_id" : ObjectId("5bdea9bbf342953dec643457"), 
+    "idMe" : ObjectId("5ba8b2c3cda330222ca7b8d1"), 
+    "message" : "21", 
+    "idFriend" : ObjectId("5bbaf4e73f8500d824ef8383"), 
+    "status" : NumberInt(0), 
+    "time" : 1541319099388.0
+}
+{ 
+    "_id" : ObjectId("5bdeaaf2f342953dec643458"), 
+    "idMe" : ObjectId("5ba8b2c3cda330222ca7b8d1"), 
+    "message" : "12", 
+    "idFriend" : ObjectId("5bbaf4ca3f8500d824ef8376"), 
+    "status" : NumberInt(0), 
+    "time" : 1541319410592.0
+}
+{ 
+    "_id" : ObjectId("5bdeaafbf342953dec643459"), 
+    "idMe" : ObjectId("5ba8b2c3cda330222ca7b8d1"), 
+    "message" : "12", 
+    "idFriend" : ObjectId("5bbaf4ca3f8500d824ef8376"), 
+    "status" : NumberInt(0), 
+    "time" : 1541319418720.0
+}
+{ 
+    "_id" : ObjectId("5bdeaafdf342953dec64345a"), 
+    "idMe" : ObjectId("5ba8b2c3cda330222ca7b8d1"), 
+    "message" : "12", 
+    "idFriend" : ObjectId("5bbaf4e73f8500d824ef8383"), 
+    "status" : NumberInt(0), 
+    "time" : 1541319421897.0
+}
+{ 
+    "_id" : ObjectId("5bdeab07f342953dec64345b"), 
+    "idMe" : ObjectId("5ba8b2c3cda330222ca7b8d1"), 
+    "message" : "aaaaaaaaaaaaaaaaaa", 
+    "idFriend" : ObjectId("5bbaf4e73f8500d824ef8383"), 
+    "status" : NumberInt(0), 
+    "time" : 1541319431643.0
+}
+{ 
+    "_id" : ObjectId("5bdeab21f342953dec64345c"), 
+    "idMe" : ObjectId("5ba8b2c3cda330222ca7b8d1"), 
+    "message" : "12", 
+    "idFriend" : ObjectId("5bbaf4d73f8500d824ef837c"), 
+    "status" : NumberInt(0), 
+    "time" : 1541319457438.0
+}
+{ 
+    "_id" : ObjectId("5bdeab32f342953dec64345d"), 
+    "idMe" : ObjectId("5ba8b2c3cda330222ca7b8d1"), 
+    "message" : "2333", 
+    "idFriend" : ObjectId("5bbaf4e73f8500d824ef8383"), 
+    "status" : NumberInt(0), 
+    "time" : 1541319474299.0
+}
+{ 
+    "_id" : ObjectId("5bdeab68f342953dec64345e"), 
+    "idMe" : ObjectId("5ba8b2c3cda330222ca7b8d1"), 
+    "message" : "ascasc", 
+    "idFriend" : ObjectId("5bbaf4e73f8500d824ef8383"), 
+    "status" : NumberInt(0), 
+    "time" : 1541319527691.0
+}
+{ 
+    "_id" : ObjectId("5bdeab96f342953dec64345f"), 
+    "idMe" : ObjectId("5ba8b2c3cda330222ca7b8d1"), 
+    "message" : "ascascasc", 
+    "idFriend" : ObjectId("5bbaf4ca3f8500d824ef8376"), 
+    "status" : NumberInt(0), 
+    "time" : 1541319574438.0
+}
+{ 
+    "_id" : ObjectId("5bdeabad7802c7308497d8a1"), 
+    "idMe" : ObjectId("5ba8b2c3cda330222ca7b8d1"), 
+    "message" : "ascasc", 
+    "idFriend" : ObjectId("5bbaf4ca3f8500d824ef8376"), 
+    "status" : NumberInt(0), 
+    "time" : 1541319596787.0
+}
+{ 
+    "_id" : ObjectId("5bdeabc57802c7308497d8a2"), 
+    "idMe" : ObjectId("5ba8b2c3cda330222ca7b8d1"), 
+    "message" : "asc", 
+    "idFriend" : ObjectId("5bbaf4e73f8500d824ef8383"), 
+    "status" : NumberInt(0), 
+    "time" : 1541319621264.0
+}
+{ 
+    "_id" : ObjectId("5bdeabc77802c7308497d8a3"), 
+    "idMe" : ObjectId("5ba8b2c3cda330222ca7b8d1"), 
+    "message" : "1111111111111", 
+    "idFriend" : ObjectId("5bbaf4e73f8500d824ef8383"), 
+    "status" : NumberInt(0), 
+    "time" : 1541319623908.0
+}
+{ 
+    "_id" : ObjectId("5bdeabd47802c7308497d8a4"), 
+    "idMe" : ObjectId("5ba8b2c3cda330222ca7b8d1"), 
+    "message" : "ascascasc", 
+    "idFriend" : ObjectId("5bbaf4e73f8500d824ef8383"), 
+    "status" : NumberInt(0), 
+    "time" : 1541319636352.0
+}
+{ 
+    "_id" : ObjectId("5bdeabd67802c7308497d8a5"), 
+    "idMe" : ObjectId("5ba8b2c3cda330222ca7b8d1"), 
+    "message" : "1", 
+    "idFriend" : ObjectId("5bbaf4e73f8500d824ef8383"), 
+    "status" : NumberInt(0), 
+    "time" : 1541319638611.0
+}
+{ 
+    "_id" : ObjectId("5bdeabd87802c7308497d8a6"), 
+    "idMe" : ObjectId("5ba8b2c3cda330222ca7b8d1"), 
+    "message" : "2", 
+    "idFriend" : ObjectId("5bbaf4e73f8500d824ef8383"), 
+    "status" : NumberInt(0), 
+    "time" : 1541319640743.0
+}
+{ 
+    "_id" : ObjectId("5bdeabde7802c7308497d8a7"), 
+    "idMe" : ObjectId("5ba8b2c3cda330222ca7b8d1"), 
+    "message" : "55", 
+    "idFriend" : ObjectId("5bbaf4e73f8500d824ef8383"), 
+    "status" : NumberInt(0), 
+    "time" : 1541319646411.0
+}
+{ 
+    "_id" : ObjectId("5bdeadaf7802c7308497d8a8"), 
+    "idMe" : ObjectId("5ba8b2c3cda330222ca7b8d1"), 
+    "message" : "ascasc", 
+    "idFriend" : ObjectId("5bbaf4ca3f8500d824ef8376"), 
+    "status" : NumberInt(0), 
+    "time" : 1541320111299.0
+}
+{ 
+    "_id" : ObjectId("5bdeadb67802c7308497d8a9"), 
+    "idMe" : ObjectId("5ba8b2c3cda330222ca7b8d1"), 
+    "message" : "1111111111", 
+    "idFriend" : ObjectId("5bbaf4ca3f8500d824ef8376"), 
+    "status" : NumberInt(0), 
+    "time" : 1541320118172.0
+}
+{ 
+    "_id" : ObjectId("5bdeadbd7802c7308497d8aa"), 
+    "idMe" : ObjectId("5ba8b2c3cda330222ca7b8d1"), 
+    "message" : "ascasc", 
+    "idFriend" : ObjectId("5bbaf4ca3f8500d824ef8376"), 
+    "status" : NumberInt(0), 
+    "time" : 1541320125976.0
+}
+{ 
+    "_id" : ObjectId("5bdeadcf7802c7308497d8ab"), 
+    "idMe" : ObjectId("5ba8b2c3cda330222ca7b8d1"), 
+    "message" : "ascasc", 
+    "idFriend" : ObjectId("5bbaf4ca3f8500d824ef8376"), 
+    "status" : NumberInt(0), 
+    "time" : 1541320143798.0
+}
+{ 
+    "_id" : ObjectId("5bdeaded7802c7308497d8ac"), 
+    "idMe" : ObjectId("5ba8b2c3cda330222ca7b8d1"), 
+    "message" : "ascasc", 
+    "idFriend" : ObjectId("5bbaf4ca3f8500d824ef8376"), 
+    "status" : NumberInt(0), 
+    "time" : 1541320172974.0
+}
+{ 
+    "_id" : ObjectId("5bdeadf27802c7308497d8ad"), 
+    "idMe" : ObjectId("5ba8b2c3cda330222ca7b8d1"), 
+    "message" : "1111111111111", 
+    "idFriend" : ObjectId("5bbaf4ca3f8500d824ef8376"), 
+    "status" : NumberInt(0), 
+    "time" : 1541320178797.0
+}
+{ 
+    "_id" : ObjectId("5bdeadfa7802c7308497d8ae"), 
+    "idMe" : ObjectId("5ba8b2c3cda330222ca7b8d1"), 
+    "message" : "ascasc", 
+    "idFriend" : ObjectId("5bbaf4ca3f8500d824ef8376"), 
+    "status" : NumberInt(0), 
+    "time" : 1541320185866.0
+}
+{ 
+    "_id" : ObjectId("5bdeae047802c7308497d8af"), 
+    "idMe" : ObjectId("5ba8b2c3cda330222ca7b8d1"), 
+    "message" : "ascascasc", 
+    "idFriend" : ObjectId("5bbaf4ca3f8500d824ef8376"), 
+    "status" : NumberInt(0), 
+    "time" : 1541320196624.0
+}
+{ 
+    "_id" : ObjectId("5bdeae197802c7308497d8b0"), 
+    "idMe" : ObjectId("5ba8b2c3cda330222ca7b8d1"), 
+    "message" : "ascascasc", 
+    "idFriend" : ObjectId("5bbaf4ca3f8500d824ef8376"), 
+    "status" : NumberInt(0), 
+    "time" : 1541320217129.0
+}
+{ 
+    "_id" : ObjectId("5bdeae1c7802c7308497d8b1"), 
+    "idMe" : ObjectId("5ba8b2c3cda330222ca7b8d1"), 
+    "message" : "11111111111", 
+    "idFriend" : ObjectId("5bbaf4ca3f8500d824ef8376"), 
+    "status" : NumberInt(0), 
+    "time" : 1541320220618.0
+}
+{ 
+    "_id" : ObjectId("5bdeae947802c7308497d8b2"), 
+    "idMe" : ObjectId("5ba8b2c3cda330222ca7b8d1"), 
+    "message" : "asca", 
+    "idFriend" : ObjectId("5bbaf4ca3f8500d824ef8376"), 
+    "status" : NumberInt(0), 
+    "time" : 1541320340969.0
+}
+{ 
+    "_id" : ObjectId("5bdeaf407802c7308497d8b3"), 
+    "idMe" : ObjectId("5ba8b2c3cda330222ca7b8d1"), 
+    "message" : "ascasc", 
+    "idFriend" : ObjectId("5bbaf4ca3f8500d824ef8376"), 
+    "status" : NumberInt(0), 
+    "time" : 1541320512852.0
+}
+{ 
+    "_id" : ObjectId("5bdeaf507802c7308497d8b4"), 
+    "idMe" : ObjectId("5ba8b2c3cda330222ca7b8d1"), 
+    "message" : "ascasc", 
+    "idFriend" : ObjectId("5bbaf4ca3f8500d824ef8376"), 
+    "status" : NumberInt(0), 
+    "time" : 1541320527721.0
+}
+{ 
+    "_id" : ObjectId("5bee32204f0c7c287cb83ca6"), 
+    "idMe" : ObjectId("5bee2cbf1accac3770cf03be"), 
+    "message" : "hahaha", 
+    "idFriend" : ObjectId("5bee2c481accac3770cf03bd"), 
+    "status" : NumberInt(0), 
+    "time" : 1542337056284.0
+}
+{ 
+    "_id" : ObjectId("5bee322e4f0c7c287cb83ca7"), 
+    "idMe" : ObjectId("5bee2c481accac3770cf03bd"), 
+    "message" : "hahah", 
+    "idFriend" : ObjectId("5bee2cbf1accac3770cf03be"), 
+    "status" : NumberInt(0), 
+    "time" : 1542337070810.0
+}
+{ 
+    "_id" : ObjectId("5bee32304f0c7c287cb83ca8"), 
+    "idMe" : ObjectId("5bee2c481accac3770cf03bd"), 
+    "message" : "hihih", 
+    "idFriend" : ObjectId("5bee2cbf1accac3770cf03be"), 
+    "status" : NumberInt(0), 
+    "time" : 1542337072110.0
+}
+{ 
+    "_id" : ObjectId("5bee32304f0c7c287cb83ca9"), 
+    "idMe" : ObjectId("5bee2c481accac3770cf03bd"), 
+    "message" : "hasc", 
+    "idFriend" : ObjectId("5bee2cbf1accac3770cf03be"), 
+    "status" : NumberInt(0), 
+    "time" : 1542337072950.0
+}
+{ 
+    "_id" : ObjectId("5bee32314f0c7c287cb83caa"), 
+    "idMe" : ObjectId("5bee2c481accac3770cf03bd"), 
+    "message" : "asc", 
+    "idFriend" : ObjectId("5bee2cbf1accac3770cf03be"), 
+    "status" : NumberInt(0), 
+    "time" : 1542337073706.0
+}
+{ 
+    "_id" : ObjectId("5bee32364f0c7c287cb83cab"), 
+    "idMe" : ObjectId("5bee2cbf1accac3770cf03be"), 
+    "message" : "hahaha", 
+    "idFriend" : ObjectId("5bee2c481accac3770cf03bd"), 
+    "status" : NumberInt(0), 
+    "time" : 1542337078024.0
+}
+{ 
+    "_id" : ObjectId("5bee32364f0c7c287cb83cac"), 
+    "idMe" : ObjectId("5bee2cbf1accac3770cf03be"), 
+    "message" : "haha", 
+    "idFriend" : ObjectId("5bee2c481accac3770cf03bd"), 
+    "status" : NumberInt(0), 
+    "time" : 1542337078697.0
+}
+{ 
+    "_id" : ObjectId("5bee3ad09573452b5c0bb605"), 
+    "idMe" : ObjectId("5bee2cbf1accac3770cf03be"), 
+    "message" : "heel", 
+    "idFriend" : ObjectId("5bee2c481accac3770cf03bd"), 
+    "status" : NumberInt(0), 
+    "time" : 1542339280414.0
+}
+{ 
+    "_id" : ObjectId("5bee3ad59573452b5c0bb606"), 
+    "idMe" : ObjectId("5bee2c481accac3770cf03bd"), 
+    "message" : "hihi", 
+    "idFriend" : ObjectId("5bee2cbf1accac3770cf03be"), 
+    "status" : NumberInt(0), 
+    "time" : 1542339285049.0
+}
+{ 
+    "_id" : ObjectId("5bf01f620ce00b170cbee9a8"), 
+    "idMe" : ObjectId("5ba8b2c3cda330222ca7b8d1"), 
+    "message" : "aaaa", 
+    "idFriend" : ObjectId("5bbaf4ca3f8500d824ef8376"), 
+    "status" : NumberInt(0), 
+    "time" : 1542463329949.0
+}
+{ 
+    "_id" : ObjectId("5c054c86b7b55737706fe5d3"), 
+    "idMe" : ObjectId("5bbaf4ca3f8500d824ef8376"), 
+    "message" : "hello", 
+    "idFriend" : ObjectId("5ba8b2c3cda330222ca7b8d1"), 
+    "status" : NumberInt(0), 
+    "time" : 1543851141959.0
+}
+{ 
+    "_id" : ObjectId("5c054c8cb7b55737706fe5d4"), 
+    "idMe" : ObjectId("5ba8b2c3cda330222ca7b8d1"), 
+    "message" : "huhu", 
+    "idFriend" : ObjectId("5bbaf4ca3f8500d824ef8376"), 
+    "status" : NumberInt(0), 
+    "time" : 1543851147717.0
+}
+{ 
+    "_id" : ObjectId("5c054d3eb7b55737706fe5d5"), 
+    "idMe" : ObjectId("5bbaf4ca3f8500d824ef8376"), 
+    "message" : "hello", 
+    "idFriend" : ObjectId("5ba8b2c3cda330222ca7b8d1"), 
+    "status" : NumberInt(0), 
+    "time" : 1543851326796.0
+}
+{ 
+    "_id" : ObjectId("5c054d43b7b55737706fe5d6"), 
+    "idMe" : ObjectId("5ba8b2c3cda330222ca7b8d1"), 
+    "message" : "ahihi", 
+    "idFriend" : ObjectId("5bbaf4ca3f8500d824ef8376"), 
+    "status" : NumberInt(0), 
+    "time" : 1543851331421.0
+}
+{ 
+    "_id" : ObjectId("5c054d4bb7b55737706fe5d7"), 
+    "idMe" : ObjectId("5bbaf4ca3f8500d824ef8376"), 
+    "message" : "xin chào bạn", 
+    "idFriend" : ObjectId("5ba8b2c3cda330222ca7b8d1"), 
+    "status" : NumberInt(0), 
+    "time" : 1543851339540.0
+}
+{ 
+    "_id" : ObjectId("5c054d55b7b55737706fe5d8"), 
+    "idMe" : ObjectId("5ba8b2c3cda330222ca7b8d1"), 
+    "message" : "cảm ơn bạn", 
+    "idFriend" : ObjectId("5bbaf4ca3f8500d824ef8376"), 
+    "status" : NumberInt(0), 
+    "time" : 1543851349141.0
+}
+{ 
+    "_id" : ObjectId("5c054d5bb7b55737706fe5d9"), 
+    "idMe" : ObjectId("5ba8b2c3cda330222ca7b8d1"), 
+    "message" : "ahihi", 
+    "idFriend" : ObjectId("5bbaf4e73f8500d824ef8383"), 
+    "status" : NumberInt(0), 
+    "time" : 1543851355460.0
+}
+{ 
+    "_id" : ObjectId("5c054d70b7b55737706fe5da"), 
+    "idMe" : ObjectId("5bbaf4ca3f8500d824ef8376"), 
+    "message" : "bạn ơi", 
+    "idFriend" : ObjectId("5ba8b2c3cda330222ca7b8d1"), 
+    "status" : NumberInt(0), 
+    "time" : 1543851376372.0
+}
+{ 
+    "_id" : ObjectId("5c054d7db7b55737706fe5db"), 
+    "idMe" : ObjectId("5ba8b2c3cda330222ca7b8d1"), 
+    "message" : "mình day", 
+    "idFriend" : ObjectId("5bbaf4ca3f8500d824ef8376"), 
+    "status" : NumberInt(0), 
+    "time" : 1543851388772.0
+}
+{ 
+    "_id" : ObjectId("5c054d8bb7b55737706fe5dc"), 
+    "idMe" : ObjectId("5ba8b2c3cda330222ca7b8d1"), 
+    "message" : "aloalo", 
+    "idFriend" : ObjectId("5bbaf4ca3f8500d824ef8376"), 
+    "status" : NumberInt(0), 
+    "time" : 1543851402836.0
+}
+{ 
+    "_id" : ObjectId("5c054d8fb7b55737706fe5dd"), 
+    "idMe" : ObjectId("5bbaf4ca3f8500d824ef8376"), 
+    "message" : "hihi", 
+    "idFriend" : ObjectId("5ba8b2c3cda330222ca7b8d1"), 
+    "status" : NumberInt(0), 
+    "time" : 1543851407598.0
+}
+{ 
+    "_id" : ObjectId("5c05577fb7b55737706fe611"), 
+    "idMe" : ObjectId("5bbaf4ca3f8500d824ef8376"), 
+    "message" : "ascascasc", 
+    "idFriend" : ObjectId("5ba8b2c3cda330222ca7b8d1"), 
+    "status" : NumberInt(0), 
+    "time" : 1543853951659.0
+}
+{ 
+    "_id" : ObjectId("5c068e3163f1b4130092665c"), 
+    "idMe" : ObjectId("5ba8b2c3cda330222ca7b8d1"), 
+    "message" : "2121212", 
+    "idFriend" : ObjectId("5bbaf4ca3f8500d824ef8376"), 
+    "status" : NumberInt(0), 
+    "time" : 1543933489427.0
+}
+{ 
+    "_id" : ObjectId("5c068e3963f1b4130092665d"), 
+    "idMe" : ObjectId("5bbaf4ca3f8500d824ef8376"), 
+    "message" : "11111111", 
+    "idFriend" : ObjectId("5ba8b2c3cda330222ca7b8d1"), 
+    "status" : NumberInt(0), 
+    "time" : 1543933496908.0
+}
+{ 
+    "_id" : ObjectId("5c06932363f1b4130092665e"), 
+    "idMe" : ObjectId("5bbaf4ca3f8500d824ef8376"), 
+    "message" : "aascascasc", 
+    "idFriend" : ObjectId("5ba8b2c3cda330222ca7b8d1"), 
+    "status" : NumberInt(0), 
+    "time" : 1543934755313.0
+}
+{ 
+    "_id" : ObjectId("5c06932c63f1b4130092665f"), 
+    "idMe" : ObjectId("5ba8b2c3cda330222ca7b8d1"), 
+    "message" : "ascascascascasc", 
+    "idFriend" : ObjectId("5bbaf4ca3f8500d824ef8376"), 
+    "status" : NumberInt(0), 
+    "time" : 1543934763712.0
+}

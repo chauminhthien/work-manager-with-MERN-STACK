@@ -32,5 +32,21 @@
   "cateTask": {
     "dataSource": "mongodb",
     "public": true
+  },
+  "task": {
+    "dataSource": "mongodb",
+    "public": true
+  },
+  "project": {
+    "dataSource": "mongodb",
+    "public": true
+  },
+  "comment": {
+    "dataSource": "mongodb",
+    "public": true
+  },
+  "login": {
+    "dataSource": "mongodb",
+    "public": true
   }
 }

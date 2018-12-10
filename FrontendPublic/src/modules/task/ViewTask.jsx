@@ -14,6 +14,7 @@ import * as taskActions from './actions';
 import { actions as cateTaskActions } from 'modules/categories/cateTask';
 import { actions as commentActions } from 'modules/categories/comment';
 import * as fileConfig from 'config/fileConfig';
+import { convertTime } from 'utils/format';
 
 import FormCMT from './FormCMT';
 import ListCMT from './ListCMT';
@@ -25,7 +26,8 @@ class ViewTask extends Component {
       isWoring    : false,
       idUpdatePro : null,
       taskProcess : null,
-      idDoneTask  : null
+      idDoneTask  : null,
+      pointTask   : 0
     }
   }
 
@@ -128,7 +130,20 @@ class ViewTask extends Component {
       .finally(() => this.setState({idDoneTask: null}))
   }
 
-  uploadFile = (file) => {
+  pointClick = (point) => () => {
+
+    let { notification, taskActions, match, task, profile } = this.props;
+    let { id } = match.params;
+    let dataTask = task.data[id];
+
+    profile.info.account_type === 1 && taskActions.updateById(id, {point})
+    .then(r => {
+      if(!!r.data) notification.s("Message", "Update done success");
+    })
+    .finally(() => this.setState({idDoneTask: null}))
+  }
+
+  uploadFile = (file, parentId = null) => {
     let { notification, commentActions, match } = this.props;
     let { id } = match.params;
 
@@ -136,18 +151,28 @@ class ViewTask extends Component {
       let formData = new FormData();
       formData.append('file', file);
 
-      commentActions.uploadFile(formData, id)
+      commentActions.uploadFile(formData, id, parentId)
     }else notification.e("Error", 'File invalid')
   }
 
   render() {
     let { match, profile, task, friends, comment, cateTask, project } = this.props;
-    let { isWoring, idUpdatePro, taskProcess, idDoneTask } = this.state;
+    let { isWoring, idUpdatePro, taskProcess, idDoneTask, pointTask } = this.state;
 
     let { id } = match.params;
     
     let dataTask = task.data[id];
-    if(!dataTask || (profile.info.id !== dataTask.createAt && profile.info.id !== dataTask.memberId)) return null;
+    let fl = false;
+    if(!dataTask ) return null;
+
+    for(let val of dataTask.relateMember){ 
+      if(val.value === profile.info.id) {
+        fl = true;
+        break;
+      }
+    }
+
+    if((profile.info.id !== dataTask.createAt && profile.info.id !== dataTask.memberId && !fl)) return null;
     
     let now = Date.now();
     let process = {
@@ -219,6 +244,7 @@ class ViewTask extends Component {
             <h2 className="box-title">
               <i className={`m-r-15 ${!!cateTask && !!cateTask.data[dataTask.cateTaskId] ? cateTask.data[dataTask.cateTaskId].icon : ""}`}></i>
               {dataTask.name}
+              <smail> ({convertTime(dataTask.begin)} -> {convertTime(dataTask.end)})</smail>
             </h2>
 
           </div>
@@ -238,7 +264,7 @@ class ViewTask extends Component {
               <div className="col-sm-6">
    
                 {
-                  !!dataTask.process && dataTask.process < 100 && !dataTask.finish
+                  dataTask.process < 100 && !dataTask.finish && profile.info.id === dataTask.memberId
                   ? (
                     <Link onClick={ this.updateProces(id) } className="btn btn-flat cbtn btn-outline btn-1e btn-info" to="#">Update work process</Link>
                   ) : null
@@ -250,6 +276,20 @@ class ViewTask extends Component {
                     <Link onClick={ this.doneTask(id) } className="m-l-15 btn btn-flat cbtn btn-outline btn-1e btn-info" to="#">Done task</Link>
                   ) : null
                 }
+
+                {
+
+                  !!dataTask.process && dataTask.process === 100 && !!dataTask.finish && 
+                  [...Array(10)].map((e, i) => {
+                    return <i 
+                      style={{cursor: 'pointer'}}
+                      onClick={ this.pointClick(i + 1)}
+                      onMouseEnter={() => this.setState({pointTask: (i + 1)})}
+                      onMouseLeave = { () => this.setState({pointTask: 0})}
+                      key={i} className={`mdi mdi-star${ (i + 1) <= pointTask || (i + 1) <= dataTask.point ? '' : '-outline'} text-success`}></i>
+                  })
+                }
+
               </div>
               <div className="col-sm-6">
                 <h5>{process.text}<span className="pull-right">{dataTask.process}%</span></h5>
@@ -263,7 +303,7 @@ class ViewTask extends Component {
           </form>
           
           {
-            dataTask.process < 100 && !dataTask.finish && !project.data[dataTask.projectId].finish
+            dataTask.process <= 100 && !dataTask.finish && !project.data[dataTask.projectId].finish
             ? (
               <FormCMT
                 profile       = { profile }
@@ -283,6 +323,7 @@ class ViewTask extends Component {
             dataTask      = { dataTask }
             commentActions = { this.props.commentActions}
             match         = { this.props.match }
+            uploadFile    = { this.uploadFile }
             comment       = { comment } />
         </Scrollbars>
       </div>

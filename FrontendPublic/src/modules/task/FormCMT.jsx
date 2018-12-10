@@ -38,8 +38,11 @@ class FormCMT extends Component {
   }
 
   uploadFileComment = () => {
+    let { parentId } = this.props;
+    parentId = !!parentId ? parentId : null;
+
     if(!!this._attFile && !!this._attFile.files[0])
-      this.props.uploadFile(this._attFile.files[0]);
+      this.props.uploadFile(this._attFile.files[0], parentId);
   }
 
   render() {

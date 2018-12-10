@@ -118,3 +118,16 @@ export const updateById = (id, data) => {
       });
   }
 }
+
+export const getTaskScheduler = () => {
+  return () => {
+    return api.task.getTaskScheduler()
+      .then(res => {
+        if(res.error) return Promise.reject(res.error);
+        return res.data;
+      })
+      .catch(err => {
+        return err;
+      });
+  };
+};

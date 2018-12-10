@@ -28,7 +28,7 @@ class FormAdd extends Component {
 
   onSubmitData = (e) => {
     e.preventDefault();
-    let { idUser }    = this.props;
+    let { idUser, profile }    = this.props;
     let dataError     = {};
 
     let ru = [
@@ -82,13 +82,13 @@ class FormAdd extends Component {
         else if(password) data.password = password;
         if(this._statusSelect != null) data.status = this._statusSelect.value;
 
-        if(!idUser && !!end && !!begin){
+        if(!idUser && !!end && !!begin && profile.info.account_type === 0){
           // fl = true;
           let now = Date.now();
           begin = new Date(begin).getTime();
           end   = new Date(end).getTime();
           
-          if(now <= begin && begin <= end){
+          if(begin <= end){
             data.end = end;
             data.begin = begin;
           }else{
@@ -96,10 +96,12 @@ class FormAdd extends Component {
             dataError.begin = true;
           }
         }
-        if(!idUser && (!end || !begin)){
+
+        if(!idUser && profile.info.account_type === 0 &&  (!end || !begin)){
           dataError.end = true;
           dataError.begin = true;
         }
+        console.log(dataError)
         this.setState({dataError})
         if(isEmpty(dataError))
           if(!!this.props.formSubmitDataUser) this.props.formSubmitDataUser(data);

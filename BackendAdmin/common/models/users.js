@@ -316,14 +316,14 @@ module.exports = function(Users) {
         .catch(e => next(e))
       }else{
         let { groupUserID } = context.args.data;
-        let couUser = 1;
+        var couU = 1;
         Users.count({groupUserID})
           .then(couUser => { 
-            couUser = couUser;
+            couU = couUser;
             return Users.app.models.groupUser.findById(groupUserID, { fields: ['max_user']});
           }, e => Promise.reject({...mess.DATA_NO_MATCH, messagse: 'User to maximum'}))
           .then(groupU => { 
-            if(couUser >= groupU.max_user) return Promise.reject({...mess.DATA_NO_MATCH, messagse: 'User to maximum'});
+            if(couU >= groupU.max_user) return Promise.reject({...mess.DATA_NO_MATCH, messagse: 'User to maximum'});
             next();
           }, e => Promise.reject({...mess.DATA_NO_MATCH, messagse: 'User to maximum'}))
           .catch(e => next(e))

@@ -32,8 +32,8 @@
       "required": true
     },
     "parentId": {
-      "type"    : "string",
-      "default" : "null"
+      "type": "string",
+      "default": "null"
     }
   },
   "validations": [],

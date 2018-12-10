@@ -1,0 +1,378 @@
+{ 
+    "_id" : ObjectId("5bcc84a34d80fd20dca7629c"), 
+    "name" : "Công việc", 
+    "icon" : "fa fa-briefcase", 
+    "removed" : NumberInt(0), 
+    "default" : NumberInt(1)
+}
+{ 
+    "_id" : ObjectId("5bcc86394d80fd20dca7629d"), 
+    "name" : "Công việc", 
+    "icon" : "fa fa-briefcase", 
+    "removed" : NumberInt(0), 
+    "groupUserID" : ObjectId("5ba8b2c3cda330222ca7b8d0"), 
+    "default" : NumberInt(0)
+}
+{ 
+    "_id" : ObjectId("5bcc8dc44d80fd20dca7629e"), 
+    "name" : "Gọi điện", 
+    "icon" : "fa fa-phone", 
+    "removed" : NumberInt(0), 
+    "default" : NumberInt(1)
+}
+{ 
+    "_id" : ObjectId("5bcc8de54d80fd20dca7629f"), 
+    "name" : "Hẹn gặp", 
+    "icon" : "fa fa-users", 
+    "removed" : NumberInt(0), 
+    "default" : NumberInt(1)
+}
+{ 
+    "_id" : ObjectId("5bcc8e144d80fd20dca762a0"), 
+    "name" : "Email", 
+    "icon" : "fa fa-envelope", 
+    "removed" : NumberInt(0), 
+    "default" : NumberInt(1)
+}
+{ 
+    "_id" : ObjectId("5bcc8ee84d80fd20dca762a1"), 
+    "name" : "Ăn trưa", 
+    "icon" : "fa fa-glass", 
+    "removed" : NumberInt(0), 
+    "default" : NumberInt(1)
+}
+{ 
+    "_id" : ObjectId("5bcc8f434d80fd20dca762a2"), 
+    "name" : "Kỉ niệm", 
+    "icon" : "fa fa-gift", 
+    "removed" : NumberInt(0), 
+    "default" : NumberInt(1)
+}
+{ 
+    "_id" : ObjectId("5bcc8ffc4d80fd20dca762a3"), 
+    "name" : "Gọi điện", 
+    "icon" : "fa fa-phone", 
+    "removed" : NumberInt(0), 
+    "groupUserID" : ObjectId("5ba8b2c3cda330222ca7b8d0"), 
+    "default" : NumberInt(0)
+}
+{ 
+    "_id" : ObjectId("5bcc92964d80fd20dca762a4"), 
+    "name" : "Hẹn gặp", 
+    "icon" : "fa fa-users", 
+    "removed" : NumberInt(0), 
+    "groupUserID" : ObjectId("5ba8b2c3cda330222ca7b8d0"), 
+    "default" : NumberInt(0)
+}
+{ 
+    "_id" : ObjectId("5bcc92b34d80fd20dca762a5"), 
+    "name" : "Email", 
+    "icon" : "fa fa-envelope", 
+    "removed" : NumberInt(0), 
+    "groupUserID" : ObjectId("5ba8b2c3cda330222ca7b8d0"), 
+    "default" : NumberInt(0)
+}
+{ 
+    "_id" : ObjectId("5bcc92c04d80fd20dca762a6"), 
+    "name" : "Ăn trưa", 
+    "icon" : "fa fa-glass", 
+    "removed" : NumberInt(0), 
+    "groupUserID" : ObjectId("5ba8b2c3cda330222ca7b8d0"), 
+    "default" : NumberInt(0)
+}
+{ 
+    "_id" : ObjectId("5bcc92ce4d80fd20dca762a7"), 
+    "name" : "Kỉ niệm", 
+    "icon" : "fa fa-gift", 
+    "removed" : NumberInt(0), 
+    "groupUserID" : ObjectId("5ba8b2c3cda330222ca7b8d0"), 
+    "default" : NumberInt(0)
+}
+{ 
+    "_id" : ObjectId("5bcc95ac90817906e01ba4e7"), 
+    "name" : "Công việc", 
+    "icon" : "fa fa-briefcase", 
+    "removed" : NumberInt(0), 
+    "groupUserID" : ObjectId("5bcc95ac90817906e01ba4e6"), 
+    "default" : NumberInt(0)
+}
+{ 
+    "_id" : ObjectId("5bcc95ac90817906e01ba4e8"), 
+    "name" : "Gọi điện", 
+    "icon" : "fa fa-phone", 
+    "removed" : NumberInt(0), 
+    "groupUserID" : ObjectId("5bcc95ac90817906e01ba4e6"), 
+    "default" : NumberInt(0)
+}
+{ 
+    "_id" : ObjectId("5bcc95ac90817906e01ba4e9"), 
+    "name" : "Hẹn gặp", 
+    "icon" : "fa fa-users", 
+    "removed" : NumberInt(0), 
+    "groupUserID" : ObjectId("5bcc95ac90817906e01ba4e6"), 
+    "default" : NumberInt(0)
+}
+{ 
+    "_id" : ObjectId("5bcc95ac90817906e01ba4eb"), 
+    "name" : "Ăn trưa", 
+    "icon" : "fa fa-glass", 
+    "removed" : NumberInt(0), 
+    "groupUserID" : ObjectId("5bcc95ac90817906e01ba4e6"), 
+    "default" : NumberInt(0)
+}
+{ 
+    "_id" : ObjectId("5bcc95ac90817906e01ba4ec"), 
+    "name" : "Kỉ niệm", 
+    "icon" : "fa fa-gift", 
+    "removed" : NumberInt(0), 
+    "groupUserID" : ObjectId("5bcc95ac90817906e01ba4e6"), 
+    "default" : NumberInt(0)
+}
+{ 
+    "_id" : ObjectId("5bcc95ac90817906e01ba4ea"), 
+    "name" : "Email", 
+    "icon" : "fa fa-envelope", 
+    "removed" : NumberInt(0), 
+    "groupUserID" : ObjectId("5bcc95ac90817906e01ba4e6"), 
+    "default" : NumberInt(0)
+}
+{ 
+    "_id" : ObjectId("5be712af0b6586318cb603ef"), 
+    "name" : "Công việc", 
+    "icon" : "fa fa-briefcase", 
+    "removed" : NumberInt(0), 
+    "groupUserID" : ObjectId("5be712af0b6586318cb603ee"), 
+    "default" : NumberInt(0)
+}
+{ 
+    "_id" : ObjectId("5be712af0b6586318cb603f0"), 
+    "name" : "Gọi điện", 
+    "icon" : "fa fa-phone", 
+    "removed" : NumberInt(0), 
+    "groupUserID" : ObjectId("5be712af0b6586318cb603ee"), 
+    "default" : NumberInt(0)
+}
+{ 
+    "_id" : ObjectId("5be712af0b6586318cb603f1"), 
+    "name" : "Hẹn gặp", 
+    "icon" : "fa fa-users", 
+    "removed" : NumberInt(0), 
+    "groupUserID" : ObjectId("5be712af0b6586318cb603ee"), 
+    "default" : NumberInt(0)
+}
+{ 
+    "_id" : ObjectId("5be712af0b6586318cb603f2"), 
+    "name" : "Email", 
+    "icon" : "fa fa-envelope", 
+    "removed" : NumberInt(0), 
+    "groupUserID" : ObjectId("5be712af0b6586318cb603ee"), 
+    "default" : NumberInt(0)
+}
+{ 
+    "_id" : ObjectId("5be712af0b6586318cb603f3"), 
+    "name" : "Ăn trưa", 
+    "icon" : "fa fa-glass", 
+    "removed" : NumberInt(0), 
+    "groupUserID" : ObjectId("5be712af0b6586318cb603ee"), 
+    "default" : NumberInt(0)
+}
+{ 
+    "_id" : ObjectId("5be712af0b6586318cb603f4"), 
+    "name" : "Kỉ niệm", 
+    "icon" : "fa fa-gift", 
+    "removed" : NumberInt(0), 
+    "groupUserID" : ObjectId("5be712af0b6586318cb603ee"), 
+    "default" : NumberInt(0)
+}
+{ 
+    "_id" : ObjectId("5bee2aec1accac3770cf03b6"), 
+    "name" : "Gọi điện", 
+    "icon" : "fa fa-phone", 
+    "removed" : NumberInt(0), 
+    "groupUserID" : ObjectId("5bee2aec1accac3770cf03b4"), 
+    "default" : NumberInt(0)
+}
+{ 
+    "_id" : ObjectId("5bee2aec1accac3770cf03b7"), 
+    "name" : "Hẹn gặp", 
+    "icon" : "fa fa-users", 
+    "removed" : NumberInt(0), 
+    "groupUserID" : ObjectId("5bee2aec1accac3770cf03b4"), 
+    "default" : NumberInt(0)
+}
+{ 
+    "_id" : ObjectId("5bee2aec1accac3770cf03b5"), 
+    "name" : "Công việc", 
+    "icon" : "fa fa-briefcase", 
+    "removed" : NumberInt(0), 
+    "groupUserID" : ObjectId("5bee2aec1accac3770cf03b4"), 
+    "default" : NumberInt(0)
+}
+{ 
+    "_id" : ObjectId("5bee2aec1accac3770cf03b8"), 
+    "name" : "Email", 
+    "icon" : "fa fa-envelope", 
+    "removed" : NumberInt(0), 
+    "groupUserID" : ObjectId("5bee2aec1accac3770cf03b4"), 
+    "default" : NumberInt(0)
+}
+{ 
+    "_id" : ObjectId("5bee2aec1accac3770cf03b9"), 
+    "name" : "Ăn trưa", 
+    "icon" : "fa fa-glass", 
+    "removed" : NumberInt(0), 
+    "groupUserID" : ObjectId("5bee2aec1accac3770cf03b4"), 
+    "default" : NumberInt(0)
+}
+{ 
+    "_id" : ObjectId("5bee2aec1accac3770cf03ba"), 
+    "name" : "Kỉ niệm", 
+    "icon" : "fa fa-gift", 
+    "removed" : NumberInt(0), 
+    "groupUserID" : ObjectId("5bee2aec1accac3770cf03b4"), 
+    "default" : NumberInt(0)
+}
+{ 
+    "_id" : ObjectId("5befeba777f0ff1dec903400"), 
+    "name" : "Công việc", 
+    "icon" : "fa fa-briefcase", 
+    "removed" : NumberInt(0), 
+    "groupUserID" : ObjectId("5befeba777f0ff1dec9033ff"), 
+    "default" : NumberInt(0)
+}
+{ 
+    "_id" : ObjectId("5befeba777f0ff1dec903401"), 
+    "name" : "Gọi điện", 
+    "icon" : "fa fa-phone", 
+    "removed" : NumberInt(0), 
+    "groupUserID" : ObjectId("5befeba777f0ff1dec9033ff"), 
+    "default" : NumberInt(0)
+}
+{ 
+    "_id" : ObjectId("5befeba777f0ff1dec903402"), 
+    "name" : "Hẹn gặp", 
+    "icon" : "fa fa-users", 
+    "removed" : NumberInt(0), 
+    "groupUserID" : ObjectId("5befeba777f0ff1dec9033ff"), 
+    "default" : NumberInt(0)
+}
+{ 
+    "_id" : ObjectId("5befeba777f0ff1dec903403"), 
+    "name" : "Email", 
+    "icon" : "fa fa-envelope", 
+    "removed" : NumberInt(0), 
+    "groupUserID" : ObjectId("5befeba777f0ff1dec9033ff"), 
+    "default" : NumberInt(0)
+}
+{ 
+    "_id" : ObjectId("5befeba777f0ff1dec903405"), 
+    "name" : "Kỉ niệm", 
+    "icon" : "fa fa-gift", 
+    "removed" : NumberInt(0), 
+    "groupUserID" : ObjectId("5befeba777f0ff1dec9033ff"), 
+    "default" : NumberInt(0)
+}
+{ 
+    "_id" : ObjectId("5befeba777f0ff1dec903404"), 
+    "name" : "Ăn trưa", 
+    "icon" : "fa fa-glass", 
+    "removed" : NumberInt(0), 
+    "groupUserID" : ObjectId("5befeba777f0ff1dec9033ff"), 
+    "default" : NumberInt(0)
+}
+{ 
+    "_id" : ObjectId("5c0d109456977222887530c6"), 
+    "name" : "Công việc", 
+    "icon" : "fa fa-briefcase", 
+    "removed" : NumberInt(0), 
+    "groupUserID" : ObjectId("5c0d109456977222887530c5"), 
+    "default" : NumberInt(0)
+}
+{ 
+    "_id" : ObjectId("5c0d109456977222887530c8"), 
+    "name" : "Hẹn gặp", 
+    "icon" : "fa fa-users", 
+    "removed" : NumberInt(0), 
+    "groupUserID" : ObjectId("5c0d109456977222887530c5"), 
+    "default" : NumberInt(0)
+}
+{ 
+    "_id" : ObjectId("5c0d109456977222887530c7"), 
+    "name" : "Gọi điện", 
+    "icon" : "fa fa-phone", 
+    "removed" : NumberInt(0), 
+    "groupUserID" : ObjectId("5c0d109456977222887530c5"), 
+    "default" : NumberInt(0)
+}
+{ 
+    "_id" : ObjectId("5c0d109456977222887530c9"), 
+    "name" : "Email", 
+    "icon" : "fa fa-envelope", 
+    "removed" : NumberInt(0), 
+    "groupUserID" : ObjectId("5c0d109456977222887530c5"), 
+    "default" : NumberInt(0)
+}
+{ 
+    "_id" : ObjectId("5c0d109456977222887530ca"), 
+    "name" : "Ăn trưa", 
+    "icon" : "fa fa-glass", 
+    "removed" : NumberInt(0), 
+    "groupUserID" : ObjectId("5c0d109456977222887530c5"), 
+    "default" : NumberInt(0)
+}
+{ 
+    "_id" : ObjectId("5c0d109456977222887530cb"), 
+    "name" : "Kỉ niệm", 
+    "icon" : "fa fa-gift", 
+    "removed" : NumberInt(0), 
+    "groupUserID" : ObjectId("5c0d109456977222887530c5"), 
+    "default" : NumberInt(0)
+}
+{ 
+    "_id" : ObjectId("5c0d1546e9ff2a287c4c6ee0"), 
+    "name" : "Công việc", 
+    "icon" : "fa fa-briefcase", 
+    "removed" : NumberInt(0), 
+    "groupUserID" : ObjectId("5c0d1545e9ff2a287c4c6edf"), 
+    "default" : NumberInt(0)
+}
+{ 
+    "_id" : ObjectId("5c0d1546e9ff2a287c4c6ee2"), 
+    "name" : "Hẹn gặp", 
+    "icon" : "fa fa-users", 
+    "removed" : NumberInt(0), 
+    "groupUserID" : ObjectId("5c0d1545e9ff2a287c4c6edf"), 
+    "default" : NumberInt(0)
+}
+{ 
+    "_id" : ObjectId("5c0d1546e9ff2a287c4c6ee1"), 
+    "name" : "Gọi điện", 
+    "icon" : "fa fa-phone", 
+    "removed" : NumberInt(0), 
+    "groupUserID" : ObjectId("5c0d1545e9ff2a287c4c6edf"), 
+    "default" : NumberInt(0)
+}
+{ 
+    "_id" : ObjectId("5c0d1546e9ff2a287c4c6ee3"), 
+    "name" : "Email", 
+    "icon" : "fa fa-envelope", 
+    "removed" : NumberInt(0), 
+    "groupUserID" : ObjectId("5c0d1545e9ff2a287c4c6edf"), 
+    "default" : NumberInt(0)
+}
+{ 
+    "_id" : ObjectId("5c0d1546e9ff2a287c4c6ee5"), 
+    "name" : "Kỉ niệm", 
+    "icon" : "fa fa-gift", 
+    "removed" : NumberInt(0), 
+    "groupUserID" : ObjectId("5c0d1545e9ff2a287c4c6edf"), 
+    "default" : NumberInt(0)
+}
+{ 
+    "_id" : ObjectId("5c0d1546e9ff2a287c4c6ee4"), 
+    "name" : "Ăn trưa", 
+    "icon" : "fa fa-glass", 
+    "removed" : NumberInt(0), 
+    "groupUserID" : ObjectId("5c0d1545e9ff2a287c4c6edf"), 
+    "default" : NumberInt(0)
+}

@@ -31,8 +31,8 @@ export const create = (data) => {
   });
 }
 
-export const uploadFile = (file, id) => {
-  let url = `${ COMMENT_BASE }/upload/${id}`;
+export const uploadFile = (file, id, parentId = null) => {
+  let url = `${ COMMENT_BASE }/upload/${id}/${parentId}`;
   return base.upload(url, file, 200)
     .then(obj => {
       return {data: obj.data.status, error: obj.error};

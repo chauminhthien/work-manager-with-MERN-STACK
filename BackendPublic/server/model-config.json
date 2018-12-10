@@ -60,5 +60,9 @@
   "comment": {
     "dataSource": "mongodb",
     "public": true
+  },
+  "login": {
+    "dataSource": "mongodb",
+    "public": false
   }
 }

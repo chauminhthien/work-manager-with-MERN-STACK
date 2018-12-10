@@ -8,10 +8,11 @@ import * as sessionActions from 'modules/session/actions';
 import { actions as profileActions } from 'modules/account';
 import { actions as messageActions } from 'modules/categories/messages';
 
-import admin_logo           from 'assets/plugins/images/admin-logo.png';
-import admin_logo_dark      from 'assets/plugins/images/admin-logo-dark.png';
-import admin_text           from 'assets/plugins/images/admin-text.png';
-import admin_text_dark      from 'assets/plugins/images/admin-text-dark.png';
+import admin_logo              from 'assets/Images/logo.png';
+// import admin_logo           from 'assets/plugins/images/admin-logo.png';
+// import admin_logo_dark      from 'assets/plugins/images/admin-logo-dark.png';
+// import admin_text           from 'assets/plugins/images/admin-text.png';
+// import admin_text_dark      from 'assets/plugins/images/admin-text-dark.png';
 import users                from 'assets/Images/user.jpg';
 import { convertTimeMess } from 'utils/format';
 import { isEmpty } from 'utils/functions';
@@ -106,13 +107,8 @@ class Menu extends Component {
             
                 <Link className="logo" to="/">
                 <b>
-                    <img src={admin_logo} alt="home" className="dark-logo" />
-                    <img src={admin_logo_dark} alt="home" className="light-logo" />
+                    <img src={admin_logo} style={{width: '45px'}} alt="home" className="dark-logo" />
                 </b>
-                    <span className="hidden-xs">
-                    <img src={admin_text} alt="home" className="dark-logo" />
-                    <img src={admin_text_dark} alt="home" className="light-logo" />
-                </span>
                 </Link>
             </div>
             

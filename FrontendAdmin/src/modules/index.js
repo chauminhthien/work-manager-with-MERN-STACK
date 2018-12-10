@@ -7,3 +7,4 @@ export { default as AccessPasswordAsync } from './account/accesspassword/AccessP
 export { default as ProfileAsync } from './account/profile/ProfileAsync';
 export { default as GroupUserAsync } from './groupUser/GroupUserAsync';
 export { default as CategoriesAsync } from './categories/CategoriesAsync';
+export { default as ReportAsync } from './report/ReportAsync';

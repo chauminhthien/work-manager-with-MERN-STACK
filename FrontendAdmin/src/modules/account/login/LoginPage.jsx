@@ -55,7 +55,7 @@ class LoginPage extends Component {
 
   handleSuccess = (res, remember) => {
     let { sessionActions, notification, history } = this.props;
-
+    
     if( null != res.error){
       notification.e('Message', res.error.messagse);
       this.setState({isWorking: false});
@@ -64,6 +64,7 @@ class LoginPage extends Component {
       sessionActions.setSession(res.data, remember);
       history.push('/'); 
     }else{
+      
       this.setState({isWorking: false});
       notification.e('Message', 'Login fail');
     }

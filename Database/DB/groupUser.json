@@ -1,0 +1,32 @@
+{ 
+    "_id" : ObjectId("5ba8b2c3cda330222ca7b8d0"), 
+    "name" : "chauminhthien0212@gmail.com", 
+    "max_user" : NumberInt(11), 
+    "begin" : 1537246800000.0, 
+    "end" : 1551330000000.0, 
+    "status" : NumberInt(1)
+}
+{ 
+    "_id" : ObjectId("5befeba777f0ff1dec9033ff"), 
+    "name" : "chauminhthien0212@gmail.com", 
+    "max_user" : NumberInt(1), 
+    "begin" : 1542776400000.0, 
+    "end" : 1543467600000.0, 
+    "status" : NumberInt(1)
+}
+{ 
+    "_id" : ObjectId("5c0d109456977222887530c5"), 
+    "name" : "admintest@gmail.com", 
+    "max_user" : NumberInt(3), 
+    "begin" : 1544072400000.0, 
+    "end" : 1545195600000.0, 
+    "status" : NumberInt(1)
+}
+{ 
+    "_id" : ObjectId("5c0d1545e9ff2a287c4c6edf"), 
+    "name" : "admintest1@gmail.com", 
+    "max_user" : NumberInt(1), 
+    "begin" : 1544245200000.0, 
+    "end" : 1545800400000.0, 
+    "status" : NumberInt(1)
+}

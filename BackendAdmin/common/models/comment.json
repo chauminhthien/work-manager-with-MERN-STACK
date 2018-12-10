@@ -1,0 +1,62 @@
+{
+  "name": "comment",
+  "base": "PersistedModel",
+  "idInjection": true,
+  "options": {
+    "validateUpsert": true
+  },
+  "properties": {
+    "userId": {
+      "type": "string",
+      "required": true
+    },
+    "userTags": {
+      "type": [
+        "any"
+      ]
+    },
+    "files": {
+      "type": "any"
+    },
+    "content": {
+      "type": "string"
+    },
+    "time": {
+      "type": "number"
+    },
+    "groupUserID": {
+      "type": "string"
+    },
+    "taskId": {
+      "type": "string",
+      "required": true
+    },
+    "parentId": {
+      "type"    : "string",
+      "default" : "null"
+    }
+  },
+  "validations": [],
+  "relations": {
+    "groupUser": {
+      "type": "belongsTo",
+      "model": "groupUser",
+      "foreignKey": "groupUserID",
+      "primaryKey": ""
+    },
+    "parent": {
+      "type": "belongsTo",
+      "model": "comment",
+      "foreignKey": "parentId",
+      "primaryKey": ""
+    },
+    "task": {
+      "type": "belongsTo",
+      "model": "task",
+      "foreignKey": "taskId",
+      "primaryKey": ""
+    }
+  },
+  "acls": [],
+  "methods": {}
+}

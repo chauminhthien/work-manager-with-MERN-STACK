@@ -1,0 +1,80 @@
+{ 
+    "_id" : ObjectId("5c06020d01cee737ccd6370e"), 
+    "name" : "Project 01", 
+    "description" : "<p>http://localhost:3100/</p>\n", 
+    "begin" : 1543813200000.0, 
+    "end" : 1546232400000.0, 
+    "files" : [
+
+    ], 
+    "memberJoins" : [
+        {
+            "value" : "5bbaf4ca3f8500d824ef8376", 
+            "label" : "User 01", 
+            "email" : "chauminhthien@gmail.com"
+        }, 
+        {
+            "value" : "5bbaf4d73f8500d824ef837c", 
+            "label" : "User 02", 
+            "email" : "minhthien1305@gmail.com"
+        }, 
+        {
+            "value" : "5bbafff93f8500d824ef8814", 
+            "label" : "User 04", 
+            "email" : "chauminhthien03@gmail.com"
+        }, 
+        {
+            "value" : "5bbaf4e73f8500d824ef8383", 
+            "label" : "User 03", 
+            "email" : "chauminhthien02@gmail.com"
+        }, 
+        {
+            "value" : "5ba8b2c3cda330222ca7b8d1", 
+            "label" : "Châu Minh Thiện", 
+            "email" : "chauminhthien0212@gmail.com"
+        }
+    ], 
+    "groupUserID" : ObjectId("5ba8b2c3cda330222ca7b8d0"), 
+    "finish" : NumberInt(0), 
+    "createAt" : ObjectId("5ba8b2c3cda330222ca7b8d1")
+}
+{ 
+    "_id" : ObjectId("5c068d3163f1b4130092663b"), 
+    "name" : "Project 02", 
+    "description" : "<p>đ&acirc;y l&agrave; project 02</p>\n", 
+    "begin" : 1543899600000.0, 
+    "end" : 1546232400000.0, 
+    "files" : [
+
+    ], 
+    "memberJoins" : [
+        {
+            "value" : "5bbaf4ca3f8500d824ef8376", 
+            "label" : "User 01", 
+            "email" : "chauminhthien@gmail.com"
+        }, 
+        {
+            "value" : "5bbaf4d73f8500d824ef837c", 
+            "label" : "User 02", 
+            "email" : "minhthien1305@gmail.com"
+        }, 
+        {
+            "value" : "5bbaf4e73f8500d824ef8383", 
+            "label" : "User 03", 
+            "email" : "chauminhthien02@gmail.com"
+        }, 
+        {
+            "value" : "5bbafff93f8500d824ef8814", 
+            "label" : "User 04", 
+            "email" : "chauminhthien03@gmail.com"
+        }, 
+        {
+            "value" : "5ba8b2c3cda330222ca7b8d1", 
+            "label" : "Châu Minh Thiện", 
+            "email" : "chauminhthien0212@gmail.com"
+        }
+    ], 
+    "groupUserID" : ObjectId("5ba8b2c3cda330222ca7b8d0"), 
+    "finish" : NumberInt(0), 
+    "createAt" : ObjectId("5ba8b2c3cda330222ca7b8d1")
+}

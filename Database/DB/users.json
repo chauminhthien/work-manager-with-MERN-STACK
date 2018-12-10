@@ -1,0 +1,311 @@
+{ 
+    "_id" : ObjectId("5b98808d6aa50a283c379148"), 
+    "email" : "chauminhthien@itfsoft.com", 
+    "password" : "$2a$10$TcPbL3S9v/XGIdsBiYXlBuC44zYxiQ1FO00G70ZRebaEBHRWmeE5i", 
+    "fullname" : "Châu Minh Thiện", 
+    "phone" : "0963501008", 
+    "token" : "", 
+    "address" : "572 Luỹ bán bích, quận Tân Phú, TP.HCM", 
+    "gender" : NumberInt(1), 
+    "status" : NumberInt(1), 
+    "account_type" : NumberInt(0)
+}
+{ 
+    "_id" : ObjectId("5ba8b2c3cda330222ca7b8d1"), 
+    "email" : "chauminhthien0212@gmail.com", 
+    "password" : "$2a$10$tBvNYKJyG/pJyU9Ns4CzIukZeypeO5OXCy2W4aRI39WRtgiQodem2", 
+    "avatar" : "http://localhost:9100/uploads/avatar/1540865428832_18119292_324088004672990_4514242497453390633_n.jpg", 
+    "fullname" : "Châu Minh Thiện", 
+    "phone" : "963501008", 
+    "token" : "5PWoRi53FWboN2NLBrh90abwtkj6jN19", 
+    "address" : "572 luy ban bich", 
+    "groupUserID" : ObjectId("5ba8b2c3cda330222ca7b8d0"), 
+    "gender" : NumberInt(0), 
+    "status" : NumberInt(1), 
+    "account_type" : NumberInt(1), 
+    "created_at" : ObjectId("5b98808d6aa50a283c379148"), 
+    "permit" : {
+
+    }, 
+    "max_user" : null, 
+    "file" : "http://localhost:9100/uploads/avatar/1539078513183_b612_20170607_135001(1).jpg"
+}
+{ 
+    "_id" : ObjectId("5bbaf4ca3f8500d824ef8376"), 
+    "email" : "chauminhthien@gmail.com", 
+    "password" : "$2a$10$oDFPsiZXFct5cu45hG5epetSrD69TMHeGS/DyJBtKDSHtQAI6kOBm", 
+    "avatar" : "http://localhost:9100/uploads/avatar/1539232946335_11855714_464261727078534_2992328136707446173_n.jpg", 
+    "fullname" : "User 01", 
+    "phone" : "963501008", 
+    "token" : "", 
+    "address" : "572 luy ban bich", 
+    "groupUserID" : ObjectId("5ba8b2c3cda330222ca7b8d0"), 
+    "gender" : NumberInt(1), 
+    "status" : NumberInt(1), 
+    "account_type" : NumberInt(2), 
+    "created_at" : ObjectId("5ba8b2c3cda330222ca7b8d1"), 
+    "permit" : {
+
+    }, 
+    "max_user" : null
+}
+{ 
+    "_id" : ObjectId("5bbaf4d73f8500d824ef837c"), 
+    "email" : "minhthien1305@gmail.com", 
+    "password" : "$2a$10$c4T9/H13JADBto/0xS5DUOIXtSfHIJ6AlyDdNA7xAqMxVYmGX1cWS", 
+    "fullname" : "User 02", 
+    "phone" : "963501008", 
+    "address" : "572 luy ban bich", 
+    "groupUserID" : ObjectId("5ba8b2c3cda330222ca7b8d0"), 
+    "gender" : NumberInt(1), 
+    "status" : NumberInt(1), 
+    "account_type" : NumberInt(2), 
+    "created_at" : ObjectId("5ba8b2c3cda330222ca7b8d1"), 
+    "permit" : {
+
+    }, 
+    "max_user" : "10", 
+    "token" : ""
+}
+{ 
+    "_id" : ObjectId("5bbaf4e73f8500d824ef8383"), 
+    "email" : "chauminhthien02@gmail.com", 
+    "password" : "$2a$10$c4T9/H13JADBto/0xS5DUOIXtSfHIJ6AlyDdNA7xAqMxVYmGX1cWS", 
+    "fullname" : "User 03", 
+    "phone" : "963501008", 
+    "address" : "572 luy ban bich", 
+    "groupUserID" : ObjectId("5ba8b2c3cda330222ca7b8d0"), 
+    "gender" : NumberInt(1), 
+    "status" : NumberInt(1), 
+    "account_type" : NumberInt(2), 
+    "created_at" : ObjectId("5ba8b2c3cda330222ca7b8d1"), 
+    "permit" : {
+
+    }, 
+    "max_user" : "10", 
+    "token" : ""
+}
+{ 
+    "_id" : ObjectId("5bbafff93f8500d824ef8814"), 
+    "email" : "chauminhthien03@gmail.com", 
+    "password" : "$2a$10$c4T9/H13JADBto/0xS5DUOIXtSfHIJ6AlyDdNA7xAqMxVYmGX1cWS", 
+    "fullname" : "User 04", 
+    "phone" : "963501008", 
+    "address" : "572 luy ban bich", 
+    "groupUserID" : ObjectId("5ba8b2c3cda330222ca7b8d0"), 
+    "gender" : NumberInt(1), 
+    "status" : NumberInt(1), 
+    "account_type" : NumberInt(2), 
+    "created_at" : ObjectId("5ba8b2c3cda330222ca7b8d1"), 
+    "permit" : {
+
+    }, 
+    "max_user" : "10", 
+    "token" : ""
+}
+{ 
+    "_id" : ObjectId("5bbb00073f8500d824ef8819"), 
+    "email" : "chauminhthien04@gmail.com", 
+    "password" : "$2a$10$c4T9/H13JADBto/0xS5DUOIXtSfHIJ6AlyDdNA7xAqMxVYmGX1cWS", 
+    "fullname" : "User 05", 
+    "phone" : "963501008", 
+    "address" : "572 luy ban bich", 
+    "groupUserID" : ObjectId("5ba8b2c3cda330222ca7b8d0"), 
+    "gender" : NumberInt(1), 
+    "status" : NumberInt(1), 
+    "account_type" : NumberInt(2), 
+    "created_at" : ObjectId("5ba8b2c3cda330222ca7b8d1"), 
+    "permit" : {
+
+    }, 
+    "max_user" : "10", 
+    "token" : ""
+}
+{ 
+    "_id" : ObjectId("5bcc95ad90817906e01ba4ed"), 
+    "email" : "chauminhthien021211@gmail.com", 
+    "password" : "$2a$10$afY0tSkbrf6GetNGM2Bd9eSDLQvhNMQnDSyhukoVR1GGJU7geyDze", 
+    "fullname" : "Châu Minh Thiện", 
+    "phone" : "963501008", 
+    "address" : "572 luy ban bich", 
+    "groupUserID" : ObjectId("5bcc95ac90817906e01ba4e6"), 
+    "gender" : NumberInt(1), 
+    "status" : NumberInt(1), 
+    "account_type" : NumberInt(1), 
+    "created_at" : ObjectId("5b98808d6aa50a283c379148"), 
+    "permit" : {
+
+    }, 
+    "max_user" : null
+}
+{ 
+    "_id" : ObjectId("5be71ac597e50b2a6475ea83"), 
+    "email" : "chauminhthien0123@gmail.com", 
+    "password" : "$2a$10$b0s05Pcp0/d5DYv.FbzcpORWAFYmWeD.Fp4x1bQZiwkBisjE0Vw.y", 
+    "fullname" : "User 06", 
+    "phone" : "0963501008", 
+    "address" : "chauminhthien", 
+    "groupUserID" : ObjectId("5ba8b2c3cda330222ca7b8d0"), 
+    "gender" : NumberInt(0), 
+    "status" : NumberInt(1), 
+    "account_type" : NumberInt(2), 
+    "created_at" : ObjectId("5ba8b2c3cda330222ca7b8d1"), 
+    "permit" : {
+
+    }, 
+    "max_user" : null
+}
+{ 
+    "_id" : ObjectId("5bee2aed1accac3770cf03bb"), 
+    "email" : "ntnthanhtnmt@gmail.com", 
+    "password" : "$2a$10$gKkeyEgo2IZqZDbgfxe8AeSAQVVDjy/FM5nfaNTk7WmaZDRcWb.JS", 
+    "fullname" : "Cô Thanh", 
+    "phone" : "0963501008", 
+    "address" : "572 Luỹ bán bích, quận Tân Phú, TP.HCM", 
+    "groupUserID" : ObjectId("5bee2aec1accac3770cf03b4"), 
+    "gender" : NumberInt(1), 
+    "status" : NumberInt(1), 
+    "account_type" : NumberInt(1), 
+    "created_at" : ObjectId("5b98808d6aa50a283c379148"), 
+    "permit" : {
+
+    }, 
+    "max_user" : null
+}
+{ 
+    "_id" : ObjectId("5bee2c291accac3770cf03bc"), 
+    "email" : "user01@gmail.com", 
+    "password" : "$2a$10$/FZp4K.y7AjDPfXiJjXjhuXRs8kHPOiIS5X0LdYJHYQAmHOk0FE6W", 
+    "fullname" : "User01", 
+    "phone" : "0123456789", 
+    "address" : "572 luy ban bich", 
+    "groupUserID" : ObjectId("5bee2aec1accac3770cf03b4"), 
+    "gender" : NumberInt(1), 
+    "status" : NumberInt(0), 
+    "account_type" : NumberInt(2), 
+    "created_at" : ObjectId("5bee2aed1accac3770cf03bb"), 
+    "permit" : {
+
+    }, 
+    "max_user" : null
+}
+{ 
+    "_id" : ObjectId("5bee2c481accac3770cf03bd"), 
+    "email" : "user02@gmail.com", 
+    "password" : "$2a$10$ugwiUm.Pry.4L58DmtEMnu5dctpiAKsT9e/RlKyaqB03FsJUOwGiq", 
+    "fullname" : "User 02", 
+    "phone" : "0963501008", 
+    "address" : "572 Luỹ bán bích, quận Tân Phú, TP.HCM", 
+    "groupUserID" : ObjectId("5bee2aec1accac3770cf03b4"), 
+    "gender" : NumberInt(1), 
+    "status" : NumberInt(1), 
+    "account_type" : NumberInt(2), 
+    "created_at" : ObjectId("5bee2aed1accac3770cf03bb"), 
+    "permit" : {
+
+    }, 
+    "max_user" : null
+}
+{ 
+    "_id" : ObjectId("5bee2cbf1accac3770cf03be"), 
+    "email" : "user03@gmail.com", 
+    "password" : "$2a$10$hPvcAmWVBIpj0gYzJNrLJu40kzWiE486zFx6ea9es5Eo6APaxFxCO", 
+    "fullname" : "User 03", 
+    "phone" : "0963501008", 
+    "address" : "572 Luỹ bán bích, quận Tân Phú, TP.HCM", 
+    "groupUserID" : ObjectId("5bee2aec1accac3770cf03b4"), 
+    "gender" : NumberInt(1), 
+    "status" : NumberInt(1), 
+    "account_type" : NumberInt(2), 
+    "created_at" : ObjectId("5bee2aed1accac3770cf03bb"), 
+    "permit" : {
+
+    }, 
+    "max_user" : null
+}
+{ 
+    "_id" : ObjectId("5c0d109456977222887530cc"), 
+    "email" : "admintest@gmail.com", 
+    "password" : "$2a$10$Pkra5cISKsGAayLq8PhUm.6X.V1ZCwRchcY/l6X82w40qYyK5Ouhi", 
+    "fullname" : "Admin Test", 
+    "phone" : "963501008", 
+    "address" : "572 Luỹ bán bích, quận Tân Phú, TP.HCM", 
+    "groupUserID" : ObjectId("5c0d109456977222887530c5"), 
+    "gender" : NumberInt(1), 
+    "status" : NumberInt(1), 
+    "account_type" : NumberInt(1), 
+    "created_at" : ObjectId("5b98808d6aa50a283c379148"), 
+    "permit" : {
+
+    }, 
+    "max_user" : null
+}
+{ 
+    "_id" : ObjectId("5c0d12f156977222887530cd"), 
+    "email" : "test01@gmail.com", 
+    "password" : "$2a$10$L6ZmtYvzNWBF6wBaDMmHYe54XIypMECKfWbDmZqm5LqDgX4jBkMOa", 
+    "avatar" : "http://localhost:9100/uploads/avatar/1544361696277_bk.png", 
+    "fullname" : "Test 01", 
+    "phone" : "0963501008", 
+    "address" : "chauminhthien", 
+    "groupUserID" : ObjectId("5c0d109456977222887530c5"), 
+    "gender" : NumberInt(1), 
+    "status" : NumberInt(1), 
+    "account_type" : NumberInt(2), 
+    "created_at" : ObjectId("5c0d109456977222887530cc"), 
+    "permit" : {
+
+    }, 
+    "max_user" : null
+}
+{ 
+    "_id" : ObjectId("5c0d130656977222887530ce"), 
+    "email" : "test02@gmail.com", 
+    "password" : "$2a$10$RGeovZ8w5uICqIDJPb2WReJAP.n4s5z2Ohyqw7MyLWs4p23APYwn2", 
+    "fullname" : "Test 02", 
+    "phone" : "0963501008", 
+    "address" : "chauminhthien", 
+    "groupUserID" : ObjectId("5c0d109456977222887530c5"), 
+    "gender" : NumberInt(1), 
+    "status" : NumberInt(1), 
+    "account_type" : NumberInt(2), 
+    "created_at" : ObjectId("5c0d109456977222887530cc"), 
+    "permit" : {
+
+    }, 
+    "max_user" : null
+}
+{ 
+    "_id" : ObjectId("5c0d148baa09101e88fe33bc"), 
+    "email" : "email@address.com", 
+    "password" : "$2a$10$yWAvBDzNSn3V/dMZqhP5TuZeQOC9wG/XmIvlEvo175m.RTZyta1Ke", 
+    "fullname" : "chauminhthien", 
+    "phone" : "0963501008", 
+    "address" : "chauminhthien", 
+    "groupUserID" : ObjectId("5c0d109456977222887530c5"), 
+    "gender" : NumberInt(1), 
+    "status" : NumberInt(1), 
+    "account_type" : NumberInt(2), 
+    "created_at" : ObjectId("5c0d109456977222887530cc"), 
+    "permit" : {
+
+    }, 
+    "max_user" : null
+}
+{ 
+    "_id" : ObjectId("5c0d1547e9ff2a287c4c6ee6"), 
+    "email" : "admintest1@gmail.com", 
+    "password" : "$2a$10$jPE.vGaNnbgpn0UVDN3Q8u3oPYSyaxLTF4fyAkVkF/Y9YbgBQOjti", 
+    "fullname" : "admintest1", 
+    "phone" : "963501008", 
+    "address" : "572 Luỹ bán bích, quận Tân Phú, TP.HCM", 
+    "groupUserID" : ObjectId("5c0d1545e9ff2a287c4c6edf"), 
+    "gender" : NumberInt(1), 
+    "status" : NumberInt(1), 
+    "account_type" : NumberInt(1), 
+    "created_at" : ObjectId("5b98808d6aa50a283c379148"), 
+    "permit" : {
+
+    }, 
+    "max_user" : "1"
+}

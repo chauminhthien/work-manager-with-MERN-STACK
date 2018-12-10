@@ -21,7 +21,7 @@ class ListUser extends Component {
   }
 
   componentDidMount(){
-    let { breadcrumbActions, profile, users, userActions } = this.props;
+    let { breadcrumbActions, profile, userActions } = this.props;
 
     breadcrumbActions.set({
       page_name: 'Dashboard',
@@ -31,17 +31,16 @@ class ListUser extends Component {
       }]
     });
 
-    if(!!profile.info && users.ordered.length === 0){
 
-      let where = {};
+    let where = {};
 
-      if(profile.info && profile.info.account_type === 0)
-        where = { account_type : 1 };
-      else
-        where = { created_at : profile.info.id };
-        
-      userActions.fetchAll({}, 0, 0, where)
-    }
+    if(profile.info && profile.info.account_type === 0)
+      where = { account_type : 1 };
+    else
+      where = { created_at : profile.info.id };
+      
+    userActions.fetchAll({}, 0, 0, where)
+    
     
   }
 

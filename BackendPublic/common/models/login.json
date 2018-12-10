@@ -1,0 +1,50 @@
+{
+  "name": "login",
+  "base": "PersistedModel",
+  "idInjection": true,
+  "options": {
+    "validateUpsert": true
+  },
+  "properties": {
+    "userId": {
+      "type": "string",
+      "required": true
+    },
+    "time": {
+      "type": "number",
+      "required": true,
+      "default": 0
+    },
+    "type": {
+      "type": "number",
+      "required": true,
+      "default": 0
+    },
+    "account_type": {
+      "type": "number",
+      "required": true,
+      "default": 0
+    },
+    "groupUserID": {
+      "type": "string",
+      "default": ""
+    }
+  },
+  "validations": [],
+  "relations": {
+    "groupUser": {
+      "type": "belongsTo",
+      "model": "groupUser",
+      "foreignKey": "groupUserID",
+      "primaryKey": ""
+    },
+    "users": {
+      "type": "belongsTo",
+      "model": "users",
+      "foreignKey": "userId",
+      "primaryKey": ""
+    }
+  },
+  "acls": [],
+  "methods": {}
+}

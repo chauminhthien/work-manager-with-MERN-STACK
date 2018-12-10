@@ -1,0 +1,266 @@
+{ 
+    "_id" : ObjectId("5c0606b497bea8119c318029"), 
+    "name" : "Đại Học Tài Nguyên Và Môi trường Tp.Hcm", 
+    "files" : [
+
+    ], 
+    "relateMember" : [
+        {
+            "value" : "5bbaf4ca3f8500d824ef8376", 
+            "label" : "User 01", 
+            "email" : "chauminhthien@gmail.com"
+        }, 
+        {
+            "value" : "5bbafff93f8500d824ef8814", 
+            "label" : "User 04", 
+            "email" : "chauminhthien03@gmail.com"
+        }
+    ], 
+    "memberCmt" : [
+
+    ], 
+    "memberId" : ObjectId("5bbaf4d73f8500d824ef837c"), 
+    "cateTaskId" : ObjectId("5bcc86394d80fd20dca7629d"), 
+    "begin" : 1543985340000.0, 
+    "end" : 1545799800000.0, 
+    "description" : "<p>ascascascascasc</p>\n", 
+    "status" : NumberInt(0), 
+    "process" : NumberInt(0), 
+    "finish" : NumberInt(0), 
+    "groupUserID" : ObjectId("5ba8b2c3cda330222ca7b8d0"), 
+    "projectId" : ObjectId("5c06020d01cee737ccd6370e"), 
+    "createAt" : ObjectId("5ba8b2c3cda330222ca7b8d1")
+}
+{ 
+    "_id" : ObjectId("5c060bd797bea8119c31802c"), 
+    "name" : "Task 02", 
+    "files" : [
+
+    ], 
+    "relateMember" : [
+        {
+            "value" : "5bbaf4d73f8500d824ef837c", 
+            "label" : "User 02", 
+            "email" : "minhthien1305@gmail.com"
+        }
+    ], 
+    "memberCmt" : [
+
+    ], 
+    "memberId" : ObjectId("5bbaf4ca3f8500d824ef8376"), 
+    "cateTaskId" : ObjectId("5bcc86394d80fd20dca7629d"), 
+    "begin" : 1543900140000.0, 
+    "timeFisnish" : 1543901111113.0, 
+    "end" : 1543986720000.0, 
+    "description" : "<p>ascascascascascascascasc</p>\n", 
+    "status" : NumberInt(0), 
+    "process" : NumberInt(100), 
+    "finish" : NumberInt(1), 
+    "groupUserID" : ObjectId("5ba8b2c3cda330222ca7b8d0"), 
+    "projectId" : ObjectId("5c06020d01cee737ccd6370e"), 
+    "createAt" : ObjectId("5ba8b2c3cda330222ca7b8d1")
+}
+{ 
+    "_id" : ObjectId("5c060ffed01bc5246c0781ce"), 
+    "name" : "Đại Học Tài Nguyên Và Môi trường Tp.Hcm", 
+    "files" : [
+        {
+            "container" : "files", 
+            "name" : "1543911859907_13726742_226764967722969_711079556233161887_n.jpg", 
+            "type" : "image/jpeg", 
+            "field" : "file", 
+            "originalFilename" : "13726742_226764967722969_711079556233161887_n.jpg", 
+            "size" : NumberInt(11539), 
+            "url" : "http://localhost:9100/uploads/files/1543911859907_13726742_226764967722969_711079556233161887_n.jpg"
+        }, 
+        {
+            "container" : "files", 
+            "name" : "1543911862660_13770384_581047735401395_662880670938087522_n.jpg", 
+            "type" : "image/jpeg", 
+            "field" : "file", 
+            "originalFilename" : "13770384_581047735401395_662880670938087522_n.jpg", 
+            "size" : NumberInt(24134), 
+            "url" : "http://localhost:9100/uploads/files/1543911862660_13770384_581047735401395_662880670938087522_n.jpg"
+        }
+    ], 
+    "relateMember" : [
+        {
+            "value" : "5bbafff93f8500d824ef8814", 
+            "label" : "User 04", 
+            "email" : "chauminhthien03@gmail.com"
+        }, 
+        {
+            "value" : "5bbaf4d73f8500d824ef837c", 
+            "label" : "User 02", 
+            "email" : "minhthien1305@gmail.com"
+        }, 
+        {
+            "value" : "5ba8b2c3cda330222ca7b8d1", 
+            "label" : "Châu Minh Thiện", 
+            "email" : "chauminhthien0212@gmail.com"
+        }
+    ], 
+    "memberCmt" : [
+        "5ba8b2c3cda330222ca7b8d1", 
+        "5bbaf4ca3f8500d824ef8376"
+    ], 
+    "memberId" : ObjectId("5bbaf4ca3f8500d824ef8376"), 
+    "cateTaskId" : ObjectId("5bcc86394d80fd20dca7629d"), 
+    "begin" : 1544084580000.0, 
+    "end" : 1544592360000.0, 
+    "description" : "<p>ascascascascascascascascasc</p>\n", 
+    "status" : NumberInt(0), 
+    "process" : NumberInt(52), 
+    "finish" : NumberInt(0), 
+    "groupUserID" : ObjectId("5ba8b2c3cda330222ca7b8d0"), 
+    "projectId" : ObjectId("5c06020d01cee737ccd6370e"), 
+    "createAt" : ObjectId("5ba8b2c3cda330222ca7b8d1")
+}
+{ 
+    "_id" : ObjectId("5c068d7f63f1b41300926642"), 
+    "name" : "Task 01 project 02", 
+    "files" : [
+
+    ], 
+    "relateMember" : [
+        {
+            "value" : "5bbaf4d73f8500d824ef837c", 
+            "label" : "User 02", 
+            "email" : "minhthien1305@gmail.com"
+        }, 
+        {
+            "value" : "5bbaf4e73f8500d824ef8383", 
+            "label" : "User 03", 
+            "email" : "chauminhthien02@gmail.com"
+        }, 
+        {
+            "value" : "5bbafff93f8500d824ef8814", 
+            "label" : "User 04", 
+            "email" : "chauminhthien03@gmail.com"
+        }
+    ], 
+    "memberCmt" : [
+        "5bbaf4ca3f8500d824ef8376", 
+        "5ba8b2c3cda330222ca7b8d1"
+    ], 
+    "memberId" : ObjectId("5bbaf4ca3f8500d824ef8376"), 
+    "cateTaskId" : ObjectId("5bcc86394d80fd20dca7629d"), 
+    "begin" : 1543933440000.0, 
+    "timeFisnish" : 1543933394639.0, 
+    "end" : 1544020800000.0, 
+    "description" : "<p>Task 01 project 02Task 01 project 02Task 01 project 02Task 01 project 02</p>\n", 
+    "status" : NumberInt(0), 
+    "process" : NumberInt(100), 
+    "finish" : NumberInt(1), 
+    "groupUserID" : ObjectId("5ba8b2c3cda330222ca7b8d0"), 
+    "projectId" : ObjectId("5c068d3163f1b4130092663b"), 
+    "createAt" : ObjectId("5ba8b2c3cda330222ca7b8d1"), 
+    "point" : NumberInt(7)
+}
+{ 
+    "_id" : ObjectId("5c0694c363f1b41300926660"), 
+    "name" : "Task 02 of project 02", 
+    "files" : [
+
+    ], 
+    "relateMember" : [
+        {
+            "value" : "5bbafff93f8500d824ef8814", 
+            "label" : "User 04", 
+            "email" : "chauminhthien03@gmail.com"
+        }
+    ], 
+    "memberCmt" : [
+
+    ], 
+    "memberId" : ObjectId("5bbaf4ca3f8500d824ef8376"), 
+    "cateTaskId" : ObjectId("5bcc8ffc4d80fd20dca762a3"), 
+    "begin" : 1543935540000.0, 
+    "end" : 1544106180000.0, 
+    "description" : "<p>ascascascascascascascasc</p>\n", 
+    "status" : NumberInt(0), 
+    "process" : NumberInt(39), 
+    "finish" : NumberInt(0), 
+    "groupUserID" : ObjectId("5ba8b2c3cda330222ca7b8d0"), 
+    "projectId" : ObjectId("5c068d3163f1b4130092663b"), 
+    "createAt" : ObjectId("5ba8b2c3cda330222ca7b8d1")
+}
+{ 
+    "_id" : ObjectId("5c0a16e7f7ab449dac5a13d3"), 
+    "name" : "Task 03", 
+    "files" : [
+
+    ], 
+    "relateMember" : [
+        {
+            "value" : "5bbaf4d73f8500d824ef837c", 
+            "label" : "User 02", 
+            "email" : "minhthien1305@gmail.com"
+        }
+    ], 
+    "memberCmt" : [
+
+    ], 
+    "memberId" : ObjectId("5bbaf4ca3f8500d824ef8376"), 
+    "cateTaskId" : ObjectId("5bcc86394d80fd20dca7629d"), 
+    "begin" : 1543900140000.0, 
+    "timeFisnish" : NumberInt(0), 
+    "end" : 1543986720000.0, 
+    "description" : "<p>ascascascascascascascasc</p>\n", 
+    "status" : NumberInt(0), 
+    "process" : NumberInt(20), 
+    "finish" : NumberInt(0), 
+    "groupUserID" : ObjectId("5ba8b2c3cda330222ca7b8d0"), 
+    "projectId" : ObjectId("5c06020d01cee737ccd6370e"), 
+    "createAt" : ObjectId("5ba8b2c3cda330222ca7b8d1")
+}
+{ 
+    "_id" : ObjectId("5c0cbc08131760206cadfd39"), 
+    "name" : "Task 03 project 01", 
+    "files" : [
+
+    ], 
+    "relateMember" : [
+
+    ], 
+    "memberCmt" : [
+
+    ], 
+    "point" : NumberInt(0), 
+    "memberId" : ObjectId("5bbaf4ca3f8500d824ef8376"), 
+    "cateTaskId" : ObjectId("5bcc86394d80fd20dca7629d"), 
+    "begin" : 1544428560000.0, 
+    "end" : 1544522100000.0, 
+    "description" : "<p>ascascascascascacsasc</p>\n", 
+    "status" : NumberInt(0), 
+    "process" : NumberInt(0), 
+    "finish" : NumberInt(0), 
+    "groupUserID" : ObjectId("5ba8b2c3cda330222ca7b8d0"), 
+    "projectId" : ObjectId("5c06020d01cee737ccd6370e"), 
+    "createAt" : ObjectId("5ba8b2c3cda330222ca7b8d1")
+}
+{ 
+    "_id" : ObjectId("5c0cc3ba131760206cadfd3e"), 
+    "name" : "Công việc", 
+    "files" : [
+
+    ], 
+    "relateMember" : [
+
+    ], 
+    "memberCmt" : [
+
+    ], 
+    "point" : NumberInt(0), 
+    "memberId" : ObjectId("5bbaf4ca3f8500d824ef8376"), 
+    "cateTaskId" : ObjectId("5bcc86394d80fd20dca7629d"), 
+    "begin" : 1544598720000.0, 
+    "end" : 1545387060000.0, 
+    "description" : "", 
+    "status" : NumberInt(0), 
+    "process" : NumberInt(0), 
+    "finish" : NumberInt(0), 
+    "groupUserID" : ObjectId("5ba8b2c3cda330222ca7b8d0"), 
+    "projectId" : ObjectId("5c06020d01cee737ccd6370e"), 
+    "createAt" : ObjectId("5ba8b2c3cda330222ca7b8d1")
+}

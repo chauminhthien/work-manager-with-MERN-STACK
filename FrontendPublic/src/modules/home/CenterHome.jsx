@@ -126,7 +126,16 @@ class CenterHome extends Component {
   checkJob = (obj) => {
     let { profile, data } = obj;
     if(profile.info.account_type === 1) return true;
-    return (data.createAt === profile.info.id || data.memberId === profile.info.id)
+
+    let fl = false;
+    for(let val of data.relateMember){ 
+      if(val.value === profile.info.id) {
+        fl = true;
+        break;
+      }
+    }
+
+    return (data.createAt === profile.info.id || data.memberId === profile.info.id || !!fl)
   }
 
   render() {
@@ -140,6 +149,7 @@ class CenterHome extends Component {
       nameTask = rmv(nameTask);
       
       let flag = (taskSearch == null || nameTask.indexOf(taskSearch) !== -1);
+
       flag = !!flag && this.checkJobType({profile, jobType, data: task.data[e]});
       flag = !!flag && this.checkJobStatus({profile, jobStatus, data: task.data[e]});
       flag = !!flag && this.checkJob({profile, data: task.data[e]});

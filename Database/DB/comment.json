@@ -1,0 +1,648 @@
+{ 
+    "_id" : ObjectId("5c060c2a97bea8119c31802f"), 
+    "userId" : "5bbaf4ca3f8500d824ef8376", 
+    "files" : [
+
+    ], 
+    "content" : "Cập nhật tiến độ công việc", 
+    "time" : 1543900202653.0, 
+    "groupUserID" : ObjectId("5ba8b2c3cda330222ca7b8d0"), 
+    "taskId" : ObjectId("5c060bd797bea8119c31802c"), 
+    "parentId" : "null"
+}
+{ 
+    "_id" : ObjectId("5c060d6360b14d35f8acf121"), 
+    "userId" : "5bbaf4ca3f8500d824ef8376", 
+    "files" : [
+
+    ], 
+    "content" : "Cập nhật tiến độ công việc", 
+    "time" : 1543900515046.0, 
+    "groupUserID" : ObjectId("5ba8b2c3cda330222ca7b8d0"), 
+    "taskId" : ObjectId("5c060bd797bea8119c31802c"), 
+    "parentId" : "null"
+}
+{ 
+    "_id" : ObjectId("5c060dc85c2d4c1f1cfb7418"), 
+    "userId" : "5bbaf4ca3f8500d824ef8376", 
+    "files" : [
+
+    ], 
+    "content" : "Cập nhật tiến độ công việc", 
+    "time" : 1543900616161.0, 
+    "groupUserID" : ObjectId("5ba8b2c3cda330222ca7b8d0"), 
+    "taskId" : ObjectId("5c060bd797bea8119c31802c"), 
+    "parentId" : "null"
+}
+{ 
+    "_id" : ObjectId("5c060dfd62e711121c197d5b"), 
+    "userId" : "5bbaf4ca3f8500d824ef8376", 
+    "files" : [
+
+    ], 
+    "content" : "Cập nhật tiến độ công việc", 
+    "time" : 1543900669294.0, 
+    "groupUserID" : ObjectId("5ba8b2c3cda330222ca7b8d0"), 
+    "taskId" : ObjectId("5c060bd797bea8119c31802c"), 
+    "parentId" : "null"
+}
+{ 
+    "_id" : ObjectId("5c060e1062e711121c197d5c"), 
+    "userId" : "5bbaf4ca3f8500d824ef8376", 
+    "files" : [
+
+    ], 
+    "content" : "Cập nhật tiến độ công việc", 
+    "time" : 1543900688583.0, 
+    "groupUserID" : ObjectId("5ba8b2c3cda330222ca7b8d0"), 
+    "taskId" : ObjectId("5c060bd797bea8119c31802c"), 
+    "parentId" : "null"
+}
+{ 
+    "_id" : ObjectId("5c060e4c62e711121c197d5d"), 
+    "userId" : "5ba8b2c3cda330222ca7b8d1", 
+    "files" : [
+
+    ], 
+    "content" : "Cập nhật tiến độ công việc", 
+    "time" : 1543900748580.0, 
+    "groupUserID" : ObjectId("5ba8b2c3cda330222ca7b8d0"), 
+    "taskId" : ObjectId("5c060bd797bea8119c31802c"), 
+    "parentId" : "null"
+}
+{ 
+    "_id" : ObjectId("5c060ead62e711121c197d5e"), 
+    "userId" : "5ba8b2c3cda330222ca7b8d1", 
+    "files" : [
+
+    ], 
+    "content" : "Cập nhật tiến độ công việc", 
+    "time" : 1543900845906.0, 
+    "groupUserID" : ObjectId("5ba8b2c3cda330222ca7b8d0"), 
+    "taskId" : ObjectId("5c060bd797bea8119c31802c"), 
+    "parentId" : "null"
+}
+{ 
+    "_id" : ObjectId("5c060f45d01bc5246c0781c8"), 
+    "userId" : "5ba8b2c3cda330222ca7b8d1", 
+    "files" : [
+
+    ], 
+    "content" : "Cập nhật tiến độ công việc", 
+    "time" : 1543900997940.0, 
+    "groupUserID" : ObjectId("5ba8b2c3cda330222ca7b8d0"), 
+    "taskId" : ObjectId("5c060bd797bea8119c31802c"), 
+    "parentId" : "null"
+}
+{ 
+    "_id" : ObjectId("5c060f73d01bc5246c0781c9"), 
+    "userId" : "5bbaf4ca3f8500d824ef8376", 
+    "files" : [
+
+    ], 
+    "content" : "Cập nhật tiến độ công việc", 
+    "time" : 1543901043264.0, 
+    "groupUserID" : ObjectId("5ba8b2c3cda330222ca7b8d0"), 
+    "taskId" : ObjectId("5c060bd797bea8119c31802c"), 
+    "parentId" : "null"
+}
+{ 
+    "_id" : ObjectId("5c060f78d01bc5246c0781ca"), 
+    "userId" : "5bbaf4ca3f8500d824ef8376", 
+    "files" : [
+
+    ], 
+    "content" : "Cập nhật tiến độ công việc", 
+    "time" : 1543901048090.0, 
+    "groupUserID" : ObjectId("5ba8b2c3cda330222ca7b8d0"), 
+    "taskId" : ObjectId("5c060bd797bea8119c31802c"), 
+    "parentId" : "null"
+}
+{ 
+    "_id" : ObjectId("5c060f99d01bc5246c0781cb"), 
+    "userId" : "5bbaf4ca3f8500d824ef8376", 
+    "files" : [
+
+    ], 
+    "content" : "Cập nhật tiến độ công việc", 
+    "time" : 1543901081296.0, 
+    "groupUserID" : ObjectId("5ba8b2c3cda330222ca7b8d0"), 
+    "taskId" : ObjectId("5c060bd797bea8119c31802c"), 
+    "parentId" : "null"
+}
+{ 
+    "_id" : ObjectId("5c060f9fd01bc5246c0781cc"), 
+    "userId" : "5bbaf4ca3f8500d824ef8376", 
+    "files" : [
+
+    ], 
+    "content" : "Cập nhật tiến độ công việc", 
+    "time" : 1543901087661.0, 
+    "groupUserID" : ObjectId("5ba8b2c3cda330222ca7b8d0"), 
+    "taskId" : ObjectId("5c060bd797bea8119c31802c"), 
+    "parentId" : "null"
+}
+{ 
+    "_id" : ObjectId("5c060fb7d01bc5246c0781cd"), 
+    "userId" : "5ba8b2c3cda330222ca7b8d1", 
+    "files" : [
+
+    ], 
+    "content" : "Cập nhật tiến độ công việc", 
+    "time" : 1543901111446.0, 
+    "groupUserID" : ObjectId("5ba8b2c3cda330222ca7b8d0"), 
+    "taskId" : ObjectId("5c060bd797bea8119c31802c"), 
+    "parentId" : "null"
+}
+{ 
+    "_id" : ObjectId("5c06219e560d3e28fc235020"), 
+    "userId" : "5ba8b2c3cda330222ca7b8d1", 
+    "userTags" : [
+
+    ], 
+    "content" : "<p>25152123132</p>", 
+    "time" : 1543905694253.0, 
+    "groupUserID" : ObjectId("5ba8b2c3cda330222ca7b8d0"), 
+    "taskId" : ObjectId("5c060ffed01bc5246c0781ce"), 
+    "parentId" : "null"
+}
+{ 
+    "_id" : ObjectId("5c0621ce49879432b4017a08"), 
+    "userId" : "5ba8b2c3cda330222ca7b8d1", 
+    "userTags" : [
+
+    ], 
+    "content" : "<p>2123</p>\n\n<p>&nbsp;</p>", 
+    "time" : 1543905742313.0, 
+    "groupUserID" : ObjectId("5ba8b2c3cda330222ca7b8d0"), 
+    "taskId" : ObjectId("5c060ffed01bc5246c0781ce"), 
+    "parentId" : "null"
+}
+{ 
+    "_id" : ObjectId("5c0621ef49879432b4017a09"), 
+    "userId" : "5bbaf4ca3f8500d824ef8376", 
+    "files" : [
+
+    ], 
+    "content" : "Cập nhật tiến độ công việc", 
+    "time" : 1543905775030.0, 
+    "groupUserID" : ObjectId("5ba8b2c3cda330222ca7b8d0"), 
+    "taskId" : ObjectId("5c060ffed01bc5246c0781ce"), 
+    "parentId" : "null"
+}
+{ 
+    "_id" : ObjectId("5c06226e53bf380610b0bf55"), 
+    "userId" : "5ba8b2c3cda330222ca7b8d1", 
+    "userTags" : [
+
+    ], 
+    "content" : "<p>ascasc</p>", 
+    "time" : 1543905902175.0, 
+    "groupUserID" : ObjectId("5ba8b2c3cda330222ca7b8d0"), 
+    "taskId" : ObjectId("5c060ffed01bc5246c0781ce"), 
+    "parentId" : "null"
+}
+{ 
+    "_id" : ObjectId("5c06227953bf380610b0bf5a"), 
+    "userId" : "5ba8b2c3cda330222ca7b8d1", 
+    "userTags" : [
+
+    ], 
+    "content" : "<p>1111111111111</p>", 
+    "time" : 1543905913425.0, 
+    "groupUserID" : ObjectId("5ba8b2c3cda330222ca7b8d0"), 
+    "taskId" : ObjectId("5c060ffed01bc5246c0781ce"), 
+    "parentId" : "null"
+}
+{ 
+    "_id" : ObjectId("5c0623a6fbd2ee36a03fa0ce"), 
+    "userId" : "5ba8b2c3cda330222ca7b8d1", 
+    "userTags" : [
+
+    ], 
+    "content" : "<p>ascascascasc</p>", 
+    "time" : 1543906213803.0, 
+    "groupUserID" : ObjectId("5ba8b2c3cda330222ca7b8d0"), 
+    "taskId" : ObjectId("5c060ffed01bc5246c0781ce"), 
+    "parentId" : "null"
+}
+{ 
+    "_id" : ObjectId("5c0625525d754a1e8c2e1f1d"), 
+    "userId" : "5ba8b2c3cda330222ca7b8d1", 
+    "files" : {
+        "container" : "files", 
+        "name" : "1543906642782_13934580_218266578571485_581216931787601571_n.jpg", 
+        "type" : "image/jpeg", 
+        "field" : "file", 
+        "originalFilename" : "13934580_218266578571485_581216931787601571_n.jpg", 
+        "size" : NumberInt(9197), 
+        "url" : "http://localhost:9100/uploads/files/1543906642782_13934580_218266578571485_581216931787601571_n.jpg"
+    }, 
+    "content" : "", 
+    "time" : 1543906642790.0, 
+    "groupUserID" : ObjectId("5ba8b2c3cda330222ca7b8d0"), 
+    "taskId" : ObjectId("5c060ffed01bc5246c0781ce"), 
+    "parentId" : "null"
+}
+{ 
+    "_id" : ObjectId("5c0625786a32cd17aca0c8cf"), 
+    "userId" : "5ba8b2c3cda330222ca7b8d1", 
+    "files" : {
+        "container" : "files", 
+        "name" : "1543906680518_13669140_1622196328093624_7984663829851979121_n.jpg", 
+        "type" : "image/jpeg", 
+        "field" : "file", 
+        "originalFilename" : "13669140_1622196328093624_7984663829851979121_n.jpg", 
+        "size" : NumberInt(3678), 
+        "url" : "http://localhost:9100/uploads/files/1543906680518_13669140_1622196328093624_7984663829851979121_n.jpg"
+    }, 
+    "content" : "", 
+    "time" : 1543906680534.0, 
+    "groupUserID" : ObjectId("5ba8b2c3cda330222ca7b8d0"), 
+    "taskId" : ObjectId("5c060ffed01bc5246c0781ce"), 
+    "parentId" : "null"
+}
+{ 
+    "_id" : ObjectId("5c0625abaf427e08b4ceae37"), 
+    "userId" : "5ba8b2c3cda330222ca7b8d1", 
+    "files" : {
+        "container" : "files", 
+        "name" : "1543906731190_13434874_627228147433961_2732623429402026600_n.jpg", 
+        "type" : "image/jpeg", 
+        "field" : "file", 
+        "originalFilename" : "13434874_627228147433961_2732623429402026600_n.jpg", 
+        "size" : NumberInt(9219), 
+        "url" : "http://localhost:9100/uploads/files/1543906731190_13434874_627228147433961_2732623429402026600_n.jpg"
+    }, 
+    "content" : "", 
+    "time" : 1543906731199.0, 
+    "groupUserID" : ObjectId("5ba8b2c3cda330222ca7b8d0"), 
+    "taskId" : ObjectId("5c060ffed01bc5246c0781ce"), 
+    "parentId" : "null"
+}
+{ 
+    "_id" : ObjectId("5c0625b6af427e08b4ceae38"), 
+    "userId" : "5ba8b2c3cda330222ca7b8d1", 
+    "userTags" : [
+
+    ], 
+    "content" : "<p>ascascascasc</p>", 
+    "time" : 1543906742348.0, 
+    "groupUserID" : ObjectId("5ba8b2c3cda330222ca7b8d0"), 
+    "taskId" : ObjectId("5c060ffed01bc5246c0781ce"), 
+    "parentId" : "null"
+}
+{ 
+    "_id" : ObjectId("5c0625c1af427e08b4ceae39"), 
+    "userId" : "5ba8b2c3cda330222ca7b8d1", 
+    "files" : {
+        "container" : "files", 
+        "name" : "1543906753320_13669140_1622196328093624_7984663829851979121_n.jpg", 
+        "type" : "image/jpeg", 
+        "field" : "file", 
+        "originalFilename" : "13669140_1622196328093624_7984663829851979121_n.jpg", 
+        "size" : NumberInt(3678), 
+        "url" : "http://localhost:9100/uploads/files/1543906753320_13669140_1622196328093624_7984663829851979121_n.jpg"
+    }, 
+    "content" : "", 
+    "time" : 1543906753322.0, 
+    "groupUserID" : ObjectId("5ba8b2c3cda330222ca7b8d0"), 
+    "taskId" : ObjectId("5c060ffed01bc5246c0781ce"), 
+    "parentId" : "null"
+}
+{ 
+    "_id" : ObjectId("5c0626a99875a12920ea9f63"), 
+    "userId" : "5ba8b2c3cda330222ca7b8d1", 
+    "files" : {
+        "container" : "files", 
+        "name" : "1543906985671_13669140_1622196328093624_7984663829851979121_n.jpg", 
+        "type" : "image/jpeg", 
+        "field" : "file", 
+        "originalFilename" : "13669140_1622196328093624_7984663829851979121_n.jpg", 
+        "size" : NumberInt(3678), 
+        "url" : "http://localhost:9100/uploads/files/1543906985671_13669140_1622196328093624_7984663829851979121_n.jpg"
+    }, 
+    "content" : "", 
+    "time" : 1543906985677.0, 
+    "groupUserID" : ObjectId("5ba8b2c3cda330222ca7b8d0"), 
+    "taskId" : ObjectId("5c060ffed01bc5246c0781ce"), 
+    "parentId" : "null"
+}
+{ 
+    "_id" : ObjectId("5c0627a11efeca12687238fe"), 
+    "userId" : "5ba8b2c3cda330222ca7b8d1", 
+    "files" : {
+        "container" : "files", 
+        "name" : "1543907232990_13434874_627228147433961_2732623429402026600_n.jpg", 
+        "type" : "image/jpeg", 
+        "field" : "file", 
+        "originalFilename" : "13434874_627228147433961_2732623429402026600_n.jpg", 
+        "size" : NumberInt(9219), 
+        "url" : "http://localhost:9100/uploads/files/1543907232990_13434874_627228147433961_2732623429402026600_n.jpg"
+    }, 
+    "content" : "", 
+    "time" : 1543907233034.0, 
+    "groupUserID" : ObjectId("5ba8b2c3cda330222ca7b8d0"), 
+    "taskId" : ObjectId("5c060ffed01bc5246c0781ce"), 
+    "parentId" : "null"
+}
+{ 
+    "_id" : ObjectId("5c0627aa1efeca12687238ff"), 
+    "userId" : "5bbaf4ca3f8500d824ef8376", 
+    "userTags" : [
+
+    ], 
+    "content" : "<p>ascascascascasc</p>", 
+    "time" : 1543907242291.0, 
+    "groupUserID" : ObjectId("5ba8b2c3cda330222ca7b8d0"), 
+    "taskId" : ObjectId("5c060ffed01bc5246c0781ce"), 
+    "parentId" : ObjectId("5c0627a11efeca12687238fe")
+}
+{ 
+    "_id" : ObjectId("5c0627b81efeca1268723901"), 
+    "userId" : "5ba8b2c3cda330222ca7b8d1", 
+    "files" : {
+        "container" : "files", 
+        "name" : "1543907256215_13726742_226764967722969_711079556233161887_n.jpg", 
+        "type" : "image/jpeg", 
+        "field" : "file", 
+        "originalFilename" : "13726742_226764967722969_711079556233161887_n.jpg", 
+        "size" : NumberInt(11539), 
+        "url" : "http://localhost:9100/uploads/files/1543907256215_13726742_226764967722969_711079556233161887_n.jpg"
+    }, 
+    "content" : "", 
+    "time" : 1543907256217.0, 
+    "groupUserID" : ObjectId("5ba8b2c3cda330222ca7b8d0"), 
+    "taskId" : ObjectId("5c060ffed01bc5246c0781ce"), 
+    "parentId" : "null"
+}
+{ 
+    "_id" : ObjectId("5c06297b40d73f19345f16b1"), 
+    "userId" : "5ba8b2c3cda330222ca7b8d1", 
+    "files" : {
+        "container" : "files", 
+        "name" : "1543907707551_13434874_627228147433961_2732623429402026600_n.jpg", 
+        "type" : "image/jpeg", 
+        "field" : "file", 
+        "originalFilename" : "13434874_627228147433961_2732623429402026600_n.jpg", 
+        "size" : NumberInt(9219), 
+        "url" : "http://localhost:9100/uploads/files/1543907707551_13434874_627228147433961_2732623429402026600_n.jpg"
+    }, 
+    "content" : "", 
+    "time" : 1543907707558.0, 
+    "groupUserID" : ObjectId("5ba8b2c3cda330222ca7b8d0"), 
+    "taskId" : ObjectId("5c060ffed01bc5246c0781ce"), 
+    "parentId" : "null"
+}
+{ 
+    "_id" : ObjectId("5c062a7740d73f19345f16b3"), 
+    "userId" : "5ba8b2c3cda330222ca7b8d1", 
+    "files" : {
+        "container" : "files", 
+        "name" : "1543907959235_13669140_1622196328093624_7984663829851979121_n.jpg", 
+        "type" : "image/jpeg", 
+        "field" : "file", 
+        "originalFilename" : "13669140_1622196328093624_7984663829851979121_n.jpg", 
+        "size" : NumberInt(3678), 
+        "url" : "http://localhost:9100/uploads/files/1543907959235_13669140_1622196328093624_7984663829851979121_n.jpg"
+    }, 
+    "content" : "", 
+    "time" : 1543907959249.0, 
+    "groupUserID" : ObjectId("5ba8b2c3cda330222ca7b8d0"), 
+    "taskId" : ObjectId("5c060ffed01bc5246c0781ce"), 
+    "parentId" : "null"
+}
+{ 
+    "_id" : ObjectId("5c062a9c40d73f19345f16b5"), 
+    "userId" : "5ba8b2c3cda330222ca7b8d1", 
+    "files" : {
+        "container" : "files", 
+        "name" : "1543907996689_13669140_1622196328093624_7984663829851979121_n.jpg", 
+        "type" : "image/jpeg", 
+        "field" : "file", 
+        "originalFilename" : "13669140_1622196328093624_7984663829851979121_n.jpg", 
+        "size" : NumberInt(3678), 
+        "url" : "http://localhost:9100/uploads/files/1543907996689_13669140_1622196328093624_7984663829851979121_n.jpg"
+    }, 
+    "content" : "", 
+    "time" : 1543907996691.0, 
+    "groupUserID" : ObjectId("5ba8b2c3cda330222ca7b8d0"), 
+    "taskId" : ObjectId("5c060ffed01bc5246c0781ce"), 
+    "parentId" : ObjectId("5c062a7740d73f19345f16b3")
+}
+{ 
+    "_id" : ObjectId("5c062ac440d73f19345f16b7"), 
+    "userId" : "5ba8b2c3cda330222ca7b8d1", 
+    "userTags" : [
+
+    ], 
+    "content" : "<p>ascascascasc</p>", 
+    "time" : 1543908035852.0, 
+    "groupUserID" : ObjectId("5ba8b2c3cda330222ca7b8d0"), 
+    "taskId" : ObjectId("5c060ffed01bc5246c0781ce"), 
+    "parentId" : ObjectId("5c0627b81efeca1268723901")
+}
+{ 
+    "_id" : ObjectId("5c062acc40d73f19345f16b9"), 
+    "userId" : "5ba8b2c3cda330222ca7b8d1", 
+    "files" : {
+        "container" : "files", 
+        "name" : "1543908044963_13726742_226764967722969_711079556233161887_n.jpg", 
+        "type" : "image/jpeg", 
+        "field" : "file", 
+        "originalFilename" : "13726742_226764967722969_711079556233161887_n.jpg", 
+        "size" : NumberInt(11539), 
+        "url" : "http://localhost:9100/uploads/files/1543908044963_13726742_226764967722969_711079556233161887_n.jpg"
+    }, 
+    "content" : "", 
+    "time" : 1543908044965.0, 
+    "groupUserID" : ObjectId("5ba8b2c3cda330222ca7b8d0"), 
+    "taskId" : ObjectId("5c060ffed01bc5246c0781ce"), 
+    "parentId" : ObjectId("5c0627b81efeca1268723901")
+}
+{ 
+    "_id" : ObjectId("5c062f3840d73f19345f16bb"), 
+    "userId" : "5bbaf4ca3f8500d824ef8376", 
+    "files" : [
+
+    ], 
+    "content" : "Cập nhật tiến độ công việc", 
+    "time" : 1543909176146.0, 
+    "groupUserID" : ObjectId("5ba8b2c3cda330222ca7b8d0"), 
+    "taskId" : ObjectId("5c060ffed01bc5246c0781ce"), 
+    "parentId" : "null"
+}
+{ 
+    "_id" : ObjectId("5c068d9263f1b41300926645"), 
+    "userId" : "5bbaf4ca3f8500d824ef8376", 
+    "files" : [
+
+    ], 
+    "content" : "Cập nhật tiến độ công việc", 
+    "time" : 1543933330304.0, 
+    "groupUserID" : ObjectId("5ba8b2c3cda330222ca7b8d0"), 
+    "taskId" : ObjectId("5c068d7f63f1b41300926642"), 
+    "parentId" : "null"
+}
+{ 
+    "_id" : ObjectId("5c068d9863f1b4130092664a"), 
+    "userId" : "5bbaf4ca3f8500d824ef8376", 
+    "userTags" : [
+
+    ], 
+    "content" : "<p>nhjklnkjn</p>", 
+    "time" : 1543933336524.0, 
+    "groupUserID" : ObjectId("5ba8b2c3cda330222ca7b8d0"), 
+    "taskId" : ObjectId("5c068d7f63f1b41300926642"), 
+    "parentId" : "null"
+}
+{ 
+    "_id" : ObjectId("5c068da263f1b4130092664b"), 
+    "userId" : "5bbaf4ca3f8500d824ef8376", 
+    "files" : {
+        "container" : "files", 
+        "name" : "1543933345988_[lampart]_noi_dung_tuyen_dung_junior_engineer_(education_department)_june2018.docx", 
+        "type" : "application/vnd.openxmlformats-officedocument.wordprocessingml.document", 
+        "field" : "file", 
+        "originalFilename" : "[LAMPART] Nội dung tuyển dụng Junior Engineer (Education department)_June2018.docx", 
+        "size" : NumberInt(23783), 
+        "url" : "http://localhost:9100/uploads/files/1543933345988_[lampart]_noi_dung_tuyen_dung_junior_engineer_(education_department)_june2018.docx"
+    }, 
+    "content" : "", 
+    "time" : 1543933346020.0, 
+    "groupUserID" : ObjectId("5ba8b2c3cda330222ca7b8d0"), 
+    "taskId" : ObjectId("5c068d7f63f1b41300926642"), 
+    "parentId" : "null"
+}
+{ 
+    "_id" : ObjectId("5c068daa63f1b4130092664c"), 
+    "userId" : "5ba8b2c3cda330222ca7b8d1", 
+    "userTags" : [
+
+    ], 
+    "content" : "<p>kjnkjnjk</p>", 
+    "time" : 1543933354003.0, 
+    "groupUserID" : ObjectId("5ba8b2c3cda330222ca7b8d0"), 
+    "taskId" : ObjectId("5c068d7f63f1b41300926642"), 
+    "parentId" : ObjectId("5c068da263f1b4130092664b")
+}
+{ 
+    "_id" : ObjectId("5c068db663f1b4130092664e"), 
+    "userId" : "5bbaf4ca3f8500d824ef8376", 
+    "userTags" : [
+
+    ], 
+    "content" : "<p>kmlnkljnkjnk</p>", 
+    "time" : 1543933365730.0, 
+    "groupUserID" : ObjectId("5ba8b2c3cda330222ca7b8d0"), 
+    "taskId" : ObjectId("5c068d7f63f1b41300926642"), 
+    "parentId" : ObjectId("5c068da263f1b4130092664b")
+}
+{ 
+    "_id" : ObjectId("5c068dc563f1b41300926650"), 
+    "userId" : "5bbaf4ca3f8500d824ef8376", 
+    "files" : [
+
+    ], 
+    "content" : "Cập nhật tiến độ công việc", 
+    "time" : 1543933381667.0, 
+    "groupUserID" : ObjectId("5ba8b2c3cda330222ca7b8d0"), 
+    "taskId" : ObjectId("5c068d7f63f1b41300926642"), 
+    "parentId" : "null"
+}
+{ 
+    "_id" : ObjectId("5c068dd263f1b41300926656"), 
+    "userId" : "5ba8b2c3cda330222ca7b8d1", 
+    "files" : [
+
+    ], 
+    "content" : "Cập nhật tiến độ công việc", 
+    "time" : 1543933394957.0, 
+    "groupUserID" : ObjectId("5ba8b2c3cda330222ca7b8d0"), 
+    "taskId" : ObjectId("5c068d7f63f1b41300926642"), 
+    "parentId" : "null"
+}
+{ 
+    "_id" : ObjectId("5c0694d363f1b41300926663"), 
+    "userId" : "5ba8b2c3cda330222ca7b8d1", 
+    "files" : [
+
+    ], 
+    "content" : "Cập nhật tiến độ công việc", 
+    "time" : 1543935187364.0, 
+    "groupUserID" : ObjectId("5ba8b2c3cda330222ca7b8d0"), 
+    "taskId" : ObjectId("5c0694c363f1b41300926660"), 
+    "parentId" : "null"
+}
+{ 
+    "_id" : ObjectId("5c06965b63f1b41300926667"), 
+    "userId" : "5bbaf4ca3f8500d824ef8376", 
+    "files" : [
+
+    ], 
+    "content" : "Cập nhật tiến độ công việc", 
+    "time" : 1543935579083.0, 
+    "groupUserID" : ObjectId("5ba8b2c3cda330222ca7b8d0"), 
+    "taskId" : ObjectId("5c0694c363f1b41300926660"), 
+    "parentId" : "null"
+}
+{ 
+    "_id" : ObjectId("5c0a6248fedb8015504f976f"), 
+    "userId" : "5ba8b2c3cda330222ca7b8d1", 
+    "files" : [
+
+    ], 
+    "content" : "Đã đống công việc", 
+    "time" : 1544184392134.0, 
+    "groupUserID" : ObjectId("5ba8b2c3cda330222ca7b8d0"), 
+    "taskId" : ObjectId("5c068d7f63f1b41300926642"), 
+    "parentId" : "null"
+}
+{ 
+    "_id" : ObjectId("5c0a63a0aa851f06d4ed078e"), 
+    "userId" : "5ba8b2c3cda330222ca7b8d1", 
+    "files" : [
+
+    ], 
+    "content" : "Cập nhật tiến độ công việc", 
+    "time" : 1544184736590.0, 
+    "groupUserID" : ObjectId("5ba8b2c3cda330222ca7b8d0"), 
+    "taskId" : ObjectId("5c068d7f63f1b41300926642"), 
+    "parentId" : "null"
+}
+{ 
+    "_id" : ObjectId("5c0a63a3aa851f06d4ed0794"), 
+    "userId" : "5ba8b2c3cda330222ca7b8d1", 
+    "files" : [
+
+    ], 
+    "content" : "Cập nhật tiến độ công việc", 
+    "time" : 1544184739737.0, 
+    "groupUserID" : ObjectId("5ba8b2c3cda330222ca7b8d0"), 
+    "taskId" : ObjectId("5c068d7f63f1b41300926642"), 
+    "parentId" : "null"
+}
+{ 
+    "_id" : ObjectId("5c0a63a5aa851f06d4ed079a"), 
+    "userId" : "5ba8b2c3cda330222ca7b8d1", 
+    "files" : [
+
+    ], 
+    "content" : "Cập nhật tiến độ công việc", 
+    "time" : 1544184741915.0, 
+    "groupUserID" : ObjectId("5ba8b2c3cda330222ca7b8d0"), 
+    "taskId" : ObjectId("5c068d7f63f1b41300926642"), 
+    "parentId" : "null"
+}
+{ 
+    "_id" : ObjectId("5c0a63a9aa851f06d4ed07a0"), 
+    "userId" : "5ba8b2c3cda330222ca7b8d1", 
+    "files" : [
+
+    ], 
+    "content" : "Cập nhật tiến độ công việc", 
+    "time" : 1544184745878.0, 
+    "groupUserID" : ObjectId("5ba8b2c3cda330222ca7b8d0"), 
+    "taskId" : ObjectId("5c068d7f63f1b41300926642"), 
+    "parentId" : "null"
+}

@@ -81,9 +81,9 @@ export const fetchMore = (filter?, skip?, limit?, where?) => {
   };
 };
 
-export const uploadFile = (file, id) => {
+export const uploadFile = (file, id, parentId = null) => {
   return (dispatch: (action) => void) => {
-    return api.comment.uploadFile(file, id)
+    return api.comment.uploadFile(file, id, parentId)
       .then(obj => { 
         if(!!obj.data)
           dispatch(fetchFinished([obj.data]))

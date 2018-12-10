@@ -8,7 +8,8 @@ import {
   Messagse,
   ProjectAsync,
   NotificationAsync,
-  TaskAsync
+  TaskAsync,
+  SchedulerAsync
 } from 'modules';
 
 class Content extends Component {
@@ -17,6 +18,7 @@ class Content extends Component {
       <Switch>
         <Route exact path="/" component={ HomeAsync } />
         <Route exact path="/messagse" component={ Messagse } />
+        <Route exact path="/scheduler" component={ SchedulerAsync } />
         <Route exact path="/notification" component={ NotificationAsync } />
         <Route path="/profile" component={ ProfileAsync } />
         <Route path="/project" component={ ProjectAsync } />

@@ -1,0 +1,176 @@
+{ 
+    "_id" : ObjectId("5c0802702742cd2eac81d37e"), 
+    "userId" : ObjectId("5ba8b2c3cda330222ca7b8d1"), 
+    "time" : 1544028784412.0, 
+    "type" : NumberInt(1), 
+    "account_type" : NumberInt(1), 
+    "groupUserID" : ObjectId("5ba8b2c3cda330222ca7b8d0")
+}
+{ 
+    "_id" : ObjectId("5c08027b2742cd2eac81d37f"), 
+    "userId" : ObjectId("5ba8b2c3cda330222ca7b8d1"), 
+    "time" : 1544028795284.0, 
+    "type" : NumberInt(0), 
+    "account_type" : NumberInt(1), 
+    "groupUserID" : ObjectId("5ba8b2c3cda330222ca7b8d0")
+}
+{ 
+    "_id" : ObjectId("5c0a5da63e6ebd2cbc6d463f"), 
+    "userId" : ObjectId("5ba8b2c3cda330222ca7b8d1"), 
+    "time" : 1544183206893.0, 
+    "type" : NumberInt(0), 
+    "account_type" : NumberInt(1), 
+    "groupUserID" : ObjectId("5ba8b2c3cda330222ca7b8d0")
+}
+{ 
+    "_id" : ObjectId("5c0a6208fedb8015504f976e"), 
+    "userId" : ObjectId("5ba8b2c3cda330222ca7b8d1"), 
+    "time" : 1544184328970.0, 
+    "type" : NumberInt(0), 
+    "account_type" : NumberInt(1), 
+    "groupUserID" : ObjectId("5ba8b2c3cda330222ca7b8d0")
+}
+{ 
+    "_id" : ObjectId("5c0a642441ea232f5c2019d5"), 
+    "userId" : ObjectId("5bbaf4ca3f8500d824ef8376"), 
+    "time" : 1544184868096.0, 
+    "type" : NumberInt(0), 
+    "account_type" : NumberInt(2), 
+    "groupUserID" : ObjectId("5ba8b2c3cda330222ca7b8d0")
+}
+{ 
+    "_id" : ObjectId("5c0a67c141ea232f5c2019d6"), 
+    "userId" : ObjectId("5ba8b2c3cda330222ca7b8d1"), 
+    "time" : 1544185793983.0, 
+    "type" : NumberInt(0), 
+    "account_type" : NumberInt(1), 
+    "groupUserID" : ObjectId("5ba8b2c3cda330222ca7b8d0")
+}
+{ 
+    "_id" : ObjectId("5c0a70f75795dc37a4d58c97"), 
+    "userId" : ObjectId("5ba8b2c3cda330222ca7b8d1"), 
+    "time" : 1544188151487.0, 
+    "type" : NumberInt(0), 
+    "account_type" : NumberInt(1), 
+    "groupUserID" : ObjectId("5ba8b2c3cda330222ca7b8d0")
+}
+{ 
+    "_id" : ObjectId("5c0a74d05795dc37a4d58c98"), 
+    "userId" : ObjectId("5ba8b2c3cda330222ca7b8d1"), 
+    "time" : 1544189136980.0, 
+    "type" : NumberInt(0), 
+    "account_type" : NumberInt(1), 
+    "groupUserID" : ObjectId("5ba8b2c3cda330222ca7b8d0")
+}
+{ 
+    "_id" : ObjectId("5c0ca114673f9b27ac5f4ae7"), 
+    "userId" : ObjectId("5ba8b2c3cda330222ca7b8d1"), 
+    "time" : 1544331540318.0, 
+    "type" : NumberInt(0), 
+    "account_type" : NumberInt(1), 
+    "groupUserID" : ObjectId("5ba8b2c3cda330222ca7b8d0")
+}
+{ 
+    "_id" : ObjectId("5c0cb3000c94d01114d809e8"), 
+    "userId" : ObjectId("5bbaf4ca3f8500d824ef8376"), 
+    "time" : 1544336128391.0, 
+    "type" : NumberInt(0), 
+    "account_type" : NumberInt(2), 
+    "groupUserID" : ObjectId("5ba8b2c3cda330222ca7b8d0")
+}
+{ 
+    "_id" : ObjectId("5c0cbac7a9710a252c083c65"), 
+    "userId" : ObjectId("5bbaf4ca3f8500d824ef8376"), 
+    "time" : 1544338119972.0, 
+    "type" : NumberInt(0), 
+    "account_type" : NumberInt(2), 
+    "groupUserID" : ObjectId("5ba8b2c3cda330222ca7b8d0")
+}
+{ 
+    "_id" : ObjectId("5c0cbbcf131760206cadfd38"), 
+    "userId" : ObjectId("5ba8b2c3cda330222ca7b8d1"), 
+    "time" : 1544338383681.0, 
+    "type" : NumberInt(0), 
+    "account_type" : NumberInt(1), 
+    "groupUserID" : ObjectId("5ba8b2c3cda330222ca7b8d0")
+}
+{ 
+    "_id" : ObjectId("5c0cbce0131760206cadfd3c"), 
+    "userId" : ObjectId("5bbaf4ca3f8500d824ef8376"), 
+    "time" : 1544338656445.0, 
+    "type" : NumberInt(0), 
+    "account_type" : NumberInt(2), 
+    "groupUserID" : ObjectId("5ba8b2c3cda330222ca7b8d0")
+}
+{ 
+    "_id" : ObjectId("5c0cbf6a131760206cadfd3d"), 
+    "userId" : ObjectId("5ba8b2c3cda330222ca7b8d1"), 
+    "time" : 1544339306438.0, 
+    "type" : NumberInt(0), 
+    "account_type" : NumberInt(1), 
+    "groupUserID" : ObjectId("5ba8b2c3cda330222ca7b8d0")
+}
+{ 
+    "_id" : ObjectId("5c0cc41a131760206cadfd41"), 
+    "userId" : ObjectId("5ba8b2c3cda330222ca7b8d1"), 
+    "time" : 1544340506511.0, 
+    "type" : NumberInt(1), 
+    "account_type" : NumberInt(1), 
+    "groupUserID" : ObjectId("5ba8b2c3cda330222ca7b8d0")
+}
+{ 
+    "_id" : ObjectId("5c0cc420131760206cadfd42"), 
+    "userId" : ObjectId("5bbaf4ca3f8500d824ef8376"), 
+    "time" : 1544340512008.0, 
+    "type" : NumberInt(0), 
+    "account_type" : NumberInt(2), 
+    "groupUserID" : ObjectId("5ba8b2c3cda330222ca7b8d0")
+}
+{ 
+    "_id" : ObjectId("5c0cc431131760206cadfd43"), 
+    "userId" : ObjectId("5bbaf4ca3f8500d824ef8376"), 
+    "time" : 1544340529262.0, 
+    "type" : NumberInt(1), 
+    "account_type" : NumberInt(2), 
+    "groupUserID" : ObjectId("5ba8b2c3cda330222ca7b8d0")
+}
+{ 
+    "_id" : ObjectId("5c0cc433131760206cadfd44"), 
+    "userId" : ObjectId("5ba8b2c3cda330222ca7b8d1"), 
+    "time" : 1544340531132.0, 
+    "type" : NumberInt(0), 
+    "account_type" : NumberInt(1), 
+    "groupUserID" : ObjectId("5ba8b2c3cda330222ca7b8d0")
+}
+{ 
+    "_id" : ObjectId("5c0cc446131760206cadfd45"), 
+    "userId" : ObjectId("5ba8b2c3cda330222ca7b8d1"), 
+    "time" : 1544340550627.0, 
+    "type" : NumberInt(1), 
+    "account_type" : NumberInt(1), 
+    "groupUserID" : ObjectId("5ba8b2c3cda330222ca7b8d0")
+}
+{ 
+    "_id" : ObjectId("5c0d03f3c91ad237b84d48b6"), 
+    "userId" : ObjectId("5bbaf4ca3f8500d824ef8376"), 
+    "time" : 1544356851611.0, 
+    "type" : NumberInt(0), 
+    "account_type" : NumberInt(2), 
+    "groupUserID" : ObjectId("5ba8b2c3cda330222ca7b8d0")
+}
+{ 
+    "_id" : ObjectId("5c0d14f113c4602a18988952"), 
+    "userId" : ObjectId("5c0d12f156977222887530cd"), 
+    "time" : 1544361201584.0, 
+    "type" : NumberInt(0), 
+    "account_type" : NumberInt(2), 
+    "groupUserID" : ObjectId("5c0d109456977222887530c5")
+}
+{ 
+    "_id" : ObjectId("5c0d151f13c4602a18988953"), 
+    "userId" : ObjectId("5c0d12f156977222887530cd"), 
+    "time" : 1544361247600.0, 
+    "type" : NumberInt(0), 
+    "account_type" : NumberInt(2), 
+    "groupUserID" : ObjectId("5c0d109456977222887530c5")
+}

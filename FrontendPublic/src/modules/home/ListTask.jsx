@@ -10,6 +10,7 @@ class ListTask extends Component {
 
   render() {
     let { data, ordered, cateTask, friends, isEmpty, jobStatus, profile } = this.props;
+    
     return (
       <div className="bottom">
         <ul className="nav nav-tabs tabs customtab">
@@ -63,13 +64,14 @@ class ListTask extends Component {
 
         <Scrollbars className="hiddenOverX" style={{ minHeight: "45vh" }}>
           <ul className="list-group no-br">
-            <li className="list-group-item no-br br-b m-b-5 min-h-50">
+            {/* <li className="list-group-item no-br br-b m-b-5 min-h-50">
               Chủ nhật (23/09/2018)
-            </li>
+            </li> */}
               {
                 !!data && !isEmpty(ordered) && ordered.map( (e, i) => {
                   let taskItem = !!data && !!data[e] ? data[e]  : null;
                   let now = Date.now();
+                 
                   if(!taskItem) return null;
 
                   let icon = !!cateTask && !!cateTask.data[taskItem.cateTaskId] ? cateTask.data[taskItem.cateTaskId].icon : "";
@@ -89,7 +91,7 @@ class ListTask extends Component {
                     if(now < taskItem.begin)
                       process = { liClass : "default", text: "Not implemented yet" };
                   }
-                  
+                  if(!!taskItem.finish) process = { liClass : "success", text    : "Done" }
 
                   let avatar = (
                     !!friends.data[taskItem.memberId] && friends.data[taskItem.memberId].avatar

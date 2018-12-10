@@ -30,6 +30,10 @@
       ],
       "default": "[]"
     },
+    "point": {
+      "type": "number",
+      "default": 0
+    },
     "memberId": {
       "type": "string"
     },
@@ -79,6 +83,12 @@
       "type": "belongsTo",
       "model": "users",
       "foreignKey": "createAt",
+      "primaryKey": ""
+    },
+    "member": {
+      "type": "belongsTo",
+      "model": "users",
+      "foreignKey": "memberId",
       "primaryKey": ""
     },
     "projectId": {

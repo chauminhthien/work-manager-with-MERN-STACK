@@ -15,8 +15,18 @@ module.exports = function(Task) {
   //========================
 
   Task.afterRemote('create', function (ctx, res, next) {
-  	let { memberId, id, name, groupUserID, projectId } = res.__data;
+  	let { memberId, id, name, groupUserID, projectId, relateMember } = res.__data;
   	let { socketID, userCurrent } = Task.app;
+
+  	if(!!socketID && socketID[groupUserID]){
+    	if(!!socketID[groupUserID][memberId]){
+        socketID[groupUserID][memberId].emit('SERVER_SEND_TASK', res);
+      }
+
+      for(let val of relateMember){
+      	!!socketID[groupUserID][val.value] && socketID[groupUserID][val.value].emit('SERVER_SEND_TASK', res);
+      }
+    }
 
   	let mail = `
   				<h2>
@@ -395,11 +405,11 @@ module.exports = function(Task) {
 	  			})
 	  		
 			}
-		}else{
-			let { id, finish } = instance;
+		}else if(!instance.point){
+			let { id, finish, point } = instance;
 			let content = "Cập nhật tiến độ công việc";
 
-			if(!!finish) content = "Đã đống công việc";
+			if(!!finish && !point) content = "Đã đống công việc";
 
 			let cmt = {
 	     	taskId: id,
@@ -423,9 +433,22 @@ module.exports = function(Task) {
 	    							task.save();
 	    						}
 
-	    						let { memberCmt } = task.__data;
+	    						let { memberCmt, relateMember, createAt, memberId } = task.__data;
 	    						if(memberCmt.indexOf(userCurrent.id.toString()) === -1)
     								memberCmt.push(userCurrent.id.toString());
+
+    							if(memberCmt.indexOf(createAt) === -1)
+    								memberCmt.push(createAt);
+
+    							if(memberCmt.indexOf(memberId) === -1)
+    								memberCmt.push(memberId);
+
+    							for(let v of relateMember){
+    								if(memberCmt.indexOf(v.value) === -1)
+    									memberCmt.push(v.value);
+    							}
+
+    							console.log(memberCmt);
 
     							for(let key of memberCmt){
     								let dataMess = {
@@ -474,7 +497,7 @@ module.exports = function(Task) {
 	Task.afterRemote('prototype.patchAttributes', function (ctx, res, next) {
 
 		let { socketID } 	= Task.app;
-		let { relateMember, groupUserID, memberId } = res;
+		let { relateMember, groupUserID, memberId, createAt, finish } = res.__data;
 
 		if(!!relateMember){
       for(let m of relateMember){
@@ -484,12 +507,42 @@ module.exports = function(Task) {
       }
     }
 
+
     if(!!socketID && socketID[groupUserID]){
-    	if(!!socketID[groupUserID][memberId]){
-        socketID[groupUserID][memberId].emit('SERVER_SEND_TASK_NOT_NOTY', {data: res});
-      } 
+
+    	if(!!socketID[groupUserID][createAt]) socketID[groupUserID][createAt].emit('SERVER_SEND_TASK_NOT_NOTY', {data: res});
+    	if(!!finish && !!socketID[groupUserID][memberId]) socketID[groupUserID][memberId].emit('SERVER_SEND_TASK_NOT_NOTY', {data: res});
+
     }
 
 		next();
 	})
+
+
+
+	Task.getTaskScheduler = async function(cb) {
+		let { userCurrent } = Task.app;
+		let { id } = userCurrent.__data;
+		let result = [];
+
+		let listTask = await Task.app.models.task.find({
+			where: { memberId: id }
+		});
+
+		if(!!listTask)
+			for (let val of listTask){
+				let { id, begin: start, end, name: title, projectId } = val.__data;
+				result.push({
+					id, start, end, title, projectId
+				})
+			}
+		cb(null, result)
+  };
+
+  Task.remoteMethod(
+    'getTaskScheduler', {
+      http: {path: '/getTaskScheduler', verb: 'get'},
+      returns: {arg: 'res', type: 'object', root: true},
+    }
+  );
 };

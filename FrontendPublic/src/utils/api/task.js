@@ -47,6 +47,14 @@ export const removeFile = (name, id) => {
     });
 }
 
+export const getTaskScheduler = () => {
+  let url = `${ TASK_BASE }/getTaskScheduler`;
+  return base.get(url, 200)
+    .then(obj => {
+      return obj;
+    });
+}
+
 export const updateById = (id, data) => {
   let url = `${TASK_BASE}/${id}`;
   return base.patch(url, data, 200)

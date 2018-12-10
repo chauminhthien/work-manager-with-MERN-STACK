@@ -1,0 +1,67 @@
+{
+  "name": "project",
+  "base": "PersistedModel",
+  "idInjection": true,
+  "options": {
+    "validateUpsert": true
+  },
+  "properties": {
+    "name": {
+      "type": "string",
+      "required": true
+    },
+    "description": {
+      "type": "string"
+    },
+    "begin": {
+      "type": "number",
+      "required": true
+    },
+    "end": {
+      "type": "number",
+      "required": true
+    },
+    "files": {
+      "type": [
+        "any"
+      ],
+      "default": "[]"
+    },
+    "memberJoins": {
+      "type": [
+        "any"
+      ],
+      "default": "[]"
+    },
+    "groupUserID": {
+      "type": "string"
+    },
+    "createAt": {
+      "type": "string"
+    },
+    "timeFisnish": {
+      "type": "number"
+    },
+    "finish": {
+      "type": "number",
+      "default": 0
+    }
+  },
+  "validations": [],
+  "relations": {
+    "groupUser": {
+      "type": "belongsTo",
+      "model": "groupUser",
+      "foreignKey": "groupUserID",
+      "primaryKey": ""
+    },
+    "createAt": {
+      "type": "belongsTo",
+      "model": "users",
+      "foreignKey": "createAt",
+      "primaryKey": ""
+    }
+  },
+  "acls": [],
+  "methods": {}
+}
